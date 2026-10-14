@@ -470,4 +470,43 @@ example {H K N : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [Comple
   CompletelyPositiveMap.map_cstarMatrix_nonneg
     (Fock.secondQuantizationCompressionCP V) (star M * M) (star_mul_self_nonneg M)
 
+noncomputable section
+section ActualPositiveProductUsage
+open scoped Topology
+local instance (I : Type*) : PartialOrder (Fock.closedSemicircularAlgebra I) :=
+  CStarAlgebra.spectralOrder _
+local instance (I : Type*) : StarOrderedRing (Fock.closedSemicircularAlgebra I) :=
+  CStarAlgebra.spectralOrderedRing _
+
+-- Two positive free squared fields give an actual positive sandwich germ;
+-- all three nonzero means are proved from the concrete state.
+example {I : Type*} (i j : I) (hij : i ≠ j) :
+    let φ := Fock.closedGeneratedVacuumState I
+    let a := Fock.closedSemicircular i ^ 2
+    let b := Fock.closedSemicircular j ^ 2
+    ∃ hEa : φ.expectation a ≠ 0, ∃ hEb : φ.expectation b ≠ 0,
+      ∃ hEP : φ.expectation (positiveMultiplicativeSandwich a b) ≠ 0,
+        φ.sTransform (positiveMultiplicativeSandwich a b) hEP =ᶠ[𝓝 0]
+          (fun w => φ.sTransform a hEa w * φ.sTransform b hEb w) := by
+  intro φ a b
+  have hf := Fock.freelyIndependent_closedGeneratedVacuumState I
+  have ha : a ∈ Fock.closedGeneratorAlgebra i :=
+    (Fock.closedGeneratorAlgebra i).pow_mem
+      (Fock.closedSemicircular_mem_closedGeneratorAlgebra i) 2
+  have hb : b ∈ Fock.closedGeneratorAlgebra j :=
+    (Fock.closedGeneratorAlgebra j).pow_mem
+      (Fock.closedSemicircular_mem_closedGeneratorAlgebra j) 2
+  have hEa : φ.expectation a ≠ 0 := by simp [φ, a]
+  have hEb : φ.expectation b ≠ 0 := by simp [φ, b]
+  have hapos : @LE.le (Fock.closedSemicircularAlgebra I)
+      (CStarAlgebra.spectralOrder (Fock.closedSemicircularAlgebra I)).toPreorder.toLE 0 a := by
+    simpa only [(Fock.isSelfAdjoint_closedSemicircular i).star_eq, ← pow_two] using
+      star_mul_self_nonneg (Fock.closedSemicircular i)
+  have ht := Fock.closedGeneratedVacuumState_isTracial I
+  refine ⟨hEa, hEb, φ.expectation_positiveMultiplicativeSandwich_ne_zero
+    ht hf hij a b ha hb hapos hEa hEb, ?_⟩
+  exact φ.sTransform_positiveMultiplicativeSandwich_eventually ht hf hij a b ha hb hapos hEa hEb
+end ActualPositiveProductUsage
+end
+
 end FreeProbability.Examples

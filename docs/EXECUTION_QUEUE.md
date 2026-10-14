@@ -18,9 +18,9 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `1767b485a1c5eddbe1337e281137b3454f10b0a7`,
-published on main through [PR #19](https://github.com/T1mberland/lean-free-probability-01/pull/19).
-Full builds 3672/3675, direct transitive audit 3848 declarations and source guard pass.
+Latest checked integration: `741660d35157dddeb846c1321bcf6bad8989b0e7`,
+published on main through [PR #20](https://github.com/T1mberland/lean-free-probability-01/pull/20).
+Full builds 3677/3680, direct transitive audit 3952 declarations and source guard pass.
 Goals 1, 2, 3 and 6 are certified complete; seven full goals remain open.
 Every historical checkpoint below retains its original scope and date.
 
@@ -32,7 +32,7 @@ Every historical checkpoint below retains its original scope and date.
 | 4. Operator-valued Dyson | Actual finite-matrix model, Wick, Dyson and physical theory integrated | General arbitrary-base CP covariance realization and entrywise-model comparison remain |
 | 5. Spectral edges | Actual core variational equality, state/density bounds and exterior derivative/Lyapunov integrated | Actual exterior spectral-gap bounds integrated; quantitative finite-depth Fock approximation, singular limits and deterministic edge subspaces remain |
 | 6. Spectral distributions | Complete on checked main `427f72b`, PR #2 | Actual compact laws/CFC/support/Cauchy/moment compatibility and bounded weak/Cauchy convergence |
-| 7. Multiplicative convolution | Projection law/germ integrated; generic positive-pair path ready | Positive sandwich law and cyclic moments, normclosure freeness, centered-resolvent analytic S multiplication; arbitrary-law realizations and projection-product support remain |
+| 7. Multiplicative convolution | Projection law/germ integrated; generic positive-pair path ready | Actual given-positive-pair S/law/marginal determination reviewed pending integration; grouping for projection products next, physical support/edge and arbitrary-law realizations remain |
 | 8. Conditional subordination | Noncommutative L² and Goal 7 dependencies open | Normal conditional expectations, analytic subordination, exterior continuation and projection specialization |
 | 9. Haar freeness | Independent algebraic groundwork ready | Haar-unitary star law and free conjugation; orthogonal pairing integration precedes joint asymptotic estimates |
 | 10. OU and entropy | Actual Wick contractions and homogeneous Haagerup integrated | Unitary second quantization integrated; cross-space isometry/CP compression in progress; completely positive OU, normal Lp/entropy and dimension-independent regularization remain |
@@ -43,8 +43,8 @@ Every historical checkpoint below retains its original scope and date.
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
 | Coordinator | `main`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/multiplicative-resolvent-germ`, `/home/user/Projects/lean-fp-cumulants` | New `Analytic/MultiplicativeResolvent*.lean`; completed closure/norm features preserved | Actual two-inverse factorization and centered alternating geometric expectations |
-| Worker B (`fock`) | `feat/fock-ou-rotation`, `/home/user/Projects/lean-fp-fock` | New `Fock/OrnsteinUhlenbeckRotation*.lean`, `OrnsteinUhlenbeckDilation*.lean` and agreed OU notes; published CP feature preserved | Actual real doubled rotation and rotated CP compression, then true Wick range/scaling |
+| Worker A (`cumulants`) | `feat/grouped-freeness`, `/home/user/Projects/lean-fp-cumulants` | New `Algebraic/FreenessGrouping*.lean`; complete multiplicative feature/math notes preserved | General grouping of free subalgebras via product cumulants and multilinear spans |
+| Worker B (`fock`) | `feat/tensor-family-faithfulness`, `/home/user/Projects/lean-fp-fock` | New `Fock/TensorBasisTransport*.lean`, `TensorFamilyFaithfulness*.lean` and agreed transport notes; complete dilation feature preserved | Native completed-tensor arbitrary-ON-family faithful tracial generated state transport |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -1514,3 +1514,60 @@ A actual S-germ wrapper is written but not yet kernel verified; its statement
 will not be claimed before compilation, mathematical review and integration.
 B subsequent doubled rotation `cfa690e` and A `123f760`/`8d59bb2` conditional
 expectation + actual germ bounds are independently reviewed, not in this CP PR.
+
+### Checked full CP PR and actual multiplicative S/law integration
+
+PR #20 merged head `f2d88ef` as `741660d35157dddeb846c1321bcf6bad8989b0e7`.
+Main full 3677, Verification 3680, direct audit 3952 and source guard pass.
+Actual S/law worker originals `bb3f211`, `550a3db`, `123f760`, `8d59bb2`,
+`4faa20f`, `f55038c`, `76803c6`, `53b8bd2`, `822abe4` and design notes
+`d37005d` are preserved in one focused integration, original atomic history.
+All nine source modules independently mathematically reviewed. The conditional
+pointwise inverse expectation lemma has explicit domains/means; the final S
+theorem DISCHARGES ALL of them from actual inverse germs and nonzero marginal
+means, with product mean nonzero derived from freeness. Candidate is globally
+DEFINED and continuous AT ZERO, not asserted globally continuous. The theorem
+is an actual filled analytic germ, not formal series or an assumed inverse.
+The unit factorization is two-sided in arbitrary noncommutative algebras, no
+Dedekind-finite or unsafe one-sided inverse argument. Actual S multiplication
+needs no trace or positivity of the variables.
+
+Under trace and a>=0, all true sandwich powers have the ordered-product moments;
+b>=0 makes the actual sandwich positive. Its true compact nonnegative probability
+law is determined by marginal laws across DIFFERENT actual ambient models, without
+nonzero-mean or faithful-state assumptions. Symmetry and unit laws are actual
+measure equalities. No universal realization of arbitrary compact laws is inserted.
+Goal 7 still needs L-projection characterization and physical support/edge.
+A concrete two-squared-field closed-Fock example proves marginal and sandwich
+means nonzero and verifies the actual positive-sandwich S germ. Its first check
+exposed a REAL example order-instance mismatch (subtype inherited LE versus
+chosen spectral PartialOrder), repaired by explicitly typing the intended
+spectral positivity. Noncomputable local order declaration and neighborhood
+notation were also corrected; no mathematical statement or hypothesis changed.
+Focused example now passes. Full combined integration checks follow.
+
+Coordinator switched A's clean d37005d to `feat/grouped-freeness` from checked
+`741660d`, exclusive new FreenessGrouping*.lean. Path B selected only: raw top
+interval join + monochromatic blocks implies constant grouped labels, then
+product cumulants and multilinear spans. Initial `6375793` interval lemma and
+`6e3b1aa` arbitrary tagged-flatten word-product mixed cumulants are published,
+not integrated/full grouping yet. Empty word unit cumulants handled separately.
+Literal ordered fibers retain order; no equality only up to permutation is used.
+
+Coordinator switched B's clean `0904736` to `feat/tensor-family-faithfulness`
+from checked741660d. Native fixedTensorFullFock arbitrary-ON-family faithfulness
+is a GENUINE missing transport, not implied by faith on the earlier adapted
+WordSpace. Adapted levels map to actual completed TensorPowerH recursively,
+fixing scalar vacuum; whole grading unitary must conjugate creation. Then actual
+closed generated algebra/faith/tracial state transports. No all-complex-field
+faith assumption is allowed. This unblocks includedcompression as injective
+star-hom with closed isometric range and inverse original-algebra embedding.
+
+Combined S/law feature passes full build 3686, Verification 3689, direct
+transitive axiom audit 4037 declarations and source-integrity guard. The actual
+positive two-squared-field sandwich S example passes with all means proved.
+No weakened statement or analytic convergence premise is inserted into the
+final germ theorem. Generic grouped-algebra feature now fully published through
+`9bce675`, design notes `69c43ad`; native arbitrary-family tensor faithful state
+and generated-algebra equivalence fully published through `1d646f2`. These are
+reviewed in part and separately queued, not included in this S/law PR.

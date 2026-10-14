@@ -320,3 +320,5 @@ import FreeProbability.Fock.OrnsteinUhlenbeckL2Cyclic
 import FreeProbability.Analytic.ProjectionProductPicard
 import FreeProbability.Analytic.ProjectionProductPicardPolynomial
 import FreeProbability.Analytic.ProjectionProductPicardStabilization
+import FreeProbability.Fock.OrnsteinUhlenbeckContinuityDense
+import FreeProbability.Fock.OrnsteinUhlenbeckContinuityHilbert

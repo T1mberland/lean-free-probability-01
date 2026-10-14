@@ -952,3 +952,12 @@ run_cmd do
 #print axioms FreeProbability.halfProjectionPicardCoefficient_partial_sum_le_supersolution
 #print axioms FreeProbability.halfProjectionPicardCoefficient_summable
 #print axioms FreeProbability.halfProjectionPicardCoefficient_tsum_le_supersolution
+#print axioms FreeProbability.Fock.continuous_contraction_family_of_dense
+#print axioms FreeProbability.Fock.nativeOU_continuous_orbits_dense
+#print axioms FreeProbability.Fock.familyOUTime_joint_continuous
+#print axioms FreeProbability.Fock.familyOUTime_strong_continuous
+#print axioms FreeProbability.Fock.tensorDamping_continuous_orbits_dense
+#print axioms FreeProbability.Fock.degreeDamping_joint_continuous
+#print axioms FreeProbability.Fock.degreeDamping_strong_continuous
+#print axioms FreeProbability.Fock.familyOUL2_joint_continuous
+#print axioms FreeProbability.Fock.familyOUL2_strong_continuous

@@ -18,11 +18,11 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `3b5fa1d2c626a1564791a6b471838537b1550755`,
+Latest checked integration: `8231e1385b4fb4ecb159a7a0bb65dc155e479668`,
 published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
 and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
-Grouped-freeness PR #23 passes full builds 3690/3693, direct transitive audit
-4066 declarations and source guard.
+Rotation-dilation PR #24 passes full builds 3700/3703, direct transitive audit
+4208 declarations and source guard.
 Goals 1, 2, 3 and 6 are certified complete; seven full goals remain open.
 Every historical checkpoint below retains its original scope and date.
 
@@ -1638,3 +1638,18 @@ was still in progress at this query; local post-merge checks have passed.
 Rotation-dilation integration feature passes full3700, Verification3703,
 direct transitive audit4208, source guard and diff checks. The concrete
 zero-time canonical Wick example passes; no original-algebra self-map claimed.
+
+### Checked rotation and pending native-family coherence
+
+PR #24 head `645d91b` merged as `8231e13`; main full3700, Verification3703,
+direct audit4208, source guard and diff checks pass. Next integration preserves
+`c8b44e5`, `be3594b`, `e0412d1`, `1d646f2`: actual completed tensor transport,
+creator/adjoint/field/state transport, native ON-family faithful tracial state,
+and genuine onto generated-closure equivalence with exact norms. All four modules
+critically reviewed. Usage checks faithfulness of arbitrary native-family elements.
+This closes a model-coherence dependency needed for the genuine OU embedding;
+normal/Lp/entropy extensions remain open and no new full goal is certified.
+
+Native-family integration feature passes full3704, Verification3707, direct
+transitive audit4330, source guard and diff checks. Arbitrary native-family
+faithfulness usage compiles. No statement about faithfulness on all operators.

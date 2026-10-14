@@ -611,4 +611,12 @@ example {A : Type*} [CStarAlgebra A] [PartialOrder A] [StarOrderedRing A]
       (fun z => halfProjectionAnalyticSum 2 z / (1 - halfProjectionAnalyticSum 2 z)) :=
   φ.momentGeneratingFunction_eq_picard_fraction_eventually hφ 1 hf p hpB hp hE
 
+-- Compression has trivial kernel on the entire included WOT closure of an arbitrary ON family.
+example {I H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+    [NormedAddCommGroup K] [InnerProductSpace ℂ K] [CompleteSpace K]
+    (V : H →ₗᵢ[ℂ] K) (e : I → H) (he : Orthonormal ℂ e)
+    (T : Fock.tensorFamilyWOTAlgebra (fun i => V (e i)))
+    (hz : Fock.includedFamilyWOTCompression V e T = 0) : T = 0 :=
+  Fock.includedFamilyWOTCompression_eq_zero V e he T hz
+
 end FreeProbability.Examples

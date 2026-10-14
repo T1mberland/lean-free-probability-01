@@ -1201,3 +1201,34 @@ all three surviving operator contractions; its first attempt differed only by
 addition order and was repaired with commutativity, without statement changes.
 CI for PRs #8, #9 and #10 is confirmed successful (runs 38544010777,
 38545132352, 38548126213); PR #11 run 38551786693 remains in progress.
+
+### Checked Wick PR and pending physical matrix integration
+
+PR #12 merged head `c1522bc` as `be0f1635216209e18c7f5e1681b6fc0d1203c21e`.
+Main passes full 3644, Verification 3647, direct audit 3594 and source guard.
+General homogeneous Wick inequality and all reversed-overlap products are now
+integrated; OU CP/normal/Lp/entropy remain open.
+
+Physical sources through `6692fe8` are preserved on `feat/integrate-matrix-physical`.
+Twelve new modules include the previously reported failed `8775e6e` imaginary-part
+cleanup ONLY WITH its corrective `efc7f32` and later Gram/strict-positivity fixes.
+No claim is made that the failing intermediate commit alone was verified.
+Actual analytic derivative is minus the expectation of the true squared inverse.
+Normalization is z*m(z) to identity at infinity; normalized analytic Dyson
+uniqueness holds on connected unbounded open domains, specialized to upper half
+plane. This is not arbitrary fixed-argument root uniqueness. Strict actual
+negative imaginary part uses invertible vacuum Gram vectors, without pretending
+faithfulness on all bounded Fock operators. Full right spectral exterior gives
+actual inverse positivity and actual m positive definite, including empty matrices.
+Actual derivative of Dyson gives d=-m*m+m*eta(d)*m, preserving order.
+Explicit norms: expectation entry control uses elementwise supremum; covariance
+contraction uses row operator norm. No unsupported C-star contractivity is asserted.
+Read-only reviewer approves corrected chain and new coreedge `094e84d` separately;
+physical PR precedes distinct edge PR, preserving precise scopes and atomic history.
+
+Combined physical integration passes full build 3656 jobs, Verification 3659,
+direct audit 3707 declarations and source guard. The noncommuting drift/Pauli
+coefficient example at z=I proves STRICT negative imaginary part. Its missing
+ComplexOrder scope was a genuine example elaboration error, fixed locally;
+no resource/stale-artifact failure or mathematical statement change occurred.
+The twelve mathematical modules compiled before that example repair.

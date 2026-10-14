@@ -692,3 +692,12 @@ run_cmd do
 #print axioms FreeProbability.Fock.norm_homogeneousWick_le
 #print axioms FreeProbability.Fock.norm_homogeneousWick_vacuum_sq
 #print axioms FreeProbability.Fock.norm_homogeneousWick_le_degree_mul_vacuumNorm
+#print axioms FreeProbability.Fock.operatorMatrixPencilCauchy_negativeImaginaryPart
+#print axioms FreeProbability.Fock.matrixVacuumGram_posDef
+#print axioms FreeProbability.Fock.operatorMatrixPencilCauchy_negativeImaginaryPart_posDef
+#print axioms FreeProbability.Fock.operatorMatrixPencilCauchy_hasDerivAt
+#print axioms FreeProbability.Fock.operatorMatrixPencilCauchy_smul_tendsto_one
+#print axioms FreeProbability.matrixDyson_analytic_unique_of_normalized
+#print axioms FreeProbability.Fock.operatorMatrixPencilCauchy_unique_normalized_analytic
+#print axioms FreeProbability.Fock.operatorMatrixPencilCauchy_posDef_right_exterior
+#print axioms FreeProbability.Fock.operatorMatrixPencilCauchyDerivative_lyapunov

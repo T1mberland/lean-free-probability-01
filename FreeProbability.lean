@@ -317,3 +317,6 @@ import FreeProbability.Fock.OrnsteinUhlenbeckL2Damping
 import FreeProbability.Fock.OrnsteinUhlenbeckL2WickVacuum
 import FreeProbability.Fock.OrnsteinUhlenbeckL2Intertwining
 import FreeProbability.Fock.OrnsteinUhlenbeckL2Cyclic
+import FreeProbability.Analytic.ProjectionProductPicard
+import FreeProbability.Analytic.ProjectionProductPicardPolynomial
+import FreeProbability.Analytic.ProjectionProductPicardStabilization

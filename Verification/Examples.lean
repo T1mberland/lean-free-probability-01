@@ -619,4 +619,18 @@ example {I H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [Comple
     (hz : Fock.includedFamilyWOTCompression V e T = 0) : T = 0 :=
   Fock.includedFamilyWOTCompression_eq_zero V e he T hz
 
+-- The actual three-half-projection law has greatest support point 27/32.
+example {A : Type*} [CStarAlgebra A] [PartialOrder A] [StarOrderedRing A]
+    (φ : StarProbabilitySpace A) (hφ : IsTracial φ.toProbabilitySpace)
+    {B : Fin 3 → Subalgebra ℂ A} (hf : FreelyIndependent φ.toProbabilitySpace B)
+    (p : Fin 3 → A) (hpB : ∀ i, p i ∈ B i) (hp : ∀ i, IsStarProjection (p i))
+    (hE : ∀ i, φ.expectation (p i) = (1 / 2 : ℂ)) :
+    IsGreatest (iteratedPositiveProbabilityLaw φ 3 p (fun i => (hp i).nonneg) : MeasureTheory.Measure ℝ).support
+      (27 / 32 : ℝ) := by
+  have h := φ.iteratedHalfProjection_law_support_isGreatest hφ 3 (by norm_num) hf p hpB hp hE
+  have hedge : halfProjectionRightEdge 3 = (27 / 32 : ℝ) := by
+    norm_num [halfProjectionRightEdge]
+  rw [hedge] at h
+  exact h
+
 end FreeProbability.Examples

@@ -445,4 +445,19 @@ example {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSp
   simpa using Fock.secondQuantization_conj_field
     (LinearIsometryEquiv.neg ℂ : H ≃ₗᵢ[ℂ] H) h
 
+-- Explicit actual inverse centering bound in the faithful closed Fock state.
+example {I : Type*} (i : I) :
+    ‖(Fock.closedGeneratedVacuumState I).toProbabilitySpace.center
+      (Ring.inverse (1 - (1 / 8 : ℂ) • Fock.closedSemicircular i))‖ ≤ 2 / 3 := by
+  letI : PartialOrder (Fock.closedSemicircularAlgebra I) := CStarAlgebra.spectralOrder _
+  letI : StarOrderedRing (Fock.closedSemicircularAlgebra I) := CStarAlgebra.spectralOrderedRing _
+  have hq : ‖(1 / 8 : ℂ) • Fock.closedSemicircular i‖ = (1 / 4 : ℝ) := by
+    rw [norm_smul, Fock.norm_closedSemicircular]
+    norm_num
+  have h := (Fock.closedGeneratedVacuumState I).norm_center_inverse_one_sub_le
+    ((1 / 8 : ℂ) • Fock.closedSemicircular i) (by rw [hq]; norm_num)
+  rw [hq] at h
+  norm_num at h
+  exact h
+
 end FreeProbability.Examples

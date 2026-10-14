@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `714c2de` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 3802 declarations.
+The latest checked and published integration is `cfcc7a5` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 3837 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -240,7 +240,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 3802 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 3837 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -309,8 +309,9 @@ without positivity, traciality, norms or completeness. Genuine Banach inverse
 membership has explicit norm-small domains. Norm centering bounds and actual
 multiplicative resolvent factorization are the next analytic S-product steps.
 
-Second quantization of arbitrary complex Hilbert unitaries is published/reviewed
-through `550505c`, undergoing integration. Genuine completed tensor levels and
+Second quantization of arbitrary complex Hilbert unitaries through `550505c`
+is integrated via [PR #18](https://github.com/T1mberland/lean-free-probability-01/pull/18)
+at checked main `cfcc7a5` (full 3670, Verification 3673, audit 3837 and source guard). Genuine completed tensor levels and
 infinite Hilbert sum preserve scalar vacuum and every grading; actual bounded
 creation, adjoint and fields conjugate correctly, including original-H FullFock
 transport. Composition/identity/inverse and all bounded-operator vacuum
@@ -319,3 +320,12 @@ generated algebra to its rotated image; preservation of a fixed real algebra is
 not asserted. Nonsurjective Fock isometry `d34f086` and scalar compression
 `1d85daa` are published on a subsequent feature, not included here. All-level
 complete positivity and actual OU range/semigroup/normal extensions remain open.
+
+Generic actual Neumann remainder and centered O(z) bounds `68a4488`, with
+positive-state constants two/four `712446a`, are independently reviewed and
+undergoing integration. The generic estimate retains the actual expectation
+operator norm and unit norm; positive-state normalization derives the universal
+constants, with no traciality or extra norm-one premise. Generic centered
+continuity-to-boundedness uses a nontrivially normed field. Actual two-inverse
+factorization `bb3f211` is published/reviewed on a separate multiplicative feature.
+Alternating geometric expectations and inverse-germ identification remain unproved.

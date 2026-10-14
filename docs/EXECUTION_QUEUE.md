@@ -18,9 +18,9 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `714c2de1c093bf5ccea46e2ecfbbbcc5fc36bda1`,
-published on main through [PR #17](https://github.com/T1mberland/lean-free-probability-01/pull/17).
-Full builds 3666/3669, direct transitive audit 3802 declarations and source guard pass.
+Latest checked integration: `cfcc7a562cb1a8917f66ae5d5953d70568b4ec06`,
+published on main through [PR #18](https://github.com/T1mberland/lean-free-probability-01/pull/18).
+Full builds 3670/3673, direct transitive audit 3837 declarations and source guard pass.
 Goals 1, 2, 3 and 6 are certified complete; seven full goals remain open.
 Every historical checkpoint below retains its original scope and date.
 
@@ -35,7 +35,7 @@ Every historical checkpoint below retains its original scope and date.
 | 7. Multiplicative convolution | Projection law/germ integrated; generic positive-pair path ready | Positive sandwich law and cyclic moments, normclosure freeness, centered-resolvent analytic S multiplication; arbitrary-law realizations and projection-product support remain |
 | 8. Conditional subordination | Noncommutative L² and Goal 7 dependencies open | Normal conditional expectations, analytic subordination, exterior continuation and projection specialization |
 | 9. Haar freeness | Independent algebraic groundwork ready | Haar-unitary star law and free conjugation; orthogonal pairing integration precedes joint asymptotic estimates |
-| 10. OU and entropy | Actual Wick contractions and homogeneous Haagerup integrated | Second quantization in progress; completely positive OU, normal Lp/entropy and dimension-independent regularization remain |
+| 10. OU and entropy | Actual Wick contractions and homogeneous Haagerup integrated | Unitary second quantization integrated; cross-space isometry/CP compression in progress; completely positive OU, normal Lp/entropy and dimension-independent regularization remain |
 | 11. Follow-up milestones | Formal R and quantitative conditional moment CLT integrated | Positive free products, analytic convolution, operator-valued cumulants, annular/second-order and genus theory remain |
 
 ## Active assignments and isolation
@@ -1433,3 +1433,48 @@ Verification 3673, direct audit 3837 and source guard. Concrete one-particle
 reflection field conjugation compiles. Review also approves generic and positive
 centering norm sources `68a4488`, `712446a`, still queued separately; no unsupported
 unit-norm premise is inserted into their generic statements.
+
+### Checked second-quantization PR and pending Neumann estimates
+
+PR #18 merged head `835caac` as `cfcc7a562cb1a8917f66ae5d5953d70568b4ec06`.
+Main full 3670, Verification 3673, direct audit 3837 and source guard pass.
+Generic bounds `68a4488` and positive normalization specialization `712446a`
+are preserved in their own integration PR, original atomic history retained.
+Independent review approves the Neumann remainder and centered O(z) estimate,
+including non-unit-one generic rings and positive-state universal two/four.
+A concrete closed-Fock inverse with coefficient1/8 has q=1/4 against norm-two
+field and proves centered inverse norm<=2/3, deriving its entire actual domain.
+These estimates support centered-product Neumann convergence in the analytic
+S proof; they do not themselves assert multiplicativity.
+
+Actual multiplicative factorization `bb3f211` is published and independently
+reviewed: A Q B=(1+w)(1-T), actual Q inverse B*((1+w)^-1 inverse(1-T))*A.
+Unit outer factors and unit middle give TRUE unit Q, without unsafe one-sided
+inverse/Dedekind-finite assumptions on arbitrary bounded-operator C-star rings.
+Generic field/ring algebra suffices for this algebraic prerequisite.
+A now proves exact alternating-product power expectations before analytic limits.
+
+B actual finite-Hilbert-block star-algebra equivalence `bedad89` is published
+and critically reviewed: native CStarMatrix of bounded operators equals genuine
+bounded operators on finite lp Hilbert sum, with exact inverse blocks, product,
+adjoint and FULL positive-cone preservation/reflection including empty sizes.
+This avoids mathlib toCLM, whose right-module/opposite action is a different
+representation. Bundled amplified CP comparison still awaits its actual proof.
+
+Combined norm-bound integration passes full build 3672, Verification 3675,
+direct audit 3848 and source guard. Actual closed Fock inverse centered norm<=2/3
+example compiles, with q=1/4 explicitly established.
+
+B complete compression feature `1ce5594` independently critically reviewed:
+entrywise amplification is EXACT whole finite-Hilbert-block compression by Γ(V),
+FULL canonical CStarMatrix positive input becomes positive actual Hilbert operator,
+adjoint conjugation preserves positivity, inverse bridge reflects actual cone.
+Bundled CP has the genuine underlying compression and maps unit to unit.
+No matrix-level, countability or nontriviality restriction is hidden. Root checks
+and separate PR integration are still required. Coordinator preserved clean1ce
+and created `feat/fock-ou-rotation` from checkedcfcc7a5 with published original
+CP dependency merge. B owns ONLY NEW OrnsteinUhlenbeckRotation*/Dilation*.lean
+and optional new docs/math-notes/ou-dilation.md. Real doubled rotation uses
+WithLp2(H×H), and actual inclusion/compression next; OU range and Wick scaling
+remain open. A actual alternating power/sandwich source `550a3db` is reviewed,
+not integrated, and actual geometric expectation is its current task.

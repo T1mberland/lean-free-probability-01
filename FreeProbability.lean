@@ -261,3 +261,5 @@ import FreeProbability.Fock.SecondQuantizationTensor
 import FreeProbability.Fock.SecondQuantizationOperators
 import FreeProbability.Fock.SecondQuantizationFunctor
 import FreeProbability.Fock.SecondQuantizationFields
+import FreeProbability.Algebraic.FreenessClosureResolventBounds
+import FreeProbability.Algebraic.FreenessClosureResolventBoundsPositive

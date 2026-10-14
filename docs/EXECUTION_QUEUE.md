@@ -18,11 +18,11 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `6087183b5c7750a99cfd659925ca557196711106`,
+Latest checked integration: `ab1573bc17def2fb89a0d0b8a147c24202f7eb02`,
 published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
 and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
-Actual analytic Picard PR #34 passes full builds 3741/3744, direct transitive audit
-4926 declarations and source guard.
+Corrected WOT-generated PR #35 passes full builds 3745/3748, direct transitive audit
+5008 declarations and source guard.
 Goals 1, 2, 3 and 6 are certified complete; seven full goals remain open.
 Every historical checkpoint below retains its original scope and date.
 
@@ -44,8 +44,8 @@ Every historical checkpoint below retains its original scope and date.
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/integrate-wot-generated`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/projection-product-germs`, `/home/user/Projects/lean-fp-cumulants` | New `Analytic/ProjectionProduct*.lean`; frozen eight law/germ modules integrated | Actual analytic Picard-series realization and moment identification; physical branch and sharp edge remain |
+| Coordinator | `fix/ci-verification-modules`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Worker A (`cumulants`) | `feat/projection-product-germs`, `/home/user/Projects/lean-fp-cumulants` | New `Analytic/ProjectionProduct*.lean`; frozen eight law/germ modules integrated | Actual law-moment polynomial continuation and sharp lower edge/physical branch; sharp upper support published |
 | Worker B (`fock`) | `feat/fock-prefix-tail`, `/home/user/Projects/lean-fp-fock` | NEW `Fock/SecondQuantizationPrefix*.lean` and agreed prefix-tail notes; corrected WOT feature frozen | Actual ordered word bijection/full Hilbert prefix-tail representation and bounded-WOT amplification |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
@@ -1961,3 +1961,20 @@ GitHub CIconfirmed PR #30 run38568229416, #31 run38568630658,
 #32 run38569500389 and #33 run38570520383 success. LaterPRCI notyetqueried.
 A sharpactualupper89223d8 andscalarallq globalthresholdobstruction66f54e3
 are published separately; actuallawlower/physicalbranch stillactive.
+
+### Checked WOT generated checkpoint and CI coverage repair
+
+PR #35 head `2c0ad18` merged as `ab1573b`; checked main full3745,
+Verification3748, direct audit5008, source guard/diff andexplicitpushmain pass.
+Corrected fullWOTclosure faithfulness/injectivity are integrated; nativeonto,
+bounded-WOT inverse/normalOU andbicommuntant remain open.
+Coordinator adds explicit serialized `lake build Verification` to GitHub CI:
+previous workflow built the default library and directly audited axioms but
+never explicitly built the public Verification.Examples usage module. Local
+integration did cover it; the CI step closes that coverage gap. No Lean source,
+toolchain/mathlib pin or existing integrity/audit check changed. Exact step
+is validated locally. No new mathematical goal is certified by CI configuration.
+A supportupper89223d8, scalarobstruction66f54e3 and actualLAWmomentpolynomial
+continuation58d42ec are published; loweractualλsupport andphysicalbranchactive.
+B complete prefix-tailunitary207a4cd and trueall-B(E) boundedamplification900a295
+published separately; exactcreatortransport/bounded-WOT continuity stillactive.

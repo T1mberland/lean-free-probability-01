@@ -17,6 +17,8 @@ jobs:
         with:
           auto-config: false
           build: true
+      - name: Build verification modules
+        run: flock -x /tmp/lean-fp-build.lock -c 'lake build Verification'
       - name: Source integrity guard
         run: python3 scripts/check_integrity.py
       - name: Audit transitive theorem axioms

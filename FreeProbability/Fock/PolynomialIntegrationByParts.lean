@@ -50,5 +50,48 @@ theorem vacuumState_polynomial_integrationByParts (i : I) (p : WordPolynomial �
     · simp only [List.get_eq_getElem] at h
       simp [h]
 
+/-- Evaluation in the closed generated algebra agrees with the concrete operators. -/
+theorem coe_evaluate_closedSemicircular (p : WordPolynomial ℂ I) :
+    (closedSemicircularAlgebra I).val (evaluate closedSemicircular p) =
+      evaluate semicircular p := by
+  induction p using MonoidAlgebra.induction_linear with
+  | zero => simp
+  | add p q hp hq =>
+    simp only [map_add]
+    exact congrArg₂ (· + ·) hp hq
+  | single w c =>
+    obtain ⟨w, rfl⟩ := FreeMonoid.ofList.surjective w
+    simp only [evaluate_single, map_smul, map_list_prod, List.map_map]
+    rfl
+
+/-- Tensor expectations agree under the actual inclusion of the closed C-star model. -/
+theorem tensorPolynomialExpectation_closedGeneratedVacuumState :
+    tensorPolynomialExpectation (closedGeneratedVacuumState I).toProbabilitySpace
+      closedSemicircular = tensorPolynomialExpectation (vacuumState I).toProbabilitySpace
+      semicircular := by
+  apply LinearMap.ext
+  intro z
+  induction z using TensorProduct.inductionOn with
+  | tmul p q =>
+    simp only [tensorPolynomialExpectation_tmul]
+    change vacuumExpectation ((closedSemicircularAlgebra I).val (evaluate closedSemicircular p)) *
+      vacuumExpectation ((closedSemicircularAlgebra I).val (evaluate closedSemicircular q)) = _
+    rw [coe_evaluate_closedSemicircular, coe_evaluate_closedSemicircular]
+    rfl
+  | add x y hx hy => simp [map_add, hx, hy]
+
+/-- Polynomial integration by parts in the actual faithful tracial C-star probability space. -/
+theorem closedGeneratedVacuumState_polynomial_integrationByParts (i : I)
+    (p : WordPolynomial ℂ I) :
+    (closedGeneratedVacuumState I).expectation
+      (closedSemicircular i * evaluate closedSemicircular p) =
+      tensorPolynomialExpectation (closedGeneratedVacuumState I).toProbabilitySpace
+        closedSemicircular (freeDifferenceQuotient i p) := by
+  rw [tensorPolynomialExpectation_closedGeneratedVacuumState]
+  change vacuumExpectation ((closedSemicircularAlgebra I).val
+    (closedSemicircular i * evaluate closedSemicircular p)) = _
+  rw [map_mul, coe_evaluate_closedSemicircular]
+  exact vacuumState_polynomial_integrationByParts i p
+
 end Fock
 end FreeProbability

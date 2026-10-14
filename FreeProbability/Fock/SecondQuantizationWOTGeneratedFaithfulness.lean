@@ -122,7 +122,8 @@ theorem tensorFamilyWOTAlgebra_vacuum_faithful (e : I → H) (he : Orthonormal �
   rw [tensorVacuumState_expectation, mul_apply_eq_comp, ContinuousLinearMap.star_eq_adjoint,
     ContinuousLinearMap.adjoint_inner_right, inner_self_eq_norm_sq_to_K,
     sq_eq_zero_iff] at hzero
-  have hn : ‖T.toCLM (tensorVacuum H)‖ = 0 := by exact_mod_cast hzero
+  have hn : ‖T.toCLM (tensorVacuum H)‖ = 0 := by
+    simpa using congrArg Complex.re hzero
   exact norm_eq_zero.mp hn
 
 end FreeProbability.Fock

@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `741660d` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 3952 declarations.
+The latest checked and published integration is `36ede12` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 4037 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -240,7 +240,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 3952 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 4037 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -343,7 +343,10 @@ published separately, not included in this integration. OU range, Wick scaling,
 semigroup, normal extensions and entropy remain open.
 
 The actual analytic multiplicative S germ and positive-product-law package through
-`822abe4` is published, independently reviewed and undergoing combined integration.
+`822abe4` is integrated through [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
+at checked main `c292997` (full 3686, Verification 3689, audit 4037 and source guard).
+README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21)
+was reviewed, CI-passed and merged as `36ede12`; identical-source full checks pass.
 `StarProbabilitySpace.sTransform_mul_eventually` needs only given free elements
 and nonzero marginal first moments: all Neumann domains and means are derived,
 including the germ value at zero. Under a trace, actual square-root sandwich
@@ -361,3 +364,12 @@ Its map still compresses included Wick operators from the doubled Fock space.
 Restriction to an actual original generated-algebra selfmap and semigroup need
 faithful native arbitrary-family tensor transport and a genuine inclusion embedding.
 Those are active, without asserting faithfulness on all complex field operators.
+
+Generic grouping of entire free subalgebras through `9bce675` is published and
+critically reviewed, undergoing integration. An unrestricted grouping function
+forms each algebra by adjoining its original fiber. No finiteness, countability,
+injectivity, positivity, trace or topology is required for algebraic freeness.
+Actual fiber joins, iterated-group composition and membership are exact; closed
+group freeness adds only expectation/topological-operation continuity. A concrete
+three-algebra use proves the whole join of the first two is free from the third.
+This is the next iterated projection-product dependency, beyond pairwise freeness.

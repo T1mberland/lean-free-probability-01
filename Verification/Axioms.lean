@@ -1151,3 +1151,15 @@ run_cmd do
 #print axioms FreeProbability.Orthogonal.pairingDistance_triangle
 #print axioms FreeProbability.Orthogonal.eventually_rescaledWeingartenWeight_distance_bound
 #print axioms FreeProbability.Orthogonal.rescaledWeingartenWeight_zero
+#print axioms FreeProbability.Fock.degreeDamping_adjoint
+#print axioms FreeProbability.Fock.ouVonNeumannTimeCP_state_symmetric
+#print axioms FreeProbability.Fock.ouVonNeumannTimeCP_correlation_half_norm
+#print axioms FreeProbability.Fock.numberOperatorDomain_dense
+#print axioms FreeProbability.Fock.numberOperator_adjoint_graph_iff
+#print axioms FreeProbability.Fock.isClosed_numberOperatorGraph
+#print axioms FreeProbability.Fock.numberShift_bijective
+#print axioms FreeProbability.Fock.numberResolvent_nonneg
+#print axioms FreeProbability.Fock.ouGeneratorError_tendsto
+#print axioms FreeProbability.Fock.ouGenerator_graph_iff
+#print axioms FreeProbability.Fock.ouGenerator_domain_iff
+#print axioms FreeProbability.Fock.ouGenerator_hasDerivWithinAt_iff

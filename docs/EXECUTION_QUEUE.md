@@ -18,8 +18,8 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `62ca93b0c632efc860c3d3bc8881b2014324357c`,
-published main after PR51. Full3835, Verification3838, direct transitive6296,
+Latest checked integration: `afebf5d124a58113aab90e211e195e8c233e3013`,
+published main after PR52. Full3841, Verification3844, direct transitive6336,
 source guard/diff and explicit push passed. Earlier records below are historical.
 Goals 1, 2, 3, 6 and 7 are certified complete; six full goals remain open.
 Every historical checkpoint below retains its original scope and date.
@@ -42,9 +42,9 @@ Every historical checkpoint below retains its original scope and date.
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/weingarten-distance-asymptotics-integration`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/orthogonal-trace-words`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalPermutationNetwork*.lean and agreed notes; prior sources frozen | Actual permutation-network ordered cycle traces |
-| Worker B (`fock`) | `feat/fock-von-neumann-cyclic`, `/home/user/Projects/lean-fp-fock` | NEW Fock/OrnsteinUhlenbeckVonNeumannCyclic*.lean and agreed notes; prior sources frozen | WholeD vacuum in original native cyclicspace and actual L2 extension agreement |
+| Coordinator | `feat/fock-ou-generator-integration`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Worker A (`cumulants`) | `feat/orthogonal-trace-words`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalPairingNetworkTransfer*.lean and agreed notes; prior sources frozen | Actual oriented paired networks, raw component/selected orbit equality, phase-preserving trace transfer |
+| Worker B (`fock`) | `feat/fock-family-cyclic-basis`, `/home/user/Projects/lean-fp-fock` | NEW Fock/OrnsteinUhlenbeckFamilyCyclicBasis*.lean and agreed notes; prior sources frozen | Actual ON-family original cyclic Hilbert basis and WordSpace unitary |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -2430,3 +2430,36 @@ Weingarten-rate feature passes full3841, Verification3844, directtransitive6336,
 source/diff and all statement reviews. A reviewed centered multi-trace plan is
 persisted in math-notes/haar-centered-trace-plan.md; its O(N^-m)/a.s. claims
 remain unproved pending actual paired cycle orientation and operator-norm bounds.
+
+### Actual completed-Fock OU generator and exact domain
+
+PR52 checked main `afebf5d124a58113aab90e211e195e8c233e3013` passes full3841,
+Verification3844, directtransitive6336, source/diff and push. Genuine actual
+Weingarten leading/distance bounds integrated; trace asymptotic plan unproved.
+Reviewed B chaind4cf1e4..990bb91 with exactnotesd6966ae is assembled: full
+actual vacuum L2 symmetry/positivehalf-timecorrelation; genuine weighted
+number domain (n f_n) inℓ2, densepuregrades, actualunboundedlinearN, symmetry,
+positivequadraticform, FULLweakadjointgraph equality and closedgraph; true
+positiveboundednorm1 resolvent(N+I)^-1 maps EVERYvector intoEXACTdomain and
+is a genuine two-sidedinverse; actual completed-Hilbert right generator=-N
+with EXACT domain in both directions and real HasDerivWithinAt onIci0.
+The weighted domain is operator domain, not the larger quadratic-form domain.
+Scalar error domination by actualsummable ‖Nf_n‖² plus Tannery proves true
+Hilbertnorm difference-quotient convergence, not merelycoordinateconvergence.
+Reverse direction uses actualcontinuousgradeevaluation and real weightedℓ2
+membership forced by a genuine stronglimit. Clampmax(t,0) supplies a correct
+real-time totalization; no negative-timebounded semigroup/two-sided derivative
+or operatornorm generator assertion is made. ZeroHilbert/degree0 retained.
+Major declarations: numberOperator_adjoint_graph_iff, numberResolvent_nonneg,
+ouGenerator_graph_iff, ouGenerator_domain_iff, ouGenerator_hasDerivWithinAt_iff.
+All fifteen modules critically reviewed and individuallystandard-axiom audited.
+B properfamily wholeD cyclicrange/L2/action441360b reviewedpendingintegration;
+newactual ON-family ListI Hilbertbasis andunitaryOriginalK↔WordSpaceI active.
+A truehalfselection89a4eb6 pendingreview/integration, newpairednetworktransfer
+active. Rootnextfullhomogeneousℓ2 Wickextension viaextendOfNorm before
+actualnormconvergent positive-time Wickreconstruction.
+Five full goals complete, six open; noncommutativeL1/matrixentropy stillopen.
+
+Generator feature passes full3856, Verification3859, directtransitive6458,
+source/diff and fifteen source-statement reviews. True Hilbert generator/domain
+complete; intrinsic L1 and matrix entropy remain distinct missing results.

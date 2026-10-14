@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `03aff10` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 4780 declarations.
+The latest checked and published integration is `ba2ea90` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 4824 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -240,7 +240,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 4780 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 4824 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -478,3 +478,15 @@ true summability and its tsum bound, including zero parameters.
 This is a proved conditional series majorant. Matching it to the actual normalized
 projection moment germ and transferring summability to W=Q/(1-Q) remain open.
 Consequently no sharp support edge or global physical branch is claimed.
+
+### Published and checked Picard prerequisite checkpoint
+
+Picard PR #30 merged as `ba2ea90`; checked main full3731, Verification3734,
+direct transitive audit4824, source guard and diff checks pass. All three
+conditional scalar/coefficient convergence modules and notes are integrated.
+Four full goals (1,2,3,6) are certified complete; seven full goals remain open.
+The native Cstar OU semigroup and genuine state/cyclic L2 extension are integrated.
+Strong time continuity, normal extension, L1 and entropy are still open.
+A new source-branch formal Picard equation/uniqueness `040d0cc` is published;
+analytic identification with actual projection moments remains active. The sharp
+lambda_L support and global physical branch are not established.

@@ -180,3 +180,9 @@ import FreeProbability.Combinatorics.IncidencePiMobius
 
 import FreeProbability.Analytic.SpectralMeasureConvergence
 import FreeProbability.Analytic.SpectralMeasureNonrealConvergence
+import FreeProbability.Semicircular.SpectralFock
+import FreeProbability.Semicircular.SpectralDensityIntegrals
+import FreeProbability.Semicircular.SpectralDensityMeasure
+import FreeProbability.Analytic.SpectralMeasureCompactMoments
+import FreeProbability.Semicircular.SpectralDensitySupport
+import FreeProbability.Semicircular.SpectralIdentification

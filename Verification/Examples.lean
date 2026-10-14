@@ -163,4 +163,17 @@ example {I : Type*} (i : I) (j : ℕ → I) :
         (nhds (if Even k then (catalan (k / 2) : ℂ) else 0)))
   · exact Filter.Eventually.of_forall (fun n => by simp)
 
+/-- Both spectral endpoints belong to the spectrum of the actual bounded operator. -/
+example {I : Type*} (i : I) :
+    (-2 : ℝ) ∈ spectrum ℝ (Fock.semicircular i) ∧
+      (2 : ℝ) ∈ spectrum ℝ (Fock.semicircular i) := by
+  rw [Fock.spectrum_semicircular_real]
+  norm_num
+
+/-- The actual Fock spectral measure has the explicit density's fourth moment. -/
+example {I : Type*} (i : I) :
+    ∫ x : ℝ, x ^ 4 ∂Fock.fockSpectralLaw i = 2 := by
+  rw [Fock.fockSpectralLaw_eq_semicircleMeasure]
+  simpa [catalan_two] using Semicircular.semicircleMeasure_even_moment 2
+
 end FreeProbability.Examples

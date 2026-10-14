@@ -18,9 +18,10 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `741660d35157dddeb846c1321bcf6bad8989b0e7`,
-published on main through [PR #20](https://github.com/T1mberland/lean-free-probability-01/pull/20).
-Full builds 3677/3680, direct transitive audit 3952 declarations and source guard pass.
+Latest checked integration: `36ede120f0f4718f8e4c637812bb04ceccc54019`,
+published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
+and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
+Full builds 3686/3689, direct transitive audit 4037 declarations and source guard pass.
 Goals 1, 2, 3 and 6 are certified complete; seven full goals remain open.
 Every historical checkpoint below retains its original scope and date.
 
@@ -32,7 +33,7 @@ Every historical checkpoint below retains its original scope and date.
 | 4. Operator-valued Dyson | Actual finite-matrix model, Wick, Dyson and physical theory integrated | General arbitrary-base CP covariance realization and entrywise-model comparison remain |
 | 5. Spectral edges | Actual core variational equality, state/density bounds and exterior derivative/Lyapunov integrated | Actual exterior spectral-gap bounds integrated; quantitative finite-depth Fock approximation, singular limits and deterministic edge subspaces remain |
 | 6. Spectral distributions | Complete on checked main `427f72b`, PR #2 | Actual compact laws/CFC/support/Cauchy/moment compatibility and bounded weak/Cauchy convergence |
-| 7. Multiplicative convolution | Projection law/germ integrated; generic positive-pair path ready | Actual given-positive-pair S/law/marginal determination reviewed pending integration; grouping for projection products next, physical support/edge and arbitrary-law realizations remain |
+| 7. Multiplicative convolution | Projection law/germ integrated; generic positive-pair path ready | Actual given-positive-pair S/law/marginal determination integrated; grouping reviewed pending integration, projection products next, physical support/edge and arbitrary-law realizations remain |
 | 8. Conditional subordination | Noncommutative L² and Goal 7 dependencies open | Normal conditional expectations, analytic subordination, exterior continuation and projection specialization |
 | 9. Haar freeness | Independent algebraic groundwork ready | Haar-unitary star law and free conjugation; orthogonal pairing integration precedes joint asymptotic estimates |
 | 10. OU and entropy | Actual Wick contractions and homogeneous Haagerup integrated | Unitary second quantization integrated; cross-space isometry/CP compression in progress; completely positive OU, normal Lp/entropy and dimension-independent regularization remain |
@@ -43,8 +44,8 @@ Every historical checkpoint below retains its original scope and date.
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
 | Coordinator | `main`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/grouped-freeness`, `/home/user/Projects/lean-fp-cumulants` | New `Algebraic/FreenessGrouping*.lean`; complete multiplicative feature/math notes preserved | General grouping of free subalgebras via product cumulants and multilinear spans |
-| Worker B (`fock`) | `feat/tensor-family-faithfulness`, `/home/user/Projects/lean-fp-fock` | New `Fock/TensorBasisTransport*.lean`, `TensorFamilyFaithfulness*.lean` and agreed transport notes; complete dilation feature preserved | Native completed-tensor arbitrary-ON-family faithful tracial generated state transport |
+| Worker A (`cumulants`) | `feat/projection-product-germs`, `/home/user/Projects/lean-fp-cumulants` | New `Analytic/ProjectionProduct*.lean` and agreed projection notes; complete grouping feature preserved | Actual closed-star-prefix CFC membership, iterated positive free projection law and S germ |
+| Worker B (`fock`) | `feat/fock-ou-semigroup`, `/home/user/Projects/lean-fp-fock` | New `Fock/OrnsteinUhlenbeckEmbedding*.lean`, `OrnsteinUhlenbeckSemigroup*.lean` and agreed semigroup notes; complete nativefaith/dilation features preserved | Actual included-algebra embedding, Wick range and original-algebra OU CP semigroup |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -1571,3 +1572,44 @@ final germ theorem. Generic grouped-algebra feature now fully published through
 `9bce675`, design notes `69c43ad`; native arbitrary-family tensor faithful state
 and generated-algebra equivalence fully published through `1d646f2`. These are
 reviewed in part and separately queued, not included in this S/law PR.
+
+### Checked actual S/law and existing badge PRs
+
+Actual S/law PR number is #22 (not a planned #21): head `295a8d5` merged as
+`c29299721392cfb3ddc33d582eeef4525763ee38`. Main full 3686, Verification3689,
+direct audit4037 and source guard pass. Existing external README badge PR#21
+was separately read/reviewed: ONLYtwoREADME lines, exactexisting lean.ymlworkflow
+link, CI run38560729013 confirmedsuccess. Head1750bbca merged as36ede120;
+allmain checks repeat4037 with no mathematical source change. No unrelated
+work was overwritten and no shared history rewritten.
+
+### Pending general grouped-freeness integration
+
+Original `6375793`, `6e3b1aa`, `74c5b33`, `9bce675`, designnotes `69c43ad`
+are preserved. Full arbitrarygroup theorem applies to ENTIREfiberadjoin algebras,
+not only generators. Allfour mathematicalmodules critically reviewed. Raw interval
+join plus labelkernel identifies top-connectivity; literal ordered taggedflatten
+keeps variablewordlength fibers exact. Emptyword scalarκ cases handled when
+mixedlabels imply degree>=2. CurryLeft multilinear span induction and true
+adjoin_eq_span extend generator word conclusions to everygrouped algebra element.
+Fiber iSup includes empty/infinite fibers, arbitraryfunction groupingcomposition
+is exact. Closedgroupfreedom uses only the existing genericcontinuous closure API.
+Concrete ![B0 sup B1,B2] example validates whole-joined-algebra independence.
+
+Coordinator switched A's clean69c43ad to feat/projection-product-germs from
+checkedc292997, mergedoriginalgroup prerequisites and immediatelypublished.
+OnlyNEW ProjectionProduct*.lean +agreednotes owned. Current actualCFCsqrt
+membership route uses map_cfc_n Real.sqrt in closedstaralgebra, avoiding the
+need to assume a subtype-positive order or general Banach inverse permanence.
+
+Coordinator switched B's clean1d646f2 to feat/fock-ou-semigroup from checked
+36ede120, mergedoriginal0904736 then1d646f2 dependencyhistories, pushing and
+confirming EVERYmerge separately. Nativefixedmodelfaith and genuine Wick scaling
+are published/reviewed in part but separatelyqueued. OnlyNEW Embedding*/Semigroup*
+modules owned. Includedclosedfieldalgebra reducing projection commutation and
+actualcompression multiplicativity there (NOTglobally) already publishede8a476f.
+Actual original generated-algebra OUrange/embedding/semigroup still active.
+
+Grouped-freeness integration feature passes full build 3690 jobs, Verification
+3693 jobs, direct transitive axiom audit 4066 declarations, source-integrity
+guard and diff checks. The whole-join independence example compiles.

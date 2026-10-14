@@ -509,4 +509,19 @@ example {I : Type*} (i j : I) (hij : i ≠ j) :
 end ActualPositiveProductUsage
 end
 
+-- The entire join of the first two free algebras remains free from the third.
+example {𝕜 A : Type*} [Field 𝕜] [Ring A] [Algebra 𝕜 A]
+    (φ : ProbabilitySpace 𝕜 A) (B : Fin 3 → Subalgebra 𝕜 A)
+    (hf : FreelyIndependent φ B) :
+    FreelyIndependent φ ![B 0 ⊔ B 1, B 2] := by
+  let g : Fin 3 → Fin 2 := ![0, 0, 1]
+  apply (hf.groupedSubalgebra g).mono
+  intro j
+  fin_cases j
+  · change B 0 ⊔ B 1 ≤ groupedSubalgebra B g 0
+    exact sup_le (le_groupedSubalgebra B g (0 : Fin 3))
+      (le_groupedSubalgebra B g (1 : Fin 3))
+  · change B 2 ≤ groupedSubalgebra B g 1
+    exact le_groupedSubalgebra B g (2 : Fin 3)
+
 end FreeProbability.Examples

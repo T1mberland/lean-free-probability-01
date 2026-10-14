@@ -290,3 +290,7 @@ import FreeProbability.Fock.OrnsteinUhlenbeckDilationWords
 import FreeProbability.Fock.OrnsteinUhlenbeckDilationNormalOrder
 import FreeProbability.Fock.OrnsteinUhlenbeckDilationVectorWick
 import FreeProbability.Fock.OrnsteinUhlenbeckDilationWick
+import FreeProbability.Fock.TensorBasisTransport
+import FreeProbability.Fock.TensorBasisTransportOperators
+import FreeProbability.Fock.TensorFamilyFaithfulness
+import FreeProbability.Fock.TensorFamilyFaithfulnessEquiv

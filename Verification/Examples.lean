@@ -532,4 +532,10 @@ example {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSp
       Fock.tensorOperatorEquiv H (Fock.wick w) := by
   simpa using Fock.ouTimeDilation_canonicalWick (H := H) 0 (by norm_num) w
 
+-- Faithfulness holds on the literal fixed tensor-model closure for an arbitrary ON family.
+example {I H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+    (e : I → H) (he : Orthonormal ℂ e) (T : Fock.tensorFamilyAlgebra e)
+    (hz : (Fock.tensorFamilyVacuumState e).expectation (star T * T) = 0) : T = 0 :=
+  Fock.tensorFamilyVacuumState_faithful e he T hz
+
 end FreeProbability.Examples

@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `3b5fa1d` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 4066 declarations.
+The latest checked and published integration is `8231e13` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 4208 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -240,7 +240,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 4066 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 4208 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -386,3 +386,16 @@ literal canonical Wick scaling by `(exp (-t))^degree`, for every nonnegative t.
 The map here has the doubled operator algebra as its domain. An original generated
 algebra self-map, semigroup law, normal extension and entropy theorem remain separate.
 All ten modules received critical read-only review; a zero-time Wick usage is added.
+
+### Native tensor-family coherence integration feature
+
+Rotation dilation PR #24 is merged as `8231e13`; checked main passes full3700,
+Verification3703, direct audit4208 and source guard. The next four reviewed modules
+through `1d646f2` construct an onto unitary from an adapted orthonormal-family word
+model to the independently fixed completed tensor Fock model. All original-H
+creators, adjoints, fields and the scalar vacuum are transported exactly.
+Both literal generated norm closures are carried onto one another. Consequently,
+the native tensor-family vacuum state is faithful and tracial for every ON family,
+without spanning, countability or nontriviality assumptions. The generated-algebra
+star equivalence preserves the actual state, generators and operator norm.
+Faithfulness is asserted only for this generated algebra.

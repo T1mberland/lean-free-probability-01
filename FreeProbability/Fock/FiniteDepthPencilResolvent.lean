@@ -37,6 +37,11 @@ theorem finiteDepthPencilOperator_isSelfAdjoint (C₀ : Matrix n n ℂ)
 def finiteDepthPencilUpperEdge (C₀ : Matrix n n ℂ) (C : I → Matrix n n ℂ) : ℝ :=
   realSpectralMaximum (finiteDepthPencilOperator C₀ C)
 
+theorem finiteDepthPencilUpperEdge_add_norm_nonneg (C₀ : Matrix n n ℂ)
+    (C : I → Matrix n n ℂ) (hC₀ : C₀.IsHermitian) (hC : ∀ i, (C i).IsHermitian) :
+    0 ≤ finiteDepthPencilUpperEdge C₀ C + ‖finiteDepthPencilOperator C₀ C‖ :=
+  realSpectralMaximum_add_norm_nonneg _ (finiteDepthPencilOperator_isSelfAdjoint C₀ C hC₀ hC)
+
 /-- Ambient inverse of the compressed positive shift. On the retained range this is the usual truncated pencil resolvent. -/
 def finiteDepthPencilResolvent (C₀ : Matrix n n ℂ) (C : I → Matrix n n ℂ)
     (L : ℕ) (z : ℝ) : HilbertMatrixSpace n (WordSpace I) →L[ℂ]

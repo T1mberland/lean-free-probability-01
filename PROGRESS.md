@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `9f5bd91` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 7356 declarations.
+The latest checked and published integration is `e69c705` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 7383 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -1275,3 +1275,36 @@ Independent random-input feature passes full3916, Verification3919, direct
 transitive7383, integrity/diff and all five exact mathematical source reviews.
 Actualdata-Haarjointlaw/variableinputlaws/sourceAE andcountable scopes verified.
 No multicolorcenteredcriterion orstrongconvergencecompletion is claimed.
+
+### Actual common matrix marginal and full suffix Gram order bounds
+
+PR61 checked maine69c705 passes full3916, Verification3919, transitive7383,
+source/diff and push. Actualindependent-randominputHaarprobability/a.s. and
+sourceAE/countableinterfaces are integrated; multicolorcriterion remainsopen.
+Reviewed Bc45b260..611b9ab with exactnotes0b185ca is assembled: actualcommon
+entrywisevacuum matrixmarginalρ=ΣC_wC_wᴴ forEVERYcut/arbitraryfiniteS,
+fullHilbertvector andcanonicalmatrixCS, genuinecoefficientcone sandwich,
+actualprefixfibercardinality andtruefullmatrixinequality
+G_h≤cardI^h(h+1)^2 scalarEmbedρ forsupportlengths≥h; homogeneous h≤n
+corollary. Finitealphabet neededonlyforrankfactor; emptyalphabet0^0, empty
+matrixtype andsingularρ retained. No coefficientcommutativity/invertibility
+or entrywise/productvectorpositivity shortcut.
+Major names: matrixCutGram_vacuum_marginal, finiteMatrixOperatorGram_le,
+matrixWickTerm_mul_star_le, suffixFiber_card_le, matrixCutGram_le_homogeneous.
+All seven sources reviewed/focusedbuilt, twenty principalstandardaxiomaudits
+terminalbeforecommits. Typedintermediateoperators fixed a realCFC/elaboration
+timeout; no limitsraised. A two-generator/arbitrary3×3coefficient canonical
+cone usage checks the concretefactor8 atresidualdegree1.
+This proves matrixorderprerequisites, not entropy. B NEW WickMixedSuffixGram*
+unequaldegreecontractions/prefixpartials/realweighttelescoping verifiedpending
+integration; fullmixedfiniteactualOUidentity is next. A NEWColoredTrace*
+centering/perturbation verifiedpendingintegration; truecyclicsegmentation and
+augmentedjointindependence/wordlengthinduction active. RootGoal5actualmatrix
+powerretention andquantitativeexteriorerror followpublisheddepth64f884b.
+Five full goals complete, six open; fullGoal10 L1/DPI/lsc/entropy remainsopen.
+
+Common-marginal/order feature passes full3923, Verification3926, direct
+transitive7448, integrity/diff and all seven precise source reviews. Concrete
+two-generator/arbitrary3×3 coefficientfactor8 canonicalcone usage compiles.
+Its local spectral-order instance required noncomputable section, repaired
+before publication; no resource or mathematical error was involved.

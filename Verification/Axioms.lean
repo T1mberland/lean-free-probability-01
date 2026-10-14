@@ -1237,3 +1237,10 @@ run_cmd do
 #print axioms FreeProbability.Orthogonal.ae_centered_inputs_map_iff
 #print axioms FreeProbability.Orthogonal.ae_independent_inputs_traceWord_tendsto_of_source
 #print axioms FreeProbability.Orthogonal.ae_countable_independent_inputs_traceWords_tendsto_of_source
+#print axioms FreeProbability.Fock.matrixCutGram_vacuum_marginal
+#print axioms FreeProbability.Fock.finiteOperatorGram_le
+#print axioms FreeProbability.Fock.finiteMatrixOperatorGram_le
+#print axioms FreeProbability.Fock.matrixWickTerm_mul_star_le
+#print axioms FreeProbability.Fock.suffixFiber_card_le
+#print axioms FreeProbability.Fock.matrixCutGram_le
+#print axioms FreeProbability.Fock.matrixCutGram_le_homogeneous

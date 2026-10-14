@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `8cb664e` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 2503 declarations.
+The latest checked and published integration is `ab262d5` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 2520 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -104,7 +104,10 @@ integrated at `7bb8314` for any supplied finite adjacent-fusion plan. The indepe
 identity and corresponding top join-fiber cumulant theorem are integrated at
 `18afd0f`. The actual Kreweras greatest compatible complement and free
 alternating-moment formula are also integrated at that checkpoint.
-Kreweras rotation/block-count and product-cumulant boxed convolution remain open.
+Genuine positive-degree complementary block count and raw connectivity are
+reviewed and undergoing integration. The full boxed product-cumulant theorem and all named Goal 1 subtargets are
+reviewed and awaiting final integration checks. Rotation/closed-form μ identities
+are optional extensions.
 
 The actual algebraic tensor free difference quotient satisfies the full
 noncommutative polynomial Leibniz rule. Polynomial and matrix-valued polynomial
@@ -118,7 +121,7 @@ functionals using Riesz representation; real continuous-functional-calculus
 expectations have their integral representation. Faithfulness gives actual
 support equal to real spectrum, without traciality. These declarations are
 integrated at `9ca8caa`. General complex/Cauchy representation and exact spectral-law determinacy by
-all power moments are undergoing integration;
+all power moments are integrated at `ab262d5`;
 semicircular density identification remain subsequent tasks.
 
 A quantitative non-iid free triangular-array CLT is integrated at `8cb664e`: each entry is centered, averaged second moments converge, and each
@@ -182,7 +185,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 2503 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 2520 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

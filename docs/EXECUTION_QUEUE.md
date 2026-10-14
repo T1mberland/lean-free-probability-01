@@ -18,8 +18,8 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `2464ff72d0d0b46a0bbd7eeb86d19710e037267b`,
-published main after PR59. Full3896, Verification3899, direct transitive7179,
+Latest checked integration: `9f5bd910d7fb9482db847c1a910a96c6690bc637`,
+published main after PR60. Full3911, Verification3914, direct transitive7356,
 source guard/diff and explicit push passed. Earlier records below are historical.
 Goals 1, 2, 3, 6 and 7 are certified complete; six full goals remain open.
 Every historical checkpoint below retains its original scope and date.
@@ -33,18 +33,18 @@ Every historical checkpoint below retains its original scope and date.
 | 5. Spectral edges | Actual core variational equality, state/density bounds and exterior derivative/Lyapunov integrated | Actual exterior spectral-gap bounds integrated; quantitative finite-depth Fock approximation, singular limits and deterministic edge subspaces remain |
 | 6. Spectral distributions | Complete on checked main `427f72b`, PR #2 | Actual compact laws/CFC/support/Cauchy/moment compatibility and bounded weak/Cauchy convergence |
 | 7. Multiplicative convolution | Complete on checked main `bdd05e2`, certified PR39 | Actual positive-pair S/law and arbitrary-length projection physical branch/edge/spectrum; universal free-product realization belongs to Goal11 |
-| 8. Conditional subordination | Noncommutative L² and Goal 7 dependencies open | Normal conditional expectations, analytic subordination, exterior continuation and projection specialization |
-| 9. Haar freeness | Genuine Haar conjugation and stable orthogonal FFT/integration verified | Actual sharp pairing-distance inverse estimates integrated; centered single-trace expected decay integrated PR55; multi-trace expected bounds pending integration; joint probability/a.s. convergence, strong resolvent convergence and low-dimensional integration remain |
-| 10. OU and entropy | Genuine whole-ONfamily von Neumann unital CP semigroup with faithful tracial vacuum and actual normality integrated PR51 | Exact Hilbert generator/domain integrated PR53; Original cyclic L2 bridge integrated PR56; Complete-coefficient positive-time regularization integrated PR57, L1 extension and matrix entropy remain |
+| 8. Conditional subordination | General normal conditioning and subordination open | Normal conditional expectations, analytic subordination, exterior continuation and projection specialization; concrete free-Gaussian cyclic L2 is verified |
+| 9. Haar freeness | Haar conjugation, stable FFT/integration, sharp inverse bounds, true multi-trace/second moments and mean-square/probability/a.s. Haar-marginal limits integrated PR59 | Independent random inputs in current feature; colored integration pending. Multiple-Haar centered criterion, marginal joint star-law limits, strong spectral interfaces and low-dimensional integration remain |
+| 10. OU and entropy | Whole-ONfamily normal unital CP semigroup, full generator/domain, proper cyclic L2, native regularization and actual homogeneous matrix Gram integrated PR60 | Full mixed-degree matrix identity, noncommutative L1, matrix entropy/DPI/pinching and joint lsc; common marginal/order bounds pending integration |
 | 11. Follow-up milestones | Formal R and quantitative conditional moment CLT integrated | Positive free products, analytic convolution, operator-valued cumulants, annular/second-order and genus theory remain |
 
 ## Active assignments and isolation
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/fock-homogeneous-ou-gram-integration`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/orthogonal-colored-entry-integration`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalColoredEntry*.lean and agreed notes; prior sources frozen | Actual finite independent-Haar color integration and Weingarten products |
-| Worker B (`fock`) | `feat/fock-homogeneous-gram-marginal`, `/home/user/Projects/lean-fp-fock` | NEW Fock/WickSuffixGramMarginal*/Order*.lean and agreed notes; prior sources frozen | Actual common marginal and full matrix rank/degree order bounds |
+| Coordinator | `feat/orthogonal-random-inputs-integration`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Worker A (`cumulants`) | `feat/orthogonal-colored-trace-criterion`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalColoredTrace*.lean and agreed notes; prior sources frozen | Actual multicolor centered trace criterion by strong induction |
+| Worker B (`fock`) | `feat/fock-mixed-suffix-gram`, `/home/user/Projects/lean-fp-fock` | NEW Fock/WickMixedSuffixGram*.lean and agreed notes; prior sources frozen | Actual full mixed-degree matrix positive suffix identity |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -2666,3 +2666,41 @@ A reviewed but UNPROVED general mixed-degree length-flag entropy route is
 persisted in math-notes/ou-mixed-degree-entropy-flag-plan.md. It explicitly
 requires actualmixedGram, trace-decreasingDPI/failureflag, coherence/pinching,
 jointconvexity and JOINT lsc; boundednativeapproximation does not finishL1.
+
+### Actual independent random inputs and Haar convergence
+
+PR60 checked main9f5bd91 passes full3911, Verification3914, transitive7356,
+source/diff and push. ActualhomogeneousmatrixOUGram identity is integrated;
+fullmixedidentity/entropy/L1 remainopen. Reviewed A chainbdfb597..7bec383 and
+notes321f28e is assembled: truecomplexifiedHaarunitary/opnormbounds, actual
+inputmeasurability, derivedsquaredintegrability, honestdata×HaarFubini and
+actualIndepFun jointlaw transfer; genuineuniformN^-2 secondmoments and
+a.s./inmeasure limits for randomcentered boundedinputs independentofHaar.
+Inputlaws Y_N mayvaryN; NOacrossNindependence or assumedconditional
+expectation/integrability/convergence premise. Input factors may be internally
+dependent. SourceAEcentering and normbounds are proved equivalent toactual
+pushforwardAEhypotheses; countablewordcollections shareone convergenceevent.
+Major names: independent_inputs_haar_measurePreserving,
+eventually_independent_inputs_traceWordSecondMoment_bound,
+ae_independent_inputs_traceWord_tendsto_of_source,
+ae_countable_independent_inputs_traceWords_tendsto_of_source.
+All five new sources exactlyreviewed/focusedbuilt/directstandardaxiomaudited.
+Finiteentrypolynomial induction repairedan ordinarymeasurability elaboration
+timeout; no limitsraised. Expected/probability/a.s. modes remaindistinct.
+FullmultipleHaarcenteredcriterion isnext: reviewedUNPROVEDstrongwordlength
+inductionplan in math-notes/haar-colored-centered-trace-induction-plan.md.
+It requiresWHOLEdata+othercolors tupleindependentselectedHaar, notmerely
+pairwiseindependence. Nativeendpointproductorder A_last*A_first is explicit.
+A newcoloredtracebranch proves centering/telescoping/cyclicsegmentation and
+thatinduction; coloredentry3sourcec372ff6 reviewedpendingintegration.
+B frozen0b185ca commonmarginal/fullmatrixrankdegreebounds reviewedpartially
+pendingintegration; NEW WickMixedSuffixGram* actualmixedidentity active.
+Root finite-depth64f884b truefinite-rankmatrixQ/pencilpropagation pending
+integration; actualretainedpowers/quantitativeexteriorresolvents next.
+Five full goals complete, six open; fullGoal9 includingjointstar-law/strong
+interfaces is not certified by this single-Haar random-input feature.
+
+Independent random-input feature passes full3916, Verification3919, direct
+transitive7383, integrity/diff and all five exact mathematical source reviews.
+Actualdata-Haarjointlaw/variableinputlaws/sourceAE andcountable scopes verified.
+No multicolorcenteredcriterion orstrongconvergencecompletion is claimed.

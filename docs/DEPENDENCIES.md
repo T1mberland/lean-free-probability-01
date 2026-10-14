@@ -18,9 +18,9 @@ assignments, verification checkpoints, design decisions and successive tasks.
 | 5. Spectral-edge formula | Actual affine Hermitian matrix pencil, full right spectral-exterior positivity and actual derivative/Lyapunov integrated at `3f6b367`; actual completion-square and exact top-edge variational formula integrated at `06f8254` | Positive-state/density inequalities integrated at `5131911` and actual full-exterior spectral gap order bounds at `95c414c`; quantitative finite Fock truncation bounds, singular edge limits and deterministic edge subspaces remain. General Hermitian coefficients require neither positivity nor commutation |
 | 6. Spectral distributions — complete | Actual compact spectral probability measures; real/complex continuous CFC integral representation; faithful support=spectrum; whole-resolvent Cauchy spectral integral; algebraic power/polynomial compatibility and equality iff power moments; bounded moment convergence gives actual weak laws and every pointwise nonreal Cauchy limit; existing moment/local inverse/S-germ APIs | Certified after PR #2 and full main checks at `427f72b`. Norm boundedness is explicit; uniform or derivative convergence is not claimed. S multiplication remains Goal 7 |
 | 7. Multiplicative convolution — complete | `sTransform_idempotent_eventually`, `sTransform_zero`, transform scaling and naturality; rational projection-product parameter calculus | Actual projection two-atom measure and matching real-trace S germ integrated at `8d38c42`. Generic closure freeness and actual near-zero inverse membership integrated at `714c2de`, quantitative centered bounds at `1767b48`; actual analytic S multiplication, positive sandwich law and cross-realization marginal-law determination integrated at `c292997`. General arbitrary grouping and continuous closed grouping integrated at `3b5fa1d`; actual finite positive-product and half-projection germs/law uniqueness integrated at `149ec02`; actual local moment equation and positive moment/support criterion integrated at `5920b0a`; positive Picard coefficient convergence integrated at `ba2ea90`; actual analytic Picard/moment germ matching integrated at `6087183`; actual Taylor/radius transfer, sharp greatest law-support point and full physical exterior branch, critical-support connection and faithful actual spectral edge certified after PR38 at checked main `bdd05e2`. Universal realization remains Goal11 |
-| 8. Conditional subordination | Algebraic conditional expectations and explicit nonzero-mean inverse-transform domain | Tracial noncommutative L² and von Neumann conditional expectation; analytic multiplicative subordination, exterior continuation, enlarged conditioning and annihilating-projection specialization |
-| 9. Haar freeness | Orthogonal Haar probability/invariance, low-order moments, spherical/Gaussian laws, concentration and almost-sure array convergence; algebraic joint moments | Abstract Haar-unitary star-law and free conjugation; general orthogonal pairing integration and joint asymptotic estimates. Separate expected, probability, almost-sure and strong convergence interfaces |
-| 10. Free Gaussian OU/entropy | General positive expectations; actual polynomial Wick vacuum vectors with `Fock.vacuumExpectation_wick_star_mul` orthogonality | Actual reverse-overlap Wick multiplication and general homogeneous Haagerup bound integrated at `be0f163`; actual unitary second quantization integrated at `cfcc7a5`; genuine cross-space isometry and all-level CP compression integrated at `741660d`; doubled rotation and actual Wick scaling integrated at `8231e13`, generated-algebra range/embedding and genuine native CP self-map/Wick action and full norm-closure semigroup integrated at `d5c9801`; true state L2 contraction and genuine complete cyclic Hilbert extension integrated at `03aff10`; strong action continuity on native algebra/complete cyclic L2 integrated at `2470d2a`; actual ambient WOT compression/conjugation integrated at `619788f`; actual WOT-generated reducing/range/faithfulness/injectivity integrated at `ab1573b`; normal embedding/OU extension; noncommutative Lᵖ, entropy, data processing, lower semicontinuity and dimension-independent regularization |
+| 8. Conditional subordination | Algebraic conditional expectations, transform domains and concrete completed free-Gaussian L2 representation | General normal conditional expectations; analytic multiplicative subordination, exterior continuation, enlarged conditioning and annihilating-projection specialization remain |
+| 9. Haar freeness | Abstract Haar star-law/free conjugation; actual stable orthogonal FFT and inverse-Gram integration; sharp pairing-distance bounds; actual centered single/multi-trace expected decay and second moments; genuine mean-square/probability/a.s. Haar-marginal limits and countable words (PR59) | Independent random-input convergence in current integration feature. Actual colored integration is reviewed/published. Multiple-Haar centered criterion, marginal joint star-law limits, strong convergence/spectral inclusion and low-dimensional general integration remain distinct obligations |
+| 10. Free Gaussian OU/entropy | Actual Wick contractions/Haagerup, whole-family von Neumann normal unital CP semigroup with faithful tracial vacuum, full completed L2 generator/domain, proper-family cyclic word representation, all-coefficient positive-time native regularization and state-L2 to operator bound; actual amplified homogeneous matrix positive suffix Grams (PR60) | Full mixed-degree positive suffix identity, noncommutative L1 extension/approximation, conditional matrix entropy, data processing, pinching/coherence and joint lower semicontinuity remain. Published common marginal/rank-degree matrix order bounds await integration; scalar regularization does not certify complete entropy |
 | 11. Follow-up foundations | Scalar and algebraic operator-valued probability, cumulants, analytic transform tools | Formal R-additivity and algebraic moment free CLT integrated; concrete variance-one faithful tracial Fock target integrated. Quantitative non-iid moment CLT integrated under explicit cumulant bounds and averaged variance convergence. Positive free products, analytic additive convolution/R identification, operator-valued cumulants, second-order/annular theory and genus expansions remain |
 
 Goals 1, 2, 3, 6 and 7 are certified complete at checked main `76af384`, `68de4fe`,
@@ -751,3 +751,41 @@ A reviewed but UNPROVED general mixed-degree length-flag entropy route is
 persisted in math-notes/ou-mixed-degree-entropy-flag-plan.md. It explicitly
 requires actualmixedGram, trace-decreasingDPI/failureflag, coherence/pinching,
 jointconvexity and JOINT lsc; boundednativeapproximation does not finishL1.
+
+### Actual independent random inputs and Haar convergence
+
+PR60 checked main9f5bd91 passes full3911, Verification3914, transitive7356,
+source/diff and push. ActualhomogeneousmatrixOUGram identity is integrated;
+fullmixedidentity/entropy/L1 remainopen. Reviewed A chainbdfb597..7bec383 and
+notes321f28e is assembled: truecomplexifiedHaarunitary/opnormbounds, actual
+inputmeasurability, derivedsquaredintegrability, honestdata×HaarFubini and
+actualIndepFun jointlaw transfer; genuineuniformN^-2 secondmoments and
+a.s./inmeasure limits for randomcentered boundedinputs independentofHaar.
+Inputlaws Y_N mayvaryN; NOacrossNindependence or assumedconditional
+expectation/integrability/convergence premise. Input factors may be internally
+dependent. SourceAEcentering and normbounds are proved equivalent toactual
+pushforwardAEhypotheses; countablewordcollections shareone convergenceevent.
+Major names: independent_inputs_haar_measurePreserving,
+eventually_independent_inputs_traceWordSecondMoment_bound,
+ae_independent_inputs_traceWord_tendsto_of_source,
+ae_countable_independent_inputs_traceWords_tendsto_of_source.
+All five new sources exactlyreviewed/focusedbuilt/directstandardaxiomaudited.
+Finiteentrypolynomial induction repairedan ordinarymeasurability elaboration
+timeout; no limitsraised. Expected/probability/a.s. modes remaindistinct.
+FullmultipleHaarcenteredcriterion isnext: reviewedUNPROVEDstrongwordlength
+inductionplan in math-notes/haar-colored-centered-trace-induction-plan.md.
+It requiresWHOLEdata+othercolors tupleindependentselectedHaar, notmerely
+pairwiseindependence. Nativeendpointproductorder A_last*A_first is explicit.
+A newcoloredtracebranch proves centering/telescoping/cyclicsegmentation and
+thatinduction; coloredentry3sourcec372ff6 reviewedpendingintegration.
+B frozen0b185ca commonmarginal/fullmatrixrankdegreebounds reviewedpartially
+pendingintegration; NEW WickMixedSuffixGram* actualmixedidentity active.
+Root finite-depth64f884b truefinite-rankmatrixQ/pencilpropagation pending
+integration; actualretainedpowers/quantitativeexteriorresolvents next.
+Five full goals complete, six open; fullGoal9 includingjointstar-law/strong
+interfaces is not certified by this single-Haar random-input feature.
+
+Independent random-input feature passes full3916, Verification3919, direct
+transitive7383, integrity/diff and all five exact mathematical source reviews.
+Actualdata-Haarjointlaw/variableinputlaws/sourceAE andcountable scopes verified.
+No multicolorcenteredcriterion orstrongconvergencecompletion is claimed.

@@ -159,3 +159,5 @@ import FreeProbability.Analytic.SpectralMeasureCalculus
 import FreeProbability.Analytic.SpectralMeasureCauchy
 import FreeProbability.Analytic.SpectralMeasureMoments
 import FreeProbability.Analytic.SpectralMeasureUniqueness
+import FreeProbability.Analytic.SpectralMeasureConvergence
+import FreeProbability.Analytic.SpectralMeasureNonrealConvergence

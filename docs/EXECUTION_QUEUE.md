@@ -715,3 +715,20 @@ for full support. Baseline analytic transform convergence is only in the exterio
 region under eventual uniform source bounds and explicit target norm condition.
 Weak measure convergence and all-nonreal Cauchy convergence are being proved
 separately. They are not inferred from the exterior theorem or claimed prematurely.
+
+### Pending PR: actual weak spectral laws and all-nonreal transforms
+
+Worker sources `d24b590`→`e123b38`, `ce0a337`→`45a9e76` construct the
+actual `ProbabilityMeasure` weak topology and prove convergence from all power
+moments under an eventual common operator-norm bound. Ambient C-star algebras
+may vary, and the filter is arbitrary. Continuous real/complex integrals converge;
+Cauchy transforms converge at every nonreal point, without an exterior radius
+restriction. This is pointwise convergence, not uniform convergence or convergence
+of derivatives. Read-only Goal 6 audit approves the exact statements and confirms
+canonical C-star orders supply the public order interfaces. Main integration,
+full checks and usage verification remain pending before Goal 6 certification.
+
+Combined full build passes 3530 jobs, Verification 3533 jobs, direct transitive
+axiom audit 2530 declarations and source guard. A canonical Fock-generator
+sequence usage example proves convergence at `z = I` inside the norm-two disk,
+using the actual all-order Catalan moments and the full nonreal theorem.

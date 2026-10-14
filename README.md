@@ -1,5 +1,7 @@
 # Free Probability in Lean 4
 
+[![Lean verification](https://github.com/T1mberland/lean-free-probability-01/actions/workflows/lean.yml/badge.svg?branch=main)](https://github.com/T1mberland/lean-free-probability-01/actions/workflows/lean.yml)
+
 A reusable, kernel-checked foundation for free probability in Lean 4. The library
 is intended for researchers and contributors building formal probability,
 operator-algebra, and random-matrix arguments.

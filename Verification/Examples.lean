@@ -548,4 +548,14 @@ example {A : Type*} [CStarAlgebra A] [PartialOrder A] [StarOrderedRing A]
   rw [φ.expectation_iteratedHalfProjectionProduct hφ 2 hf p hpB hp hE]
   norm_num
 
+-- Time addition holds for every actual native-family algebra element, beyond Wick polynomials.
+example {I H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+    (e : I → H) (he : Orthonormal ℂ e) (T : Fock.tensorFamilyAlgebra e) :
+    Fock.familyOUTime e he 1 (by norm_num) (Fock.familyOUTime e he 2 (by norm_num) T) =
+      Fock.familyOUTime e he 3 (by norm_num) T := by
+  have h := Fock.familyOUTime_add e he 1 2 (by norm_num) (by norm_num) T
+  have ht : (1 : ℝ) + 2 = 3 := by norm_num
+  simp only [ht] at h
+  exact h
+
 end FreeProbability.Examples

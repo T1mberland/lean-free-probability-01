@@ -236,4 +236,12 @@ example {A : Type*} [CStarAlgebra A] [PartialOrder A] [StarOrderedRing A]
   rw [spectralMeasure_projection φ hp hpi, hα]
   norm_num
 
+/-- Mixed exponential moments vanish even at a large imaginary parameter,
+using the actual norm-convergent operator exponential. -/
+example {I : Type*} (i j : I) (hij : i ≠ j) :
+    Fock.vacuumExpectation (Fock.semicircular i *
+      NormedSpace.exp (((10 : ℂ) * Complex.I) • Fock.semicircular j)) = 0 := by
+  rw [Fock.vacuumExpectation_semicircular_mul_semicircular_exp]
+  simp [hij]
+
 end FreeProbability.Examples

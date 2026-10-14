@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `a1f942b` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 3029 declarations.
+The latest checked and published integration is `8d38c42` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 3038 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -161,6 +161,14 @@ covariance moment recursion. These are integrated through
 They establish the concrete matrix case's foundations. General arbitrary-base
 CP covariance realization and analytic Dyson/physical-branch theory remain open.
 
+For an actual self-adjoint idempotent p, `spectralMeasure_projection` proves
+its actual law is `(1-alpha)delta0+alpha delta1`, alpha=Re(phi(p)) in [0,1].
+The corresponding actual S germ uses the same alpha and the precise nonzero
+first-moment domain. Integrated through
+[PR #7](https://github.com/T1mberland/lean-free-probability-01/pull/7) at `8d38c42`.
+This proves the projection piece; free-positive S multiplication and projection
+product support/edge remain open.
+
 ## Haar probability and concentration
 
 The orthogonal Haar modules establish a normalized compact-group probability,
@@ -217,7 +225,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 3029 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 3038 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

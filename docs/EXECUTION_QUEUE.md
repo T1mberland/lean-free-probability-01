@@ -18,9 +18,9 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `a1f942b`, published on `main` through
-[PR #6](https://github.com/T1mberland/lean-free-probability-01/pull/6). Full builds
-3612/3615 jobs, source guard and transitive audit of 3029 declarations pass.
+Latest checked integration: `8d38c42`, published on `main` through
+[PR #7](https://github.com/T1mberland/lean-free-probability-01/pull/7). Full builds
+3613/3616 jobs, source guard and transitive audit of 3038 declarations pass.
 Goals 1, 2 and 6 are certified complete; eight full goals remain open. Actual
 matrix covariance/Wick/recursion and entire exponential IBP are published and
 queued for sequential integration. Historical checkpoints retain their scope.
@@ -45,7 +45,7 @@ queued for sequential integration. Historical checkpoints retain their scope.
 | --- | --- | --- | --- |
 | Coordinator | `main`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
 | Worker A (`cumulants`) | `feat/operator-valued-matrix`, `/home/user/Projects/lean-fp-cumulants` | New `OperatorValued/Matrix*.lean`; completed cumulant feature preserved | Actual matrix conditional expectation, all finite covariance amplification positivity, matrix semicircular realization |
-| Worker B (`fock`) | `feat/fock-exponential-ibp`, `/home/user/Projects/lean-fp-fock` | New `Analytic/FockExponential*.lean`; published ON-family feature preserved | Actual Banach Duhamel commutator and entire exponential IBP |
+| Worker B (`fock`) | `feat/polynomial-resolvent-ibp`, `/home/user/Projects/lean-fp-fock` | New `Analytic/FockPolynomialResolvent*.lean`; published exponential/ON features preserved | Actual full-domain scalar/matrix polynomial resolvent IBP and generated-state transport |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -1000,3 +1000,41 @@ Important proof choices: first power integral determines actual weights;
 measure order bounds use pointwise ENNReal add positivity (Measure has no
 CanonicallyOrderedAdd instance); native let-bound measures are rewritten through
 explicit equality types. No theorem statements were weakened.
+
+### Checked PR integration: actual projection law
+
+[PR #7](https://github.com/T1mberland/lean-free-probability-01/pull/7) merged
+head `b718223` as `8d38c42`. Main full build 3613, Verification 3616,
+direct audit 3038 declarations and source guard pass with half-trace usage.
+Goal 7's projection piece is complete; its full convolution/edge target remains open.
+
+### Pending PR: actual entire exponential IBP
+
+Published B originals `7a17965`, `c2ce33a`, `270ee91`, `3a30233`, `15963db`
+are assembled in `49225a7` (original histories retained). Real-ray Banach
+Duhamel proves [C,expX]=integral exp((1-u)X)[C,X]exp(uX), with actual continuous
+integrands and integrability. For every noncommutative polynomial and EVERY
+complex parameter t, actual scalar Fock exponential IBP contracts the genuine
+FDQ with exponential sandwiches. Inclusion preserves actual exponentials, so
+the same identity holds in the literal faithful tracial generated C-star state.
+Finite matrices use a genuine Banach operator norm and same-ring product
+completeness, never a falsely asserted C-star norm. Their actual MATRIX
+exponential (not entrywise exponentials) satisfies finite double-index FDQ
+contraction preserving multiplication order. All five modules have independent
+review with no collisions. Full build 3618, Verification 3621, direct audit
+3148 declarations and guard pass; mixed actual exponential usage at `t=10i`
+compiles. 'Entire' here asserts identities for every complex t, not a separately
+proved complex holomorphic derivative theorem. Main integration pending.
+
+### Polynomial resolvent isolation and synchronization
+
+B's focused `feat/polynomial-resolvent-ibp` branches from its published exponential
+checkpoint, a justified dependency on actual insertion/sandwich calculus. Sources
+`ccc3edd` and `2d34626` prove actual scalar and matrix inverse IBP on WHOLE
+resolvent domains with no self-adjointness or exterior-radius restriction.
+The inverse is of the matrix itself, never of each entry. Coordinator synced
+clean `2d34626` with checked main `8d38c42` as `66eab22`, pushed immediately,
+then focused builds and source guard passed in B's actual worktree. B now reuses
+the integrated generic inverse homomorphism helper and published `31e3618`
+for closed scalar-state transport; matrix closed-state transport is active.
+Only coordinator performs integration merges; workers own disjoint new files.

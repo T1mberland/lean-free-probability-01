@@ -203,3 +203,4 @@ import FreeProbability.OperatorValued.MatrixTensorCalculus
 import FreeProbability.OperatorValued.MatrixTensorPowers
 import FreeProbability.OperatorValued.MatrixPolynomialExpectation
 import FreeProbability.OperatorValued.MatrixMomentRecursion
+import FreeProbability.Analytic.ProjectionSpectralMeasure

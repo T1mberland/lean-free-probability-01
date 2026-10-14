@@ -18,12 +18,12 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `1708387`, published on `main`, with full builds,
-source guard and transitive audit passing for 1336 declarations. Unit/full-centering
-calculus, adjacent raw merges/refinement fibers and norm-two/C-star model are integrated.
-Ordered fusion/duplicated-block transports and genuine closed-generator freeness
-feature milestones are published but await integration. Historical checkpoints
-below retain the state at each checkpoint; this paragraph records current status.
+Latest checked integration: `041906e`, published on `main`, with full builds,
+source guard and transitive audit passing for 1403 declarations. Genuine
+polynomial and closed-generator freeness is integrated in the faithful tracial
+C-star model. The all-order adjacent-product cumulant theorem and full freeness
+characterization are undergoing integration. Joint Wick/Catalan and algebraic
+free-CLT milestones are published and queued for review/integration.
 
 | Goal | Status | Earliest work and dependency |
 | --- | --- | --- |
@@ -44,8 +44,8 @@ below retain the state at each checkpoint; this paragraph records current status
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
 | Coordinator | `main`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/cumulant-characterization`, `/home/user/Projects/lean-fp-cumulants` | New cumulant-related `Combinatorics` and `Algebraic` files except B's reserved pairing-decomposition file; existing `Algebraic/CumulantFreeness.lean` if needed | Exact adjacent fibers published; ordered fused-block transport and product identity, then reverse freeness |
-| Worker B (`fock`) | `feat/fock-semicircular`, `/home/user/Projects/lean-fp-fock` | New `Fock`/`Semicircular` files and exclusively `Combinatorics/NoncrossingPairingDecomposition.lean` | Closed freeness and C-star bridge published; sync main, right-annihilation moment recursion/IBP, then pairing split and literal NC Wick |
+| Worker A (`cumulants`) | `feat/cumulant-characterization`, `/home/user/Projects/lean-fp-cumulants` | New cumulant-related `Combinatorics` and `Algebraic` files except B's three reserved pairing files; coordinator owns the existing `CumulantFreeness.lean` header | Core iff, additive formal R and moment free CLT published; full refinement product and Möbius inversion |
+| Worker B (`fock`) | `feat/fock-semicircular`, `/home/user/Projects/lean-fp-fock` | New `Fock`/`Semicircular` files and exclusively `Combinatorics/NoncrossingPairingDecomposition.lean`, `NoncrossingPairingWeights.lean`, `NoncrossingPairingCatalan.lean` | Actual joint Wick/Catalan published; arbitrary-vector creation and general Hilbert transport |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -248,3 +248,34 @@ This is a reviewed strategy, not a completed declaration.
 
 Update this ledger at each integration checkpoint with exact declarations, commit
 hashes, checks, failed approaches and newly unblocked tasks.
+
+### Checked integration checkpoint: genuine freeness
+
+`041906e` is checked and published on `main`: polynomial/closed-generator
+freeness and its actual faithful C-star bridge are integrated from `7350c11`,
+`54fde61`, `de87f86`, with duplicate-name fix `3eaf5df` → `8f3ff3a`.
+Full builds, direct transitive audit and source guard pass for 1403 declarations.
+The alternating fourth-moment usage example permits repeated nonadjacent labels.
+
+### Pending integration: complete cumulant characterization
+
+Sources/integration mappings: `481a876`→`0798b2a`, `4ea8b76`→`3a92bc7`,
+`6a41526`→`a81345d`, `7f7d3be`→`5f1a9fd`, `fa71c82`→`1c47807`,
+`712dc4d`→`2647876`, `5f10939`→`304ce45`, `eab9ffa`→`d0f933f`.
+`cumulant_fuseAdjacent` is the all-order actual adjacent product formula;
+`freelyIndependent_iff_mixedCumulantsVanish` is the intended algebraic equivalence
+for arbitrary fields/rings/algebras without positivity, trace or centering
+assumptions. Read-only mathematical review and combined checks pass: full build (3443 jobs),
+Verification (3446 jobs), direct audit of 1481 declarations, source guard and
+un-centered mixed-third-cumulant usage example. Main integration remains pending.
+These close the central characterization, not every subgoal of Goal 1.
+
+### Publication recovery
+
+Transient GitHub DNS failures were reported and recovered. Worker A's RCLike CLT
+commit was pushed on normal retry. Worker B's verified pairing-count tree
+`4d9338de851652b929825c80c8303f923d51cd37` was published through the authorized
+GitHub connector as `0138b7555e43ac153c1d1d02224c153d4a2490fa`; the matching local
+commit was `8ebf75af94fdfdec3a4cfc12e2857088fcbaa47a`. Coordinator reconciliation
+merge `a860eb6` preserved both histories and was pushed successfully after DNS
+recovered. No shared history was rewritten. Workers then resumed.

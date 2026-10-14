@@ -77,4 +77,16 @@ example {I : Type*} (i j : I) (h : i ≠ j) :
         exact Fock.closedGeneratedVacuumState_centered _)
   simpa [w, wordProduct, mul_assoc] using hh
 
+/-- Mixed third cumulants vanish without centering, positivity or traciality. -/
+example {𝕜 A I : Type*} [Field 𝕜] [Ring A] [Algebra 𝕜 A]
+    (φ : ProbabilitySpace 𝕜 A) (B : I → Subalgebra 𝕜 A)
+    (hf : FreelyIndependent φ B) (i j : I) (hij : i ≠ j)
+    (a b c : A) (ha : a ∈ B i) (hb : b ∈ B j) (hc : c ∈ B i) :
+    cumulant φ [a, b, c] = 0 := by
+  have h := hf.cumulant_ofFn_eq_zero_of_mixed
+    (fun k : Fin 3 => ![a, b, c] k) (fun k : Fin 3 => ![i, j, i] k)
+    (by intro k; fin_cases k <;> simp [ha, hb, hc])
+    ⟨0, 1, by simpa using hij⟩
+  simpa using h
+
 end FreeProbability.Examples

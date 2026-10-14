@@ -10,7 +10,8 @@ multiplies algebra entries. Every partition term of a centered alternating word
 vanishes: a mixed block has zero cumulant, and an entirely monochromatic
 partition has a centered singleton block.
 
-The reverse implication is a separate remaining theorem.
+The reverse implication and full equivalence are proved in
+`Algebraic.CumulantCharacterization`.
 -/
 
 namespace FreeProbability

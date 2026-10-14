@@ -363,3 +363,13 @@ run_cmd do
 #print axioms FreeProbability.FreelyIndependent.comap
 #print axioms FreeProbability.Fock.closedSemicircular_mem_closedGeneratorAlgebra
 #print axioms FreeProbability.Fock.freelyIndependent_closedGeneratedVacuumState
+#print axioms FreeProbability.prod_ofFn_fuseAdjacent
+#print axioms FreeProbability.NoncrossingPartition.blocks_duplicate
+#print axioms FreeProbability.fuseAdjacent_duplicateBlock_tuple
+#print axioms FreeProbability.sum_orderedPartitionContribution_adjacentFibers
+#print axioms FreeProbability.orderedPartitionContribution_reindex
+#print axioms FreeProbability.sum_duplicateBlock_covering_eq_adjacentTop
+#print axioms FreeProbability.cumulant_fuseAdjacent
+#print axioms FreeProbability.FreelyIndependent.cumulant_ofFn_eq_zero_of_mixed
+#print axioms FreeProbability.FreelyIndependent.mixedCumulantsVanish
+#print axioms FreeProbability.freelyIndependent_iff_mixedCumulantsVanish

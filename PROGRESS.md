@@ -48,15 +48,15 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `1708387` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 1336 declarations.
+The latest checked and published integration is `041906e` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 1403 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
 `cumulant_update_algebraMap`, `cumulant_update_add_algebraMap`, and
 `cumulant_update_center` are integrated from worker source `36a6578`. They require
-neither freeness nor positivity nor traciality. The adjacent-product identity and
-freeness implies mixed vanishing remain open. Lattice/adjacent-contraction
+neither freeness nor positivity nor traciality. The adjacent-product identity and full freeness–mixed-cumulant equivalence are
+proved on the worker branch and are undergoing combined integration checks. Lattice/adjacent-contraction
 milestones (`a54a473`, `c84f43d`) are integrated at `3678bca`. Explicit raw-adjacent
 merge, whole-word centering, restriction/local-refinement and exact adjacent-fiber
 sum proofs are integrated at `1708387`. The fiber theorem concerns arbitrary
@@ -74,10 +74,10 @@ usage examples.
 
 Exact norm two and explicit C-star-model compatibility (`f881b61`, `7310a7b`) are
 integrated at `2058aab`. Genuine polynomial/closed-marginal freeness and its
-faithful-C-star-ambient bridge (`7350c11`, `54fde61`, `de87f86`) are published and
-reviewed, awaiting integration. The full joint noncrossing Wick formula,
-Catalan/spectral law, arbitrary-vector creation and general completed Hilbert
-tensor-power identification remain open. None of the eleven full goals is
+faithful-C-star-ambient bridge (`7350c11`, `54fde61`, `de87f86`) are integrated at `041906e`, including repeated nonadjacent colors. The full
+joint noncrossing Wick formula and Catalan moments are published and awaiting
+integration. The spectral law, arbitrary-vector creation and general completed
+Hilbert tensor-power identification remain open. None of the eleven full goals is
 declared complete by these supporting results.
 
 ## Haar probability and concentration
@@ -136,7 +136,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 1336 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 1403 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

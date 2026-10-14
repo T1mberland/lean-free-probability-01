@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `6087183` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 4926 declarations.
+The latest checked and published integration is `ab1573b` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 5008 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -240,7 +240,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 4926 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 5008 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -545,3 +545,14 @@ Consequently the restricted compression is injective. Onto/inverse bounded-WOT
 continuity, explicit normal embedding, bicommutant and normal OU remain unproved.
 Development commit `cc7a9c3` had an unchecked final scalar-cast error; only the
 fully repaired/audited `2f05d90` combined with `ae16261` is assembled here.
+
+### Checked WOT checkpoint and CI verification coverage
+
+WOT-generated PR #35 merged as `ab1573b`; checked main full3745,
+Verification3748, direct audit5008, source guard and explicit push pass.
+Corrected faithfulness and injectivity are integrated at the fully reviewed tip.
+CI now explicitly builds `Verification`, including the public usage examples,
+under the shared build lock. The existing default library build, source guard
+and direct transitive audit remain; mathematical sources and pins are unchanged.
+Published sharp projection upper support and law-polynomial continuation remain
+queued for integration; lower edge and physical branch are active.

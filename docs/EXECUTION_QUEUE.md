@@ -18,13 +18,13 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `9ca8caa`, published on `main`, with full builds,
-source guard and transitive audit passing for 2493 declarations. Full cumulant
+Latest checked integration: `8cb664e`, published on `main`, with full builds,
+source guard and transitive audit passing for 2503 declarations. Full cumulant
 characterization/Möbius/generic interval products/Kreweras moments, genuine
 tensor-domain free semicircular system with faithful tracial C-star state,
 polynomial/matrix and single-generator resolvent IBP, iid moment free CLT and
-actual spectral probability measures/faithful support are integrated. Non-iid
-CLT is undergoing integration; Kreweras deletion/count and complex/Cauchy
+actual spectral probability measures/faithful support are integrated. Quantitative non-iid
+CLT is integrated; Kreweras deletion/count and complex/Cauchy
 spectral representation are published and queued. Full targets remain open as
 specified below; historical checkpoints retain their checked scope.
 
@@ -669,3 +669,49 @@ B's `707f09a`, `3c19e01` give complex CFC and actual all-resolvent-set Cauchy
 spectral integral representation, avoiding global-continuity restrictions.
 Complex CFC reviewed; Cauchy review and integration next. Compact moment-law
 uniqueness is the next independent spectral task.
+
+### Checked integration checkpoint: quantitative non-iid CLT
+
+`8cb664e` is checked and published on `main`, previous source mappings integrated.
+Full build 3517 jobs, Verification 3520 jobs, direct audit 2503 declarations
+and source guard pass. The non-iid triangular-array theorem is established
+under its explicit sufficient cumulant bounds and averaged variance convergence.
+The positive-degree Kreweras count is also now published/reviewed; count does
+not by itself prove the remaining complementary connectivity/top-fiber identity.
+
+### Pending integration: complex spectral calculus and Cauchy law
+
+Sources/integration mappings: `707f09a`→`bbc8723`, `3c19e01`→`92e49c7`,
+`e40267d`→`b3d1842`. Complex spectral CFC representation requires continuity
+only on the actual spectrum, never artificial global continuity.
+`resolvent_eq_cfc_inverse_kernel` identifies the actual inverse via genuine CFC;
+`cauchyTransform_eq_spectralIntegral` covers every actual resolvent point,
+including real exterior points. Actual spectral power, real polynomial and
+complex polynomial integrals agree with algebraic expectations; all powers
+are integrable. No faithfulness or trace assumption is needed for representation.
+Complex-CFC, Cauchy, moment and uniqueness reviews/global name scans approved.
+Additional source `0945dfb` → `aed52fc` proves equality of actual spectral
+probability laws across different bounded ambient C-star algebras from all
+power moments by Stone-Weierstrass and actual measure uniqueness. Source
+`a8aaa49` → `39a6232` gives the reverse and exact iff. Combined checks are
+repeated for these related new source additions: full build 3521 jobs,
+Verification 3524 jobs, direct audit 2520 declarations and source guard pass.
+Main integration pending.
+Weak spectral-law convergence and full nonreal Cauchy convergence under explicit
+uniform bounds remain next compatibility tasks; no full Goal 6 certification yet.
+
+### Worker synchronization and target-scope audit
+
+From clean published `0945dfb`, coordinator merged checked `main` `8cb664e`
+into the isolated spectral branch as `0b91789`, pushed immediately, then checked
+focused uniqueness build and the source guard in that actual worker directory.
+The worktree was clean before writing resumed. No central-file ownership changed.
+
+Read-only Goal 6 audit confirms canonical `CStarAlgebra.spectralOrder` and
+`spectralOrderedRing` supply the order interfaces for any C-star algebra;
+they are not restrictive additional mathematical hypotheses. New actual spectral
+measure/CFC/Cauchy statements need no faithfulness or trace except faithfulness
+for full support. Baseline analytic transform convergence is only in the exterior
+region under eventual uniform source bounds and explicit target norm condition.
+Weak measure convergence and all-nonreal Cauchy convergence are being proved
+separately. They are not inferred from the exterior theorem or claimed prematurely.

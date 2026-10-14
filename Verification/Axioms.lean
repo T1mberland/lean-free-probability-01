@@ -506,3 +506,15 @@ run_cmd do
 #print axioms FreeProbability.freeCLT_triangular_higher_cumulants
 #print axioms FreeProbability.freeCLT_triangular_cumulants
 #print axioms FreeProbability.freeCLT_triangular_pairingMoments
+#print axioms FreeProbability.integrable_spectralMeasure
+#print axioms FreeProbability.expectation_cfc_eq_integral_on_spectrum
+#print axioms FreeProbability.cfc_complex_re_im
+#print axioms FreeProbability.expectation_complex_cfc_eq_integral
+#print axioms FreeProbability.resolvent_eq_cfc_inverse_kernel
+#print axioms FreeProbability.cauchyTransform_eq_spectralIntegral
+#print axioms FreeProbability.spectralMeasure_power_moment
+#print axioms FreeProbability.spectralMeasure_real_polynomial
+#print axioms FreeProbability.spectralMeasure_complex_polynomial
+#print axioms FreeProbability.real_cfc_expectation_eq_of_power_moments
+#print axioms FreeProbability.spectralMeasure_eq_of_power_moments
+#print axioms FreeProbability.spectralMeasure_eq_iff_power_moments

@@ -155,3 +155,7 @@ import FreeProbability.Analytic.SpectralMeasure
 import FreeProbability.Analytic.SpectralMeasureSupport
 import FreeProbability.Algebraic.CumulantTriangularEstimates
 import FreeProbability.Algebraic.CumulantTriangularCLT
+import FreeProbability.Analytic.SpectralMeasureCalculus
+import FreeProbability.Analytic.SpectralMeasureCauchy
+import FreeProbability.Analytic.SpectralMeasureMoments
+import FreeProbability.Analytic.SpectralMeasureUniqueness

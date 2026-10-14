@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `9ca8caa` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 2493 declarations.
+The latest checked and published integration is `8cb664e` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 2503 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -117,12 +117,11 @@ Actual spectral probability measures are constructed from positive CFC
 functionals using Riesz representation; real continuous-functional-calculus
 expectations have their integral representation. Faithfulness gives actual
 support equal to real spectrum, without traciality. These declarations are
-integrated at `9ca8caa`. General complex/Cauchy representation is published
-and awaiting integration;
+integrated at `9ca8caa`. General complex/Cauchy representation and exact spectral-law determinacy by
+all power moments are undergoing integration;
 semicircular density identification remain subsequent tasks.
 
-A quantitative non-iid free triangular-array CLT is proved and undergoing
-integration: each entry is centered, averaged second moments converge, and each
+A quantitative non-iid free triangular-array CLT is integrated at `8cb664e`: each entry is centered, averaged second moments converge, and each
 fixed higher-order marginal cumulant has a uniform bound. Normalized power
 moments then converge to the explicit pairing sequence. These are sufficient
 quantitative assumptions, not an optimal Lindeberg condition or a spectral limit.
@@ -183,7 +182,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 2493 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 2503 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

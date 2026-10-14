@@ -18,11 +18,11 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `2470d2a5b5c23357f2a8a95880dd77df8b5f0810`,
+Latest checked integration: `619788f56344e0dc44d5c28cbf4e54df568a1eb1`,
 published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
 and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
-Strong OU continuity PR #32 passes full builds 3733/3736, direct transitive audit
-4842 declarations and source guard.
+Ambient WOT PR #33 passes full builds 3737/3740, direct transitive audit
+4865 declarations and source guard.
 Goals 1, 2, 3 and 6 are certified complete; seven full goals remain open.
 Every historical checkpoint below retains its original scope and date.
 
@@ -44,7 +44,7 @@ Every historical checkpoint below retains its original scope and date.
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/integrate-fock-wot`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Coordinator | `feat/integrate-analytic-picard`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
 | Worker A (`cumulants`) | `feat/projection-product-germs`, `/home/user/Projects/lean-fp-cumulants` | New `Analytic/ProjectionProduct*.lean`; frozen eight law/germ modules integrated | Actual analytic Picard-series realization and moment identification; physical branch and sharp edge remain |
 | Worker B (`fock`) | `feat/fock-wot-generated-algebras`, `/home/user/Projects/lean-fp-fock` | NEW `Fock/SecondQuantizationWOTGenerated*.lean`, `SecondQuantizationPrefix*.lean` and agreed generated-closure notes | Actual WOT generated closure compression/reducing/faithfulness; bounded-WOT normality bridge remains |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
@@ -1900,3 +1900,34 @@ is published separately; range/faithfulness stillactive. A constructedanalytic
 complexPicardsum `380c8a4` and ACTUALnormalizedq/W localmatching `b9bf87d`
 are published; fullstatementreviewqueued. Taylor/radius transfer, critical
 supersolution, supercritical loweredge and physicalbranch remain unproved.
+
+### Checked ambient WOT and pending actual analytic Picard matching
+
+PR #33 head `5f3fd25` merged as `619788f`; main full3737, Verification3740,
+direct audit4865, source guard and diff checks pass; explicitpushmain confirms
+remote up to date. Corrected bounded-WOT amplification scope is persistent.
+Four reviewed projection modules `040d0cc`, `c640cc0`, `380c8a4`, `b9bf87d`
+now assembled: actual stable formalQequation+arbitrarySemiring uniqueness;
+literalcomplex sums respectproducts/powers underTRUEabsoluteconvergence;
+constructedcomplex Q analyticity/radius/norm fromnonnegativePicardmajorants;
+ACTUALnormalized projection moment q=Q and W=Q/(1-Q) nearzero via genuineIFT.
+No localidentity/analyticity premise is assumed. Twohalfprojection usage included.
+A NEW MomentSummability constructs actualinverseexpectation Taylorcoefficients,
+Cauchy-disk expansion/radius transfer and trueactual moment summability. Still
+missing criticalcalibration, sharplowerbound/support and full physicalbranch.
+B WOTclosure reducing `7dbdabd`, actualcompressionrange/unitalWOTstarhom
+`9729bd3` published separately; separatingvacuum/faithfulness active.
+
+Actual analytic Picard integration feature passes full3741, Verification3744,
+direct transitive audit4926, source guard and diff checks. All four modules
+critically reviewed; frozen notes9f62bf7 retained/read. Actual two-halfprojection
+momentfraction usage compiles. No analytic/germidentity premise inserted.
+The actualTaylor/radius transfer and lambda support/branch remain open.
+
+Worker B development error recorded transparently: cc7a9c3 was pushed before
+final asyncbuild exit was checked; added scalar norm-cast corollary failed
+elaboration. Coordinator excluded that snapshot and required complete focused
+exit0/audit/guard before repaircommit. New2f05d90 preserves history and reports
+finalfocusedexit0, five std3 audits, guard/diff andpushconfirmed. Review of
+correctedtip queued; no WOTfaithfulness is markedintegrated yet. This was a
+genuine Lean elaboration error, not infrastructure exhaustion.

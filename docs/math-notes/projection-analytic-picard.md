@@ -77,7 +77,9 @@ actual law support lower bound, and identify the genuine exterior Cauchy
 parameterization and its physical branch. These claims remain separate
 from the local identification above. A formal derivative or critical-point
 calculation cannot replace them. Length two has critical `q=1`, hence
-`w` tending to infinity; the coordinator handles that boundary separately.
+`w` tending to infinity. Calibration must choose a strict subcritical
+`r<1`, for example by continuity from below at the critical parameter;
+using the critical value itself would violate the strict majorant hypothesis.
 
 Actual law support and operator spectrum are distinct without a suitable
 faithfulness premise. The law construction, local matching, and marginal

@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `2470d2a` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 4842 declarations.
+The latest checked and published integration is `619788f` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 4865 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -240,7 +240,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 4842 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 4865 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -515,3 +515,18 @@ verified operators. Notes frozen `d934c4b` retained, with normality scope correc
 infinite amplification may fail GLOBAL WOT continuity on unbounded nets. The
 proper next interface is bounded-WOT/ultraweak normality plus bounded approximation.
 Native normal embedding, bicommutant/Kaplansky, normal OU and L1/entropy remain open.
+
+### Actual analytic Picard/moment identification integration feature
+
+Ambient WOT PR #33 merged as `619788f`; checked main full3737,
+Verification3740, direct audit4865 and source guard. Four reviewed projection
+modules through `b9bf87d` are assembled: formal Picard equation/uniqueness,
+genuine absolute-convergence scalar evaluation semantics, constructed complex
+analytic sum with radius/norm bounds, and ACTUAL normalized moment-germ matching.
+The constructed series has unconditional analyticity at zero. Its inverse
+parameter has strict derivative 2^L !=0, and the true inverse-function theorem
+locally identifies it with the actual given-free-half-projection transform.
+Consequently actual W=Q/(1-Q) as a germ, without an assumed desired identity.
+Actual moment Taylor/radius transfer, critical supersolution calibration,
+supercritical lower bound and global physical/support edge remain open.
+No new full goal is certified.

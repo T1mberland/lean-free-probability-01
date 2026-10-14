@@ -105,5 +105,52 @@ def emptyPairing : NoncrossingPairing 0 :=
     not_nonempty_of_odd (by decide : Odd 1) ⟨p⟩⟩
   simp [pairingSum]
 
-end FreeProbability.NoncrossingPairing
+/-- Odd-dimensional pairing sets have cardinality zero. -/
+theorem card_eq_zero_of_odd (hn : Odd n) : Fintype.card (NoncrossingPairing n) = 0 := by
+  let : IsEmpty (NoncrossingPairing n) := ⟨fun p => not_nonempty_of_odd hn ⟨p⟩⟩
+  exact Fintype.card_eq_zero
 
+@[simp] theorem card_zero : Fintype.card (NoncrossingPairing 0) = 1 := by
+  simpa [pairingSum, pairingWeight] using (pairingSum_zero (fun _ _ : Fin 0 => (1 : ℕ)))
+
+/-- First-partner splitting gives the exact cardinal convolution, including odd vanishing terms. -/
+theorem card_succ_succ (n : ℕ) : Fintype.card (NoncrossingPairing (n + 2)) =
+    ∑ k : Fin (n + 1), Fintype.card (NoncrossingPairing k.val) *
+      Fintype.card (NoncrossingPairing (n - k.val)) := by
+  simpa [pairingSum, pairingWeight] using
+    (pairingSum_succ_succ (fun _ _ : Fin (n + 2) => (1 : ℕ)))
+
+/-- The cardinal convolution reduces exactly to even indices. -/
+theorem card_even_convolution (n : ℕ) : Fintype.card (NoncrossingPairing (2 * (n + 1))) =
+    ∑ k : Fin (n + 1), Fintype.card (NoncrossingPairing (2 * k.val)) *
+      Fintype.card (NoncrossingPairing (2 * (n - k.val))) := by
+  rw [show 2 * (n + 1) = 2 * n + 2 by omega, card_succ_succ]
+  let f : Fin (2 * n + 1) → ℕ := fun k => Fintype.card (NoncrossingPairing k.val) *
+    Fintype.card (NoncrossingPairing (2 * n - k.val))
+  have hs : (∑ k ∈ Finset.univ.filter (fun k : Fin (2 * n + 1) => Even k.val), f k) = ∑ k, f k := by
+    apply Finset.sum_subset (Finset.filter_subset _ _)
+    intro k hk hne
+    have hodd : Odd k.val := Nat.not_even_iff_odd.mp (by simpa using hne)
+    simp [f, card_eq_zero_of_odd hodd]
+  rw [← hs]
+  symm
+  apply Finset.sum_bij (fun k _ => (⟨2 * k.val, by have := k.isLt; omega⟩ : Fin (2 * n + 1)))
+  · intro k hk
+    simp
+  · intro a ha b hb he
+    apply Fin.ext
+    have hval := congrArg Fin.val he
+    simp only at hval
+    omega
+  · intro b hb
+    obtain ⟨t, ht⟩ := (Finset.mem_filter.mp hb).2
+    have hbnd := b.isLt
+    refine ⟨⟨t, by omega⟩, Finset.mem_univ _, ?_⟩
+    apply Fin.ext
+    simp only
+    omega
+  · intro k hk
+    have hsub : 2 * n - 2 * k.val = 2 * (n - k.val) := by have := k.isLt; omega
+    simp [f, hsub]
+
+end FreeProbability.NoncrossingPairing

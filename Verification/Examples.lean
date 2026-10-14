@@ -244,4 +244,21 @@ example {I : Type*} (i j : I) (hij : i ≠ j) :
   rw [Fock.vacuumExpectation_semicircular_mul_semicircular_exp]
   simp [hij]
 
+/-- The actual affine Dyson equation applies to noncommuting Hermitian drift
+and random coefficients at z = I, without any exterior-radius premise. -/
+example :
+    let C₀ : Matrix (Fin 2) (Fin 2) ℂ := !![1, 0; 0, -1]
+    let C : Fin 1 → Matrix (Fin 2) (Fin 2) ℂ := fun _ => !![0, 1; 1, 0]
+    (Fock.operatorMatrixPencilCauchy C₀ C Complex.I)⁻¹ =
+      Complex.I • (1 : Matrix (Fin 2) (Fin 2) ℂ) - C₀ -
+        matrixCovariance C (Fock.operatorMatrixPencilCauchy C₀ C Complex.I) := by
+  intro C₀ C
+  apply Fock.operatorMatrixPencilCauchy_inverse_dyson_nonreal
+  · ext r c
+    fin_cases r <;> fin_cases c <;> norm_num [C₀, Matrix.conjTranspose]
+  · intro i
+    ext r c
+    fin_cases r <;> fin_cases c <;> norm_num [C, Matrix.conjTranspose]
+  · simp
+
 end FreeProbability.Examples

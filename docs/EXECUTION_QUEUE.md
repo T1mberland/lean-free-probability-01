@@ -18,39 +18,37 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `5c2e9cb`, published on `main`, with full builds,
-source guard and transitive audit passing for 2083 declarations. Genuine
-polynomial and closed-generator freeness is integrated in the faithful tracial
-C-star model. The all-order adjacent-product cumulant theorem and full freeness
-characterization are integrated. Joint Wick/Catalan and all-degree word IBP are integrated. Formal R-additivity and algebraic free CLT
-are integrated; full refinement/Möbius is integrated. All-vector creation,
-Hilbert-basis transport, complete length decomposition and tensor completion
-are integrated through completed ℓ²(I) tensor levels. Original-H tensor coherence and the unconditional general-H full-Fock
-package are integrated. Explicit tensor-power presentation/operator transport,
-general interval products and Kreweras are published and queued. Coordinator
-polynomial/matrix IBP is undergoing integration.
+Latest checked integration: `9ca8caa`, published on `main`, with full builds,
+source guard and transitive audit passing for 2493 declarations. Full cumulant
+characterization/Möbius/generic interval products/Kreweras moments, genuine
+tensor-domain free semicircular system with faithful tracial C-star state,
+polynomial/matrix and single-generator resolvent IBP, iid moment free CLT and
+actual spectral probability measures/faithful support are integrated. Non-iid
+CLT is undergoing integration; Kreweras deletion/count and complex/Cauchy
+spectral representation are published and queued. Full targets remain open as
+specified below; historical checkpoints retain their checked scope.
 
 | Goal | Status | Earliest work and dependency |
 | --- | --- | --- |
-| 1. Cumulant calculus | Active; core iff and adjacent/unit/scalar calculus integrated | Full refinement/Möbius integrated; multi-product calculus and Kreweras remain |
-| 2. Full Fock systems | Active; faithful tracial C-star word model with exact norm two integrated | Freeness, literal joint Wick and Catalan integrated; integrate arbitrary-vector creation, then completed tensor identification and spectral law |
-| 3. Free integration by parts | Active proof path selected | All-degree actual word IBP integrated; polynomial tensor-bimodule derivation bundling and matrix/analytic extensions remain |
+| 1. Cumulant calculus | Active; core iff and adjacent/unit/scalar calculus integrated | Full refinement/Möbius integrated; generic interval products/Kreweras moments undergoing integration; boxed product cumulants and rotation/block counts remain |
+| 2. Full Fock systems | Active; faithful tracial C-star word model with exact norm two integrated | General-H full Fock and vector creation integrated; explicit tensor-sum operators/state/law published; spectral law remains |
+| 3. Free integration by parts | Active proof path selected | Actual polynomial tensor derivative/Leibniz and polynomial/matrix IBP integrated; analytic extensions remain |
 | 4. Operator-valued Dyson | Blocked on operator-valued realization | Completely positive covariance, amplified moments and Wick recursion precede Dyson and physical branch |
 | 5. Spectral edges | Blocked on goals 2, 4 and 6 | Faithful pencils and spectral/Dyson theory precede variational identity and certificates |
-| 6. Spectral distributions | Independent research ready | Continuous functional calculus and positive-functional representation precede spectral measure and faithful support identification |
+| 6. Spectral distributions | Active worker B | Continuous functional calculus and positive-functional representation precede spectral measure and faithful support identification |
 | 7. Multiplicative convolution | Blocked on goals 1, 2 and 6 | Positive realizations, S-transform multiplication and actual spectral laws; rational critical-point computations are supporting special cases |
 | 8. Conditional subordination | Blocked on goals 6 and 7 and noncommutative L² | Normal conditional expectations, analytic subordination, then exterior continuation and projection specialization |
 | 9. Haar freeness | Independent algebraic groundwork ready | Haar-unitary star law and free conjugation; general orthogonal pairing integration precedes asymptotic trace estimates |
 | 10. OU and entropy | Wick/tracial prerequisites integrated; OU construction ready | Wick basis/contractions, completely positive second quantization, normal noncommutative Lᵖ and entropy precede dimension-independent bound |
-| 11. Follow-up milestones | Active; formal R and algebraic CLT integrated | Positive free products, R-additivity/CLT, operator-valued cumulants, annular and genus theory have separate dependencies |
+| 11. Follow-up milestones | Active; formal R and algebraic CLT integrated | Formal R and moment CLT with actual unitvariance target integrated; positive free products, analytic convolution, operator-valued/annular/genus theory remain |
 
 ## Active assignments and isolation
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
 | Coordinator | `main`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/cumulant-characterization`, `/home/user/Projects/lean-fp-cumulants` | New cumulant-related `Combinatorics` and `Algebraic` files except B's three reserved pairing files; coordinator owns the existing `CumulantFreeness.lean` header | Generic interval products and Kreweras published; interleaving factorization and multiplicative moment calculus |
-| Worker B (`fock`) | `feat/fock-semicircular`, `/home/user/Projects/lean-fp-fock` | New `Fock`/`Semicircular` files and exclusively `Combinatorics/NoncrossingPairingDecomposition.lean`, `NoncrossingPairingWeights.lean`, `NoncrossingPairingCatalan.lean` | Tensor powers/direct-sum unitary and tensor operators published; selected tensor-domain semicircular state and Wick transport |
+| Worker A (`cumulants`) | `feat/cumulant-characterization`, `/home/user/Projects/lean-fp-cumulants` | New cumulant-related `Combinatorics` and `Algebraic` files except B's three reserved pairing files; coordinator owns the existing `CumulantFreeness.lean` header and polynomial FDQ/IBP files | Generic interval products and Kreweras published; interleaving factorization and multiplicative moment calculus |
+| Worker B (`fock`) | `feat/spectral-measures`, `/home/user/Projects/lean-fp-fock` | Current new `Analytic/SpectralMeasure*.lean`; completed Fock checkpoint on `feat/fock-semicircular`, pairing files owned exclusively: `Combinatorics/NoncrossingPairingDecomposition.lean`, `NoncrossingPairingWeights.lean`, `NoncrossingPairingCatalan.lean` | Tensor-domain faithful tracial C-star/Wick published; new feat/spectral-measures for actual spectral measures |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -497,3 +495,177 @@ extensions, especially exponential/resolvent domains, remain Goal 3 obligations.
   accepts only elementary/addition cases. No deprecated induction was retained.
 - StarSubalgebra inclusion `.val` may simplify to `.subtype`; explicit map
   equations/pointwise proofs avoided inappropriate rewrite matching.
+
+### Checked integration checkpoint: polynomial and matrix IBP
+
+`ea6149a` is checked and published on `main`; coordinator sources listed above
+are integrated. Full build 3488 jobs, Verification 3491 jobs, direct audit 2146
+declarations, source guard and a noncommutative repeated-letter derivative usage
+pass. The polynomial and rectangular matrix subtargets of Goal 3 are complete;
+analytic exponential/resolvent extensions remain open with explicit domains.
+
+### Pending integration: generic grouping and Kreweras moments
+
+Sources/integration mappings: `670aae1`→`242e414`, `83574f9`→`8e3dd1f`,
+`a1c2613`→`96fb920`, `65dce9c`→`cf12051`, `4b4cffe`→`c6c9384`,
+`7b8bfb6`→`cd00b5a`, `4fd1146`→`3ac4d5c`, `dc1a0dc`→`f4faa97`.
+Every monotone surjective finite quotient is realized by a fusion plan and its
+outputs equal literal sorted fiber products. `cumulant_intervalProducts_top`
+is the independently specified arbitrary consecutive-grouping theorem, with
+no plan witness assumed. Genuine right Kreweras construction/maximality has
+exact alternating interleave NC iff q ≤ K(p), antitonicity and endpoints.
+Parity partition classification and actual-block factorization imply
+`FreelyIndependent.expectation_eq_kreweras_sum` for all alternating tuples
+from two free algebras, including order zero; no positivity/trace/centering
+assumptions. Mathematical reviews and global name scans approved; combined
+checks pass: full build 3496 jobs, Verification 3499 jobs, direct audit 2266
+declarations and source guard. Main integration pending. K² rotation, complementary block counts and product-cumulant
+boxed convolution/analytic S-transform remain separately unproved.
+
+### Next independent work
+
+Worker B published the complete tensor-domain checkpoint through `f1657b9`.
+Goal 6 now uses exclusive new `Analytic/SpectralMeasure*.lean` files on a focused
+`feat/spectral-measures` branch based on checked main, retaining the isolated
+worktree/cache. Targeted pinned RealRMK cache hydration is authorized when absent.
+Worker A continues Kreweras product-cumulant combinatorics in its exclusive files.
+Coordinator integrates sequentially, then selects analytic IBP extensions or
+free-CLT variance scaling; reviewer remains read-only.
+
+### Checked integration checkpoint: general products and Kreweras moments
+
+`18afd0f` is checked and published on `main`, previous source mappings integrated.
+Full build 3496 jobs, Verification 3499 jobs, direct audit 2266 declarations
+and source guard pass. Independently specified consecutive products and genuine
+Kreweras maximality/interleaving/alternating moments are complete. Actual pair
+products and (a*b)^n corollaries are published (`0fe24b6`, `955cadb`) and queued.
+Worker obstruction record `bb081f0` in `docs/math-notes/cumulant-obstructions.md`
+precisely separates boxed top-fiber connectivity/tree counting and missing
+Pi Möbius/order-isomorphism APIs. No boxed/S-transform result is claimed.
+Worker A advances a conditional non-iid triangular-array CLT while these
+mathematical dependencies remain open.
+
+### Pending integration: exact tensor-domain semicircular model
+
+Sources/integration mappings: `8466cf7`→`d465a86`, `90ca303`→`f348f65`,
+`c5e9ec3`→`9cbe9c1`, `73dc31f`→`fb92008`, `f1657b9`→`cfc3534`.
+TensorPower's successor is literally the genuine completion of original H
+⊗ previous power; the zero level is explicitly scalar-unitary for universe
+consistency. The full-Fock unitary is onto the actual completed tensor-power
+Hilbert sum. Creation/annihilation act on that exact domain and creation sends
+a degree-n vector to its literal completed h⊗f in degree n+1. Chosen orthonormal
+basis fields have actual norm two/selfadjointness and freeness in intrinsic
+closed singleton algebras. The literal norm-closed generated tensor C-star state
+is proved positive, normalized, faithful and tracial. Actual literal joint Wick
+and Catalan laws hold there. No trace is asserted on all bounded operators or
+all complex-vector fields. Mathematical reviews/global name scans approved;
+combined full build 3501 jobs, Verification 3504 jobs, direct audit 2453
+declarations and source guard pass. Main integration pending. Arbitrary
+orthonormal-family/basis-independent transport
+and semicircular spectral measure/density remain separate obligations.
+
+Worker B switched from clean `f1657b9` to `feat/spectral-measures` based on checked
+main `ea6149a`; no tensor history was changed. Targeted RealRMK cache hydration
+fetched eight pinned cache files under the common lock. Actual positive real CFC
+functional is published as `c592166`; probability measure representation is next.
+
+### Checked integration checkpoint: exact tensor-domain semicircular system
+
+`8334d17` is checked and published on `main`, previous source mappings integrated.
+Full build 3501 jobs, Verification 3504 jobs, direct audit 2453 declarations
+and source guard pass. The actual recursively completed tensor-sum domain has
+bounded canonical operators, literal tensor action, selected basis semicircular
+fields and an intrinsic faithful tracial generated C-star algebra, genuine
+freeness and literal joint Wick/Catalan laws. Semicircular spectral law and
+arbitrary orthonormal-family/basis-independent interfaces remain separate.
+
+### Pending integration: actual resolvent IBP
+
+Coordinator source `3111620` gives
+`Fock.rightAnnihilation_resolvent_commutator`,
+`Fock.vacuumExpectation_semicircular_mul_resolvent`,
+`Fock.vacuumExpectation_resolvent_quadratic` and a nonreal-domain corollary.
+The generic inverse commutator is proved for actual units. Its sign yields
+[rightAnnihilation_i,R_j]=δij R_j Pvac R_j, and actual rank-one vacuum evaluation
+gives τ(s_i R_j)=δij τ(R_j)^2 throughout the actual operator resolvent set.
+The resolvent expectation satisfies G²-zG+1=0 using the genuine inverse identity
+and normalization. No power-series assumption, assumed spectral density or
+assumed transform formula is used. This is currently the raw bounded-Fock vacuum
+statement; membership/compatibility of the inverse in the generated C-star model
+and general polynomial/matrix resolvents are separate next tasks. Focused build,
+representative axiom audits, source guard and mathematical review pass. Combined
+full build 3502 jobs, Verification 3505 jobs and direct audit 2459 declarations
+pass. Main integration pending.
+
+### Newly ready review queue
+
+Spectral sources `c592166`, `d6ee62a`, `4a9dedf` construct positive real CFC
+functional, actual spectral probability measure, real CFC integral representation
+and faithfulness implies actual support=spectrum; first two reviewed, support
+review underway. No traciality is assumed. General complex/Cauchy representation
+and semicircular measure identification are the worker's next tasks.
+A's `608b229`, `86ddce2` give a quantitative non-iid triangular-array moment CLT,
+conditional on all-entry centering, actual averaged-second-moment convergence
+and uniform fixed-higher-order marginal cumulant bounds. A's `0f7d1dc` proves
+exact Kreweras adjacent-chord deletion, a genuine new prerequisite toward the
+previously recorded boxed-complement connectivity/block-count obligation.
+
+### Checked integration checkpoint: actual resolvent IBP
+
+`7386526` is checked and published on `main`; coordinator source `3111620` is
+integrated. Full build 3502 jobs, Verification 3505 jobs, direct audit 2459
+declarations and source guard pass. The all-resolvent-set single-generator IBP
+and actual Cauchy quadratic are complete, with nonreal domain proved. General
+polynomial/matrix resolvents, generated-algebra compatibility and exponential
+extensions remain explicit next tasks.
+
+### Pending integration: actual spectral measures and faithful support
+
+Sources/integration mappings: `c592166`→`bb9f9a3`, `d6ee62a`→`060aba7`,
+`4a9dedf`→`176b50b`. Actual positive real CFC functional and RMK representation
+construct `spectralMeasureOnSpectrum` and `spectralMeasure`, with genuine
+probability normalization. Real continuous CFC expectations have integral
+representation. Concentration gives support inclusion; actual faithfulness,
+CFC injectivity and continuous Urysohn bumps give
+`spectralMeasure_support_eq_spectrum`. No traciality/support assumption or
+spectral-measure existence assumption is used. This represents full complex
+expectations only for REAL-valued CFC functions; general complex/Cauchy integral
+representation is a subsequent worker theorem. All three mathematical reviews
+and global name scans approved. Combined full build 3515 jobs, Verification
+3518 jobs, direct transitive audit 2493 declarations and source guard pass.
+Main integration pending. Targeted pinned RMK
+and Support cache artifacts reused/downloaded under the common lock; no
+revision/toolchain update or unnecessary dependency rebuild.
+
+### Checked integration checkpoint: spectral measures and faithful support
+
+`9ca8caa` is checked and published on `main`, previous source mappings integrated.
+Full build 3515 jobs, Verification 3518 jobs, direct audit 2493 declarations
+and source guard pass. The actual spectral probability measure, real CFC integral
+representation and faithful support=spectrum are complete. DNS interrupted
+publication of `9ca8caa` and worker `707f09a`; local commits were preserved,
+failures reported immediately and normal SSH retries succeeded. No connector
+publication/history reconciliation was needed for this occurrence.
+
+### Pending integration: quantitative non-iid free CLT
+
+Sources/integration mappings: `608b229`→`691197c`, `86ddce2`→`bd5e0c0`.
+`FreelyIndependent.norm_cumulant_normalized_sum_le` gives an actual finite-size
+higher-order estimate; `freeCLT_triangular_cumulants` and
+`freeCLT_triangular_pairingMoments` give full limits for varying ambient algebras
+without identical distribution. Hypotheses explicitly require each entry
+centered, true averaged second-moment convergence and uniform bounds on each
+fixed higher-order marginal cumulant. No positivity/trace/spectral convergence
+is assumed or concluded. This is a conditional quantitative non-iid theorem,
+not a replacement for the completed iid CLT or an optimal Lindeberg result.
+Mathematical review and global name scan approved; full build 3517 jobs,
+Verification 3520 jobs, direct audit 2503 declarations and source guard pass.
+Main integration pending.
+
+A's `9403369`, `acaeae1` now prove the genuine positive-degree Kreweras block
+count through exact signature deletions and boundary-free NC reduction. Both
+reviewed and queued; complementary connectivity/top join fiber still remains.
+B's `707f09a`, `3c19e01` give complex CFC and actual all-resolvent-set Cauchy
+spectral integral representation, avoiding global-continuity restrictions.
+Complex CFC reviewed; Cauchy review and integration next. Compact moment-law
+uniqueness is the next independent spectral task.

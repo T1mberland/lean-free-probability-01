@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `5c2e9cb` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 2083 declarations.
+The latest checked and published integration is `9ca8caa` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 2493 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -82,7 +82,9 @@ decomposition and a genuine completed-tensor isometry are integrated at
 `871fc9f`. The ℓ²(I) levels are genuine completed tensor levels, with literal
 tensor creation; original-H tensor coherence and the unconditional full-Fock package are
 integrated at `5c2e9cb`. Explicit recursively completed tensor powers and the
-unitary onto their Hilbert sum are published and awaiting integration.
+unitary onto their Hilbert sum, exact tensor-domain operators and actual
+faithful tracial generated tensor C-star model with literal joint Wick/Catalan
+laws are integrated at `8334d17`.
 The spectral law and complete tensor-power identification remain open. None of the eleven full goals is
 declared complete by these supporting results.
 
@@ -98,16 +100,32 @@ at `cf3c085`, removing the target-existence assumption in that
 case.
 
 `cumulant_consecutiveProducts` and its all-partition join-fiber formula are
-integrated at `7bb8314` for any supplied finite adjacent-fusion plan. Every
-monotone surjective finite quotient admits such a plan on the worker branch;
-pointwise fiber-product identification is being completed before claiming the
-independently specified grouping theorem. Kreweras remains open.
+integrated at `7bb8314` for any supplied finite adjacent-fusion plan. The independent monotone surjective quotient, pointwise sorted fiber-product
+identity and corresponding top join-fiber cumulant theorem are integrated at
+`18afd0f`. The actual Kreweras greatest compatible complement and free
+alternating-moment formula are also integrated at that checkpoint.
+Kreweras rotation/block-count and product-cumulant boxed convolution remain open.
 
 The actual algebraic tensor free difference quotient satisfies the full
 noncommutative polynomial Leibniz rule. Polynomial and matrix-valued polynomial
-integration by parts in the actual faithful tracial Fock C-star state are proved
-and undergoing integration. Analytic extensions for exponentials and resolvents
-with explicit convergence domains remain open.
+integration by parts in the actual faithful tracial Fock C-star state are
+integrated at `ea6149a`. Actual one-generator resolvent IBP on every resolvent-set point and its Cauchy
+quadratic equation are integrated at `7386526`. General polynomial
+resolvent, matrix analytic and exponential extensions remain open.
+
+Actual spectral probability measures are constructed from positive CFC
+functionals using Riesz representation; real continuous-functional-calculus
+expectations have their integral representation. Faithfulness gives actual
+support equal to real spectrum, without traciality. These declarations are
+integrated at `9ca8caa`. General complex/Cauchy representation is published
+and awaiting integration;
+semicircular density identification remain subsequent tasks.
+
+A quantitative non-iid free triangular-array CLT is proved and undergoing
+integration: each entry is centered, averaged second moments converge, and each
+fixed higher-order marginal cumulant has a uniform bound. Normalized power
+moments then converge to the explicit pairing sequence. These are sufficient
+quantitative assumptions, not an optimal Lindeberg condition or a spectral limit.
 
 ## Haar probability and concentration
 
@@ -165,7 +183,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 2083 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 2493 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

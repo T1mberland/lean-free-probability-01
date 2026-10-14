@@ -53,4 +53,28 @@ example {𝕜 A : Type*} [Field 𝕜] [Ring A] [Algebra 𝕜 A]
   simpa using cumulant_update_center φ (by norm_num : 2 ≤ 3)
     (fun i : Fin 3 => ![a, b, c] i) (1 : Fin 3)
 
+/-- A genuinely alternating fourth moment vanishes in the actual faithful
+tracial C-star model, including repeated nonadjacent colors. -/
+example {I : Type*} (i j : I) (h : i ≠ j) :
+    (Fock.closedGeneratedVacuumState I).expectation
+      (Fock.closedSemicircular i * Fock.closedSemicircular j *
+        Fock.closedSemicircular i * Fock.closedSemicircular j) = 0 := by
+  classical
+  let w : List (I × Fock.closedSemicircularAlgebra I) :=
+    [(i, Fock.closedSemicircular i), (j, Fock.closedSemicircular j),
+      (i, Fock.closedSemicircular i), (j, Fock.closedSemicircular j)]
+  have hh := Fock.freelyIndependent_closedGeneratedVacuumState I w
+    (by simp [w]) (by simp [w, List.isChain_cons_cons, h, Ne.symm h])
+    (by
+      intro x hx
+      simp only [w, List.mem_cons, List.not_mem_nil, or_false] at hx
+      rcases hx with rfl | rfl | rfl | rfl <;>
+        exact Fock.closedSemicircular_mem_closedGeneratorAlgebra _)
+    (by
+      intro x hx
+      simp only [w, List.mem_cons, List.not_mem_nil, or_false] at hx
+      rcases hx with rfl | rfl | rfl | rfl <;>
+        exact Fock.closedGeneratedVacuumState_centered _)
+  simpa [w, wordProduct, mul_assoc] using hh
+
 end FreeProbability.Examples

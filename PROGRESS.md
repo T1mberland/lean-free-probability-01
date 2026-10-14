@@ -18,11 +18,12 @@ completion criterion.
 | `OperatorValued.ConditionalExpectation` | Linear retractions onto subalgebras, bimodule identities, centering, freeness with amalgamation, and the mixed second-moment identity |
 | `Combinatorics.NoncrossingPartition`, `Cumulant`, `PartitionMultilinear`, `CumulantMultilinear`, `NoncrossingSingleton` | Noncrossing partitions, constructive all-order moment–cumulant inversion and uniqueness, cumulant multilinearity, and singleton-block combinatorics |
 | `Algebraic.CumulantFreeness`, `Combinatorics.CumulantNaturality` | Vanishing mixed cumulants implies freeness; cumulants commute with expectation-preserving maps |
-| `Algebraic.CumulantUnit` | Arbitrary-position/order at least two unit-cumulant vanishing, scalar insertion/shift invariance and individual-coordinate centering invariance over arbitrary fields and noncommutative algebras |
+| `Algebraic.CumulantUnit`, `CumulantCenter` | Arbitrary-position/order at least two unit-cumulant vanishing, scalar insertion/shift and individual/all-coordinate centering invariance over arbitrary fields and noncommutative algebras |
 | `Combinatorics.NoncrossingPairing` | Intrinsic two-element-block pairings, unique partners and their fixed-point-free involution, even size, and existence of an adjacent pair |
 | `Combinatorics.NoncrossingInterval` | Every equivalence class has a least representative; every nonempty noncrossing partition has an actual convex interval block, represented by inclusive endpoints |
 | `Combinatorics.NoncrossingSingletonInsertion`, `BlockWordTransport` | Arbitrary-position singleton insertion/deletion equivalence, exact actual-block transport, ordered block-word compatibility and singleton contribution/sum factorization |
 | `Combinatorics.NoncrossingLattice`, `NoncrossingAdjacent` | Complete refinement lattice with least noncrossing closure, adjacent contraction equivalence/order isomorphism and quotient adjunction |
+| `Combinatorics.NoncrossingAdjacentMerge`, `NoncrossingRestriction`, `NoncrossingBlockRefinement`, `BlockRefinementContribution`, `NoncrossingAdjacentFiber` | Exact raw adjacent merges and top-fiber two-block bound; ordered restriction/refinement inverses with actual-block and contribution transport; exact adjacent global/local fiber equivalence and weighted sum factorization |
 | `Fock.WordSpace`, `Fock.VacuumState` | Complete Hilbert word model, bounded isometric canonical creation and adjoint annihilation, operator-wide canonical relation, positive normalized vacuum state, self-adjoint centered candidates with variance one and norm at most two |
 | `Fock.WickWord`, `Fock.RightOperators` | Polynomial Wick operators generate orthonormal word vectors from the vacuum; vacuum separating for the commutant; unitary word reversal and genuinely commuting left/right semicircular operators |
 | `Fock.GeneratedState`, `Fock.ClosedGeneratedState` | Actual restricted positive normalized vacuum states, proved faithful and tracial on both polynomial generated algebra and its operator-norm closure; completeness of the closed generated algebra |
@@ -47,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `2058aab` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 1270 declarations.
+The latest checked and published integration is `1708387` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 1336 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -57,7 +58,10 @@ Exact source/integration hashes are preserved in the execution ledger.
 neither freeness nor positivity nor traciality. The adjacent-product identity and
 freeness implies mixed vanishing remain open. Lattice/adjacent-contraction
 milestones (`a54a473`, `c84f43d`) are integrated at `3678bca`. Explicit raw-adjacent
-merge and whole-word centering proofs are published but awaiting integration.
+merge, whole-word centering, restriction/local-refinement and exact adjacent-fiber
+sum proofs are integrated at `1708387`. The fiber theorem concerns arbitrary
+block weights, not an assumed cumulant product identity. Ordered fusion and
+duplicated-block transports are the next separately published prerequisites.
 
 The complete word-Hilbert model has bounded creation/adjoints, canonical operator
 relations, a positive vacuum state, Wick vectors and commuting right operators.
@@ -132,7 +136,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 1270 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 1336 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

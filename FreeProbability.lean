@@ -41,6 +41,10 @@ import FreeProbability.Fock.GeneratedState
 import FreeProbability.Fock.ClosedGeneratedState
 import FreeProbability.Fock.SemicircularNorm
 import FreeProbability.Fock.CStarModel
+import FreeProbability.Fock.OneColorWick
+import FreeProbability.Fock.Freeness
+import FreeProbability.Fock.ClosedFreeness
+import FreeProbability.Fock.FreeCStarModel
 import FreeProbability.Algebraic.CumulantFreeness
 import FreeProbability.Algebraic.CumulantUnit
 import FreeProbability.Algebraic.CumulantCenter

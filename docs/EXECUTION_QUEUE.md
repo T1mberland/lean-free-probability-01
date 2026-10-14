@@ -18,10 +18,10 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `2058aab`, published on `main`, with full builds,
-source guard and transitive audit passing for 1270 declarations. Unit-cumulant
-calculus, lattice/adjacent contraction and norm-two/C-star model are integrated.
-Raw adjacent merge, whole-word centering and genuine closed-generator freeness
+Latest checked integration: `1708387`, published on `main`, with full builds,
+source guard and transitive audit passing for 1336 declarations. Unit/full-centering
+calculus, adjacent raw merges/refinement fibers and norm-two/C-star model are integrated.
+Ordered fusion/duplicated-block transports and genuine closed-generator freeness
 feature milestones are published but await integration. Historical checkpoints
 below retain the state at each checkpoint; this paragraph records current status.
 
@@ -190,8 +190,35 @@ norm/selfadjoint/centering/variance statements. Full builds, direct audit and
 source guard pass for 1270 declarations. No spectral law or full Wick formula
 is inferred from the norm alone.
 
+### Checked integration checkpoint: local refinements and adjacent fibers
+
+`1708387` is checked and published on `main`. Sources/integration mappings:
+`8fe5122`→`0bb05ee`, `8e72bab`→`e861b39`, `fef5c89`→`dba2ab4`,
+`375b360`→`a96b8c6`, `01ae6aa`→`083654c`, `3231976`→`af6afed`.
+Raw adjacent joins preserve noncrossing and merge at most two blocks.
+Restriction/local-refinement are actual inverse constructions with exact block
+and contribution transport. `adjacentFiberEquiv` and
+`sum_adjacentPartitionFiber_contribution` identify each global join fiber with
+local endpoint-covering refinements and fixed outside factors, for arbitrary
+weights. Whole-word centering is integrated. Full builds, direct audit and source
+guard pass for 1336 declarations. The actual adjacent cumulant product theorem
+remains unproved; its finite-index/ordered-word transport is a separate next task.
+
+Worker B was synchronized from clean `de87f86` with verified `main` at this
+checkpoint: merge `e28ccb6` was published immediately, focused FreeCStarModel
+build and source guard passed, and the worktree was clean before writing resumed.
+The operator right-annihilation boundary commutator and word recursion were
+selected ahead of pairing splitting to advance genuine integration by parts.
+
 ### Failed approach and implementation observations
 
+- Full integration detected a duplicate `FreelyIndependent.comap` in the Fock
+  bridge: the baseline `Algebraic.DistributionComparison` already provides a more
+  general pullback theorem. The standalone module build had not imported that
+  interface. Fix `3eaf5df` (integration `8f3ff3a`) removes the duplicate and imports
+  the existing API; the genuine free-model theorem is unchanged. Reviews now
+  scan new declaration names across the entire repository, and combined imports
+  are checked before integration.
 - A generic direct `.comap` proof term in `FreeCStarModel` caused Lean elaboration
   `whnf`/`isDefEq` heartbeat timeouts at 200k and 800k; this was an elaboration
   problem, not resource exhaustion. Explicit ambient parameters and direct

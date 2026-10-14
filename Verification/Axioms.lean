@@ -743,3 +743,9 @@ run_cmd do
 #print axioms FreeProbability.Fock.fullSecondQuantization_conj_annihilation
 #print axioms FreeProbability.Fock.fullSecondQuantization_conj_field
 #print axioms FreeProbability.Fock.fullSecondQuantization_vacuum_expectation
+#print axioms FreeProbability.norm_inverse_one_sub_sub_one_le
+#print axioms FreeProbability.ProbabilitySpace.norm_center_inverse_one_sub_le
+#print axioms FreeProbability.ProbabilitySpace.norm_center_inverse_one_sub_le_of_norm_le_half
+#print axioms FreeProbability.ProbabilitySpace.center_inverse_one_sub_smul_isBigO
+#print axioms FreeProbability.StarProbabilitySpace.norm_center_inverse_one_sub_le
+#print axioms FreeProbability.StarProbabilitySpace.norm_center_inverse_one_sub_le_of_norm_le_half

@@ -248,3 +248,16 @@ run_cmd do
 #print axioms FreeProbability.Fock.norm_semicircular_le_two
 #print axioms FreeProbability.Fock.isSelfAdjoint_semicircular
 #print axioms FreeProbability.Fock.vacuumState_semicircular_sq
+#print axioms FreeProbability.NoncrossingPartition.insertSingleton_rel_succAbove
+#print axioms FreeProbability.NoncrossingPartition.insertSingleton_rel_at
+#print axioms FreeProbability.NoncrossingPartition.erase_insertSingleton
+#print axioms FreeProbability.NoncrossingPartition.insertSingleton_erase
+#print axioms FreeProbability.NoncrossingPartition.singletonInsertionEquiv
+#print axioms FreeProbability.NoncrossingPartition.rel_iff_mem_block
+#print axioms FreeProbability.NoncrossingPartition.image_mem_blocks_insertSingleton
+#print axioms FreeProbability.NoncrossingPartition.blocks_insertSingleton
+#print axioms FreeProbability.orderedBlockWord_get
+#print axioms FreeProbability.orderedBlockWord_image
+#print axioms FreeProbability.orderedPartitionContribution_get
+#print axioms FreeProbability.orderedPartitionContribution_insertSingleton
+#print axioms FreeProbability.sum_orderedPartitionContribution_singleton

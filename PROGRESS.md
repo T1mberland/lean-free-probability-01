@@ -20,6 +20,7 @@ completion criterion.
 | `Algebraic.CumulantFreeness`, `Combinatorics.CumulantNaturality` | Vanishing mixed cumulants implies freeness; cumulants commute with expectation-preserving maps |
 | `Combinatorics.NoncrossingPairing` | Intrinsic two-element-block pairings, unique partners and their fixed-point-free involution, even size, and existence of an adjacent pair |
 | `Combinatorics.NoncrossingInterval` | Every equivalence class has a least representative; every nonempty noncrossing partition has an actual convex interval block, represented by inclusive endpoints |
+| `Fock.WordSpace`, `Fock.VacuumState` | Complete Hilbert word model, bounded isometric canonical creation and adjoint annihilation, operator-wide canonical relation, positive normalized vacuum state, self-adjoint centered candidates with variance one and norm at most two |
 | `Analytic.MomentSeries`, `Transform`, `ProjectionTransform`, `TransformNaturality` | Actual operator inverse and resolvent expectations, convergent moment power/Laurent expansions, analytic inverse moment and S-transforms, exact idempotent transform, scalar scaling, and equality of transform germs from common moments |
 | `Analytic.CauchyHalfPlane`, `CauchyNaturality`, `MomentConvergence` | Resolvent-set analyticity, strict upper-half-plane imaginary-part negativity, norm bounds, equality from moments at every nonreal argument for selfadjoint variables, and transform convergence under an eventual uniform source norm bound |
 | `Matrix.RankOneSecular`, `HermitianResolvent` | Exact secular and Sherman–Morrison identities; spectral resolvent expansions; positivity and monotonicity; rank-one norm thresholds; at most one exterior eigenvalue counted with multiplicity |
@@ -37,6 +38,21 @@ Representative declarations include:
 - `rankOne_norm_le_iff_resolvent_le`,
   `rankOne_exterior_eigenvalue_indices_subsingleton`, and
   `posSemidef_norm_mono`.
+
+## Fock construction checkpoint
+
+The word-space and vacuum-state modules are integrated, checked and published on
+`main` at `9f85ea8` (worker commits `778c6b0`, `6291082`). The audit covers 1039
+declarations. `Fock.annihilation_creation` is an equality of bounded operators,
+and `Fock.vacuumExpectation_star_mul_self` proves positivity as the actual squared
+norm of the vacuum image. The fourth vacuum moment two is a checked usage example.
+These results impose no finite/countable restriction on the generator type.
+
+General Hilbert-space tensor-power identification, arbitrary-vector creation,
+exact norm two, the full joint Wick law, freeness, and faithful tracial vacuum
+restriction on the generated algebra remain open. Polynomial Wick and right
+operator milestones are being developed separately; the vacuum state on all
+bounded operators is not claimed faithful or tracial.
 
 ## Haar probability and concentration
 

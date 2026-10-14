@@ -21,7 +21,7 @@ integration checkout passes the full build and audits.
 | Goal | Status | Earliest work and dependency |
 | --- | --- | --- |
 | 1. Cumulant calculus | Active; one implication already verified | Pairings, interval/deletion/insertion maps, unit insertion and adjacent products, then freeness implies mixed vanishing; Kreweras/lattice/product calculus remains |
-| 2. Full Fock systems | Active; no realization integrated yet | Complete word-Fock space, bounded creation/adjoints and canonical relations; general tensor-power identification, Wick, norm two, freeness and faithful tracial generated algebra follow |
+| 2. Full Fock systems | Active; concrete complete word model integrated | General tensor-power identification, joint Wick, norm two, freeness and faithful tracial generated algebra remain |
 | 3. Free integration by parts | Ready for algebraic groundwork | Polynomial tensor-bimodule derivations independent of Fock; semicircular integration-by-parts requires Wick recursion |
 | 4. Operator-valued Dyson | Blocked on semicircular realization | Completely positive covariance, amplified moments and Wick recursion precede Dyson and physical branch |
 | 5. Spectral edges | Blocked on goals 2, 4 and 6 | Faithful pencils and spectral/Dyson theory precede variational identity and certificates |
@@ -37,8 +37,8 @@ integration checkout passes the full build and audits.
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
 | Coordinator | `main`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/cumulant-characterization`, `/home/user/Projects/lean-fp-cumulants` | New cumulant-related `Combinatorics` and `Algebraic` files; existing `Algebraic/CumulantFreeness.lean` if needed | Intrinsic noncrossing pairings, partner involution, parity and adjacent pair; then missing calculus prerequisites |
-| Worker B (`fock`) | `feat/fock-semicircular`, `/home/user/Projects/lean-fp-fock` | New `Fock` and `Semicircular` files | Complete word-basis Hilbert Fock realization and bounded creation/annihilation |
+| Worker A (`cumulants`) | `feat/cumulant-characterization`, `/home/user/Projects/lean-fp-cumulants` | New cumulant-related `Combinatorics` and `Algebraic` files; existing `Algebraic/CumulantFreeness.lean` if needed | Singleton contribution transport and unit insertion, then adjacent products and reverse freeness |
+| Worker B (`fock`) | `feat/fock-semicircular`, `/home/user/Projects/lean-fp-fock` | New `Fock` and `Semicircular` files | Wick cyclicity, commuting right operators and generated-algebra faithfulness/traciality |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -93,6 +93,17 @@ integrated through `dd6d9bb`. Declarations:
 `NoncrossingPartition.exists_least_representative`, `.exists_interval_block`,
 and `.exists_Icc_block`. Full builds, direct audit and source guard pass for
 973 declarations. Worker A is pursuing restriction/deletion calculus next.
+
+### Checked integration checkpoint: word-Fock operators and vacuum state
+
+`9f85ea8` is checked and published on `main`; worker sources `778c6b0` and
+`6291082` were integrated through `68eeebb` and `a87b51f`. The modules
+`Fock.WordSpace` and `Fock.VacuumState` prove the operator canonical relation,
+positive normalized vacuum state, creation/annihilation norm one, selfadjointness,
+centering, covariance and semicircular norm at most two. Full builds, direct audit
+and source guard pass for 1039 declarations. A fourth-moment-two example is
+checked without assuming a full distribution. Generated trace/faithfulness,
+freeness, exact norm two and general tensor identification are not yet integrated.
 
 ### Independent spectral-measure proof path
 

@@ -40,15 +40,18 @@ source-integrity guard and diff before committing and publishing this correction
 The combined source verifies the actual identity
 `-Im(m(z)) = Im(z) * E(R(z) * R(z)^*)` and upper-half-plane positive semidefiniteness.
 Integrating `8775e6e` requires `efc7f32` and renewed integration checks.
-Strict positive definiteness and physical analytic branch uniqueness remain open.
+Strict positive definiteness was subsequently verified in `2517611` and `aa623b8`: actual inverse matrices have strictly positive vacuum Gram forms by injectivity on finite vacuum vectors, with no faithfulness assumption on all bounded operators. The genuine affine matrix Cauchy transform consequently has strictly negative Hermitian imaginary part throughout the upper half-plane. Physical analytic branch uniqueness remains open.
 
 ## Next dependencies
 
-1. Strict positive definiteness of the imaginary part for actual inverse matrices.
-2. Matrix upper-half-plane argument invertibility and analytic branch uniqueness,
+1. Actual matrix Cauchy analyticity on the true resolvent domain and decay at infinity.
+2. Matrix upper-half-plane argument invertibility and physical analytic branch uniqueness,
    beyond an invertibility-conditioned Dyson identity.
-3. Compatibility with the generated closed matrix C-star model and analytic norm
-   bounds required by general interfaces.
+3. Real exterior resolvent guarantees, compatibility with the generated closed matrix C-star model and analytic norm
+   bounds required by general interfaces. Norm choices must be explicit: entry bounds
+   give contractivity into the elementwise supremum norm, whereas a row operator
+   norm incurs dimension factors and full C-star matrix contractivity requires an
+   actual unital completely positive argument.
 4. General arbitrary-base completely positive covariance realization.
 
 ## Proof engineering observations

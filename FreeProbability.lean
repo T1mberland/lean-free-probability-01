@@ -255,3 +255,5 @@ import FreeProbability.OperatorValued.MatrixEdgeVariational
 import FreeProbability.OperatorValued.MatrixEdgeStateBounds
 import FreeProbability.OperatorValued.MatrixEdgeDensityBounds
 import FreeProbability.OperatorValued.MatrixCauchySpectralBounds
+import FreeProbability.Algebraic.FreenessClosure
+import FreeProbability.Algebraic.FreenessClosureResolvent

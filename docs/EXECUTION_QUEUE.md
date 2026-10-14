@@ -18,9 +18,9 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `51319110b83751d612d56a8749eb8be07d66ef7c`,
-published on main through [PR #15](https://github.com/T1mberland/lean-free-probability-01/pull/15).
-Full builds 3663/3666, direct transitive audit 3784 declarations and source guard pass.
+Latest checked integration: `95c414cd826de444bf47f8769a0b615794c40e75`,
+published on main through [PR #16](https://github.com/T1mberland/lean-free-probability-01/pull/16).
+Full builds 3664/3667, direct transitive audit 3794 declarations and source guard pass.
 Goals 1, 2, 3 and 6 are certified complete; seven full goals remain open.
 Every historical checkpoint below retains its original scope and date.
 
@@ -30,7 +30,7 @@ Every historical checkpoint below retains its original scope and date.
 | 2. Full Fock systems | Complete on checked main `68de4fe`, PR #5 | Arbitrary H/ON family, literal completed tensors, faithful tracial generated state, joint Wick and actual spectral law |
 | 3. Free integration by parts | Complete on checked main `5706254`, PR #11 | Actual scalar/matrix polynomial FDQ, entire exponential, whole polynomial-resolvent domain and norm-analytic series with explicit bounds |
 | 4. Operator-valued Dyson | Actual finite-matrix model, Wick, Dyson and physical theory integrated | General arbitrary-base CP covariance realization and entrywise-model comparison remain |
-| 5. Spectral edges | Actual core variational equality, state/density bounds and exterior derivative/Lyapunov integrated | Actual exterior spectral bounds in progress; quantitative finite-depth Fock approximation, singular limits and deterministic edge subspaces remain |
+| 5. Spectral edges | Actual core variational equality, state/density bounds and exterior derivative/Lyapunov integrated | Actual exterior spectral-gap bounds integrated; quantitative finite-depth Fock approximation, singular limits and deterministic edge subspaces remain |
 | 6. Spectral distributions | Complete on checked main `427f72b`, PR #2 | Actual compact laws/CFC/support/Cauchy/moment compatibility and bounded weak/Cauchy convergence |
 | 7. Multiplicative convolution | Projection law/germ integrated; generic positive-pair path ready | Positive sandwich law and cyclic moments, normclosure freeness, centered-resolvent analytic S multiplication; arbitrary-law realizations and projection-product support remain |
 | 8. Conditional subordination | Noncommutative L² and Goal 7 dependencies open | Normal conditional expectations, analytic subordination, exterior continuation and projection specialization |
@@ -1366,3 +1366,34 @@ m<=I and m^-1>=I simultaneously, with domain proved and no radius premise.
 B creator/adjoint checkpoint `a714b43` published, independently queued for review
 and integration; Γ(U) now acts on every completed vector, transported actual FullFock.
 Functor/composition and vacuum expectation interfaces remain active worker tasks.
+
+### Checked actual spectral-gap PR and generic closure integration
+
+PR #16 merged head `7f58b65` as `95c414cd826de444bf47f8769a0b615794c40e75`.
+Main full 3664, Verification 3667, direct audit 3794 and source guard pass.
+Worker closure source `9409551` preserved with original history. Generic theorem
+uses only a T2 topological field, topological ring algebra, continuous scalar
+action and continuous expectation. A itself need not be T2; scalar zero is closed.
+Finite tuples center independently, exact alternating word order is recovered
+by ofFn/get; repeated nonadjacent labels are allowed. Forward closure freeness and
+reverse monotonicity give equivalence. Independent mathematical review approves.
+C-star probability usage automatically discharges continuity via positivity.
+Next exclusive A file FreenessClosureResolvent*.lean proves genuine near-zero
+Neumann-inverse membership and actual alternating centered inverse products.
+An arbitrary closed complex Banach subalgebra is NOT assumed inverse-closed on
+the whole ambient resolvent set; norm-small Neumann domain suffices for the germ.
+
+Actual nearidentity membership/centered alternating inverse worker `bebd9c4` is
+now included in the closure PR, preserving its history. Norm-domain q<1 is
+explicit and actual geometric partial sums give actual Ring.inverse membership.
+No NormOne, positivity or traciality assumptions are needed in this Banach API.
+Both new statements independently reviewed; concrete two-inverse centered
+factorization checks the original product order on explicit Neumann domains.
+Next A bound file derives actual inverse-minus-identity and centering estimates
+for analytic-germ convergence, not arbitrary-point inverse permanence.
+
+Combined closure + actual Neumann feature passes full build 3666, Verification
+3669, direct transitive audit 3802 and source guard. Concrete C-star continuity
+application and two-variable actual inverse centered factorization both compile.
+New generic inverse remainder and centered O(z) bounds `68a4488` are published
+but NOT in this PR; review and independent integration are queued separately.

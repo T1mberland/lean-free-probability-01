@@ -716,3 +716,8 @@ run_cmd do
 #print axioms FreeProbability.Fock.operatorMatrixPencilCauchy_le_inverse_edge_gap
 #print axioms FreeProbability.Fock.operatorMatrixPencilCauchy_posDef_and_le_inverse_edge_gap
 #print axioms FreeProbability.Fock.operatorMatrixPencilCauchy_inverse_ge_edge_gap
+#print axioms FreeProbability.FreelyIndependent.centered_ofFn_topologicalClosure
+#print axioms FreeProbability.FreelyIndependent.topologicalClosure
+#print axioms FreeProbability.FreelyIndependent.topologicalClosure_iff
+#print axioms FreeProbability.inverse_one_sub_smul_mem_topologicalClosure
+#print axioms FreeProbability.FreelyIndependent.centered_inverse_ofFn_eq_zero

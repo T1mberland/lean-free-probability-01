@@ -409,4 +409,31 @@ example {I n : Type*} [Fintype I] [Fintype n] [DecidableEq n] [Nonempty n]
   rw [hgap] at hu hl
   exact ⟨hp, by simpa using hu, by simpa using hl⟩
 
+-- Positivity in a C-star state supplies the continuity needed for closure
+-- freeness; no separate continuity premise is imposed on this use.
+example {A I : Type*} [CStarAlgebra A] [PartialOrder A] [StarOrderedRing A]
+    (φ : StarProbabilitySpace A) (B : I → Subalgebra ℂ A)
+    (hf : FreelyIndependent φ.toProbabilitySpace B) :
+    FreelyIndependent φ.toProbabilitySpace (fun i => (B i).topologicalClosure) :=
+  hf.topologicalClosure φ.continuous_expectation
+
+-- The actual inverses of two free variables satisfy centered factorization
+-- on their explicit Neumann domains.
+example {𝕜 A I : Type*} [NormedField 𝕜] [NormedRing A] [NormedAlgebra 𝕜 A]
+    [CompleteSpace A] (φ : ProbabilitySpace 𝕜 A) (hφ : Continuous φ.expectation)
+    (B : I → Subalgebra 𝕜 A) (hf : FreelyIndependent φ B)
+    (i j : I) (hij : i ≠ j) (a b : A) (ha : a ∈ B i) (hb : b ∈ B j)
+    (z w : 𝕜) (hz : ‖z • a‖ < 1) (hw : ‖w • b‖ < 1) :
+    φ.expectation (φ.center (Ring.inverse (1 - z • a)) *
+      φ.center (Ring.inverse (1 - w • b))) = 0 := by
+  have h := hf.centered_inverse_ofFn_eq_zero hφ (n := 2) (by norm_num)
+    ![i, j] (by
+      intro k hk
+      have hk0 : k = 0 := by omega
+      subst k
+      simpa using hij)
+    ![a, b] (by intro k; fin_cases k <;> simp [ha, hb])
+    ![z, w] (by intro k; fin_cases k <;> simp [hz, hw])
+  simpa [List.ofFn_succ] using h
+
 end FreeProbability.Examples

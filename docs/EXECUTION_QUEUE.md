@@ -18,7 +18,7 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `9148022d6f19f95820ca57bcf5b4f81a0cc4d122`,
+Latest checked integration: `da78dfa1b1e5f7770f13a9fce05045bfe738633f`,
 published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
 and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
 Corrected WOT-generated PR #35 passes full builds 3745/3748, direct transitive audit
@@ -2257,3 +2257,28 @@ preservation/normality. Full goals4,5,8,9,10,11 remain open.
 Feature integration checks: full3797, Verification3800, transitive5857, source
 integrity and diff pass. New ON-family whole-algebra faith/trace focused build
 and individual standard-axiom audits pass; no new full goal is certified.
+
+### Literal OU double-commutant range integration
+
+PR46 checked main `da78dfa1b1e5f7770f13a9fce05045bfe738633f` passes full3797,
+Verification3800, transitive5857, source/diff and push. Actual ON-family faithful
+tracial whole-algebra vacuum is now integrated, not merely a feature result.
+Reviewed B suffix defect chain9fd86f9..7938b23 and range chainb4dd72f..5143895
+with exact notesb21b90c/40b7334 are assembled here: unconditional all-vector
+creator/annihilator/field defects, specified-family suffix commutation, literal
+rotated double-centralizer compression range, genuine all-matrix CP, unital
+norm contraction, vacuum preservation, nonnegative time specialization and
+time zero for every bounded operator. Actual WOT continuity is asserted on
+each uniform operator-norm ball; no unrestricted WOT continuity is claimed.
+Main declarations: ouDoubleCommutantRaw_mem_familyDoubleCentralizer,
+ouDoubleCommutantRawCP_mem_familyDoubleCentralizer,
+ouDoubleCommutantTimeCP_zero and_boundedWOT_continuous.
+No ON assumption is needed for range in the prescribed-field algebra.
+Whole-algebra composition and directed positive sup normality remain separate.
+B published all-vector vacuum damping05cdeaf, awaiting review/integration, and
+is proving ON-family whole-algebra composition using the checked faithful
+vacuum. A406b97a has actual eventual uniform O(1/N) rescaled Weingarten entry
+error, awaiting integration. All goals statuses remain five complete/six open.
+
+Range feature checks pass: full3808, Verification3811, directtransitive5983,
+source integrity/diff. All eleven source modules reviewed, no new full goal.

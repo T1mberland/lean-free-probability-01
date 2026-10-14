@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `8231e13` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 4208 declarations.
+The latest checked and published integration is `4c9b9f2` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 4330 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -240,7 +240,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 4208 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 4330 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -399,3 +399,21 @@ the native tensor-family vacuum state is faithful and tracial for every ON famil
 without spanning, countability or nontriviality assumptions. The generated-algebra
 star equivalence preserves the actual state, generators and operator norm.
 Faithfulness is asserted only for this generated algebra.
+
+### Actual finite positive and projection-product law integration feature
+
+Native-family coherence PR #25 merged as `4c9b9f2`, checked full3704,
+Verification3707, direct audit4330 and source guard. Eight reviewed projection
+modules and design notes through `999c240` are now assembled separately.
+Actual CFC square roots lie in the closed generated algebras. Arbitrary grouping
+supplies every prefix-versus-last freeness step from the original free family.
+The actual iterated positive sandwich has first moment equal to the product of
+marginal means, and its selected S germ is the product of marginal S germs.
+For half projections the actual S germ is `((1+w)/(1/2+w))^n`, and the selected
+inverse moment germ is its product with `w/(1+w)`, including empty families.
+The genuine compact positive product law is determined by marginal laws even
+across different ambient algebras. Half-projection laws depend only on the number
+of factors among given free realizations. Projection support lies in [0,1].
+No nonzero-mean or faithfulness assumption is needed for law uniqueness.
+The sharper lambda_L support edge and global physical branch remain unproved;
+these actual local germs and elementary support bounds do not complete Goal 7.

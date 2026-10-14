@@ -18,18 +18,19 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `e54c402`, published on `main`, with full builds,
-source guard and transitive audit passing for 1481 declarations. Genuine
+Latest checked integration: `648a7d6`, published on `main`, with full builds,
+source guard and transitive audit passing for 1684 declarations. Genuine
 polynomial and closed-generator freeness is integrated in the faithful tracial
 C-star model. The all-order adjacent-product cumulant theorem and full freeness
-characterization are integrated. Joint Wick/Catalan and algebraic
-free-CLT milestones are published and queued for review/integration.
+characterization are integrated. Joint Wick/Catalan and all-degree word IBP are integrated. Algebraic free CLT
+is undergoing integration; full refinement/Möbius and all-vector creation are
+published and reviewed, queued for integration.
 
 | Goal | Status | Earliest work and dependency |
 | --- | --- | --- |
-| 1. Cumulant calculus | Active; one implication and unit/scalar calculus integrated | Adjacent-product contraction fibers, then freeness implies mixed vanishing; pairing decomposition, Kreweras and Möbius/product calculus remains |
-| 2. Full Fock systems | Active; faithful tracial C-star word model with exact norm two integrated | Integrate published freeness; general tensor-power identification, joint Wick, Catalan and spectral law remain |
-| 3. Free integration by parts | Active proof path selected | Right-annihilation vacuum-boundary commutator and telescoping word recursion; polynomial tensor-bimodule derivation bundling and matrix/analytic extensions remain |
+| 1. Cumulant calculus | Active; core iff and adjacent/unit/scalar calculus integrated | Integrate full refinement/Möbius; multi-product calculus and Kreweras remain |
+| 2. Full Fock systems | Active; faithful tracial C-star word model with exact norm two integrated | Freeness, literal joint Wick and Catalan integrated; integrate arbitrary-vector creation, then completed tensor identification and spectral law |
+| 3. Free integration by parts | Active proof path selected | All-degree actual word IBP integrated; polynomial tensor-bimodule derivation bundling and matrix/analytic extensions remain |
 | 4. Operator-valued Dyson | Blocked on semicircular realization | Completely positive covariance, amplified moments and Wick recursion precede Dyson and physical branch |
 | 5. Spectral edges | Blocked on goals 2, 4 and 6 | Faithful pencils and spectral/Dyson theory precede variational identity and certificates |
 | 6. Spectral distributions | Independent research ready | Continuous functional calculus and positive-functional representation precede spectral measure and faithful support identification |
@@ -37,7 +38,7 @@ free-CLT milestones are published and queued for review/integration.
 | 8. Conditional subordination | Blocked on goals 6 and 7 and noncommutative L² | Normal conditional expectations, analytic subordination, then exterior continuation and projection specialization |
 | 9. Haar freeness | Independent algebraic groundwork ready | Haar-unitary star law and free conjugation; general orthogonal pairing integration precedes asymptotic trace estimates |
 | 10. OU and entropy | Blocked on Wick and tracial realization | Wick basis/contractions, completely positive second quantization, normal noncommutative Lᵖ and entropy precede dimension-independent bound |
-| 11. Follow-up milestones | Open; select after prerequisites | Positive free products, R-additivity/CLT, operator-valued cumulants, annular and genus theory have separate dependencies |
+| 11. Follow-up milestones | Active; formal R and algebraic CLT undergoing integration | Positive free products, R-additivity/CLT, operator-valued cumulants, annular and genus theory have separate dependencies |
 
 ## Active assignments and isolation
 
@@ -303,3 +304,29 @@ moment usage. Main integration remains pending. The single
 pinned Catalan mathlib cache artifact was reused from the isolated worker cache;
 no dependency revision or toolchain changed. Spectral density identification,
 polynomial tensor derivative packaging and general tensor identification remain.
+
+### Checked integration checkpoint: genuine Wick and Catalan law
+
+`648a7d6` is checked and published on `main`; previous pending mappings are now
+integrated. Full build 3451 jobs, Verification 3454 jobs, direct transitive audit
+1684 declarations, source guard and sixth-moment-five example pass. The literal
+joint noncrossing-pairing formula and actual one-generator Catalan moments hold
+in the constructed faithful tracial C-star model. Spectral measure/density
+identification remains open. Word IBP is genuine, but full tensor derivative
+and matrix/analytic Goal 3 statements are not claimed complete.
+
+### Pending integration: formal R and algebraic free CLT
+
+Sources/integration mappings: `5b65e83`→`e387fae`, `e405d98`→`ab1414b`,
+`5a57e0e`→`fdd8a87`, `b0a7b1c`→`8b9f0a1`, `d38b5b7`→`33fbaf8`,
+`d939ad4`→`35ab4c4`, `fb0b4ca`→`bfbfa6a`, `edc1176`→`d8b2c5b`,
+`38756c4`→`41ac34c`, `aab1feb`→`3193dd5`. Finite free sums give all-order
+cumulant additivity; the R transform is explicitly formal. All moment/cumulant
+limits hold for genuine centered iid free triangular arrays over RCLike scalars
+with arbitrary varying ambient algebras. Explicit pairing-moment limits require
+no limiting realization; polynomial/star-distribution corollaries require an
+actual supplied semicircular-cumulant target and star selfadjointness where
+appropriate. No uniform norm bound, spectral convergence or strong convergence
+is introduced. Read-only mathematics review and global name scan approved;
+combined checks pass: full build 3467 jobs, Verification 3470 jobs,
+direct transitive audit 1736 declarations and source guard. Main integration pending.

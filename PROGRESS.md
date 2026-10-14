@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `e54c402` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 1481 declarations.
+The latest checked and published integration is `648a7d6` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 1684 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -75,9 +75,17 @@ usage examples.
 Exact norm two and explicit C-star-model compatibility (`f881b61`, `7310a7b`) are
 integrated at `2058aab`. Genuine polynomial/closed-marginal freeness and its
 faithful-C-star-ambient bridge (`7350c11`, `54fde61`, `de87f86`) are integrated at `041906e`, including repeated nonadjacent colors. The full
-joint noncrossing Wick formula and Catalan moments are undergoing integration. The spectral law, arbitrary-vector creation and general completed
+joint noncrossing Wick formula and Catalan moments are integrated at `648a7d6`. The spectral law, arbitrary-vector creation and general completed
 Hilbert tensor-power identification remain open. None of the eleven full goals is
 declared complete by these supporting results.
+
+Formal R-transform additivity/scaling and the algebraic free CLT are published
+and undergoing integration. The CLT gives explicit pairing-moment limits for
+centered identically distributed free triangular arrays over real or complex
+scalars, allowing varying ambient algebras. Convergence to a supplied
+semicircular-cumulant realization is conditional on that realization; no norm
+or spectral convergence is claimed. Analytic R-transform identification remains
+separate from the formal series theorem.
 
 ## Haar probability and concentration
 
@@ -135,7 +143,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 1481 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 1684 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

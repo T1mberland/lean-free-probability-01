@@ -104,3 +104,16 @@ import FreeProbability.Combinatorics.NoncrossingPairingWeights
 import FreeProbability.Combinatorics.NoncrossingPairingCatalan
 import FreeProbability.Fock.WickFormula
 import FreeProbability.Fock.CatalanMoments
+import FreeProbability.Algebraic.CumulantAdditivity
+import FreeProbability.Algebraic.FormalRTransform
+import FreeProbability.Combinatorics.CumulantConvergence
+import FreeProbability.Algebraic.SemicircularCumulants
+import FreeProbability.Algebraic.UnivariateCumulant
+import FreeProbability.Algebraic.CumulantFreeSums
+import FreeProbability.Combinatorics.PairingCumulantShape
+import FreeProbability.Algebraic.CumulantFreeCLT
+import FreeProbability.Combinatorics.NoncrossingSmall
+import FreeProbability.Algebraic.CumulantLowOrder
+import FreeProbability.Algebraic.CumulantFreeCLTVariance
+import FreeProbability.Algebraic.CumulantRCLikeFreeCLT
+import FreeProbability.Algebraic.CumulantFreeCLTDistribution

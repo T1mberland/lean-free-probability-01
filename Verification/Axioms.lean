@@ -384,3 +384,15 @@ run_cmd do
 #print axioms FreeProbability.Fock.closedGeneratedVacuumState_joint_free_wick
 #print axioms FreeProbability.Fock.closedGeneratedVacuumState_even
 #print axioms FreeProbability.Fock.closedGeneratedVacuumState_odd
+#print axioms FreeProbability.FreelyIndependent.cumulant_ofFn_sum
+#print axioms FreeProbability.FreelyIndependent.cumulant_replicate_sum
+#print axioms FreeProbability.FreelyIndependent.formalRTransform_sum
+#print axioms FreeProbability.formalRTransform_smul
+#print axioms FreeProbability.powerMoments_tendsto_iff_cumulants
+#print axioms FreeProbability.HasSemicircularCumulants.expectation_pow
+#print axioms FreeProbability.FreelyIndependent.cumulant_replicate_scaled_sum
+#print axioms FreeProbability.freeCLT_pairingMoments
+#print axioms FreeProbability.freeCLT_pairingMoments_variance
+#print axioms FreeProbability.freeCLT_pairingMoments_rclike
+#print axioms FreeProbability.freeCLT_convergesInDistribution
+#print axioms FreeProbability.freeCLT_convergesInStarDistribution

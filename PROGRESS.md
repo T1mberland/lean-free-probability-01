@@ -102,6 +102,13 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 
 ## Next mathematical priorities
 
+The current assignments, integration hashes, design decisions and execution queue
+are maintained in [docs/EXECUTION_QUEUE.md](docs/EXECUTION_QUEUE.md). The verified
+starting snapshot was published as `faf32e8` on `main` and
+`feat/verified-baseline` in `T1mberland/lean-free-probability-01`. The integration
+build and audits still pass for 954 declarations. Cumulant/pairing and Fock workers
+have isolated worktrees; their active tasks are not yet integrated results.
+
 1. Complete cumulant calculus: refinement and interval-block combinatorics, unit
    insertion, adjacent products, and freeness implies vanishing mixed cumulants.
 2. Construct full Fock space, bounded creation operators, semicircular systems,

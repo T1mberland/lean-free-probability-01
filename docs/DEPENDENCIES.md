@@ -4,6 +4,9 @@ Targets are the concrete theorems in [PROJECT_GOAL.md](PROJECT_GOAL.md). This au
 compares actual existing declarations with those targets. Open entries are
 obligations, not assumptions that count as established results.
 
+See [EXECUTION_QUEUE.md](EXECUTION_QUEUE.md) for current isolated worker
+assignments, verification checkpoints, design decisions and successive tasks.
+
 ## Audit of the eleven goals
 
 | Goal | Existing reusable results | Earliest missing dependencies and remaining target |

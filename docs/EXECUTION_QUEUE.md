@@ -18,9 +18,9 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `68de4fe`, published on `main` through
-[PR #5](https://github.com/T1mberland/lean-free-probability-01/pull/5). Full builds
-3594/3597 jobs, source guard and transitive audit of 2913 declarations pass.
+Latest checked integration: `a1f942b`, published on `main` through
+[PR #6](https://github.com/T1mberland/lean-free-probability-01/pull/6). Full builds
+3612/3615 jobs, source guard and transitive audit of 3029 declarations pass.
 Goals 1, 2 and 6 are certified complete; eight full goals remain open. Actual
 matrix covariance/Wick/recursion and entire exponential IBP are published and
 queued for sequential integration. Historical checkpoints retain their scope.
@@ -973,3 +973,30 @@ Pauli covariance and ordered fourth-moment usage kernel-compile. The fourth
 moment simplifier required retaining the covariance linear-map head; expanded
 map-sum normal forms were mathematically equal but syntactically different.
 No statement or proof requirement was weakened. Main integration pending.
+
+### Checked PR integration: actual matrix covariance/Wick/recursion
+
+[PR #6](https://github.com/T1mberland/lean-free-probability-01/pull/6) merged
+head `4a91c65` as `a1f942b`. Main full build 3612, Verification 3615,
+direct audit 3029 declarations and source guard pass. Both concrete Pauli
+and generic fourth-moment usage pass. Goal 4 remains open as specified above.
+
+### Pending PR: actual projection probability law
+
+Coordinator source `c49bb0d` proves actual spectral concentration on {0,1},
+exact ENNReal-weighted Dirac decomposition and identification of the mass at
+one with the original state expectation. Finite probability masses give
+alpha=Re(phi(p)) in [0,1], hence the actual law
+`(1-alpha) delta0 + alpha delta1`. No Bernoulli law, faithfulness or trace is
+assumed. Generic `measure_eq_two_dirac_of_concentration` works even without
+finiteness, given distinct measurable singleton points. The existing analytic
+idempotent S germ is rewritten with the same real trace parameter under its
+precise nonzero-first-moment domain. This proves the projection piece of Goal 7,
+not free-positive convolution, S multiplication or the product spectral edge.
+Read-only review approves all eight statements, with no collisions. Full build
+3613 jobs, Verification 3616, direct audit 3038 declarations and source guard
+pass. The half-trace two-atom usage kernel-compiles. Main integration pending.
+Important proof choices: first power integral determines actual weights;
+measure order bounds use pointwise ENNReal add positivity (Measure has no
+CanonicallyOrderedAdd instance); native let-bound measures are rewritten through
+explicit equality types. No theorem statements were weakened.

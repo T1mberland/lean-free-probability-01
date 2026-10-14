@@ -619,3 +619,11 @@ run_cmd do
 #print axioms FreeProbability.Fock.closedMatrixMoment_recursion
 #print axioms FreeProbability.Fock.closedMatrixMoment_zero
 #print axioms FreeProbability.Fock.closedMatrixMoment_one
+#print axioms FreeProbability.measure_eq_two_dirac_of_concentration
+#print axioms FreeProbability.spectralMeasure_projection_concentration
+#print axioms FreeProbability.spectralMeasure_projection_atoms
+#print axioms FreeProbability.projection_expectation_eq_mass_one
+#print axioms FreeProbability.spectralMeasure_projection_real_mass_sum
+#print axioms FreeProbability.projection_expectation_re_mem_Icc
+#print axioms FreeProbability.spectralMeasure_projection
+#print axioms FreeProbability.projection_sTransform_eventually

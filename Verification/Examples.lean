@@ -226,4 +226,14 @@ example {I n : Type*} [Fintype I] [Fintype n] [DecidableEq n]
   simpa [Finset.sum_range_succ, h2, -matrixCovariance_apply] using
     Fock.closedMatrixMoment_recursion C 3
 
+/-- The half-trace projection's actual law is the equal two-atom probability. -/
+example {A : Type*} [CStarAlgebra A] [PartialOrder A] [StarOrderedRing A]
+    (φ : StarProbabilitySpace A) {p : A} (hp : IsSelfAdjoint p)
+    (hpi : IsIdempotentElem p) (hα : φ.expectation p = (1 / 2 : ℂ)) :
+    spectralMeasure φ hp =
+      ENNReal.ofReal (1 / 2 : ℝ) • MeasureTheory.Measure.dirac 0 +
+        ENNReal.ofReal (1 / 2 : ℝ) • MeasureTheory.Measure.dirac 1 := by
+  rw [spectralMeasure_projection φ hp hpi, hα]
+  norm_num
+
 end FreeProbability.Examples

@@ -18,8 +18,8 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `5c2e9cb`, published on `main`, with full builds,
-source guard and transitive audit passing for 2083 declarations. Genuine
+Latest checked integration: `ea6149a`, published on `main`, with full builds,
+source guard and transitive audit passing for 2146 declarations. Genuine
 polynomial and closed-generator freeness is integrated in the faithful tracial
 C-star model. The all-order adjacent-product cumulant theorem and full freeness
 characterization are integrated. Joint Wick/Catalan and all-degree word IBP are integrated. Formal R-additivity and algebraic free CLT
@@ -28,29 +28,30 @@ Hilbert-basis transport, complete length decomposition and tensor completion
 are integrated through completed ℓ²(I) tensor levels. Original-H tensor coherence and the unconditional general-H full-Fock
 package are integrated. Explicit tensor-power presentation/operator transport,
 general interval products and Kreweras are published and queued. Coordinator
-polynomial/matrix IBP is undergoing integration.
+polynomial/matrix IBP is integrated. Generic interval products, Kreweras
+maximal complement and free alternating-moment formula are undergoing integration.
 
 | Goal | Status | Earliest work and dependency |
 | --- | --- | --- |
-| 1. Cumulant calculus | Active; core iff and adjacent/unit/scalar calculus integrated | Full refinement/Möbius integrated; multi-product calculus and Kreweras remain |
-| 2. Full Fock systems | Active; faithful tracial C-star word model with exact norm two integrated | Freeness, literal joint Wick and Catalan integrated; integrate arbitrary-vector creation, then completed tensor identification and spectral law |
-| 3. Free integration by parts | Active proof path selected | All-degree actual word IBP integrated; polynomial tensor-bimodule derivation bundling and matrix/analytic extensions remain |
+| 1. Cumulant calculus | Active; core iff and adjacent/unit/scalar calculus integrated | Full refinement/Möbius integrated; generic interval products/Kreweras moments undergoing integration; boxed product cumulants and rotation/block counts remain |
+| 2. Full Fock systems | Active; faithful tracial C-star word model with exact norm two integrated | General-H full Fock and vector creation integrated; explicit tensor-sum operators/state/law published; spectral law remains |
+| 3. Free integration by parts | Active proof path selected | Actual polynomial tensor derivative/Leibniz and polynomial/matrix IBP integrated; analytic extensions remain |
 | 4. Operator-valued Dyson | Blocked on operator-valued realization | Completely positive covariance, amplified moments and Wick recursion precede Dyson and physical branch |
 | 5. Spectral edges | Blocked on goals 2, 4 and 6 | Faithful pencils and spectral/Dyson theory precede variational identity and certificates |
-| 6. Spectral distributions | Independent research ready | Continuous functional calculus and positive-functional representation precede spectral measure and faithful support identification |
+| 6. Spectral distributions | Active worker B | Continuous functional calculus and positive-functional representation precede spectral measure and faithful support identification |
 | 7. Multiplicative convolution | Blocked on goals 1, 2 and 6 | Positive realizations, S-transform multiplication and actual spectral laws; rational critical-point computations are supporting special cases |
 | 8. Conditional subordination | Blocked on goals 6 and 7 and noncommutative L² | Normal conditional expectations, analytic subordination, then exterior continuation and projection specialization |
 | 9. Haar freeness | Independent algebraic groundwork ready | Haar-unitary star law and free conjugation; general orthogonal pairing integration precedes asymptotic trace estimates |
 | 10. OU and entropy | Wick/tracial prerequisites integrated; OU construction ready | Wick basis/contractions, completely positive second quantization, normal noncommutative Lᵖ and entropy precede dimension-independent bound |
-| 11. Follow-up milestones | Active; formal R and algebraic CLT integrated | Positive free products, R-additivity/CLT, operator-valued cumulants, annular and genus theory have separate dependencies |
+| 11. Follow-up milestones | Active; formal R and algebraic CLT integrated | Formal R and moment CLT with actual unitvariance target integrated; positive free products, analytic convolution, operator-valued/annular/genus theory remain |
 
 ## Active assignments and isolation
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
 | Coordinator | `main`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/cumulant-characterization`, `/home/user/Projects/lean-fp-cumulants` | New cumulant-related `Combinatorics` and `Algebraic` files except B's three reserved pairing files; coordinator owns the existing `CumulantFreeness.lean` header | Generic interval products and Kreweras published; interleaving factorization and multiplicative moment calculus |
-| Worker B (`fock`) | `feat/fock-semicircular`, `/home/user/Projects/lean-fp-fock` | New `Fock`/`Semicircular` files and exclusively `Combinatorics/NoncrossingPairingDecomposition.lean`, `NoncrossingPairingWeights.lean`, `NoncrossingPairingCatalan.lean` | Tensor powers/direct-sum unitary and tensor operators published; selected tensor-domain semicircular state and Wick transport |
+| Worker A (`cumulants`) | `feat/cumulant-characterization`, `/home/user/Projects/lean-fp-cumulants` | New cumulant-related `Combinatorics` and `Algebraic` files except B's three reserved pairing files; coordinator owns the existing `CumulantFreeness.lean` header and polynomial FDQ/IBP files | Generic interval products and Kreweras published; interleaving factorization and multiplicative moment calculus |
+| Worker B (`fock`) | `feat/spectral-measures`, `/home/user/Projects/lean-fp-fock` | Current new `Analytic/SpectralMeasure*.lean`; completed Fock checkpoint on `feat/fock-semicircular`, pairing files owned exclusively: `Combinatorics/NoncrossingPairingDecomposition.lean`, `NoncrossingPairingWeights.lean`, `NoncrossingPairingCatalan.lean` | Tensor-domain faithful tracial C-star/Wick published; new feat/spectral-measures for actual spectral measures |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -497,3 +498,39 @@ extensions, especially exponential/resolvent domains, remain Goal 3 obligations.
   accepts only elementary/addition cases. No deprecated induction was retained.
 - StarSubalgebra inclusion `.val` may simplify to `.subtype`; explicit map
   equations/pointwise proofs avoided inappropriate rewrite matching.
+
+### Checked integration checkpoint: polynomial and matrix IBP
+
+`ea6149a` is checked and published on `main`; coordinator sources listed above
+are integrated. Full build 3488 jobs, Verification 3491 jobs, direct audit 2146
+declarations, source guard and a noncommutative repeated-letter derivative usage
+pass. The polynomial and rectangular matrix subtargets of Goal 3 are complete;
+analytic exponential/resolvent extensions remain open with explicit domains.
+
+### Pending integration: generic grouping and Kreweras moments
+
+Sources/integration mappings: `670aae1`→`242e414`, `83574f9`→`8e3dd1f`,
+`a1c2613`→`96fb920`, `65dce9c`→`cf12051`, `4b4cffe`→`c6c9384`,
+`7b8bfb6`→`cd00b5a`, `4fd1146`→`3ac4d5c`, `dc1a0dc`→`f4faa97`.
+Every monotone surjective finite quotient is realized by a fusion plan and its
+outputs equal literal sorted fiber products. `cumulant_intervalProducts_top`
+is the independently specified arbitrary consecutive-grouping theorem, with
+no plan witness assumed. Genuine right Kreweras construction/maximality has
+exact alternating interleave NC iff q ≤ K(p), antitonicity and endpoints.
+Parity partition classification and actual-block factorization imply
+`FreelyIndependent.expectation_eq_kreweras_sum` for all alternating tuples
+from two free algebras, including order zero; no positivity/trace/centering
+assumptions. Mathematical reviews and global name scans approved; combined
+checks pass: full build 3496 jobs, Verification 3499 jobs, direct audit 2266
+declarations and source guard. Main integration pending. K² rotation, complementary block counts and product-cumulant
+boxed convolution/analytic S-transform remain separately unproved.
+
+### Next independent work
+
+Worker B published the complete tensor-domain checkpoint through `f1657b9`.
+Goal 6 now uses exclusive new `Analytic/SpectralMeasure*.lean` files on a focused
+`feat/spectral-measures` branch based on checked main, retaining the isolated
+worktree/cache. Targeted pinned RealRMK cache hydration is authorized when absent.
+Worker A continues Kreweras product-cumulant combinatorics in its exclusive files.
+Coordinator integrates sequentially, then selects analytic IBP extensions or
+free-CLT variance scaling; reviewer remains read-only.

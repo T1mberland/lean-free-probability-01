@@ -1114,3 +1114,10 @@ run_cmd do
 #print axioms FreeProbability.Fock.ouDoubleCommutantRawCP_mem_familyDoubleCentralizer
 #print axioms FreeProbability.Fock.ouDoubleCommutantTimeCP_zero
 #print axioms FreeProbability.Fock.ouDoubleCommutantTimeCP_boundedWOT_continuous
+#print axioms FreeProbability.Orthogonal.pairingTensor_invariant
+#print axioms FreeProbability.Orthogonal.pairingTensor_inner
+#print axioms FreeProbability.Orthogonal.ordinaryPairingTensor_linearIndependent
+#print axioms FreeProbability.Orthogonal.ordinaryPairingGram_inverse
+#print axioms FreeProbability.Orthogonal.span_pairingTensors_eq_fixedVectors
+#print axioms FreeProbability.Orthogonal.tensorPowerAverage_eq_pairingGram_inverse
+#print axioms FreeProbability.Orthogonal.entryMoment_eq_weingarten_delta_sum

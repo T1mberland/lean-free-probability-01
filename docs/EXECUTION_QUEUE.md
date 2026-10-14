@@ -18,8 +18,8 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `9f5bd910d7fb9482db847c1a910a96c6690bc637`,
-published main after PR60. Full3911, Verification3914, direct transitive7356,
+Latest checked integration: `e69c705aea4a196206947f8d7e30fcfa9f710790`,
+published main after PR61. Full3916, Verification3919, direct transitive7383,
 source guard/diff and explicit push passed. Earlier records below are historical.
 Goals 1, 2, 3, 6 and 7 are certified complete; six full goals remain open.
 Every historical checkpoint below retains its original scope and date.
@@ -42,7 +42,7 @@ Every historical checkpoint below retains its original scope and date.
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/orthogonal-random-inputs-integration`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Coordinator | `feat/fock-suffix-gram-order-integration`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
 | Worker A (`cumulants`) | `feat/orthogonal-colored-trace-criterion`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalColoredTrace*.lean and agreed notes; prior sources frozen | Actual multicolor centered trace criterion by strong induction |
 | Worker B (`fock`) | `feat/fock-mixed-suffix-gram`, `/home/user/Projects/lean-fp-fock` | NEW Fock/WickMixedSuffixGram*.lean and agreed notes; prior sources frozen | Actual full mixed-degree matrix positive suffix identity |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
@@ -2704,3 +2704,36 @@ Independent random-input feature passes full3916, Verification3919, direct
 transitive7383, integrity/diff and all five exact mathematical source reviews.
 Actualdata-Haarjointlaw/variableinputlaws/sourceAE andcountable scopes verified.
 No multicolorcenteredcriterion orstrongconvergencecompletion is claimed.
+
+### Actual common matrix marginal and full suffix Gram order bounds
+
+PR61 checked maine69c705 passes full3916, Verification3919, transitive7383,
+source/diff and push. Actualindependent-randominputHaarprobability/a.s. and
+sourceAE/countableinterfaces are integrated; multicolorcriterion remainsopen.
+Reviewed Bc45b260..611b9ab with exactnotes0b185ca is assembled: actualcommon
+entrywisevacuum matrixmarginalρ=ΣC_wC_wᴴ forEVERYcut/arbitraryfiniteS,
+fullHilbertvector andcanonicalmatrixCS, genuinecoefficientcone sandwich,
+actualprefixfibercardinality andtruefullmatrixinequality
+G_h≤cardI^h(h+1)^2 scalarEmbedρ forsupportlengths≥h; homogeneous h≤n
+corollary. Finitealphabet neededonlyforrankfactor; emptyalphabet0^0, empty
+matrixtype andsingularρ retained. No coefficientcommutativity/invertibility
+or entrywise/productvectorpositivity shortcut.
+Major names: matrixCutGram_vacuum_marginal, finiteMatrixOperatorGram_le,
+matrixWickTerm_mul_star_le, suffixFiber_card_le, matrixCutGram_le_homogeneous.
+All seven sources reviewed/focusedbuilt, twenty principalstandardaxiomaudits
+terminalbeforecommits. Typedintermediateoperators fixed a realCFC/elaboration
+timeout; no limitsraised. A two-generator/arbitrary3×3coefficient canonical
+cone usage checks the concretefactor8 atresidualdegree1.
+This proves matrixorderprerequisites, not entropy. B NEW WickMixedSuffixGram*
+unequaldegreecontractions/prefixpartials/realweighttelescoping verifiedpending
+integration; fullmixedfiniteactualOUidentity is next. A NEWColoredTrace*
+centering/perturbation verifiedpendingintegration; truecyclicsegmentation and
+augmentedjointindependence/wordlengthinduction active. RootGoal5actualmatrix
+powerretention andquantitativeexteriorerror followpublisheddepth64f884b.
+Five full goals complete, six open; fullGoal10 L1/DPI/lsc/entropy remainsopen.
+
+Common-marginal/order feature passes full3923, Verification3926, direct
+transitive7448, integrity/diff and all seven precise source reviews. Concrete
+two-generator/arbitrary3×3 coefficientfactor8 canonicalcone usage compiles.
+Its local spectral-order instance required noncomputable section, repaired
+before publication; no resource or mathematical error was involved.

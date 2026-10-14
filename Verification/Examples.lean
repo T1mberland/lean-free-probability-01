@@ -696,4 +696,20 @@ example {I H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [Complete
   norm_num at h ⊢
   exact h
 
+noncomputable section MatrixSuffixUsage
+local instance : PartialOrder (Fock.WordSpace (Fin 2) →L[ℂ] Fock.WordSpace (Fin 2)) :=
+  CStarAlgebra.spectralOrder _
+local instance : StarOrderedRing (Fock.WordSpace (Fin 2) →L[ℂ] Fock.WordSpace (Fin 2)) :=
+  CStarAlgebra.spectralOrderedRing _
+
+-- Two generators and arbitrary three-by-three coefficients give a full matrix cone bound.
+example (S : Finset (List (Fin 2))) (C : List (Fin 2) → Matrix (Fin 3) (Fin 3) ℂ)
+    (hS : ∀ w ∈ S, 1 ≤ w.length) :
+    Fock.matrixCutGram S C 1 ≤ (8 : ℂ) •
+      Fock.matrixScalarEmbed (I := Fin 2) (Fock.matrixCoefficientMarginal S C) := by
+  have h := Fock.matrixCutGram_le S C 1 hS
+  norm_num at h
+  exact h
+end MatrixSuffixUsage
+
 end FreeProbability.Examples

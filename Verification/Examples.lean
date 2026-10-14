@@ -391,4 +391,22 @@ example :
   norm_num [ρ, C₀, C, Matrix.trace, Matrix.mul_apply, Fin.sum_univ_succ] at h
   exact h
 
+-- At one unit above the actual edge, all three order assertions follow
+-- without an operator-norm-radius assumption.
+open scoped ComplexOrder MatrixOrder Matrix.Norms.L2Operator in
+example {I n : Type*} [Fintype I] [Fintype n] [DecidableEq n] [Nonempty n]
+    (C₀ : Matrix n n ℂ) (C : I → Matrix n n ℂ)
+    (hC₀ : C₀.IsHermitian) (hC : ∀ i, (C i).IsHermitian) :
+    let x : ℝ := Fock.operatorMatrixPencilTopEdge C₀ C + 1
+    let M := Fock.operatorMatrixPencilCauchy C₀ C x
+    M.PosDef ∧ M ≤ 1 ∧ 1 ≤ M⁻¹ := by
+  intro x M
+  have hx : Fock.operatorMatrixPencilTopEdge C₀ C < x := by dsimp [x]; linarith
+  obtain ⟨hp, hu⟩ := Fock.operatorMatrixPencilCauchy_posDef_and_le_inverse_edge_gap
+    C₀ C hC₀ hC x hx
+  have hl := Fock.operatorMatrixPencilCauchy_inverse_ge_edge_gap C₀ C hC₀ hC x hx
+  have hgap : x - Fock.operatorMatrixPencilTopEdge C₀ C = 1 := by dsimp [x]; ring
+  rw [hgap] at hu hl
+  exact ⟨hp, by simpa using hu, by simpa using hl⟩
+
 end FreeProbability.Examples

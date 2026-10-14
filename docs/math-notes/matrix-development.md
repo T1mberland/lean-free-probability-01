@@ -99,11 +99,18 @@ bound. All coefficients remain arbitrary Hermitian matrices. These statements
 are not an optimal density duality formula involving trace of a matrix square
 root.
 
+`60db445` proves actual full right-exterior Cauchy order bounds: for x above
+its genuine top edge b, m(x) is positive definite, m(x) <= (x-b)^(-1) I,
+and m(x)^(-1) >= (x-b) I. These are matrix order inequalities in the actual
+C-star spectral gap; no dimension-dependent row-norm bound substitutes for them.
+A generic C-star inverse-order lemma proves the actual resolvent bound before
+positive unital vacuum averaging. A sharper lower bound using the actual bottom
+spectral edge has not been claimed.
+
 ## Next dependencies
 
-1. Full right-exterior order/spectral bounds for the actual m(x), quantitative
-   finite-depth Fock approximations, and singular or deterministic edge
-   certificates. The positive-state and actual density lower bounds are proved;
+1. Quantitative finite-depth Fock approximations and singular or deterministic
+   edge certificates. Basic full right-exterior order bounds are proved. The positive-state and actual density lower bounds are proved;
    stronger optimized density formulas remain distinct possible extensions.
 2. Matrix upper-half-plane argument invertibility and pointwise physical
    uniqueness, beyond the normalized analytic branch theorem.
@@ -128,3 +135,11 @@ A failed Lyapunov proof approach rewrote the self-referential rearrangement
 of d inside its own right-hand side and exhausted elaboration heartbeats, even
 with a large limit. A directional calculation proves the same identity promptly
 at the default limit; no increased limit remains in the published theorem.
+
+The spectral-gap proof initially used an ambiguous `(real expression)^(-1) :
+Complex` annotation. Expected-type propagation chose complex inverse, while the
+positive expectation theorem produced the real inverse followed by coercion.
+The final implicit order comparison then spent over 200,000 heartbeats unfolding
+matrix and operator subtraction. Explicitly specifying the inverse in Real before
+coercing to Complex, plus a fully typed final order inequality, verifies the same
+mathematical bound promptly at the default limit. No heartbeat override remains.

@@ -712,3 +712,7 @@ run_cmd do
 #print axioms FreeProbability.Fock.operatorMatrixPencilTopEdge_state_lower
 #print axioms FreeProbability.matrixDensityState
 #print axioms FreeProbability.Fock.operatorMatrixPencilTopEdge_density_lower
+#print axioms FreeProbability.cstar_resolvent_le_inverse_gap
+#print axioms FreeProbability.Fock.operatorMatrixPencilCauchy_le_inverse_edge_gap
+#print axioms FreeProbability.Fock.operatorMatrixPencilCauchy_posDef_and_le_inverse_edge_gap
+#print axioms FreeProbability.Fock.operatorMatrixPencilCauchy_inverse_ge_edge_gap

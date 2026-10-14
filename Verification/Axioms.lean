@@ -707,3 +707,8 @@ run_cmd do
 #print axioms FreeProbability.Fock.operatorMatrixPencilTopEdge_le_variational_value
 #print axioms FreeProbability.Fock.operatorMatrixPencil_variational_witness
 #print axioms FreeProbability.Fock.operatorMatrixPencilTopEdge_variational
+#print axioms FreeProbability.matrixState_weighted_cauchySchwarz
+#print axioms FreeProbability.matrixState_variational_value_lower
+#print axioms FreeProbability.Fock.operatorMatrixPencilTopEdge_state_lower
+#print axioms FreeProbability.matrixDensityState
+#print axioms FreeProbability.Fock.operatorMatrixPencilTopEdge_density_lower

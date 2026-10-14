@@ -1283,3 +1283,47 @@ Combined edge feature passes full build 3661 jobs, Verification 3664, direct
 transitive audit 3770 declarations and source guard. The concrete noncommuting
 exact-witness example compiles. PR #11 CI run 38551786693 is now confirmed
 successful; later PR CI results will be tracked separately from local checks.
+
+### Checked core-edge PR and pending actual state/density inequalities
+
+PR #14 merged head `a96b320` as `06f8254cea94a1595923028b1724ab6ac743c329`.
+Main full 3661, Verification 3664, direct audit 3770 and source guard pass.
+Core exact finite-matrix variational formula is integrated; Goal 5 stays open.
+PR #12 CI 38552187192 and #13 CI 38552538959 were still in progress at last check.
+
+Worker sources `4246351` and `ae23f1c` preserved on state-bound integration branch.
+Weighted CS is derived from genuine normalized positive scalar-state CS with
+actual positive square root of Z. Summation/AMGM and genuine Hermitian-matrix
+spectral order give each variational test's lower bound; the already proved
+actual infimum theorem gives actual edge at least Re(phi C0)+2sqrt(sum|phi Ci|²).
+No traciality of the arbitrary state is needed, and no desired edge premise is
+added. Actual density state tr(rho X) is constructed for ALL PSD rho of trace1,
+including singular rho, with star/positivity/normalization genuinely proved.
+Cyclic trace of actual conjugate Gram gives positivity. Both statements reviewed
+without mathematical blocker or declaration collisions. Concrete singular rho
+=diag(1,0) tests diagonal drift and two noncommuting Pauli coefficients for b>=3.
+
+A's next exclusive new MatrixCauchySpectralBounds.lean derives actual
+0<m(x)<=(x-b)^-1 I for every x>b from CFC inverse order and positive unital E,
+without restricting to x>norm(H). B continues independent SecondQuantization*.lean.
+The quantitative Fock depth blocker is exact shifted degree-window equivalence:
+left creation preserves right tails, giving copies of the depth-N compression.
+Uniform degree windows should count diagonal energy N times and offdiagonal
+energy N-1 times, suggesting explicit b_N<=b<=b_N+2||L||/N (UNPROVED).
+Creator Gram supplies ||L||²=||sum Ci²||; a Rayleigh/spectral-sup bridge is also
+needed. Sine-window refinement to O(N^-2) requires further trigonometric work.
+Generic normclosure freeness is a shorter independent Goal 7 prerequisite.
+
+Combined state/density integration passes full build 3663, Verification 3666,
+direct axiom audit 3784 and source guard. Concrete singular-density b>=3 example
+passes. Worker-owned notes update `74d0cfd` is integrated without modifying the
+worker's checkout. Independent reviewer approves both general states and densities.
+
+Read-only closure-freeness research gives a precise minimal proof: for fixed
+alternating labels, expectation of the product of centered coordinates is a
+continuous function on the finite product. Original freeness makes it zero on
+product of original algebras. `closure_pi_set` and the closed zero preimage extend
+it to product of closures. Expectation continuity suffices; no positivity,
+traciality or completeness is needed. `ProbabilitySpace.center_mem`,
+`expectation_center`, `center_of_expectation_eq_zero`, `continuous_list_prod`
+and `List.ofFn_get` supply the intended interfaces. This task is still unproved.

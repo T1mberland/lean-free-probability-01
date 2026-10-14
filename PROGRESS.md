@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `3f6b367` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 3707 declarations.
+The latest checked and published integration is `06f8254` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 3770 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -240,7 +240,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 3707 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 3770 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -284,9 +284,13 @@ normalization at infinity, uniqueness of normalized analytic upper-half-plane
 Dyson branches, full real-right-exterior positive definiteness and differentiated
 Lyapunov identities. No fixed-point uniqueness for all matrices at one argument
 is claimed. General arbitrary-base CP covariance and entrywise comparison remain
-open. Core edge variational `094e84d` is reviewed and undergoing separate integration.
+open. Core edge variational `094e84d` is integrated through
+[PR #14](https://github.com/T1mberland/lean-free-probability-01/pull/14) at checked main
+`06f8254` (full 3661, Verification 3664, audit 3770 and source guard).
 It identifies the actual real-spectrum top edge with the infimum over ALL positive
 definite Z of the actual largest eigenvalue of C₀+Z+Σ Cᵢ Z⁻¹ Cᵢ. No positivity
 or commutation assumptions are imposed on the Hermitian coefficients.
-Positive-state/density bounds, quantitative finite Fock approximation, singular
-edge limits and deterministic edge-subspace results remain open for Goal 5.
+Positive-state/density bounds are published and reviewed (`4246351`, `ae23f1c`),
+undergoing combined integration with a singular-density concrete edge bound.
+Exterior spectral bounds, quantitative finite Fock approximation, singular edge
+limits and deterministic edge-subspace results remain open for Goal 5.

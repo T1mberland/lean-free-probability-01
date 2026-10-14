@@ -1169,3 +1169,12 @@ run_cmd do
 #print axioms FreeProbability.Fock.homogeneousWickCompletion_vacuum
 #print axioms FreeProbability.Fock.homogeneousWickCompletion_mem_closedAlgebra
 #print axioms FreeProbability.Fock.homogeneousWickCompletion_injective
+#print axioms FreeProbability.Orthogonal.traceWordMoment_eq_weingarten_contractions
+#print axioms FreeProbability.Orthogonal.tracePairingContraction_eq_network_product
+#print axioms FreeProbability.Orthogonal.pairingCycle_orbit_card_eq_twice_loopCount
+#print axioms FreeProbability.Orthogonal.permutationNetwork_norm_le
+#print axioms FreeProbability.Orthogonal.Euclidean_opNorm_transpose
+#print axioms FreeProbability.Orthogonal.pairingNetwork_norm_le
+#print axioms FreeProbability.Orthogonal.centered_tracePairingContraction_norm_le
+#print axioms FreeProbability.Orthogonal.eventually_centered_traceWordMoment_uniform_bound
+#print axioms FreeProbability.Orthogonal.tendsto_centered_traceWordMoment

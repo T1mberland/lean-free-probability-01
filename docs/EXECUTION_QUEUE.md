@@ -18,8 +18,8 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `72035bafdd9bc2cfb062445aa2f1294a467f3715`,
-published main after PR53. Full3856, Verification3859, direct transitive6458,
+Latest checked integration: `83cd26281c166375eea41f1d2faea404fb8486bd`,
+published main after PR54. Full3858, Verification3861, direct transitive6499,
 source guard/diff and explicit push passed. Earlier records below are historical.
 Goals 1, 2, 3, 6 and 7 are certified complete; six full goals remain open.
 Every historical checkpoint below retains its original scope and date.
@@ -34,7 +34,7 @@ Every historical checkpoint below retains its original scope and date.
 | 6. Spectral distributions | Complete on checked main `427f72b`, PR #2 | Actual compact laws/CFC/support/Cauchy/moment compatibility and bounded weak/Cauchy convergence |
 | 7. Multiplicative convolution | Complete on checked main `bdd05e2`, certified PR39 | Actual positive-pair S/law and arbitrary-length projection physical branch/edge/spectrum; universal free-product realization belongs to Goal11 |
 | 8. Conditional subordination | Noncommutative L² and Goal 7 dependencies open | Normal conditional expectations, analytic subordination, exterior continuation and projection specialization |
-| 9. Haar freeness | Genuine Haar conjugation and stable orthogonal FFT/integration verified | Sharp pairing-distance inverse estimates and trace-word cancellation; joint expected/probability/a.s. convergence, strong resolvent convergence and low-dimensional integration remain |
+| 9. Haar freeness | Genuine Haar conjugation and stable orthogonal FFT/integration verified | Actual sharp pairing-distance inverse estimates integrated; centered expected trace decay in current integration feature; joint probability/a.s. convergence, strong resolvent convergence and low-dimensional integration remain |
 | 10. OU and entropy | Genuine whole-ONfamily von Neumann unital CP semigroup with faithful tracial vacuum and actual normality integrated PR51 | Exact Hilbert generator/domain integrated PR53; proper-family cyclic L2 bridge, L1 extension, complete-coefficient regularization and entropy remain |
 | 11. Follow-up milestones | Formal R and quantitative conditional moment CLT integrated | Positive free products, analytic convolution, operator-valued cumulants, annular/second-order and genus theory remain |
 
@@ -42,7 +42,7 @@ Every historical checkpoint below retains its original scope and date.
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/wick-homogeneous-completion`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Coordinator | `feat/orthogonal-centered-trace-integration`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
 | Worker A (`cumulants`) | `feat/orthogonal-multitrace-bounds`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalMultiTrace*.lean and agreed notes; prior sources frozen | Genuine multi-trace Haar expansion and centered moment/variance bounds |
 | Worker B (`fock`) | `feat/fock-family-native-image`, `/home/user/Projects/lean-fp-fock` | NEW Fock/FamilyCyclicBasisNative*.lean and agreed notes; prior sources frozen | Exact original native Cstar image under faithful word representation |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
@@ -2486,3 +2486,30 @@ six open; statuses and unproved obligations remain explicit above.
 Wick feature integration checks pass: full3858, Verification3861, direct
 transitive6499, source guard/diff and independent exact statement review.
 Actual all-coefficient vacuum recovery and closed-algebra membership are verified.
+
+### Genuine centered single-Haar expected trace decay integration feature
+
+PR54 checked main83cd262 passes full3858, Verification3861, transitive6499,
+integrity/diff and push. Full homogeneous ℓ² Wick completion is integrated.
+CI52 run38601584881 and CI53 run38603832037 confirmed successful.
+Reviewed A chain6349c65..4d492a6 with exact notes5d3f9f6 is assembled: true
+complex trace-word Haar expansion, actual row/column paired networks, genuine
+fixed-free involutions and two-half orbit count, explicit selected orientation,
+phase-preserving cycle trace transfer, true Euclidean operator-norm bounds,
+centered singleton-cycle cancellation and actual normalized expectation.
+For r>0, eventual uniform N threshold depends only on r, and ALL centered
+complex deterministic matrix factors satisfy expected trace bound
+C_r/N times their actual operator-norm product. Uniformly bounded moving-N
+families therefore have expectation tending to zero. C_r is explicit with
+M=number of ordinary pairings: M²(rM^r+2M^(r+1)).
+Zero degree/dimension identities are retained separately; no false nonempty
+centered theorem is applied at r=0. All source statements mathematically
+reviewed and focused standard-axiom audited. Variance/probability/a.s. and
+multiple independent Haar colors remain distinct unproved Goal9 dependencies.
+Worker A now owns NEW multi-trace expansion/bound modules. Worker B owns NEW
+native family Cstar image transport. Root next normconvergent Wick series.
+Five complete full goals/six open; no full Goal9 certification is claimed.
+
+Centered-trace integration feature passes full3873, Verification3876, direct
+transitive6722, integrity/diff and all fifteen module statement reviews.
+No new full goal is certified; variance and almost-sure modes remain open.

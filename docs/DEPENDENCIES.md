@@ -571,3 +571,30 @@ and domain. Five full goals are complete; goals4,5,8,9,10,11 remain open.
 Wick feature integration checks pass: full3858, Verification3861, direct
 transitive6499, source guard/diff and independent exact statement review.
 Actual all-coefficient vacuum recovery and closed-algebra membership are verified.
+
+### Genuine centered single-Haar expected trace decay integration feature
+
+PR54 checked main83cd262 passes full3858, Verification3861, transitive6499,
+integrity/diff and push. Full homogeneous ℓ² Wick completion is integrated.
+CI52 run38601584881 and CI53 run38603832037 confirmed successful.
+Reviewed A chain6349c65..4d492a6 with exact notes5d3f9f6 is assembled: true
+complex trace-word Haar expansion, actual row/column paired networks, genuine
+fixed-free involutions and two-half orbit count, explicit selected orientation,
+phase-preserving cycle trace transfer, true Euclidean operator-norm bounds,
+centered singleton-cycle cancellation and actual normalized expectation.
+For r>0, eventual uniform N threshold depends only on r, and ALL centered
+complex deterministic matrix factors satisfy expected trace bound
+C_r/N times their actual operator-norm product. Uniformly bounded moving-N
+families therefore have expectation tending to zero. C_r is explicit with
+M=number of ordinary pairings: M²(rM^r+2M^(r+1)).
+Zero degree/dimension identities are retained separately; no false nonempty
+centered theorem is applied at r=0. All source statements mathematically
+reviewed and focused standard-axiom audited. Variance/probability/a.s. and
+multiple independent Haar colors remain distinct unproved Goal9 dependencies.
+Worker A now owns NEW multi-trace expansion/bound modules. Worker B owns NEW
+native family Cstar image transport. Root next normconvergent Wick series.
+Five complete full goals/six open; no full Goal9 certification is claimed.
+
+Centered-trace integration feature passes full3873, Verification3876, direct
+transitive6722, integrity/diff and all fifteen module statement reviews.
+No new full goal is certified; variance and almost-sure modes remain open.

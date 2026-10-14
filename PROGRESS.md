@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `287bcf7` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 3337 declarations.
+The latest checked and published integration is `5706254` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 3497 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -94,7 +94,7 @@ explicit spectral density laws hold. `exists_fullFock_semicircular_family`
 packages the general existence theorem without a spanning/countability assumption.
 Integrated through [PR #5](https://github.com/T1mberland/lean-free-probability-01/pull/5)
 at checked main `68de4fe`, with full builds, audits and arbitrary-family usage.
-Goals 1, 2 and 6 are certified complete; eight full goals remain open. Equality
+Goals 1, 2, 3 and 6 are certified complete; seven full goals remain open. Equality
 with an independently chosen basis model is an optional coherence extension.
 
 Formal R-transform additivity/scaling and the algebraic free CLT are integrated
@@ -136,9 +136,11 @@ integrated through [PR #8](https://github.com/T1mberland/lean-free-probability-0
 at `9715c11`. Actual full polynomial/matrix resolvent IBP, including the own generated-state
 interfaces, is integrated through
 [PR #10](https://github.com/T1mberland/lean-free-probability-01/pull/10) at `287bcf7`.
-Generic norm-convergent analytic-series extensions for scalar/matrix polynomials
-and closed C-star states are published, reviewed and undergoing final integration.
-The literal Goal 3 checklist will be certified only after that main checkpoint.
+Norm-convergent analytic-series extensions for scalar/matrix polynomials and
+closed C-star states are integrated through [PR #11](https://github.com/T1mberland/lean-free-probability-01/pull/11)
+at checked main `5706254`. Explicit value and derivative absolute bounds and an
+infinite geometric-series example are kernel verified. Full build 3634,
+Verification 3637, transitive audit 3497 and source guard pass, certifying Goal 3.
 
 Actual spectral probability measures are constructed from positive CFC
 functionals using Riesz representation; real continuous-functional-calculus
@@ -238,7 +240,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 3337 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 3497 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -250,15 +252,16 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 
 The exact dependency queue, isolated assignments, source hashes and integration
 checks are maintained in [docs/EXECUTION_QUEUE.md](docs/EXECUTION_QUEUE.md).
-Goals 1, 2 and 6 are certified complete; eight goals remain open.
+Goals 1, 2, 3 and 6 are certified complete; seven goals remain open.
 
-1. Integrate actual entire exponential IBP, then full polynomial/matrix resolvent
-   identities and norm-convergent analytic extensions.
-2. Prove the actual matrix resolvent Dyson equation and its half-plane/exterior
-   properties; construct general arbitrary-base completely positive covariance.
-3. Integrate the actual projection spectral law, then positive free-product law,
-   S multiplication, projection-product support and physical spectral edge.
-4. Develop conditional L² projections/subordination, Wick contractions and OU,
+1. Integrate published actual matrix half-plane/exterior, normalized analytic
+   physical-branch and spectral-edge results; construct general arbitrary-base
+   completely positive covariance and entrywise-model comparison.
+2. Construct positive free-product law and S multiplication, then projection-product
+   support and physical spectral edge. The actual projection law is integrated.
+3. Integrate general homogeneous Wick norm bounds and reverse-overlap products;
+   develop second quantization and completely positive OU.
+4. Develop conditional L² projections/subordination, noncommutative integration,
    noncommutative Lᵖ/entropy, and Haar freeness by distinct convergence modes.
 
 Matrix and ReLU examples remain verified supporting tools. Their rational

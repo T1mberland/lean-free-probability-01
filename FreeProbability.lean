@@ -225,3 +225,13 @@ import FreeProbability.Analytic.FockAnalyticSeriesPolynomial
 import FreeProbability.Analytic.FockAnalyticSeriesMatrix
 import FreeProbability.Analytic.FockAnalyticSeriesCStar
 import FreeProbability.Analytic.FockAnalyticSeriesMatrixCStar
+import FreeProbability.Fock.WickNormCreatorFamily
+import FreeProbability.Fock.WickNormHaagerup
+import FreeProbability.Fock.WickNormHomogeneousCut
+import FreeProbability.Fock.WickNormMatrixCut
+import FreeProbability.Fock.WickNormWord
+import FreeProbability.Fock.WickProductContractions
+import FreeProbability.Fock.WickProductCreationGram
+import FreeProbability.Fock.WickProductNormalOrder
+import FreeProbability.Fock.WickProductTupleSplit
+import FreeProbability.Fock.WickProductWordAction

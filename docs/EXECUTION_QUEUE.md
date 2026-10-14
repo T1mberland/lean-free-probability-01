@@ -1169,3 +1169,35 @@ Feature integration checks passed: full build 3634 jobs, Verification 3637,
 direct transitive axiom audit 3497 declarations and source-integrity guard.
 All counts are for the combined integration branch including the concrete infinite
 geometric-series usage. Publication and checked main certification follow via PR.
+
+### Checked analytic-series PR and Goal 3 certification
+
+PR #11 merged head `0680326` as `57062543a2a255925fe1433d617444adca28aaa5`.
+Main full 3634, Verification 3637, direct audit 3497 and source guard pass.
+Independent literal checklist review plus actual infinite geometric-series usage
+certify Goal 3. Goals 1, 2, 3 and 6 are complete; seven full targets remain open.
+
+### Pending Wick contraction and homogeneous norm integration
+
+Published worker branch `feat/wick-contractions` at `4594b56` is preserved and
+merged into `feat/integrate-wick-norms`, with original atomic history. Ten modules
+prove actual normal ordering, reversed suffix/prefix contraction products, creator
+Gram/Bessel estimates, coefficient-preserving tuple cuts and the general finite
+homogeneous Haagerup bound: operator norm at most (degree+1) times actual vacuum
+Hilbert norm. Arbitrary color sets, degree zero and empty color sets are covered.
+Independent mathematical review approves the exact operator statements.
+This is Goal 10's Wick prerequisite, not completely positive OU or entropy.
+B's clean worktree switched from published `4594b56` to `feat/second-quantization`
+from checked `5706254`, with exclusive NEW Fock/SecondQuantization*.lean ownership.
+It targets actual full-Fock lifts of one-particle Hilbert unitaries, vacuum/tensor
+grading and creator conjugation for eventual rotation dilation. No assertion that
+arbitrary complex unitaries preserve a chosen real semicircular algebra is made.
+A continues exclusive new OperatorValued/Matrix*.lean edge variational work;
+reviewer remains read-only. Coordinator alone owns integration and central files.
+
+Combined Wick feature passes full build 3644, Verification 3647, direct audit
+3594 declarations and source guard. Concrete degree-two Wick square verifies
+all three surviving operator contractions; its first attempt differed only by
+addition order and was repaired with commutativity, without statement changes.
+CI for PRs #8, #9 and #10 is confirmed successful (runs 38544010777,
+38545132352, 38548126213); PR #11 run 38551786693 remains in progress.

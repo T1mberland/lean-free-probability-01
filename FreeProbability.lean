@@ -22,6 +22,7 @@ import FreeProbability.Combinatorics.Cumulant
 import FreeProbability.Combinatorics.PartitionMultilinear
 import FreeProbability.Combinatorics.CumulantMultilinear
 import FreeProbability.Combinatorics.NoncrossingSingleton
+import FreeProbability.Combinatorics.NoncrossingPairing
 import FreeProbability.Algebraic.CumulantFreeness
 import FreeProbability.Matrix.RankOneSecular
 import FreeProbability.Matrix.HermitianResolvent

@@ -219,3 +219,12 @@ run_cmd do
 #print axioms FreeProbability.StarProbabilitySpace.tendsto_cauchyTransform_of_powerMoments
 #print axioms FreeProbability.StarProbabilitySpace.tendsto_expectation_inverse_of_powerMoments
 #print axioms FreeProbability.StarProbabilitySpace.tendsto_momentGeneratingFunction_of_powerMoments
+#print axioms FreeProbability.NoncrossingPartition.IsPairing.card_eq_twice
+#print axioms FreeProbability.NoncrossingPartition.IsPairing.even
+#print axioms FreeProbability.NoncrossingPartition.IsPairing.existsUnique_partner
+#print axioms FreeProbability.NoncrossingPartition.IsPairing.exists_adjacent
+#print axioms FreeProbability.NoncrossingPairing.partner_ne
+#print axioms FreeProbability.NoncrossingPairing.rel_partner
+#print axioms FreeProbability.NoncrossingPairing.partner_partner
+#print axioms FreeProbability.NoncrossingPairing.rel_iff
+#print axioms FreeProbability.NoncrossingPairing.not_nonempty_of_odd

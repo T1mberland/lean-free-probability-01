@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `8334d17` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 2453 declarations.
+The latest checked and published integration is `7386526` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 2459 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -110,8 +110,15 @@ The actual algebraic tensor free difference quotient satisfies the full
 noncommutative polynomial Leibniz rule. Polynomial and matrix-valued polynomial
 integration by parts in the actual faithful tracial Fock C-star state are
 integrated at `ea6149a`. Actual one-generator resolvent IBP on every resolvent-set point and its Cauchy
-quadratic equation are proved and undergoing integration. General polynomial
+quadratic equation are integrated at `7386526`. General polynomial
 resolvent, matrix analytic and exponential extensions remain open.
+
+Actual spectral probability measures are constructed from positive CFC
+functionals using Riesz representation; real continuous-functional-calculus
+expectations have their integral representation. Faithfulness gives actual
+support equal to real spectrum, without traciality. These declarations are
+reviewed and undergoing integration. General complex/Cauchy representation and
+semicircular density identification remain subsequent tasks.
 
 ## Haar probability and concentration
 
@@ -169,7 +176,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 2453 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 2459 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

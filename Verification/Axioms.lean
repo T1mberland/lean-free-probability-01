@@ -493,3 +493,12 @@ run_cmd do
 #print axioms FreeProbability.Fock.vacuumExpectation_semicircular_mul_resolvent
 #print axioms FreeProbability.Fock.vacuumExpectation_resolvent_quadratic
 #print axioms FreeProbability.Fock.vacuumExpectation_semicircular_mul_resolvent_nonreal
+#print axioms FreeProbability.spectralContinuousFunctional_one
+#print axioms FreeProbability.spectralRieszFunctional
+#print axioms FreeProbability.integral_spectralMeasureOnSpectrum
+#print axioms FreeProbability.spectralMeasure_spectrum_compl
+#print axioms FreeProbability.integral_spectralMeasure_cfc
+#print axioms FreeProbability.expectation_cfc_eq_integral
+#print axioms FreeProbability.integral_square_eq_zero_iff
+#print axioms FreeProbability.spectralMeasureOnSpectrum_support_eq_univ
+#print axioms FreeProbability.spectralMeasure_support_eq_spectrum

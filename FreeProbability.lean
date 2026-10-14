@@ -150,3 +150,6 @@ import FreeProbability.Fock.TensorSemicircular
 import FreeProbability.Fock.TensorCStarModel
 import FreeProbability.Fock.TensorJointLaw
 import FreeProbability.Analytic.FockResolventIntegrationByParts
+import FreeProbability.Analytic.SpectralMeasureFunctional
+import FreeProbability.Analytic.SpectralMeasure
+import FreeProbability.Analytic.SpectralMeasureSupport

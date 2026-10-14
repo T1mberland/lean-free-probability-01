@@ -18,8 +18,8 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `8334d17`, published on `main`, with full builds,
-source guard and transitive audit passing for 2453 declarations. Genuine
+Latest checked integration: `7386526`, published on `main`, with full builds,
+source guard and transitive audit passing for 2459 declarations. Genuine
 polynomial and closed-generator freeness is integrated in the faithful tracial
 C-star model. The all-order adjacent-product cumulant theorem and full freeness
 characterization are integrated. Joint Wick/Catalan and all-degree word IBP are integrated. Formal R-additivity and algebraic free CLT
@@ -612,3 +612,30 @@ conditional on all-entry centering, actual averaged-second-moment convergence
 and uniform fixed-higher-order marginal cumulant bounds. A's `0f7d1dc` proves
 exact Kreweras adjacent-chord deletion, a genuine new prerequisite toward the
 previously recorded boxed-complement connectivity/block-count obligation.
+
+### Checked integration checkpoint: actual resolvent IBP
+
+`7386526` is checked and published on `main`; coordinator source `3111620` is
+integrated. Full build 3502 jobs, Verification 3505 jobs, direct audit 2459
+declarations and source guard pass. The all-resolvent-set single-generator IBP
+and actual Cauchy quadratic are complete, with nonreal domain proved. General
+polynomial/matrix resolvents, generated-algebra compatibility and exponential
+extensions remain explicit next tasks.
+
+### Pending integration: actual spectral measures and faithful support
+
+Sources/integration mappings: `c592166`→`bb9f9a3`, `d6ee62a`→`060aba7`,
+`4a9dedf`→`176b50b`. Actual positive real CFC functional and RMK representation
+construct `spectralMeasureOnSpectrum` and `spectralMeasure`, with genuine
+probability normalization. Real continuous CFC expectations have integral
+representation. Concentration gives support inclusion; actual faithfulness,
+CFC injectivity and continuous Urysohn bumps give
+`spectralMeasure_support_eq_spectrum`. No traciality/support assumption or
+spectral-measure existence assumption is used. This represents full complex
+expectations only for REAL-valued CFC functions; general complex/Cauchy integral
+representation is a subsequent worker theorem. All three mathematical reviews
+and global name scans approved. Combined full build 3515 jobs, Verification
+3518 jobs, direct transitive audit 2493 declarations and source guard pass.
+Main integration pending. Targeted pinned RMK
+and Support cache artifacts reused/downloaded under the common lock; no
+revision/toolchain update or unnecessary dependency rebuild.

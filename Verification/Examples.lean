@@ -666,4 +666,11 @@ example {A : Type*} [Ring A] [StarRing A] [Algebra ℂ A] [StarModule ℂ A]
     FreelyIndependent φ (haarConjugatedAlgebra u B) :=
   freelyIndependent_haarConjugatedAlgebras φ u hu B hf
 
+-- The actual suffix representation also has a full-operator compression left inverse.
+example {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+    [NormedAddCommGroup K] [InnerProductSpace ℂ K] [CompleteSpace K]
+    (V : H →ₗᵢ[ℂ] K) (T : Fock.TensorFullFock H →L[ℂ] Fock.TensorFullFock H) :
+    Fock.secondQuantizationCompression V (Fock.isometrySuffixEmbedding V T) = T :=
+  Fock.isometrySuffixEmbedding_compression V T
+
 end FreeProbability.Examples

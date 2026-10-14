@@ -723,3 +723,31 @@ Haar feature checks pass full3780, Verification3783, direct transitive audit5549
 source integrity/diff. Entire integer-family usage compiles. All four exact
 module statements and declaration collisions critically reviewed.
 GitHub CI40 run38580290981 now confirmed success; later CI not yet queried.
+
+### Actual suffix representation and geometric complement integration feature
+
+Haar PR42 merged as `45aae93e6d44510d09d7d4475712c0fb196308c4`;
+checked main full3780, Verification3783, direct audit5549, source/diff and push.
+Eight reviewed suffix modules and frozen notes through `22b487f` are assembled.
+Actual complete linear word reversal, adapted source/target reversals and true
+ALL-source-operator suffix embedding give Gamma intertwining, actual full
+compression left inverse and ambient vacuum-state preservation. Complete sectors
+prove commutation with every outside creator/annihilator and extend via actual
+basis expansion to ALL vectors orthogonal to the isometry range.
+Included-field commutant transport is currently proved for each chosen source
+basis field under its genuine commutation hypothesis. Arbitrary prescribed
+individual fields still need the exact creator commutator defect; complex
+linearity of the real field map is neither assumed nor claimed. Creator-first
+complex-linear extension followed by adjoint and fixed-vector addition is the
+reviewed next route. New SuffixDefect modules remain B-exclusive/unintegrated.
+A owns actual real compact-group orthogonal Haar averaging/projection, with
+infinite complete real Hilbert spaces allowed; no pairing FFT is assumed.
+Root next owns arbitrary CP-covariance finite Gram and quadratic positivity,
+a genuinely independent Goal4 prerequisite rather than general realization.
+Goal statuses remain five complete/six open. Normal OU, full orthogonal pairing
+integration/asymptotic freeness and general covariance realization remain open.
+
+Suffix feature checks pass full3788, Verification3791, direct transitive audit5655,
+source integrity/diff. Genuine all-operator suffix compression usage compiles.
+All eight module statements and collision scopes critically reviewed at the
+published final tips; no normality or arbitrary-field claim is introduced.

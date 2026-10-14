@@ -282,4 +282,45 @@ example {I : Type*} (i j : I) (hij : i ≠ j) (z : ℂ)
   rw [hd, Fock.sandwichPolynomialExpectation_tmul, he, map_one, one_mul] at h
   exact h
 
+/-- A genuine infinite geometric operator series has explicitly verified value
+and derivative convergence bounds in the norm-two semicircular model. -/
+example {I : Type*} (i : I) :
+    Fock.vacuumExpectation (Fock.semicircular i *
+      analyticSeries (fun n => (1 / 4 : ℂ) ^ n) (Fock.semicircular i)) =
+      ∑' n, (1 / 4 : ℂ) ^ (n + 1) *
+        Fock.analyticPolynomialDerivativeTerm i (wordMonomial (𝕜 := ℂ) [i]) n := by
+  have he : evaluate Fock.semicircular (wordMonomial (𝕜 := ℂ) [i]) = Fock.semicircular i := by
+    simp only [wordMonomial, evaluate_single, List.map_cons, List.map_nil,
+      List.prod_cons, List.prod_nil, one_smul, mul_one]
+  have hg : Summable (fun n : ℕ => (1 / 2 : ℝ) ^ n) :=
+    summable_geometric_of_lt_one (by norm_num) (by norm_num)
+  have hn : Summable (fun n : ℕ => (n : ℝ) * (1 / 2 : ℝ) ^ n) := by
+    simpa [norm_mul, norm_pow] using
+      (summable_norm_pow_mul_geometric_of_norm_lt_one 1
+        (r := (1 / 2 : ℝ)) (by norm_num))
+  have hdg : Summable (fun n : ℕ => (n + 1 : ℝ) * (1 / 2 : ℝ) ^ n) := by
+    simpa [add_mul] using hn.add hg
+  have hv : Summable (fun n => ‖(1 / 4 : ℂ) ^ n‖ * ‖Fock.semicircular i‖ ^ n) := by
+    convert hg using 1
+    funext n
+    rw [norm_pow, Fock.norm_semicircular, ← mul_pow]
+    norm_num
+  have hd : Summable (fun n : ℕ => (n + 1 : ℝ) *
+      ‖(1 / 4 : ℂ) ^ (n + 1)‖ * ‖Fock.semicircular i‖ ^ n) := by
+    convert hdg.mul_left (1 / 4 : ℝ) using 1
+    funext n
+    rw [norm_pow, Fock.norm_semicircular, pow_succ]
+    have ht : ‖(1 / 4 : ℂ)‖ = (1 / 4 : ℝ) := by norm_num
+    rw [ht]
+    have hr : (1 / 4 : ℝ) ^ n * 2 ^ n = (1 / 2 : ℝ) ^ n := by
+      rw [← mul_pow]
+      norm_num
+    calc
+      _ = (1 / 4 : ℝ) * ((n + 1 : ℝ) * ((1 / 4 : ℝ) ^ n * 2 ^ n)) := by ring
+      _ = _ := by rw [hr]
+  simpa only [he] using
+    Fock.vacuumExpectation_polynomial_analyticSeries_integrationByParts
+      i (wordMonomial (𝕜 := ℂ) [i]) (fun n => (1 / 4 : ℂ) ^ n)
+      (by simpa only [he] using hv) (by simpa only [he] using hd)
+
 end FreeProbability.Examples

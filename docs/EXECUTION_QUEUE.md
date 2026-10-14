@@ -18,9 +18,9 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `e7f693e`, published on `main` through
-[PR #9](https://github.com/T1mberland/lean-free-probability-01/pull/9). Full builds
-3625/3628 jobs, source guard and transitive audit of 3295 declarations pass.
+Latest checked integration: `287bcf7`, published on `main` through
+[PR #10](https://github.com/T1mberland/lean-free-probability-01/pull/10). Full builds
+3629/3632 jobs, source guard and transitive audit of 3337 declarations pass.
 Goals 1, 2 and 6 are certified complete; eight full goals remain open. Actual
 matrix covariance/Wick/recursion and entire exponential IBP are published and
 queued for sequential integration. Historical checkpoints retain their scope.
@@ -1134,3 +1134,38 @@ publication blocker remains. Single-word bound `128a21f` is also published.
 These are not yet integrated OU/entropy results. A's strict imaginary positivity
 and normalized analytic physical-branch results are published/reviewed in part
 and queued separately; global pointwise-root uniqueness remains unclaimed.
+
+### Checked PR integration: whole-domain polynomial resolvents
+
+[PR #10](https://github.com/T1mberland/lean-free-probability-01/pull/10) merged
+head `1fd8768` as `287bcf7`. Main full build 3629, Verification 3632,
+direct audit 3337 declarations and source guard pass, with ordered-polynomial
+boundary usage. No restriction to self-adjoint polynomials or exterior radii.
+
+### Pending PR: complete requested norm-analytic IBP
+
+B originals `6c67499`, `7599c97`, `54efb25`, `67dadbb`, `3047563`
+are assembled as `a79418d`, original history retained. Actual Banach sums
+`analyticSeries c X` and continuous commutators preserve operator order at
+every power cut. Explicit absolute value bound ensures value convergence;
+explicit derivative bound ensures absolute convergence of every contracted FDQ
+cut series. Core commutator mapping needs only the value bound, while the public
+polynomial derivative convergence uses both bounds. Scalar and full-matrix
+polynomial IBP, including actual faithful tracial closed-state versions, follows
+from actual rank-one insertions and continuous maps of genuine sums.
+Matrix norms are explicitly coherent Banach row-sum norms, not falsely C-star
+norms; unit norm for entry theorems is derived from r:N and scalar vacuum,
+with no added nonempty target premise. Empty matrices are covered in transport.
+All five modules independently reviewed, no collisions. Literal Goal 3 review
+confirms the intended checklist is covered after these sources and the already
+integrated polynomial/exponential/resolvent calculus pass main checks and usage.
+A true infinite geometric example c_n=(1/4)^n verifies BOTH convergence bounds
+against the actual norm-two field, not merely assuming them. It kernel-compiles.
+General contour calculus, optimal radii, unrestricted value-only FDQ convergence
+and independently chosen-model coherence are not claimed or required for this goal.
+Combined counts are recorded below; main integration and certification pending.
+
+Feature integration checks passed: full build 3634 jobs, Verification 3637,
+direct transitive axiom audit 3497 declarations and source-integrity guard.
+All counts are for the combined integration branch including the concrete infinite
+geometric-series usage. Publication and checked main certification follow via PR.

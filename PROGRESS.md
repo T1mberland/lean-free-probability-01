@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `e7f693e` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 3295 declarations.
+The latest checked and published integration is `287bcf7` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 3337 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -133,8 +133,12 @@ lower-half-plane Cauchy branch are integrated through
 Entire exponential IBP for every scalar and finite-matrix polynomial, with
 actual norm-convergent exponentials and unrestricted complex parameter, is
 integrated through [PR #8](https://github.com/T1mberland/lean-free-probability-01/pull/8)
-at `9715c11`. Actual full polynomial/matrix resolvent IBP is published/reviewed
-and awaits integration; generic norm-convergent analytic-series extensions remain active.
+at `9715c11`. Actual full polynomial/matrix resolvent IBP, including the own generated-state
+interfaces, is integrated through
+[PR #10](https://github.com/T1mberland/lean-free-probability-01/pull/10) at `287bcf7`.
+Generic norm-convergent analytic-series extensions for scalar/matrix polynomials
+and closed C-star states are published, reviewed and undergoing final integration.
+The literal Goal 3 checklist will be certified only after that main checkpoint.
 
 Actual spectral probability measures are constructed from positive CFC
 functionals using Riesz representation; real continuous-functional-calculus
@@ -234,7 +238,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 3295 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 3337 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

@@ -1208,3 +1208,9 @@ run_cmd do
 #print axioms FreeProbability.Orthogonal.multiTraceWord_twoTrace
 #print axioms FreeProbability.Orthogonal.traceWordSecondMoment_eq_twoTrace
 #print axioms FreeProbability.Orthogonal.eventually_centered_traceWordSecondMoment_bound
+#print axioms FreeProbability.Orthogonal.integrable_traceWord_norm_sq
+#print axioms FreeProbability.Orthogonal.summable_centered_traceWordSecondMoment
+#print axioms FreeProbability.Orthogonal.ae_centered_traceWord_tendsto
+#print axioms FreeProbability.Orthogonal.probabilityMeasure_of_haar_marginal
+#print axioms FreeProbability.Orthogonal.centered_traceWord_tendstoInMeasure
+#print axioms FreeProbability.Orthogonal.ae_countable_centered_traceWords_tendsto

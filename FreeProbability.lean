@@ -128,3 +128,6 @@ import FreeProbability.Fock.HilbertBasisModel
 import FreeProbability.Fock.LengthDecomposition
 import FreeProbability.Fock.TensorCompletion
 import FreeProbability.Fock.TensorLevels
+import FreeProbability.Algebraic.CumulantAdjacentPartition
+import FreeProbability.Combinatorics.ConsecutiveFusion
+import FreeProbability.Algebraic.CumulantConsecutiveProducts

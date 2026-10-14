@@ -18,14 +18,15 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `168898a`, published on `main`, with full builds,
-source guard and transitive audit passing for 1768 declarations. Genuine
+Latest checked integration: `871fc9f`, published on `main`, with full builds,
+source guard and transitive audit passing for 1942 declarations. Genuine
 polynomial and closed-generator freeness is integrated in the faithful tracial
 C-star model. The all-order adjacent-product cumulant theorem and full freeness
 characterization are integrated. Joint Wick/Catalan and all-degree word IBP are integrated. Formal R-additivity and algebraic free CLT
 are integrated; full refinement/Möbius is integrated. All-vector creation,
 Hilbert-basis transport, complete length decomposition and tensor completion
-are undergoing integration.
+are integrated through completed ℓ²(I) tensor levels. Original-H tensor coherence
+is published, awaiting integration.
 
 | Goal | Status | Earliest work and dependency |
 | --- | --- | --- |
@@ -407,3 +408,27 @@ pending; vector/basis/length/tensor reviews and global name scans approved.
 The initial combined build passed before adding tensor levels. The final combined
 full build 3480 jobs, Verification 3483 jobs, direct audit 1942 declarations and
 source guard pass. Main integration pending.
+
+### Checked integration checkpoint: completed tensor levels
+
+`871fc9f` is checked and published on `main`, previous pending source mappings
+integrated. Full build 3480 jobs, Verification 3483 jobs, direct audit 1942
+declarations and source guard pass. Arbitrary-vector creation, Hilbert-basis
+transport, complete length decomposition and genuine tensor-level recursion
+are integrated. Creation is literally tensoring by the input ℓ² vector. Explicit
+original-H tensor coherence is separately published as `aac1e11`; a named
+recursive completed TensorPower and general full-Fock package are ongoing.
+
+### Pending integration: consecutive product cumulants
+
+Sources/integration mappings: `e8d1865`→`7c9b492`, `68a5a09`→`2c47857`,
+`e065136`→`952e257`. All-partition adjacent product identities iterate over any
+supplied finite adjacent-fusion plan. Its quotient is monotone/surjective with
+nonempty interval fibers; exact contract/expand adjunction proves the standard
+join-fiber formula. `cumulant_consecutiveProducts` handles nonempty final tuples
+and preserves noncommutative order. Mathematical review and global name scan
+approved; combined full build 3483 jobs, Verification 3486 jobs, direct audit
+2042 declarations and source guard pass. Main integration pending. Constructing a plan from an arbitrary
+independently specified interval partition/composition and proving pointwise
+product-by-fiber identification are still separate obligations. Kreweras remains
+open; this milestone does not silently assume those construction theorems.

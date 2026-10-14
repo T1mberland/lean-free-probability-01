@@ -430,3 +430,13 @@ run_cmd do
 #print axioms FreeProbability.Fock.scalarLevelEquiv
 #print axioms FreeProbability.Fock.successorLevelTensorEquiv
 #print axioms FreeProbability.Fock.levelEmbedding_tensorCreation
+#print axioms FreeProbability.orderedCumulantContribution_fuseAdjacent
+#print axioms FreeProbability.ConsecutiveFusion.quotient_monotone
+#print axioms FreeProbability.ConsecutiveFusion.quotient_surjective
+#print axioms FreeProbability.ConsecutiveFusion.quotient_fiber_interval
+#print axioms FreeProbability.ConsecutiveFusion.contract_le_iff
+#print axioms FreeProbability.ConsecutiveFusion.expand_contract
+#print axioms FreeProbability.ConsecutiveFusion.contract_eq_iff
+#print axioms FreeProbability.ConsecutiveFusion.prod_applyWord
+#print axioms FreeProbability.orderedCumulantContribution_consecutiveProducts_join
+#print axioms FreeProbability.cumulant_consecutiveProducts

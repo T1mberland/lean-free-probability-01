@@ -524,4 +524,12 @@ example {𝕜 A : Type*} [Field 𝕜] [Ring A] [Algebra 𝕜 A]
   · change B 2 ≤ groupedSubalgebra B g 1
     exact le_groupedSubalgebra B g (2 : Fin 3)
 
+-- The actual doubled-algebra dilation fixes every included canonical Wick word at time zero.
+example {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+    (w : List (Fock.fullFockBasisSet H)) :
+    Fock.ouTimeDilation H 0 (by norm_num)
+      (Fock.tensorVectorWick ((w.map (Fock.fullFockBasis H)).map (Fock.doubledFirst H))) =
+      Fock.tensorOperatorEquiv H (Fock.wick w) := by
+  simpa using Fock.ouTimeDilation_canonicalWick (H := H) 0 (by norm_num) w
+
 end FreeProbability.Examples

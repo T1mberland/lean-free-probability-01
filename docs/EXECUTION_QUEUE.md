@@ -18,10 +18,11 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `36ede120f0f4718f8e4c637812bb04ceccc54019`,
+Latest checked integration: `3b5fa1d2c626a1564791a6b471838537b1550755`,
 published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
 and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
-Full builds 3686/3689, direct transitive audit 4037 declarations and source guard pass.
+Grouped-freeness PR #23 passes full builds 3690/3693, direct transitive audit
+4066 declarations and source guard.
 Goals 1, 2, 3 and 6 are certified complete; seven full goals remain open.
 Every historical checkpoint below retains its original scope and date.
 
@@ -1613,3 +1614,27 @@ Actual original generated-algebra OUrange/embedding/semigroup still active.
 Grouped-freeness integration feature passes full build 3690 jobs, Verification
 3693 jobs, direct transitive axiom audit 4066 declarations, source-integrity
 guard and diff checks. The whole-join independence example compiles.
+
+### Checked grouping and pending rotation dilation
+
+PR #23 head `51b303a` merged as `3b5fa1d`; checked main passes full3690,
+Verification3693, direct audit4066 and source guard. No new goal is marked complete.
+The next focused integration assembles ten reviewed OU dilation modules through
+`0904736`, including genuine all-matrix CP and literal canonical Wick degree
+scaling on actual doubled-algebra inputs. At zero time the example fixes every
+included Wick word. This does not yet assert an original-algebra OU self-map.
+B now has reviewed native faithful-family equivalence through `1d646f2`, actual
+included-family embedding through `6f7fac7`, Wick-span density `7bbab95` and range
+`1927013` published separately. Native self-map/semigroup are active.
+A has published actual finite positive-product S multiplication `f6fca7f`, actual
+half-projection S and selected inverse-moment germs `abc6e36`, and compact law
+with projection support contained in [0,1] `d81513d`. Physical branch and precise
+lambda_L support edge remain unproved; the rational germ is not an edge proof.
+
+GitHub CI independently confirmed success for PR #19 run38556426527,
+PR #20 run38557298131 and PR #22 run38561631747. PR #23 run38564315636
+was still in progress at this query; local post-merge checks have passed.
+
+Rotation-dilation integration feature passes full3700, Verification3703,
+direct transitive audit4208, source guard and diff checks. The concrete
+zero-time canonical Wick example passes; no original-algebra self-map claimed.

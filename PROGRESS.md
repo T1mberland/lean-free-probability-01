@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `5920b0a` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 4682 declarations.
+The latest checked and published integration is `03aff10` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 4780 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -240,7 +240,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 4682 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 4780 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -464,3 +464,17 @@ are not operator-norm surrogates. The genuine complete cyclic Hilbert closure of
 now proved invariant, giving `familyOUL2` on EVERY vector there, with norm
 contraction, zero/time-addition, fixed vacuum and unique dense-orbit extension
 through `e30ef66`. No nonspanning family is identified with the entire Fock space. Von Neumann normality, L1 and entropy remain separate open obligations.
+
+### Positive Picard series prerequisite integration feature
+
+Actual cyclic OU L2 PR #29 merged as `03aff10`; checked main full3728,
+Verification3731, direct audit4780 and source guard. Three reviewed projection
+Picard modules through `ecedffb` prove monotone scalar iterates converge under
+a nonnegative supersolution and their actual limit is a fixed point. Polynomial
+approximants have nonnegative coefficients and exactly evaluate to those iterates.
+Coefficient n stabilizes after n+1 steps. Every finite partial sum of the actual
+stabilized infinite sequence is bounded by the scalar supersolution, proving
+true summability and its tsum bound, including zero parameters.
+This is a proved conditional series majorant. Matching it to the actual normalized
+projection moment germ and transferring summability to W=Q/(1-Q) remain open.
+Consequently no sharp support edge or global physical branch is claimed.

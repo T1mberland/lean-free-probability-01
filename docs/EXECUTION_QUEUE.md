@@ -18,11 +18,11 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `5920b0a9197f4bf143b9f368a5ea75972a14d2ed`,
+Latest checked integration: `03aff10d863da0ab4567d480dde250855884fc99`,
 published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
 and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
-Moment/support PR #28 passes full builds 3724/3727, direct transitive audit
-4682 declarations and source guard.
+Actual cyclic L2 PR #29 passes full builds 3728/3731, direct transitive audit
+4780 declarations and source guard.
 Goals 1, 2, 3 and 6 are certified complete; seven full goals remain open.
 Every historical checkpoint below retains its original scope and date.
 
@@ -44,7 +44,7 @@ Every historical checkpoint below retains its original scope and date.
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/integrate-ou-l2`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Coordinator | `feat/integrate-projection-picard`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
 | Worker A (`cumulants`) | `feat/projection-product-germs`, `/home/user/Projects/lean-fp-cumulants` | New `Analytic/ProjectionProduct*.lean`; frozen eight law/germ modules integrated | Actual moment equation and positive moment summability/support bridge; physical branch and sharp edge remain |
 | Worker B (`fock`) | `feat/fock-ou-continuity`, `/home/user/Projects/lean-fp-fock` | NEW `Fock/OrnsteinUhlenbeckContinuity*.lean`, `SecondQuantizationWOT*.lean` and agreed continuity notes; frozen L2 feature retained | Actual strong time continuity and WOT compression/conjugation groundwork |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
@@ -1787,3 +1787,27 @@ Exclusive NEW Continuity*/SecondQuantizationWOT* and agreedcontinuitynotes.
 Next strongtimecontinuity and actualWOT compression/conjugation; normalincluded
 embedding/bicommutant remain missing. A proceeds coefficient stabilization and
 true summability/momentmatching from positive Picard majorants.
+
+### Checked cyclic L2 and pending true Picard series majorant
+
+PR #29 head `7560a27` merged as `03aff10`; checked main full3728,
+Verification3731, direct audit4780, source guard and diff checks pass.
+Actual native vacuum implementation, state L2 contraction and unique complete
+cyclic Hilbert extension integrated; strongtimecontinuity/normal/L1/entropy open.
+Three reviewed projection prerequisites `ea956c8`, `0c66326`, `ecedffb` assembled:
+scalar positive monotone Picard convergence/fixedpoint under supersolution,
+nonnegative polynomial coefficients/exact scalar evaluation, actual stabilized
+coefficient sequence and TRUE infinite-series Summable/tsum<=supersolution.
+Concrete L2,t1/2,r1/2 supersolution validates actual infinite convergence.
+This is conditional scalar/series mathematics. Identification with actual q germ
+and W=Q/(1-Q) summability is still active; no lambda_L support/branch theorem.
+
+Picard-series integration feature passes full3731, Verification3734, direct
+transitive audit4824, source guard and diff checks. All three modules critically
+reviewed; frozen notes `9e10479` retained/read. Explicit L2,t1/2,r1/2
+supersolution proves genuine Summable infinite series. Actual moment matching
+and lambda_L support remain missing. GitHub CI confirmed PR #27 run38566597996,
+#28 run38567036091 and #29 run38567701281 success.
+A next NEW ProjectionProductPicardFormal module develops genuine formal
+coefficient equation/uniqueness, without equating formal Q with the actual germ.
+B strongtimecontinuity density helper active in NEW ContinuityDense module.

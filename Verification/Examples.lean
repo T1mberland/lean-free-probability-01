@@ -574,4 +574,9 @@ example {I H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [Complete
       Fock.familyCyclicVector e (Fock.familyOUTime e he t ht T) :=
   Fock.familyOUL2_cyclicVector e he t ht T
 
+-- An explicit scalar supersolution proves genuine infinite Picard-series convergence.
+example : Summable (fun n : ℕ => halfProjectionPicardCoefficient 2 n * (1 / 2 : ℝ) ^ n) :=
+  halfProjectionPicardCoefficient_summable 2 (1 / 2) (by norm_num) (1 / 2)
+    (by norm_num) (by norm_num)
+
 end FreeProbability.Examples

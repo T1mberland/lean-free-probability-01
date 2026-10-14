@@ -106,4 +106,69 @@ theorem wordDifferenceQuotient_append (i : I) (u v : List I) :
     rw [hm, tensorLeft_mul, tensorLeft_right]
     by_cases h : i = j <;> simp [h, wordMonomial_append, add_left_comm]
 
+@[simp] theorem tensorLeft_add (p q : WordPolynomial 𝕜 I) (z : PolynomialTensor 𝕜 I) :
+    tensorLeft (p + q) z = tensorLeft p z + tensorLeft q z := by
+  induction z using TensorProduct.inductionOn with
+  | tmul a b => simp [add_mul, TensorProduct.add_tmul]
+  | add x y hx hy => simp [map_add, hx, hy, add_add_add_comm]
+
+@[simp] theorem tensorRight_add (p q : WordPolynomial 𝕜 I) (z : PolynomialTensor 𝕜 I) :
+    tensorRight (p + q) z = tensorRight p z + tensorRight q z := by
+  induction z using TensorProduct.inductionOn with
+  | tmul a b => simp [mul_add, TensorProduct.tmul_add]
+  | add x y hx hy => simp [map_add, hx, hy, add_add_add_comm]
+
+@[simp] theorem tensorLeft_zero (z : PolynomialTensor 𝕜 I) : tensorLeft 0 z = 0 := by
+  induction z using TensorProduct.inductionOn with
+  | tmul a b => simp
+  | add x y hx hy => simp [hx, hy]
+
+@[simp] theorem tensorRight_zero (z : PolynomialTensor 𝕜 I) : tensorRight 0 z = 0 := by
+  induction z using TensorProduct.inductionOn with
+  | tmul a b => simp
+  | add x y hx hy => simp [hx, hy]
+
+@[simp] theorem tensorLeft_smul (c : 𝕜) (p : WordPolynomial 𝕜 I) (z : PolynomialTensor 𝕜 I) :
+    tensorLeft (c • p) z = c • tensorLeft p z := by
+  induction z using TensorProduct.inductionOn with
+  | tmul a b => simp [TensorProduct.smul_tmul']
+  | add x y hx hy => simp [hx, hy, smul_add]
+
+@[simp] theorem tensorRight_smul (c : 𝕜) (p : WordPolynomial 𝕜 I) (z : PolynomialTensor 𝕜 I) :
+    tensorRight (c • p) z = c • tensorRight p z := by
+  induction z using TensorProduct.inductionOn with
+  | tmul a b => simp [TensorProduct.tmul_smul]
+  | add x y hx hy => simp [hx, hy, smul_add]
+
+@[simp] theorem freeDifferenceQuotient_wordMonomial (i : I) (w : List I) :
+    freeDifferenceQuotient i (wordMonomial (𝕜 := 𝕜) w) = wordDifferenceQuotient i w := by
+  change freeDifferenceQuotient i (MonoidAlgebra.single (FreeMonoid.ofList w) 1) = _
+  rw [freeDifferenceQuotient_single, one_smul]
+
+@[simp] theorem freeDifferenceQuotient_one (i : I) :
+    freeDifferenceQuotient (𝕜 := 𝕜) (I := I) i 1 = 0 := by
+  rw [← wordMonomial_nil, freeDifferenceQuotient_wordMonomial, wordDifferenceQuotient_nil]
+
+/-- The free difference quotient on all polynomials satisfies the actual
+noncommutative tensor bimodule Leibniz rule. -/
+theorem freeDifferenceQuotient_mul (i : I) (p q : WordPolynomial 𝕜 I) :
+    freeDifferenceQuotient i (p * q) =
+      tensorLeft p (freeDifferenceQuotient i q) + tensorRight q (freeDifferenceQuotient i p) := by
+  induction p using MonoidAlgebra.induction_linear with
+  | zero => simp
+  | add p r hp hr => simp [add_mul, map_add, hp, hr, add_add_add_comm]
+  | single u c =>
+    obtain ⟨u, rfl⟩ := FreeMonoid.ofList.surjective u
+    induction q using MonoidAlgebra.induction_linear with
+    | zero => simp
+    | add q r hq hr => simp [mul_add, map_add, hq, hr, add_add_add_comm]
+    | single v d =>
+      obtain ⟨v, rfl⟩ := FreeMonoid.ofList.surjective v
+      have hs (w : List I) (a : 𝕜) :
+          MonoidAlgebra.single (FreeMonoid.ofList w) a = a • wordMonomial w := by
+        simp [wordMonomial, MonoidAlgebra.smul_single]
+      rw [hs u c, hs v d, smul_mul_smul_comm, map_smul, ← wordMonomial_append,
+        freeDifferenceQuotient_wordMonomial, wordDifferenceQuotient_append]
+      simp [smul_add, smul_smul, mul_comm]
+
 end FreeProbability

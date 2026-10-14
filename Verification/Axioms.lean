@@ -686,3 +686,9 @@ run_cmd do
 #print axioms FreeProbability.Fock.analyticClosedMatrixInclusion_series
 #print axioms FreeProbability.Fock.summable_norm_closedMatrixAnalyticDerivative
 #print axioms FreeProbability.Fock.closedGeneratedVacuumState_matrixPolynomial_analyticSeries_integrationByParts
+#print axioms FreeProbability.Fock.wick_normal_order_expansion
+#print axioms FreeProbability.Fock.wick_product_contractions
+#print axioms FreeProbability.Fock.norm_wick_le_length_add_one
+#print axioms FreeProbability.Fock.norm_homogeneousWick_le
+#print axioms FreeProbability.Fock.norm_homogeneousWick_vacuum_sq
+#print axioms FreeProbability.Fock.norm_homogeneousWick_le_degree_mul_vacuumNorm

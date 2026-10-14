@@ -323,4 +323,11 @@ example {I : Type*} (i : I) :
       i (wordMonomial (𝕜 := ℂ) [i]) (fun n => (1 / 4 : ℂ) ^ n)
       (by simpa only [he] using hv) (by simpa only [he] using hd)
 
+-- All three genuine contractions of the degree-two Wick square survive.
+example {I : Type*} (i : I) :
+    Fock.wick [i, i] * Fock.wick [i, i] =
+      Fock.wick [i, i, i, i] + Fock.wick [i, i] + 1 := by
+  simpa [Fin.sum_univ_succ, List.IsPrefix, Fock.wick, add_comm] using
+    Fock.wick_product_contractions [i, i] [i, i]
+
 end FreeProbability.Examples

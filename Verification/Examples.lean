@@ -633,4 +633,14 @@ example {A : Type*} [CStarAlgebra A] [PartialOrder A] [StarOrderedRing A]
   rw [hedge] at h
   exact h
 
+-- The length-two exterior branch has a unique positive parameter, without an upper bound on w.
+example {A : Type*} [CStarAlgebra A] [PartialOrder A] [StarOrderedRing A]
+    (φ : StarProbabilitySpace A) (hφ : IsTracial φ.toProbabilitySpace)
+    {B : Fin 2 → Subalgebra ℂ A} (hf : FreelyIndependent φ.toProbabilitySpace B)
+    (p : Fin 2 → A) (hpB : ∀ i, p i ∈ B i) (hp : ∀ i, IsStarProjection (p i))
+    (hE : ∀ i, φ.expectation (p i) = (1 / 2 : ℂ)) (x : ℝ)
+    (hx : halfProjectionRightEdge 2 < x) :
+    ∃! w : ℝ, halfProjectionPhysicalDomain 2 w ∧ halfProjectionExteriorCurve 2 w = x :=
+  φ.existsUnique_halfProjection_standard_physical_root hφ 2 (by norm_num) hf p hpB hp hE x hx
+
 end FreeProbability.Examples

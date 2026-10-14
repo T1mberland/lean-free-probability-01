@@ -104,3 +104,37 @@ usage namespace error, not a failure of any mathematical source.
 GitHub CI confirmed PR34 run38571454427, PR35 run38572925297 and
 PR36 run38573679338 success. Physical and prefix chains critically reviewed
 at final published tips; their separate integrations remain queued.
+
+### Actual physical projection branch and faithful spectral edge feature
+
+PR37 sharp actual-law edge merged as `272452cd7a53169da0d30f9bc236fd5b4ad92b14`;
+checked main full3752, Verification3755, direct audit5089, integrity/diff and push.
+Reviewed physical core through `401d9ff` and frozen notes `b3a58a5` are assembled.
+The actual law parameter W=xG(x)-1 is positive throughout x>lambda_L, satisfies
+z_L(W)=x, and lies in the proved physical domain. It is the unique root there;
+every physical parameter is realized, and the curve image is exactly (lambda_L,infinity).
+For L=2 the domain is all positive W; for L>=3 it is 0<W<1/(L-2).
+Reviewed `6be9139` identifies the genuine stationary curve value with the actual
+support maximum. `aa3739d` proves actual W→0 and xG→1 at infinity.
+`7c17f68` proves the L2 curve tends to1 at infinite parameter and the ACTUAL
+W(x) tends to infinity as x decreases to1; no finite L2 critical coordinate.
+Spectrum wrappers `e75218e` identify the actual ambient spectral maximum under
+faithfulness and supply the full sharp exterior operator resolvent; operator and
+law Cauchy transforms agree at every actual resolvent point without faithfulness.
+The faithful exterior normalized operator parameter is the actual physical W.
+Goal7 completion audit is pending the reviewer certificate and integration checks.
+Other open targets retain their exact scope; normal OU, entropy and general
+operator-valued covariance/subordination/asymptotic foundations remain open.
+
+Physical feature checks pass: full3762, Verification3765, direct transitive audit
+5159 declarations, source integrity/diff. Actual length-two unique-root usage
+compiles. Reviewer approves all ten physical modules including exact faithful
+spectrum scope, and certifies that every literal Goal7 mathematical subtarget
+is covered after successful main integration. Convolution is for GIVEN free
+positive elements with proved cross-realization law independence; universal
+free-product realization remains the independent Goal11 obligation.
+Certificate must be recorded only after the merged main checkpoint passes.
+A clean isolated worktree now uses `feat/haar-conjugation`, based on checked
+main272452c, owning only NEW HaarUnitary/HaarConjugationWords/HaarConjugation
+and agreed notes. Next target is entire-algebra integer Haar conjugate freeness.
+B continues new suffix amplification/commutant work; frozen prefix integration next.

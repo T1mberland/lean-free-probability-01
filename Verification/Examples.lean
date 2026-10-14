@@ -330,4 +330,19 @@ example {I : Type*} (i : I) :
   simpa [Fin.sum_univ_succ, List.IsPrefix, Fock.wick, add_comm] using
     Fock.wick_product_contractions [i, i] [i, i]
 
+-- Strict sign for an actual noncommuting affine pencil at an interior point.
+open scoped ComplexOrder in
+example :
+    let C₀ : Matrix (Fin 2) (Fin 2) ℂ := !![1, 0; 0, -1]
+    let C : Fin 1 → Matrix (Fin 2) (Fin 2) ℂ := fun _ => !![0, 1; 1, 0]
+    (matrixNegativeImaginaryPart (Fock.operatorMatrixPencilCauchy C₀ C Complex.I)).PosDef := by
+  intro C₀ C
+  apply Fock.operatorMatrixPencilCauchy_negativeImaginaryPart_posDef
+  · ext r c
+    fin_cases r <;> fin_cases c <;> norm_num [C₀, Matrix.conjTranspose]
+  · intro i
+    ext r c
+    fin_cases r <;> fin_cases c <;> norm_num [C, Matrix.conjTranspose]
+  · simp
+
 end FreeProbability.Examples

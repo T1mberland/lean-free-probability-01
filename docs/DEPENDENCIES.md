@@ -349,3 +349,144 @@ preservation/normality. Full goals4,5,8,9,10,11 remain open.
 Feature integration checks: full3797, Verification3800, transitive5857, source
 integrity and diff pass. New ON-family whole-algebra faith/trace focused build
 and individual standard-axiom audits pass; no new full goal is certified.
+
+### Literal OU double-commutant range integration
+
+PR46 checked main `da78dfa1b1e5f7770f13a9fce05045bfe738633f` passes full3797,
+Verification3800, transitive5857, source/diff and push. Actual ON-family faithful
+tracial whole-algebra vacuum is now integrated, not merely a feature result.
+Reviewed B suffix defect chain9fd86f9..7938b23 and range chainb4dd72f..5143895
+with exact notesb21b90c/40b7334 are assembled here: unconditional all-vector
+creator/annihilator/field defects, specified-family suffix commutation, literal
+rotated double-centralizer compression range, genuine all-matrix CP, unital
+norm contraction, vacuum preservation, nonnegative time specialization and
+time zero for every bounded operator. Actual WOT continuity is asserted on
+each uniform operator-norm ball; no unrestricted WOT continuity is claimed.
+Main declarations: ouDoubleCommutantRaw_mem_familyDoubleCentralizer,
+ouDoubleCommutantRawCP_mem_familyDoubleCentralizer,
+ouDoubleCommutantTimeCP_zero and_boundedWOT_continuous.
+No ON assumption is needed for range in the prescribed-field algebra.
+Whole-algebra composition and directed positive sup normality remain separate.
+B published all-vector vacuum damping05cdeaf, awaiting review/integration, and
+is proving ON-family whole-algebra composition using the checked faithful
+vacuum. A406b97a has actual eventual uniform O(1/N) rescaled Weingarten entry
+error, awaiting integration. All goals statuses remain five complete/six open.
+
+Range feature checks pass: full3808, Verification3811, directtransitive5983,
+source integrity/diff. All eleven source modules reviewed, no new full goal.
+
+### Actual stable orthogonal FFT and entry integration
+
+PR47 checked main `2260d14249be0ed6ce560c85e5009dccf318d086` passes
+full3808/Verification3811/transitive5983, source/diff and push.
+Reviewed A chainc7a8dc1..e4b842f with exact notes17bd38e is assembled: actual
+invariant tensors for ALL ordinary perfect pairings (including crossings),
+true Gram as dimension raised to raw Setoid-join quotient loop count, actual
+stable independence/Gram inverse, genuine invariant-tensor spanning and full
+Haar entry-integration formula for N>=r at degree2r. Spanning follows actual
+reflection/permutation/45-degree fresh-color coefficient laws and strong
+induction on missing colors; no invariant spanning theorem is assumed.
+Major declarations: pairingTensor_inner, ordinaryPairingGram_inverse,
+span_pairingTensors_eq_fixedVectors, entryMoment_eq_weingarten_delta_sum.
+Degreezero/emptydimension cases are retained. The stable N>=r scope is explicit;
+low-dimensional spanning/integration remains a separate open obligation.
+A later published literal leading limits and uniform rescaled-entry estimates
+are separate integration checkpoints. Random-matrix expected/probability/a.s.
+joint asymptotic freeness and strong resolvent convergence remain unproved.
+Bbc3c599 has whole-ONfamily OU composition awaiting independent review and
+integration. Normality needs actual directed positive IsLUB preservation;
+no complete lattice on arbitrary noncommuting operator sets is asserted.
+Full goal statuses remain five certified, six open.
+
+Stable FFT/integration feature passes full3817, Verification3820, direct
+transitive6065, source/diff and independent mathematical review.
+
+### Actual whole-von-Neumann OU semigroup feature
+
+PR48 checked main `914cb5e9a768b82d4229db2c568b879c74474e0b` passes full3817,
+Verification3820, directtransitive6065, source/diff and push. Actual stable FFT
+and Haar integration are integrated, with low-dimensional scope still open.
+Reviewed B chain6bd59b3..687195a assembles genuine finite-rank norm-bounded
+WOT approximations to EVERY bounded operator; actual intrinsic unital CP
+contractions on every prescribed-family D_e; exact bounded-WOT continuity;
+ALLcompleted-vector rotation sandwich=degree damping; actual ANYbounded-T
+vacuum identity; and WHOLEONfamily D_e semigroup law with timezero.
+The semigroup uses only degreeDamping_add and genuine faithful vacuum separation,
+not weak polynomial density or an all-B(H) semigroup assertion.
+Major declarations: ouVacuumSandwich_eq_degreeDamping, ouVonNeumannTimeCP_add,
+ouVonNeumannTimeContinuous_add, ouVonNeumannTimeCP_state_L2_le,
+ouVonNeumannTimeCP_vacuum_strong_continuous. Actual state L2 contraction and
+strong time continuity of every vacuum image hold ANYfamily; ON gives injective
+faithful state interpretation. No nonspanning cyclic space=ambient identification.
+Normality still requires actual bounded positive directed-net IsLUB preservation.
+Next root prerequisite positive operator energy and strong monotone convergence;
+B newbranchsymmetry owns NEW VacuumSymmetry modules. A owns NEW genuine raw
+pairing distance triangle. All eleven integrated-source statements reviewed;
+no full Goal10 or random-matrix asymptotic freeness completion is claimed.
+
+Whole-von-Neumann semigroup feature passes full3828, Verification3831,
+direct transitive6256, source/diff, precise mathematical review and named audits.
+
+### Genuine bounded monotone operator convergence and directed suprema
+
+PR49 checked main `a123904ee26ab288fb0905095f1169824425abd9` passes full3828,
+Verification3831, directtransitive6256, source/diff and push. Whole ON-family
+OU semigroup is integrated; normality is still distinct. CI46 38593822819
+andCI47 38594314691 are confirmed successful; CI48/49 were still running.
+Root commits b913d8e,1aa51db,570e38d,728897a,6dc696e prove actual positive
+operator energy, scalar quadratic limits/increment bounds, vector Cauchy and
+genuine bounded CLM strong limits for arbitrary normbounded Loewner-monotone
+directed nets, actual IsLUB and literal commutant/doublecommutant closure.
+The index needs only Preorder plus atTop.NeBot (equivalent to nonempty directed),
+not a countable sequence, semilattice or finite-dimensional Hilbert space.
+Individual operators need not be positive for monotone convergence/IsLUB;
+positivity passes separately under the genuine eventually-positive hypothesis.
+No blanket complete lattice on arbitrary noncommuting operator sets is installed.
+Major declarations: positiveOperator_energy_le, monotoneOperator_vector_cauchy,
+positiveOperator_nonneg_of_strong_tendsto, monotoneOperator_exists_isLUB and
+operatorDoubleCentralizer_exists_isLUB. All thirteen public statements reviewed
+and individually standard-axiom audited; focused builds are warning-free.
+Next normality proof must identify intrinsic DC IsLUB with the constructed
+ambient strong supremum, apply bounded-WOT continuity, and identify the image
+strong supremum. Intrinsic-to-ambient supremum equivalence is not assumed.
+A frozen published checkpoints include true leading/distance Weingarten bounds
+and actual complex trace contractions6349c65; new TraceContractions active.
+B frozen663f2f8 has true weighted number-operator domain, density, full adjoint
+graph and closed graph; new NumberResolvent active. These are not integrated
+yet. Five full goals complete, six open; no normality/entropy/freeness completion.
+
+Monotone-limit feature passes full3833, Verification3836, directtransitive6270,
+source/diff, all focused builds and mathematical statement reviews.
+
+### Actual OU normality in the directed-positive-supremum sense
+
+PR50 checked main `f502be11e46b15e19eebc46ed02a4444f08e8038` passes full3833,
+Verification3836, directtransitive6270, source/diff and push. Genuine arbitrary
+bounded monotone operator convergence/actual DC suprema are integrated.
+CI48 38594675047, CI49 38595244923 andCI50 38597812853 confirmed success.
+Root7615cbe/8ef8aa0 prove generic monotone norm-contraction bounded-WOT
+continuity preserves actual directed operator IsLUB, and actual OU normality
+for EVERY prescribed family. Positive nets get their norm bound automatically
+from their supplied supremum: no extra uniform-bound, ON, spanning, trace or
+faith hypothesis remains in ouVonNeumannCP_isLUB/TimeCP_isLUB.
+Canonical Cstar order is proved exactly equal to inherited ambient Loewner
+subtype order (tensorFamilyDoubleAlgebra_order_eq_inherited). Local consistent
+LE/Preorder/PartialOrder instances avoid competing subtype instance inference.
+Explicit CP coe rewrites removed a real elaboration timeout; no proof limit
+was increased. The actual intrinsic supremum is identified with the constructed
+ambient strong supremum by DC membership and subtype uniqueness; it is not
+assumed ambient. Images then have a genuine actual strong supremum identified
+via bounded WOT continuity and Hausdorff uniqueness.
+All nine generic/actual public statements focused-build and standard-axiom
+audited, source/diff passed, precise statements/collision/order bridge reviewed.
+Normality means preservation of every increasing positive nonempty directed
+net with its actual IsLUB. Unbounded-net global WOT continuity is not asserted.
+ON-family time-add semigroup plus this normality is genuine normal OU on the
+whole actual von Neumann algebra; L1, regularization and entropy remain open.
+A cycle components c27cddd frozen, actual cycle-count new module active;
+B actual strong right generator derivative452c87c frozen, reverse domain
+characterization active. These feature results still await integration.
+All full goals statuses remain five complete/six open.
+
+Actualnormality feature passes full3835, Verification3838, directtransitive6296,
+source/diff, focused warning-free new modules and exact mathematical review.

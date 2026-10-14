@@ -1232,3 +1232,54 @@ coefficient example at z=I proves STRICT negative imaginary part. Its missing
 ComplexOrder scope was a genuine example elaboration error, fixed locally;
 no resource/stale-artifact failure or mathematical statement change occurred.
 The twelve mathematical modules compiled before that example repair.
+
+### Checked physical matrix PR and pending exact edge integration
+
+PR #13 merged head `44044e9` as `3f6b367201402627452e38deccdcefc5609c8675`.
+Main passes full 3656, Verification 3659, direct audit 3707 and source guard.
+Actual negative-imaginary positivity, normalized analytic physical branch, full
+right-exterior positivity and actual derivative/Lyapunov are integrated.
+Goal 4 remains open for arbitrary base C-star CP-covariance and entrywise models.
+
+Worker original edge sources `5f94a49`, `872b04d`, `fb67bf9`, `0eebeb2`,
+`094e84d` and updated design notes `3983e9c` are preserved in a separate edge
+integration branch. Actual creator Gram gives completion square and every
+positive definite Z an operator comparison. Actual largest Hermitian-matrix
+eigenvalue is proved equal to real spectral maximum. Sharpness is not assumed:
+for EVERY x above the genuine real-operator spectral maximum, Z=m(x)^-1 is
+positive definite and makes the variational matrix EXACTLY xI by actual Dyson.
+Infimum nonemptiness/lower boundedness and midpoint argument give the reverse
+inequality, without asserting an optimizer at the edge. Matrix size nonempty
+is natural for the actual nonempty top spectrum/eigenvalue; color set may be empty.
+ALL positive definite tests and arbitrary Hermitian coefficients are allowed.
+Independent read-only reviewer approves full equality, correcting its earlier
+upper-bound-only review before `094e84d` existed. Usage constructs this exact
+positive test for a noncommuting diagonal drift and swap coefficient.
+Goal 5 remains open beyond the core formula and actual exterior/Lyapunov pieces.
+
+### Independent next queue: multiplicative convolution analytic route
+
+Read-only research identifies a smaller centered-resolvent proof using existing
+moment inverse right-uniqueness instead of unproved formal boxed inversion.
+First tasks: positive sandwich sqrt(a)b sqrt(a) actual spectral law and cyclic
+trace equality of all its powers with (ab)^n; generic continuity of freeness under
+norm closure, ensuring the centered actual inverse factors are free.
+For alpha=chi_a(w), beta=chi_b(w), c=1+w, A=(1-alpha*a)^-1,
+B=(1-beta*b)^-1, x=A-cI and y=B-cI, exact inverse algebra should yield
+A(1-gamma*ab)B=c(I-xy/(wc)), with removable gamma=c*alpha*beta/w.
+Centered factors x,y are order w, hence the actual geometric inverse converges
+near zero. Alternating freeness makes expectation of B(xy)^n A zero for n>=1,
+while n=0 gives c^2. Actual inverse germ uniqueness then gives S_ab=S_a*S_b;
+cyclic moment equality transfers this to the positive sandwich. THESE ARE
+UNPROVED TASKS, not accomplished results. Actual convolution on arbitrary
+positive compact laws also needs general positive free realization (Goal 11).
+Known formal obstruction: boxed cumulant formula alone does not supply the
+Lagrange/tree inverse-moment identity or the formal-to-analytic coefficient bridge.
+Useful existing names: cumulant_prod_eq_kreweras_sum,
+TransformNaturality.momentInverse_eq_of_eventually_right_inverse,
+sTransform_eventually_eq_of_powerMoments, hasSum_expectation_inverse.
+
+Combined edge feature passes full build 3661 jobs, Verification 3664, direct
+transitive audit 3770 declarations and source guard. The concrete noncommuting
+exact-witness example compiles. PR #11 CI run 38551786693 is now confirmed
+successful; later PR CI results will be tracked separately from local checks.

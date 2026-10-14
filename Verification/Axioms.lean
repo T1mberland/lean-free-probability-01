@@ -701,3 +701,9 @@ run_cmd do
 #print axioms FreeProbability.Fock.operatorMatrixPencilCauchy_unique_normalized_analytic
 #print axioms FreeProbability.Fock.operatorMatrixPencilCauchy_posDef_right_exterior
 #print axioms FreeProbability.Fock.operatorMatrixPencilCauchyDerivative_lyapunov
+#print axioms FreeProbability.Fock.matrixCreationCombination_gram
+#print axioms FreeProbability.Fock.operatorMatrixPencil_le_positive_square_bound
+#print axioms FreeProbability.matrixMaxEigenvalue_eq_sup_eigenvalues
+#print axioms FreeProbability.Fock.operatorMatrixPencilTopEdge_le_variational_value
+#print axioms FreeProbability.Fock.operatorMatrixPencil_variational_witness
+#print axioms FreeProbability.Fock.operatorMatrixPencilTopEdge_variational

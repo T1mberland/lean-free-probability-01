@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `ab1573b` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 5008 declarations.
+The latest checked and published integration is `f217432` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 6956 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -1108,3 +1108,34 @@ separately as an unproved plan, not a mathematical achievement.
 Original cyclic representation feature passes full3882, Verification3885,
 directtransitive6956, integrity/diff and all nine module statement reviews.
 CI54 run38607693716 and CI55 run38608060530 still in progress when queried.
+
+### Genuine positive-time completed Wick and native OU regularization
+
+PR56 checked mainf217432 passes full3882, Verification3885, transitive6956,
+source/diff and push. Original-family cyclic representation is integrated.
+Reviewed B359200d/0554f84 notes9881bb9 construct exact isometric native
+Cstar word equivalence and wholeD native membership detection. Rootf97326e,
+e52f41d,384a532,2950c98 prove actual operatornorm full Wick series for EVERY
+completedFock f and EVERYcomplex |z|<1, with map bound (1−|z|)^−2, exact
+positive-time OU vacuum identity and originalclosedword membership. Genuine
+ALLrightcommutation/vacuum separation identifies actual representedPt(T)
+with this series, so EVERYwholeONfamilyD T enters the ORIGINALnormclosed
+familyCstar at t>0. Actualoperatornorm≤(1−e^-t)^−2‖TΩ‖, independent of
+alphabet/ambientdimension. No spanning/countable/nonempty assumption.
+Major names: familyWordRepresentation_ou_eq_dampedWick,
+ouVonNeumannTimeCP_mem_native, norm_ouVonNeumannTimeCP_le_L2.
+Focusednewmoduleswarningfree, directstandardaxiomaudits and exactstatement
+reviews pass. NestedCLM norm proof initially hit typeclass/whnf timeout;
+explicit codomain and ContinuousLinearMap.opNorm_smul_le fixed inference,
+without increasing limits. Scalar L2→operator regularization is proved;
+complete matrix entropy, noncommutativeL1 extension/approximation and mixed
+degree conditionalentropy remain separate. Reviewedplan persisted as
+math-notes/ou-positive-suffix-gram-plan.md. B now owns NEW WickSuffixGram*
+finiteactualmatrixdecomposition; candidate positivity is verifiedbutits
+OU-image identity remains open. A NEW multi-trace/secondmoment modules have
+actualN^-m expectedbounds pendingintegration; variance/a.s. still active.
+Five full goals complete, six open; this is not full Goal10 completion.
+
+Full regularization feature passes full3888, Verification3891, directtransitive
+7083, integrity/diff and exact six-module reviews. Actual t=log2 factor-four
+state-L2 usage compiles. Goal10 L1 and matrix entropy remain open.

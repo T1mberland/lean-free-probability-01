@@ -1188,3 +1188,13 @@ run_cmd do
 #print axioms FreeProbability.Fock.familyWordRepresentation_commute_right
 #print axioms FreeProbability.Fock.familyWordRepresentation_norm
 #print axioms FreeProbability.Fock.familyWordRepresentation_Wick
+#print axioms FreeProbability.Fock.familyNativeWordRepresentation_range
+#print axioms FreeProbability.Fock.familyNativeWordEquiv_preimage
+#print axioms FreeProbability.Fock.familyWordRepresentation_mem_closed_iff
+#print axioms FreeProbability.Fock.summable_dampedWickSector
+#print axioms FreeProbability.Fock.norm_dampedWickReconstruction_le
+#print axioms FreeProbability.Fock.dampedWickReconstruction_mem_closedAlgebra
+#print axioms FreeProbability.Fock.dampedWickReconstruction_ou_vacuum
+#print axioms FreeProbability.Fock.familyWordRepresentation_ou_eq_dampedWick
+#print axioms FreeProbability.Fock.ouVonNeumannTimeCP_mem_native
+#print axioms FreeProbability.Fock.norm_ouVonNeumannTimeCP_le_L2

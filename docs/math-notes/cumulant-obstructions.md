@@ -34,7 +34,8 @@ convolution formula for actual free product cumulants.
 Maximal compatibility alone does not prove the missing statement. A suitable
 route is to prove that the bipartite block-incidence graph of `p` and its actual
 complement is a tree, or equivalently establish the relevant connectedness and
-block count `|p| + |K(p)| = n + 1`. Dropping complementary refinement blocks must
+block count `|p| + |K(p)| = n + 1` for `n > 0`. (For `n = 0`, both
+block counts are zero, so the tree count does not apply.) Dropping complementary refinement blocks must
 then disconnect the pair grouping. Rotation/order anti-isomorphism and block
 cardinality identities remain unproved. No conditional substitute is counted as
 the boxed formula.

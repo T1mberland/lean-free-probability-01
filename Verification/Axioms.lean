@@ -1178,3 +1178,13 @@ run_cmd do
 #print axioms FreeProbability.Orthogonal.centered_tracePairingContraction_norm_le
 #print axioms FreeProbability.Orthogonal.eventually_centered_traceWordMoment_uniform_bound
 #print axioms FreeProbability.Orthogonal.tendsto_centered_traceWordMoment
+#print axioms FreeProbability.Fock.ouVonNeumann_vacuum_mem_cyclic
+#print axioms FreeProbability.Fock.ouVonNeumannCyclicVector_denseRange
+#print axioms FreeProbability.Fock.ouVonNeumannCyclicAction_norm
+#print axioms FreeProbability.Fock.familyCyclicWordUnitary
+#print axioms FreeProbability.Fock.familyCyclicWordUnitary_damping_comp
+#print axioms FreeProbability.Fock.familyVonNeumannWordCoefficients_state_inner
+#print axioms FreeProbability.Fock.familyVonNeumannWordCoefficients_OU
+#print axioms FreeProbability.Fock.familyWordRepresentation_commute_right
+#print axioms FreeProbability.Fock.familyWordRepresentation_norm
+#print axioms FreeProbability.Fock.familyWordRepresentation_Wick

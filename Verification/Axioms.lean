@@ -228,3 +228,6 @@ run_cmd do
 #print axioms FreeProbability.NoncrossingPairing.partner_partner
 #print axioms FreeProbability.NoncrossingPairing.rel_iff
 #print axioms FreeProbability.NoncrossingPairing.not_nonempty_of_odd
+#print axioms FreeProbability.NoncrossingPartition.exists_least_representative
+#print axioms FreeProbability.NoncrossingPartition.exists_interval_block
+#print axioms FreeProbability.NoncrossingPartition.exists_Icc_block

@@ -72,6 +72,20 @@ Workers publish each commit immediately and never merge or edit central files.
 
 ## Next independent tasks
 
+### Checked integration checkpoint: pairing fundamentals
+
+`6ade2b4` is checked and published on `main`; worker source milestone `ab82d17`
+was integrated through `f30dffe`. The module `Combinatorics.NoncrossingPairing`
+provides `NoncrossingPartition.IsPairing.card_eq_twice`, `.even`,
+`.existsUnique_partner`, `.exists_adjacent`, and
+`NoncrossingPairing.partner_partner`, `.rel_iff`, `.not_nonempty_of_odd`.
+Full library and verification builds, the direct audit and the source guard pass;
+the audit covers 970 declarations. An odd weighted pairing-sum example is checked.
+
+Published next milestones awaiting integration: interval blocks (`4df3696`) and
+complete word-Fock creation/adjoint operators with canonical relation and first
+two vacuum moments (`778c6b0`). Neither is recorded as integrated yet.
+
 - Following pairing fundamentals: construct noncrossing interval restriction and
   deletion/insertion equivalences; prove unit insertion, then adjacent products.
 - Following creation operators: vacuum action and adjoint relations, semicircular

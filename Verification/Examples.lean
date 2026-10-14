@@ -13,4 +13,15 @@ example {n : ℕ} (hn : Odd n) (weight : NoncrossingPairing n → ℂ) :
     ⟨fun p => NoncrossingPairing.not_nonempty_of_odd hn ⟨p⟩⟩
   simp
 
+/-- The adjacent-pair theorem expressed using the public partner map. -/
+example {n : ℕ} (p : NoncrossingPairing n) (hn : 0 < n) :
+    ∃ i : Fin n, i.val + 1 = (p.partner i).val := by
+  obtain ⟨i, j, hij, hrel⟩ := p.property.exists_adjacent hn
+  have hji : j ≠ i := by
+    intro h
+    subst j
+    omega
+  have hj := (p.rel_iff i j).mp hrel
+  exact ⟨i, (hj.resolve_left hji) ▸ hij⟩
+
 end FreeProbability.Examples

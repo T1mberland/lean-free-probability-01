@@ -18,6 +18,7 @@ completion criterion.
 | `OperatorValued.ConditionalExpectation` | Linear retractions onto subalgebras, bimodule identities, centering, freeness with amalgamation, and the mixed second-moment identity |
 | `Combinatorics.NoncrossingPartition`, `Cumulant`, `PartitionMultilinear`, `CumulantMultilinear`, `NoncrossingSingleton` | Noncrossing partitions, constructive all-order moment–cumulant inversion and uniqueness, cumulant multilinearity, and singleton-block combinatorics |
 | `Algebraic.CumulantFreeness`, `Combinatorics.CumulantNaturality` | Vanishing mixed cumulants implies freeness; cumulants commute with expectation-preserving maps |
+| `Combinatorics.NoncrossingPairing` | Intrinsic two-element-block pairings, unique partners and their fixed-point-free involution, even size, and existence of an adjacent pair |
 | `Analytic.MomentSeries`, `Transform`, `ProjectionTransform`, `TransformNaturality` | Actual operator inverse and resolvent expectations, convergent moment power/Laurent expansions, analytic inverse moment and S-transforms, exact idempotent transform, scalar scaling, and equality of transform germs from common moments |
 | `Analytic.CauchyHalfPlane`, `CauchyNaturality`, `MomentConvergence` | Resolvent-set analyticity, strict upper-half-plane imaginary-part negativity, norm bounds, equality from moments at every nonreal argument for selfadjoint variables, and transform convergence under an eventual uniform source norm bound |
 | `Matrix.RankOneSecular`, `HermitianResolvent` | Exact secular and Sherman–Morrison identities; spectral resolvent expansions; positivity and monotonicity; rank-one norm thresholds; at most one exterior eigenvalue counted with multiplicity |
@@ -108,6 +109,12 @@ starting snapshot was published as `faf32e8` on `main` and
 `feat/verified-baseline` in `T1mberland/lean-free-probability-01`. The integration
 build and audits still pass for 954 declarations. Cumulant/pairing and Fock workers
 have isolated worktrees; their active tasks are not yet integrated results.
+
+Pairing fundamentals were subsequently integrated and checked on `main` at
+`6ade2b4` (worker milestone `ab82d17`). Full builds, the source guard and the
+transitive axiom audit pass for 970 library declarations. Interval blocks and
+word-Fock operators are separately published worker milestones awaiting their
+integration checkpoints; they do not establish the full cumulant or Fock goals.
 
 1. Complete cumulant calculus: refinement and interval-block combinatorics, unit
    insertion, adjacent products, and freeness implies vanishing mixed cumulants.

@@ -18,8 +18,8 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `9436c25e3fea306c41b07643f30b87ec91e2e344`,
-published main after PR57. Full3888, Verification3891, direct transitive7083,
+Latest checked integration: `7d70927a91a88005964f9db525d5cd4154a29871`,
+published main after PR58. Full3893, Verification3896, direct transitive7172,
 source guard/diff and explicit push passed. Earlier records below are historical.
 Goals 1, 2, 3, 6 and 7 are certified complete; six full goals remain open.
 Every historical checkpoint below retains its original scope and date.
@@ -42,9 +42,9 @@ Every historical checkpoint below retains its original scope and date.
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/orthogonal-multitrace-variance-integration`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/orthogonal-multitrace-bounds`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalMultiTrace*.lean and agreed notes; prior sources frozen | Genuine multi-trace Haar expansion and centered moment/variance bounds |
-| Worker B (`fock`) | `feat/fock-positive-suffix-gram`, `/home/user/Projects/lean-fp-fock` | NEW Fock/WickSuffixGram*.lean and agreed notes; prior sources frozen | Actual finite matrix positive suffix decomposition |
+| Coordinator | `feat/orthogonal-almost-sure-integration`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Worker A (`cumulants`) | `feat/orthogonal-probability-random-inputs`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalMultiTraceProbability*.lean and agreed notes; prior sources frozen | Genuine independent random input product-law and Fubini bounds |
+| Worker B (`fock`) | `feat/fock-homogeneous-gram-ou`, `/home/user/Projects/lean-fp-fock` | NEW Fock/WickSuffixGramActualOU*.lean and agreed notes; prior sources frozen | Actual OU identity for finite homogeneous matrix positive suffix decomposition |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -2596,3 +2596,35 @@ Five full goals complete, six open; full random-matrix freeness stillopen.
 Multi-trace/second-moment feature passes full3893, Verification3896, direct
 transitive7172, integrity/diff and all five source precise statement reviews.
 Actual same-Haar second absolute moment is proved; probability/a.s. next.
+
+### Genuine mean-square, probability and almost-sure Haar trace convergence
+
+PR58 checked main7d70927 passes full3893, Verification3896, transitive7172,
+source/diff and push. True single-Haar second absolute moment is integrated.
+Reviewed A44e4e23/677a3ee/2ed976b and notes47a84dd are assembled: actual
+squared-trace integrability, summable secondmoments over ALLN (finite unstable
+prefix handled), genuine Tonelli a.e. summability and a.s. centeredtrace→0
+for ANY common measurable source with correct normalized Haar marginals.
+No independence across dimensions or assumed convergence is required.
+Correct marginal derives source probability; actual convergence in measure
+follows, and COUNTABLE indexed word collections share one fullmeasureevent.
+Positive fixedhalfdegree and actualuniformcomplexmatrixopnorm bounds are
+explicit; uncountable simultaneousword assertions are not made.
+Major names: summable_centered_traceWordSecondMoment,
+ae_centered_traceWord_tendsto, centered_traceWord_tendstoInMeasure,
+ae_countable_centered_traceWords_tendsto. Sevenpublicnewtheorems and the
+Tonellihelper reviewed/focusedbuilt/standardaxiomaudited. This proves distinct
+mean-square/probability/a.s. modes for actualsingle-Haarcenteredwords, not
+fullmultipleindependentHaarcolor/randomfamilyjointstar-law/strongconvergence.
+A NEW ProbabilityRandomInputs* proves actual jointmeasurability, productlaw
+and Haar×data Fubini bounds. B NEW WickSuffixGramActualOU* identifies the
+reviewed finite homogeneousmatrixpositiveGram with actualOU. Root published
+c9acaaa/c1e7329 conditionalgeometricinversebound and actualfinite-depth
+projections; actualpencilpropagation/quantitativeexteriorapplication next.
+The shiftedcompression plan records a required domain correction: ambient
+QHQ adds eigenvalue0; use Q(H+‖H‖I)Q or restricteddepthspace forz>b.
+Five full goals complete/six open; no fullGoal9/Goal5/Goal10 completion.
+
+Mean-square/probability/a.s. feature passes full3896, Verification3899, direct
+transitive7179, integrity/diff and all exact scope reviews. CI56 run38608452061,
+CI57 run38610503541 and CI58 run38611081396 confirmed success.

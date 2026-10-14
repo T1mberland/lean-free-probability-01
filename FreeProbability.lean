@@ -204,3 +204,8 @@ import FreeProbability.OperatorValued.MatrixTensorPowers
 import FreeProbability.OperatorValued.MatrixPolynomialExpectation
 import FreeProbability.OperatorValued.MatrixMomentRecursion
 import FreeProbability.Analytic.ProjectionSpectralMeasure
+import FreeProbability.Analytic.FockExponentialDuhamel
+import FreeProbability.Analytic.FockExponentialIntegrationByParts
+import FreeProbability.Analytic.FockExponentialPolynomial
+import FreeProbability.Analytic.FockExponentialCStar
+import FreeProbability.Analytic.FockExponentialMatrix

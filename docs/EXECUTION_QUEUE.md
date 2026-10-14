@@ -18,7 +18,7 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `b22509301b70a3923b509a99c65e06410ec4e530`,
+Latest checked integration: `61c259146bf5c5133176c1f44518602085d5d540`,
 published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
 and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
 Corrected WOT-generated PR #35 passes full builds 3745/3748, direct transitive audit
@@ -2092,3 +2092,27 @@ Reviewer approved a literal doublecommutant prefix-block/suffix-range route that
 avoids general Kaplansky for range, plus a bounded finite-rank ALLB semigroup
 route. Both still require actual new kernel proofs. Positive order-sup normality
 and doublecommutant traciality remain explicit separate obligations.
+
+### Literal double-commutant amplification integration feature
+
+Prefix PR40 merged at `61c259146bf5c5133176c1f44518602085d5d540`;
+checked main full3774, Verification3777, direct audit5452, source/diff and push.
+Root proofs `4367dae`, `7d23481`, `0b3c7fc` establish complete Hilbert-sum block
+commutation and literal doublecentralizer preservation, generic multiplicative
+unitary transport, and actual Fock embedding of ANY entire field doublecommutant
+into included fields. No ON/countability/spanning restriction or false WOTclosure
+identification is introduced. New math notes retain failed coercion approaches,
+precise proof and next suffix/positive-sup/trace dependencies.
+CI PR37 run38579133371 failed downloading Elan with connection-reset before any
+Lean checks; the failed job was rerun. PR38/40 were still running when queried.
+Local kernel checks are unaffected; no CI success is claimed for these runs yet.
+A Haar core through2ff26dd+notesbe814c9 is reviewed/published pending integration;
+A now owns HaarIndependentConjugation. B owns suffix modules/commutants, with
+reviewed outside-letter and Gamma identities. Goal statuses unchanged: 1,2,3,6,7
+complete; 4,5,8,9,10,11 open. Normality and entropy remain unproved obligations.
+
+Doublecommutant feature checks pass full3776, Verification3779, direct audit5465,
+source integrity/diff. Arbitrary-family literal doublecommutant usage compiles.
+All new mathematical statements critically reviewed; no new full goal completed.
+GitHub CI37 failed-job retry run38579133371 succeeds, confirming the download
+failure was transient; CI38 run38579730062 succeeds. CI40 still in progress.

@@ -41,4 +41,9 @@ example {I : Type*} (i j : I) (h : i ≠ j) :
   classical
   simp [Fock.vacuumExpectation_wick_star_mul, h]
 
+/-- Commutators have zero expectation in the closed generated algebra. -/
+example {I : Type*} (T U : Fock.closedSemicircularAlgebra I) :
+    (Fock.closedGeneratedVacuumState I).expectation (T * U - U * T) = 0 := by
+  rw [map_sub, Fock.closedGeneratedVacuumState_tracial I T U, sub_self]
+
 end FreeProbability.Examples

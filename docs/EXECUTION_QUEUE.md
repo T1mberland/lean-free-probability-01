@@ -37,8 +37,8 @@ integration checkout passes the full build and audits.
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
 | Coordinator | `main`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/cumulant-characterization`, `/home/user/Projects/lean-fp-cumulants` | New cumulant-related `Combinatorics` and `Algebraic` files; existing `Algebraic/CumulantFreeness.lean` if needed | Singleton contribution transport and unit insertion, then adjacent products and reverse freeness |
-| Worker B (`fock`) | `feat/fock-semicircular`, `/home/user/Projects/lean-fp-fock` | New `Fock` and `Semicircular` files | Wick cyclicity, commuting right operators and generated-algebra faithfulness/traciality |
+| Worker A (`cumulants`) | `feat/cumulant-characterization`, `/home/user/Projects/lean-fp-cumulants` | New cumulant-related `Combinatorics` and `Algebraic` files; existing `Algebraic/CumulantFreeness.lean` if needed | Unit/scalar/centering cumulants published; adjacent products and reverse freeness next |
+| Worker B (`fock`) | `feat/fock-semicircular`, `/home/user/Projects/lean-fp-fock` | New `Fock` and `Semicircular` files | Closed faithful/tracial generated state published; exact norm two, freeness and full Wick next |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -123,6 +123,20 @@ equivalence at every prescribed position, with exact actual-block transport.
 transport for arbitrary block weights. Full builds, direct audit and source guard
 pass for 1070 declarations. Unit-cumulant vanishing is the next obligation, not
 a hypothesis or a consequence asserted by the transport module.
+
+### Checked integration checkpoint: Wick vectors and right operators
+
+`131f134` is checked and published on `main`; sources `e2d7aa8`, `0e0a63b`
+were integrated through `7384bb4`, `3affad8`. `wick_vacuum` realizes every word,
+`vacuumExpectation_wick_star_mul` proves exact orthogonality, and the commutant
+separating lemma follows from this cyclicity. `commute_semicircular_rightSemicircular`
+is an operator equality on all vectors, with boundary cases handled explicitly.
+Full builds, direct audit and source guard pass for 1127 declarations.
+
+Reviewed published milestones awaiting integration: polynomial/closed faithful
+tracial generated states (`53f5bd8`, `979669a`) and general unit-cumulant vanishing
+with scalar/centering invariance (`36a6578`). No full Wick/freeness or norm-two
+result is counted from these supporting milestones.
 
 ### Independent spectral-measure proof path
 

@@ -275,3 +275,16 @@ run_cmd do
 #print axioms FreeProbability.Fock.rightSemicircular_vacuum
 #print axioms FreeProbability.Fock.rightSemicircular_word_append
 #print axioms FreeProbability.Fock.commute_semicircular_rightSemicircular
+#print axioms FreeProbability.Fock.commute_right_of_mem_semicircularAlgebra
+#print axioms FreeProbability.Fock.eq_zero_of_commute_right_of_vacuum_eq_zero
+#print axioms FreeProbability.Fock.vacuumExpectation_faithful_on_semicircularAlgebra
+#print axioms FreeProbability.Fock.generatedVacuumState
+#print axioms FreeProbability.Fock.generatedVacuumState_isFaithful
+#print axioms FreeProbability.Fock.vacuumExpectation_semicircular_mul_comm
+#print axioms FreeProbability.Fock.vacuumExpectation_mul_comm_on_semicircularAlgebra
+#print axioms FreeProbability.Fock.commute_right_of_mem_closedSemicircularAlgebra
+#print axioms FreeProbability.Fock.vacuumExpectation_faithful_on_closedSemicircularAlgebra
+#print axioms FreeProbability.Fock.vacuumExpectation_mul_comm_on_closedSemicircularAlgebra
+#print axioms FreeProbability.Fock.closedGeneratedVacuumState
+#print axioms FreeProbability.Fock.closedGeneratedVacuumState_isFaithful
+#print axioms FreeProbability.Fock.closedGeneratedVacuumState_tracial

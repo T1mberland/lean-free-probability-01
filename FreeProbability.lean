@@ -30,6 +30,8 @@ import FreeProbability.Fock.WordSpace
 import FreeProbability.Fock.VacuumState
 import FreeProbability.Fock.WickWord
 import FreeProbability.Fock.RightOperators
+import FreeProbability.Fock.GeneratedState
+import FreeProbability.Fock.ClosedGeneratedState
 import FreeProbability.Algebraic.CumulantFreeness
 import FreeProbability.Matrix.RankOneSecular
 import FreeProbability.Matrix.HermitianResolvent

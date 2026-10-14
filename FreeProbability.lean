@@ -374,3 +374,4 @@ import FreeProbability.Fock.SecondQuantizationSuffixOutside
 import FreeProbability.Fock.SecondQuantizationSuffixFields
 import FreeProbability.Fock.SecondQuantizationSuffixTransport
 import FreeProbability.Fock.SecondQuantizationSuffixOrthogonal
+import FreeProbability.OperatorValued.CovarianceGram

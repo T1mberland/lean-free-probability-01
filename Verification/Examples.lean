@@ -673,4 +673,10 @@ example {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [Complete
     Fock.secondQuantizationCompression V (Fock.isometrySuffixEmbedding V T) = T :=
   Fock.isometrySuffixEmbedding_compression V T
 
+-- A completely positive covariance need not preserve one to satisfy the ordered Gram inequality.
+example {B : Type*} [CStarAlgebra B] [PartialOrder B] [StarOrderedRing B]
+    (η : CompletelyPositiveMap B B) (a b : Fin 3 → B) :
+    0 ≤ ∑ i, ∑ j, star (b i) * η (star (a i) * a j) * b j :=
+  cp_covariance_quadratic_nonneg η a b
+
 end FreeProbability.Examples

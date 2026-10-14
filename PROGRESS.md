@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `871fc9f` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 1942 declarations.
+The latest checked and published integration is `7bb8314` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 2042 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -94,6 +94,12 @@ separate from the formal series theorem. The actual Fock semicircular-cumulant
 law and variance-one polynomial/star CLT with that concrete target are integrated
 at `cf3c085`, removing the target-existence assumption in that
 case.
+
+`cumulant_consecutiveProducts` and its all-partition join-fiber formula are
+integrated at `7bb8314` for any supplied finite adjacent-fusion plan. Every
+monotone surjective finite quotient admits such a plan on the worker branch;
+pointwise fiber-product identification is being completed before claiming the
+independently specified grouping theorem. Kreweras remains open.
 
 ## Haar probability and concentration
 
@@ -151,7 +157,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 1942 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 2042 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

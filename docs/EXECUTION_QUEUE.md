@@ -18,8 +18,8 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `871fc9f`, published on `main`, with full builds,
-source guard and transitive audit passing for 1942 declarations. Genuine
+Latest checked integration: `7bb8314`, published on `main`, with full builds,
+source guard and transitive audit passing for 2042 declarations. Genuine
 polynomial and closed-generator freeness is integrated in the faithful tracial
 C-star model. The all-order adjacent-product cumulant theorem and full freeness
 characterization are integrated. Joint Wick/Catalan and all-degree word IBP are integrated. Formal R-additivity and algebraic free CLT
@@ -432,3 +432,27 @@ approved; combined full build 3483 jobs, Verification 3486 jobs, direct audit
 independently specified interval partition/composition and proving pointwise
 product-by-fiber identification are still separate obligations. Kreweras remains
 open; this milestone does not silently assume those construction theorems.
+
+### Checked integration checkpoint: consecutive-product plans
+
+`7bb8314` is checked and published on `main`, prior source mappings integrated.
+Full build 3483 jobs, Verification 3486 jobs, direct audit 2042 declarations
+and source guard pass. Standard join-fiber cumulant formulas hold for all
+supplied finite consecutive-fusion plans. Every monotone surjective finite
+quotient plan-existence theorem is published separately (`670aae1`); direct
+pointwise products over quotient fibers remain being completed.
+
+### Pending integration: original-H full Fock package
+
+Sources/integration mappings: `aac1e11`→`b7af568`, `914ff46`→`c6f5501`.
+Completion transports actual linear isometry equivalences; the original H
+enters genuine completed H ⊗ level recursion and literal creation action.
+`FullFock H` exists for every complete complex Hilbert H using mathlib's actual
+Hilbert-basis existence theorem, with full grading, exact operator norms,
+canonical relation and vacuum annihilation. The named recursively completed
+TensorPower/direct-sum equivalence is the next presentation theorem, avoiding
+universe problems by a scalar-isomorphic base level. General basis independence
+and spectral density identification remain separate obligations. Original-H
+coherence and FullFock package reviewed; full build 3485 jobs, Verification
+3488 jobs, direct transitive audit 2083 declarations and source guard pass.
+Main integration pending.

@@ -440,3 +440,12 @@ run_cmd do
 #print axioms FreeProbability.ConsecutiveFusion.prod_applyWord
 #print axioms FreeProbability.orderedCumulantContribution_consecutiveProducts_join
 #print axioms FreeProbability.cumulant_consecutiveProducts
+#print axioms FreeProbability.Fock.isometryEquivCompletion
+#print axioms FreeProbability.Fock.basisSuccessorLevelTensorEquiv
+#print axioms FreeProbability.Fock.basisLevelEmbedding_tensorCreation
+#print axioms FreeProbability.Fock.fullFockBasis
+#print axioms FreeProbability.Fock.norm_fullCreation
+#print axioms FreeProbability.Fock.fullAnnihilation_creation
+#print axioms FreeProbability.Fock.fullFockGrading
+#print axioms FreeProbability.Fock.fullFockTensorLevel
+#print axioms FreeProbability.Fock.fullCreation_tensorLevel

@@ -131,3 +131,5 @@ import FreeProbability.Fock.TensorLevels
 import FreeProbability.Algebraic.CumulantAdjacentPartition
 import FreeProbability.Combinatorics.ConsecutiveFusion
 import FreeProbability.Algebraic.CumulantConsecutiveProducts
+import FreeProbability.Fock.BasisTensorLevels
+import FreeProbability.Fock.FullFock

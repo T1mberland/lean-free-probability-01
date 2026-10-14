@@ -42,6 +42,30 @@ theorem finiteDepthPencilUpperEdge_add_norm_nonneg (C₀ : Matrix n n ℂ)
     0 ≤ finiteDepthPencilUpperEdge C₀ C + ‖finiteDepthPencilOperator C₀ C‖ :=
   realSpectralMaximum_add_norm_nonneg _ (finiteDepthPencilOperator_isSelfAdjoint C₀ C hC₀ hC)
 
+omit [Nonempty n] in
+theorem finiteDepthPencilOperator_scalar (a : ℝ) :
+    finiteDepthPencilOperator ((a : ℂ) • (1 : Matrix n n ℂ)) (fun _ : I => 0) =
+      (a : ℂ) • 1 := by
+  apply ContinuousLinearMap.ext
+  intro f
+  apply lp.ext
+  funext j
+  simp [finiteDepthPencilOperator_apply, Matrix.one_apply, smul_apply]
+  rfl
+
+theorem finiteDepthPencilUpperEdge_scalar (a : ℝ) :
+    finiteDepthPencilUpperEdge ((a : ℂ) • (1 : Matrix n n ℂ)) (fun _ : I => 0) = a := by
+  unfold finiteDepthPencilUpperEdge realSpectralMaximum
+  rw [finiteDepthPencilOperator_scalar]
+  have he : (a : ℂ) • (1 : HilbertMatrixSpace n (WordSpace I) →L[ℂ]
+      HilbertMatrixSpace n (WordSpace I)) = algebraMap ℝ _ a := by
+    rw [← Algebra.algebraMap_eq_smul_one]
+    exact (IsScalarTower.algebraMap_apply ℝ ℂ _ a).symm
+  rw [he]
+  have hs : spectrum ℝ (algebraMap ℝ (HilbertMatrixSpace n (WordSpace I) →L[ℂ]
+      HilbertMatrixSpace n (WordSpace I)) a) = {a} := spectrum.scalar_eq a
+  exact (congrArg sSup hs).trans (csSup_singleton a)
+
 /-- Ambient inverse of the compressed positive shift. On the retained range this is the usual truncated pencil resolvent. -/
 def finiteDepthPencilResolvent (C₀ : Matrix n n ℂ) (C : I → Matrix n n ℂ)
     (L : ℕ) (z : ℝ) : HilbertMatrixSpace n (WordSpace I) →L[ℂ]

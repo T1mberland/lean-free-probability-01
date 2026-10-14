@@ -1088,3 +1088,8 @@ run_cmd do
 #print axioms FreeProbability.Fock.isometrySuffixEmbedding_commute_field_basis
 #print axioms FreeProbability.Fock.isometrySuffixEmbedding_commute_creation_orthogonal
 #print axioms FreeProbability.Fock.isometrySuffixEmbedding_commute_annihilation_orthogonal
+#print axioms FreeProbability.cstarGramMatrix_nonneg
+#print axioms FreeProbability.cp_covariance_gram_nonneg
+#print axioms FreeProbability.cstarMatrix_starSquare_quadratic_nonneg
+#print axioms FreeProbability.cstarMatrix_quadratic_nonneg
+#print axioms FreeProbability.cp_covariance_quadratic_nonneg

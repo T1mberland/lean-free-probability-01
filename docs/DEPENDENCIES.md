@@ -265,3 +265,26 @@ Suffix feature checks pass full3788, Verification3791, direct transitive audit56
 source integrity/diff. Genuine all-operator suffix compression usage compiles.
 All eight module statements and collision scopes critically reviewed at the
 published final tips; no normality or arbitrary-field claim is introduced.
+
+### Arbitrary CP covariance Gram positivity integration feature
+
+Suffix PR43 merged as `96193a7ac5c7316c62adf98cd543c25cea6241a4`;
+checked main full3788, Verification3791, direct audit5655, source/diff and push.
+Root reviewed/audited `aace45c` proves actual finite C-star Gram positivity,
+CP covariance mapped-Gram positivity and fully ordered coefficient quadratic
+positivity for EVERY finite type including empty. Covariance needs neither
+unitality nor a finite Kraus representation; no trace/faithfulness assumption.
+An actual positive-cone induction preserves all noncommutative factor order.
+This is a proven Goal4 prerequisite; general covariance realization remains open.
+New design notes record the failed CFC-instance approach and the verified cone
+proof, plus exact correspondence/tensor/adjointable-operator obligations.
+A actual compact real Haar projection through34dcc10 is reviewed/published
+pending integration and continues actual orthogonal tensor representation.
+B exact basis creator defect9fd86f9 is published; arbitrary-h defect stillactive.
+Five goals remain complete and six open; no new full goal is certified here.
+
+Covariance feature checks pass full3789, Verification3792, direct audit5661,
+source integrity/diff. Actual three-coefficient nonunital-covariance usage compiles.
+All six public declarations critically reviewed and collision-free.
+CI39 run38579919914, CI41 run38582089296, CI42 run38582719980 and
+CI43 run38583117617 confirmed success. All queried CI through PR43 pass.

@@ -59,12 +59,21 @@ uniqueness of all pointwise matrix solutions at one fixed argument.
 
 `406666b` gives the sufficient genuine norm-exterior resolvent domain
 `|z| > norm(P)`, including both real exteriors and the empty matrix dimension.
-This is not the full real right-exterior condition beyond the top spectral edge.
+This norm-bound theorem is only a sufficient special case.
+
+`7ae6c69` proves preservation of the actual full positive C-star matrix cone for
+every scalar state and every finite matrix dimension, via square-cone closure
+and verified Gram positivity. `5406b9d` then proves genuine positive definite
+Cauchy transforms and actual inverse Dyson on the FULL real right exterior
+`forall t in spectrum Real P, t < x`, including empty dimensions. The true inverse
+is positive by continuous functional calculus; positivity plus verified finite
+matrix invertibility gives strict positive definiteness. No faithfulness of the
+vacuum state on all bounded operators is assumed.
 
 ## Next dependencies
 
-1. Full real right-exterior positivity under the exact condition
-   `forall t in spectrum Real P, t < x`, beyond the sufficient norm radius.
+1. Actual Lyapunov identities obtained by differentiating actual matrix Dyson,
+   and further right-exterior bounds for the spectral-edge variational goal.
 2. Matrix upper-half-plane argument invertibility and pointwise physical
    uniqueness, beyond the normalized analytic branch theorem.
 3. Compatibility with the generated closed matrix C-star model and analytic norm

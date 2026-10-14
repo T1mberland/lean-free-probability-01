@@ -579,4 +579,13 @@ example : Summable (fun n : ℕ => halfProjectionPicardCoefficient 2 n * (1 / 2 
   halfProjectionPicardCoefficient_summable 2 (1 / 2) (by norm_num) (1 / 2)
     (by norm_num) (by norm_num)
 
+-- Strong time continuity recovers every native algebra element as time tends to zero.
+open scoped Topology NNReal in
+example {I H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+    (e : I → H) (he : Orthonormal ℂ e) (T : Fock.tensorFamilyAlgebra e) :
+    Filter.Tendsto (fun t : ℝ≥0 => Fock.familyOUTime e he t t.coe_nonneg T)
+      (𝓝 0) (𝓝 T) := by
+  have h := (Fock.familyOUTime_strong_continuous e he T).continuousAt (x := (0 : ℝ≥0))
+  simpa only [NNReal.coe_zero, Fock.familyOUTime_zero] using h.tendsto
+
 end FreeProbability.Examples

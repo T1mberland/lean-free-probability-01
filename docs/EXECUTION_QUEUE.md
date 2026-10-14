@@ -18,7 +18,7 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `ba2ea90c5408aaa5375ed9e2c70d23ab2d7771d2`,
+Latest checked integration: `470d11e29589a6227701ec985ea0255cbda34653`,
 published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
 and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
 Positive Picard-series PR #30 passes full builds 3731/3734, direct transitive audit
@@ -44,7 +44,7 @@ Every historical checkpoint below retains its original scope and date.
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `docs/checked-picard-ledger`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Coordinator | `feat/integrate-ou-continuity`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
 | Worker A (`cumulants`) | `feat/projection-product-germs`, `/home/user/Projects/lean-fp-cumulants` | New `Analytic/ProjectionProduct*.lean`; frozen eight law/germ modules integrated | Actual analytic Picard-series realization and moment identification; physical branch and sharp edge remain |
 | Worker B (`fock`) | `feat/fock-ou-continuity`, `/home/user/Projects/lean-fp-fock` | NEW `Fock/OrnsteinUhlenbeckContinuity*.lean`, `SecondQuantizationWOT*.lean` and agreed continuity notes; frozen L2 feature retained | Actual strong time continuity and WOT compression/conjugation groundwork |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
@@ -1830,3 +1830,37 @@ Goal4 generic-base/entrywise realization, Goal5 quantitative/singular edges,
 Goal7 actual global branch/sharp support, Goal8 conditional subordination,
 Goal9 Haar conjugation/asymptotics, Goal10 normal/L1/entropy, Goal11 general
 free realizations/additive/second-order foundations remain open.
+
+### Checked ledger and pending OU strong action continuity
+
+PR #31 head `7110175` merged as `470d11e`; mathematical tree unchanged,
+main full3731, Verification3734, audit4824 and source guard pass. New
+`b57ec04` proves actual native OU jointnormcontinuity at all t>=0 including0,
+`6d173ac` does actual fullinfiniteHilbert/cyclicL2. This is action continuity,
+not mapfamily operator-norm continuity. Dense orbit submodules plus uniform
+norm1 contractions prove both, no assumed spanning or timecontinuity.
+WOT compression/conjugation active, target pinnedcache only; no toolchain or
+revision update. Normal included embedding remains missing.
+
+Read-only Goal9 research identifies independent ready algebraic queue:
+NEW Algebraic/HaarUnitary, HaarConjugationWords, HaarConjugation. Use group
+powers in unitary A, actual Unitary.conjStarAlgAut and ENTIRE B/Haar algebra
+free pair containing every integer power (staradjoin includes inverses).
+Conjugation preserves expectation by centering and U/B/U alternation; full
+ordered tuple telescopes to centered B/interior nonzero U-power differences,
+with zero peripheral powers omitted. Nonadjacent repeated labels allowed;
+no trace/positivity/topology needed. This is an unproved ready plan, not a
+formalized achievement, and orthogonal Haar asymptotics remain separate.
+Current workers continue projection analytic matching and OU continuity.
+
+Strong-time-continuity feature passes full3733, Verification3736, direct
+transitive audit4842, source guard and diff checks. Both mathematical modules
+critically reviewed. A new usage proves actualOU_t(T) tends to T at time0
+for every native algebra T. Its first check exposed missing scopedNNReal
+notation (parsed as an order proposition on Type); explicit scopedNNReal
+fixed elaboration and focused Verification.Examples passes. No mathematical
+statement/resource limit changed. Timeproofs ship independently of NEW WOT
+compression, still active; normalincludedembedding remains unproved.
+A `c640cc0` proves generic absoluteconvergence and literalcomplex evaluation
+for formal addition/multiplication/powers and implicit Q, published separately.
+Actual projection normalized-moment identification is still pending.

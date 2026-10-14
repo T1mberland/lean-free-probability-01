@@ -48,7 +48,7 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `ba2ea90` on `main`; full builds,
+The latest checked and published integration is `470d11e` on `main`; full builds,
 the direct transitive axiom audit and source guard pass for 4824 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
@@ -490,3 +490,16 @@ Strong time continuity, normal extension, L1 and entropy are still open.
 A new source-branch formal Picard equation/uniqueness `040d0cc` is published;
 analytic identification with actual projection moments remains active. The sharp
 lambda_L support and global physical branch are not established.
+
+### OU action strong continuity integration feature
+
+Documentation PR #31 merged as `470d11e`; unchanged mathematical tree passes
+full3731, Verification3734, direct audit4824 and source guard. New native OU
+joint norm continuity on nonnegative time times the ENTIRE generated algebra
+is published `b57ec04`; dense finite Wick orbits and uniform norm contraction
+supply actual continuity including zero. New `6d173ac` proves the same joint
+norm continuity for degree damping on every complete infinite tensor Hilbert
+vector and for the proper complete cyclic L2 restriction. These statements
+assert strong action continuity, not operator-norm continuity of the map family.
+Actual ambient WOT compression/conjugation groundwork is active. A genuine
+normal included embedding and the normality interface remain missing.

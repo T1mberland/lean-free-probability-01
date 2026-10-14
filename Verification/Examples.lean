@@ -103,4 +103,33 @@ example {I : Type*} (i j : I) (hij : i ≠ j) :
         wordMonomial [i, j] ⊗ₜ[ℂ] (1 : WordPolynomial ℂ I) := by
   simp [wordDifferenceQuotient, hij, ← wordMonomial_append]
 
+/-- Boxed convolution gives the vanishing ordinary second cumulant of a
+product of centered free variables, without a trace or positivity assumption. -/
+example {𝕜 A : Type*} [Field 𝕜] [Ring A] [Algebra 𝕜 A]
+    (φ : ProbabilitySpace 𝕜 A) (B : Fin 2 → Subalgebra 𝕜 A)
+    (hf : FreelyIndependent φ B) (a b : A) (ha : a ∈ B 0) (hb : b ∈ B 1)
+    (hca : φ.expectation a = 0) (hcb : φ.expectation b = 0) :
+    cumulant φ [a * b, a * b] = 0 := by
+  classical
+  have hd (x : A) (hx : φ.expectation x = 0) :
+      orderedPartitionContribution (cumulant φ) (fun _ : Fin 2 => x)
+        (NoncrossingPartition.discrete 2) = 0 := by
+    unfold orderedPartitionContribution
+    have hs : ({0} : Finset (Fin 2)) ∈ (NoncrossingPartition.discrete 2).blocks := by
+      rw [NoncrossingPartition.blocks_discrete]
+      exact Finset.mem_image.mpr ⟨0, Finset.mem_univ _, rfl⟩
+    apply Finset.prod_eq_zero hs
+    simp [orderedBlockWord, cumulant, hx]
+  calc
+    _ = ∑ p : NoncrossingPartition 2,
+        orderedPartitionContribution (cumulant φ) (fun _ => a) p *
+          orderedPartitionContribution (cumulant φ) (fun _ => b) p.kreweras := by
+      simpa using hf.cumulant_replicate_mul_eq_kreweras_sum a b ha hb 2 (by norm_num)
+    _ = 0 := by
+      apply Finset.sum_eq_zero
+      intro p _
+      rcases p.two_eq_discrete_or_indiscrete with hp | hp
+      · rw [hp, hd a hca, zero_mul]
+      · rw [hp, NoncrossingPartition.kreweras_indiscrete, hd b hcb, mul_zero]
+
 end FreeProbability.Examples

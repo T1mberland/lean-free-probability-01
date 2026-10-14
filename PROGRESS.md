@@ -976,3 +976,37 @@ All full goals statuses remain five complete/six open.
 
 Actualnormality feature passes full3835, Verification3838, directtransitive6296,
 source/diff, focused warning-free new modules and exact mathematical review.
+
+### Actual fixed-order Weingarten leading limits and sharp distance decay
+
+PR51 checked main `62ca93b0c632efc860c3d3bc8881b2014324357c` passes full3835,
+Verification3838, directtransitive6296, source/diff and push. True positive
+directed-supremum normality of actual OU maps is integrated; Goal10 L1 and
+entropy still open. Reviewed A sourcechaind6d807b..46b45bd andnotesb110052
+are assembled: genuine loop-count diagonal/offdiagonal, normalized true Gram
+and literal inverse limits, actual rescaled Haar entry leading sum with
+uniform moving-dimension tuple error, general finite raw-Setoid join-card
+triangle, exact pairing distance and true distance-sensitive inverse decay.
+N^r G_N^-1 entries tend todelta; eventualuniformrescaledweight error≤2M/N,
+actual rescaledentryMoment error≤2M^3/N, and actualrescaledinverseentry≤
+(r M^r+2 M^(r+1)) N^-d(p,q), whereM=numberofordinarypairings,
+d=r−actualrawjoinloopcount. Degreezero literalrescaledweight=1 evenN0.
+The sharperrate uses finite inverse identity R=Σ(k<r)E^k+R E^r and genuine
+distance triangle; no infinite Neumann convergence hypothesis is assumed.
+All six modules and precise fixed-r/eventual/stable scopes reviewed.
+Major declarations: tendsto_rescaledWeingartenWeight,
+eventually_rescaled_entryMoment_error_le, pairingDistance_triangle and
+eventually_rescaledWeingartenWeight_distance_bound.
+No normalized traceword convergence follows merely from entrywise estimates.
+A actualcomplextrace, networkfactorization, rawpartner/cycle/count checkpoints
+04269e9 awaitintegration; newpermutationnetwork trace active.
+B actualfullrightgenerator d6966ae awaitsfinalcalculusreview/integration;
+newproper-family wholeD cyclicrange/L2bridge active onbranch9017a0a.
+Next root fullhomogeneous ℓ2 Wickextension via LinearMap.extendOfNorm, then
+actualpositive-time normconvergent Wick reconstruction and vacuum identification.
+Five full goals complete/six open; no asymptotic freeness or entropy completion.
+
+Weingarten-rate feature passes full3841, Verification3844, directtransitive6336,
+source/diff and all statement reviews. A reviewed centered multi-trace plan is
+persisted in math-notes/haar-centered-trace-plan.md; its O(N^-m)/a.s. claims
+remain unproved pending actual paired cycle orientation and operator-norm bounds.

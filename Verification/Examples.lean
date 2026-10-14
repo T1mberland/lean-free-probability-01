@@ -566,4 +566,12 @@ example (μ : Measure ℝ) (hpos : ∀ᵐ x ∂μ, 0 ≤ x)
     μ.support ⊆ Set.Iic (1 / 2 : ℝ) :=
   support_subset_Iic_of_summable_positive_moments μ hpos hint 2 (by norm_num) hs
 
+-- The complete cyclic L2 extension agrees with the actual algebra map on every vacuum vector.
+example {I H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+    (e : I → H) (he : Orthonormal ℂ e) (t : ℝ) (ht : 0 ≤ t)
+    (T : Fock.tensorFamilyAlgebra e) :
+    Fock.familyOUL2 e he t ht (Fock.familyCyclicVector e T) =
+      Fock.familyCyclicVector e (Fock.familyOUTime e he t ht T) :=
+  Fock.familyOUL2_cyclicVector e he t ht T
+
 end FreeProbability.Examples

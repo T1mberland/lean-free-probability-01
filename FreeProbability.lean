@@ -313,3 +313,7 @@ import FreeProbability.Fock.OrnsteinUhlenbeckSemigroupDensity
 import FreeProbability.Fock.OrnsteinUhlenbeckSemigroupLaws
 import FreeProbability.Analytic.ProjectionProductMomentEquation
 import FreeProbability.Analytic.ProjectionProductMomentSupport
+import FreeProbability.Fock.OrnsteinUhlenbeckL2Damping
+import FreeProbability.Fock.OrnsteinUhlenbeckL2WickVacuum
+import FreeProbability.Fock.OrnsteinUhlenbeckL2Intertwining
+import FreeProbability.Fock.OrnsteinUhlenbeckL2Cyclic

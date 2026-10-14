@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `9a2bdad` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 2730 declarations.
+The latest checked and published integration is `0f40468` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 2755 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -118,7 +118,11 @@ The actual algebraic tensor free difference quotient satisfies the full
 noncommutative polynomial Leibniz rule. Polynomial and matrix-valued polynomial
 integration by parts in the actual faithful tracial Fock C-star state are
 integrated at `ea6149a`. Actual one-generator resolvent IBP on every resolvent-set point and its Cauchy
-quadratic equation are integrated at `7386526`. General polynomial
+quadratic equation are integrated at `7386526`. Generated-algebra full domain
+and inverse compatibility, restricted-state resolvent IBP and actual unique
+lower-half-plane Cauchy branch are integrated through
+[PR #4](https://github.com/T1mberland/lean-free-probability-01/pull/4) at `0f40468`.
+General polynomial
 resolvent, matrix analytic and exponential extensions remain open.
 
 Actual spectral probability measures are constructed from positive CFC
@@ -197,7 +201,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 2730 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 2755 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

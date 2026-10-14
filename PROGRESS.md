@@ -18,6 +18,7 @@ completion criterion.
 | `OperatorValued.ConditionalExpectation` | Linear retractions onto subalgebras, bimodule identities, centering, freeness with amalgamation, and the mixed second-moment identity |
 | `Combinatorics.NoncrossingPartition`, `Cumulant`, `PartitionMultilinear`, `CumulantMultilinear`, `NoncrossingSingleton` | Noncrossing partitions, constructive all-order moment–cumulant inversion and uniqueness, cumulant multilinearity, and singleton-block combinatorics |
 | `Algebraic.CumulantFreeness`, `Combinatorics.CumulantNaturality` | Vanishing mixed cumulants implies freeness; cumulants commute with expectation-preserving maps |
+| `Algebraic.CumulantUnit` | Arbitrary-position/order at least two unit-cumulant vanishing, scalar insertion/shift invariance and individual-coordinate centering invariance over arbitrary fields and noncommutative algebras |
 | `Combinatorics.NoncrossingPairing` | Intrinsic two-element-block pairings, unique partners and their fixed-point-free involution, even size, and existence of an adjacent pair |
 | `Combinatorics.NoncrossingInterval` | Every equivalence class has a least representative; every nonempty noncrossing partition has an actual convex interval block, represented by inclusive endpoints |
 | `Combinatorics.NoncrossingSingletonInsertion`, `BlockWordTransport` | Arbitrary-position singleton insertion/deletion equivalence, exact actual-block transport, ordered block-word compatibility and singleton contribution/sum factorization |
@@ -42,42 +43,33 @@ Representative declarations include:
   `rankOne_exterior_eigenvalue_indices_subsingleton`, and
   `posSemidef_norm_mono`.
 
-## Fock construction checkpoint
+## Current checked development state
 
-The word-space and vacuum-state modules are integrated, checked and published on
-`main` at `9f85ea8` (worker commits `778c6b0`, `6291082`). The audit covers 1039
-declarations. `Fock.annihilation_creation` is an equality of bounded operators,
-and `Fock.vacuumExpectation_star_mul_self` proves positivity as the actual squared
-norm of the vacuum image. The fourth vacuum moment two is a checked usage example.
-These results impose no finite/countable restriction on the generator type.
+The latest checked and published integration is `84af7d3` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 1200 declarations.
+Exact source/integration hashes are preserved in the execution ledger.
 
-General Hilbert-space tensor-power identification, arbitrary-vector creation,
-exact norm two, the full joint Wick law, and freeness remain open integration
-obligations. Generated-algebra faithfulness and traciality are now integrated as
-recorded below. The vacuum state on all bounded operators is not claimed faithful
-or tracial.
+`cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
+`cumulant_update_algebraMap`, `cumulant_update_add_algebraMap`, and
+`cumulant_update_center` are integrated from worker source `36a6578`. They require
+neither freeness nor positivity nor traciality. The adjacent-product identity and
+freeness implies mixed vanishing remain open. Lattice/adjacent-contraction
+milestones are separately published and awaiting integration.
 
-Singleton insertion and ordered contribution transport are integrated, checked
-and published on `main` at `18f3ce7` (worker sources `8b88486`, `c8ea122`). Full
-builds, direct audit and source guard pass for 1070 declarations. The exact sum
-factorization is available for arbitrary block weights; unit cumulants and the
-reverse freeness implication remain open mathematical obligations.
-
-Wick vectors and right operators are integrated, checked and published on `main`
-at `131f134` (worker sources `e2d7aa8`, `0e0a63b`), with 1127 declarations audited.
-The Wick-vector orthogonality theorem is not yet the noncrossing joint-moment
-formula. Faithful tracial polynomial/closed generated states (`53f5bd8`,
-`979669a`) and all-order unit-cumulant calculus (`36a6578`) are published feature
-milestones awaiting their integration checkpoints.
-
-Faithfulness and traciality on both polynomial and norm-closed generated algebras
-are integrated, checked and published at `51bd061` (worker sources `53f5bd8`,
-`979669a`). The audit passes for 1184 declarations. Key declarations are
+The complete word-Hilbert model has bounded creation/adjoints, canonical operator
+relations, a positive vacuum state, Wick vectors and commuting right operators.
 `Fock.closedGeneratedVacuumState_isFaithful` and
-`Fock.closedGeneratedVacuumState_tracial`; these are proved properties of the
-actual restricted state, with no faithful/tracial assumptions. Exact norm two
-(`f881b61`) and all-order unit cumulants (`36a6578`) are published feature results
-awaiting integration; neither completes a full goal.
+`Fock.closedGeneratedVacuumState_tracial` are proved properties of the actual
+state restricted to the norm-closed generated algebra. No faithful/tracial claim
+is made on all bounded Fock operators. No finite/countable generator restriction
+is imposed. Fourth moment two and orthogonal two-letter Wick words are checked
+usage examples.
+
+Exact norm two and explicit C-star-model compatibility (`f881b61`, `7310a7b`) are
+published feature milestones awaiting integration. Freeness, the full joint
+noncrossing Wick formula, Catalan/spectral law, arbitrary-vector creation and
+general completed Hilbert tensor-power identification remain open. None of the
+eleven full goals is declared complete by these supporting results.
 
 ## Haar probability and concentration
 
@@ -135,7 +127,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 1184 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 1200 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -160,7 +152,7 @@ are now integrated and checked at `f419315` (worker source `4df3696`); builds an
 audits pass for 973 declarations. The word-Fock milestone awaits its integration
 checkpoint. These prerequisites do not establish the full cumulant or Fock goals.
 
-1. Complete cumulant calculus: integrate unit insertion; develop adjacent products
+1. Complete cumulant calculus: develop adjacent products
    and refinement/contraction fibers, then freeness implies mixed vanishing.
 2. Integrate exact semicircular norm two; prove freeness and joint Wick moments,
    and identify the word model with completed Hilbert tensor powers.

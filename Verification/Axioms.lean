@@ -296,3 +296,15 @@ run_cmd do
 #print axioms FreeProbability.cumulant_update_algebraMap
 #print axioms FreeProbability.cumulant_update_add_algebraMap
 #print axioms FreeProbability.cumulant_update_center
+#print axioms FreeProbability.IsNoncrossing.sInf
+#print axioms FreeProbability.NoncrossingPartition.inf_val
+#print axioms FreeProbability.NoncrossingPartition.le_closure
+#print axioms FreeProbability.NoncrossingPartition.closure_le_iff
+#print axioms FreeProbability.NoncrossingPartition.closure_val
+#print axioms FreeProbability.NoncrossingPartition.sup_eq_closure
+#print axioms FreeProbability.IsNoncrossing.comap_monotone
+#print axioms FreeProbability.NoncrossingPartition.adjacentContractionOrderIso
+#print axioms FreeProbability.NoncrossingPartition.adjacentPair_le_iff
+#print axioms FreeProbability.NoncrossingPartition.duplicate_contract
+#print axioms FreeProbability.NoncrossingPartition.contract_le_iff
+#print axioms FreeProbability.NoncrossingPartition.contract_duplicate

@@ -24,6 +24,8 @@ import FreeProbability.Combinatorics.CumulantMultilinear
 import FreeProbability.Combinatorics.NoncrossingSingleton
 import FreeProbability.Combinatorics.NoncrossingPairing
 import FreeProbability.Combinatorics.NoncrossingInterval
+import FreeProbability.Combinatorics.NoncrossingLattice
+import FreeProbability.Combinatorics.NoncrossingAdjacent
 import FreeProbability.Combinatorics.NoncrossingSingletonInsertion
 import FreeProbability.Combinatorics.BlockWordTransport
 import FreeProbability.Fock.WordSpace

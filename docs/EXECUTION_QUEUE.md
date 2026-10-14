@@ -18,9 +18,15 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
+Latest checked integration: `84af7d3`, published on `main`, with full builds,
+source guard and transitive audit passing for 1200 declarations. Unit-cumulant
+calculus is integrated. Lattice/adjacent-contraction and norm-two/C-star-model
+feature milestones are published but await integration. Historical checkpoints
+below retain the state at each checkpoint; this paragraph records current status.
+
 | Goal | Status | Earliest work and dependency |
 | --- | --- | --- |
-| 1. Cumulant calculus | Active; one implication already verified | Pairings, interval/deletion/insertion maps, unit insertion and adjacent products, then freeness implies mixed vanishing; Kreweras/lattice/product calculus remains |
+| 1. Cumulant calculus | Active; one implication and unit/scalar calculus integrated | Adjacent-product contraction fibers, then freeness implies mixed vanishing; pairing decomposition, Kreweras and Möbius/product calculus remains |
 | 2. Full Fock systems | Active; word model and faithful tracial closed generated state integrated | General tensor-power identification, joint Wick, norm two, freeness, Catalan and spectral law remain |
 | 3. Free integration by parts | Ready for algebraic groundwork | Polynomial tensor-bimodule derivations independent of Fock; semicircular integration-by-parts requires Wick recursion |
 | 4. Operator-valued Dyson | Blocked on semicircular realization | Completely positive covariance, amplified moments and Wick recursion precede Dyson and physical branch |
@@ -150,6 +156,17 @@ direct audit and source guard pass for 1184 declarations. A commutator-expectati
 example checks the public closed trace interface. Exact norm two (`f881b61`) and
 unit/scalar cumulants (`36a6578`) await their integration checkpoints.
 
+### Checked integration checkpoint: unit/scalar cumulants
+
+`84af7d3` is checked and published on `main`; worker source `36a6578` was
+integrated through `d1e24d9`. `cumulant_ofFn_eq_zero_of_unit` and
+`cumulant_eq_zero_of_one_mem` prove arbitrary-position unit vanishing at every
+order at least two. Scalar insertion/shift and individual-coordinate centering
+invariance follow from actual multilinearity, with no freeness/trace/positivity
+assumption. The noncommutative ordered product deletion and proper-block
+strong-induction step are audited. Full builds, direct audit and source guard
+pass for 1200 declarations; a third-order centering usage example is checked.
+
 ### Independent spectral-measure proof path
 
 For a positive normalized state and self-adjoint `a`, pull the real part of the
@@ -162,10 +179,10 @@ using nonzero continuous bump functions and injectivity of the functional
 calculus. Complex Cauchy integral representation remains a subsequent theorem.
 This is a reviewed strategy, not a completed declaration.
 
-- Following pairing fundamentals: construct noncrossing interval restriction and
-  deletion/insertion equivalences; prove unit insertion, then adjacent products.
-- Following creation operators: vacuum action and adjoint relations, semicircular
-  second moments/selfadjointness, right operators and Wick recursion.
+- Following unit calculus and adjacent contraction: prove raw adjacent-join
+  preservation, block/fiber product formulas, then the reverse freeness implication.
+- Following faithful tracial closed realization: integrate exact norm two and
+  C-star compatibility; prove genuine freeness and joint Wick recursion.
 - When a worker becomes available: polynomial free difference quotient Leibniz
   rules, or spectral-measure representation prerequisites, with exclusive files.
 

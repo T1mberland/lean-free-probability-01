@@ -18,11 +18,11 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `d5c980179026bbdacc39668879180c8ad4ea9b97`,
+Latest checked integration: `5920b0a9197f4bf143b9f368a5ea75972a14d2ed`,
 published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
 and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
-Native OU semigroup PR #27 passes full builds 3722/3725, direct transitive audit
-4660 declarations and source guard.
+Moment/support PR #28 passes full builds 3724/3727, direct transitive audit
+4682 declarations and source guard.
 Goals 1, 2, 3 and 6 are certified complete; seven full goals remain open.
 Every historical checkpoint below retains its original scope and date.
 
@@ -44,9 +44,9 @@ Every historical checkpoint below retains its original scope and date.
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/integrate-projection-moment-support`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Coordinator | `feat/integrate-ou-l2`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
 | Worker A (`cumulants`) | `feat/projection-product-germs`, `/home/user/Projects/lean-fp-cumulants` | New `Analytic/ProjectionProduct*.lean`; frozen eight law/germ modules integrated | Actual moment equation and positive moment summability/support bridge; physical branch and sharp edge remain |
-| Worker B (`fock`) | `feat/fock-ou-l2`, `/home/user/Projects/lean-fp-fock` | NEW `Fock/OrnsteinUhlenbeckL2*.lean` and agreed L2 notes; frozen native OU semigroup retained | Actual complete-Hilbert degree damping, native vacuum intertwining and genuine cyclic L2 contraction |
+| Worker B (`fock`) | `feat/fock-ou-continuity`, `/home/user/Projects/lean-fp-fock` | NEW `Fock/OrnsteinUhlenbeckContinuity*.lean`, `SecondQuantizationWOT*.lean` and agreed continuity notes; frozen L2 feature retained | Actual strong time continuity and WOT compression/conjugation groundwork |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -1755,3 +1755,35 @@ and #26 run38565462216. Native OU PR #27 CI not yet confirmed.
 B actual completed-degree Wick vacuum `b586c84` and genuine all-native OU
 vacuum implementation/state L2 contraction `570f486` published; exact complete
 cyclic-space restriction remains active and source review is queued.
+
+### Checked support criterion and pending actual L2 extension
+
+PR #28 head `12e6c49` merged as `5920b0a`; checked main full3724,
+Verification3727, direct audit4682, source guard and diff checks pass.
+Next feature retains reviewed `f8a6240`, `b586c84`, `570f486`: true all-infinite-
+vector Hilbert degree damping, actual completed tensor Wick vacuum degrees,
+all-native vacuum intertwining, and genuine state L2 norm/quadratic contraction.
+Actual complete cyclic closure restriction is still being implemented in a new
+module, no assumption of ON-family spanning. Normal/L1/entropy remain open.
+A conditional scalar Picard-majorant convergence/fixedpoint theorem `ea956c8`
+is published/reviewed separately. Conversion to actual subcritical moment
+summability still needs genuine positive coefficient/analytic matching arguments.
+
+Actual complete cyclic Hilbert extension `e30ef66` now published/assembled:
+closure of all native vacuum vectors, actual degree-damping invariance, norm
+contraction on every cyclic vector, zero/semigroup/vacuum/unique dense extension.
+Source review active, fullcombined integration checks run. No normal/L1 claim.
+A genuine polynomial Picard approximant positivity/evaluation/finitepartialsum
+majorant `0c66326` published; actual limiting coefficients/summability and analytic
+identification with projection moments remain separate missing steps.
+
+Actual OU L2 integration feature passes full3728, Verification3731, direct
+transitive audit4780, source guard and diff checks. All four modules critically
+reviewed; frozen design notes `bad3186` retained/read. Genuine cyclic extension
+agreement usage compiles. No new full goal certified; normal/L1/entropy remain.
+Coordinator switched B's CLEANfrozenbad3186 to feat/fock-ou-continuity from
+checked5920b0a, merged exact L2 prerequisites and immediatelypushedconfirmed.
+Exclusive NEW Continuity*/SecondQuantizationWOT* and agreedcontinuitynotes.
+Next strongtimecontinuity and actualWOT compression/conjugation; normalincluded
+embedding/bicommutant remain missing. A proceeds coefficient stabilization and
+true summability/momentmatching from positive Picard majorants.

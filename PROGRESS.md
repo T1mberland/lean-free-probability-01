@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `d5c9801` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 4660 declarations.
+The latest checked and published integration is `5920b0a` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 4682 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -240,7 +240,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 4660 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 4682 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -450,3 +450,17 @@ The actual finite-product law wrapper discharges positivity and integrability.
 These are proven general prerequisites. Subcritical summability for the actual
 half-projection law at the proposed lambda_L remains unproved, so Goal 7 remains
 open. No formal polynomial or critical point is counted as an edge proof.
+
+### Actual OU vacuum L2 integration feature
+
+Projection moment/support PR #28 merged as `5920b0a`; checked main full3724,
+Verification3727, direct audit4682 and source guard. Three reviewed OU L2 modules
+through `570f486` construct contractive degree damping on every vector of the
+complete infinite tensor Hilbert sum, with vacuum/zero/semigroup properties.
+Actual recursive Wick vacuum vectors lie in their exact completed tensor degree.
+Genuine norm density proves `P_t(T)Ω = D_t(TΩ)` for EVERY native algebra element.
+Thus the actual vacuum L2 norm and true state quadratic form contract. These
+are not operator-norm surrogates. The genuine complete cyclic Hilbert closure of all native vacuum vectors is
+now proved invariant, giving `familyOUL2` on EVERY vector there, with norm
+contraction, zero/time-addition, fixed vacuum and unique dense-orbit extension
+through `e30ef66`. No nonspanning family is identified with the entire Fock space. Von Neumann normality, L1 and entropy remain separate open obligations.

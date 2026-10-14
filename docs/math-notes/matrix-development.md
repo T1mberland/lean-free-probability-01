@@ -70,10 +70,29 @@ is positive by continuous functional calculus; positivity plus verified finite
 matrix invertibility gives strict positive definiteness. No faithfulness of the
 vacuum state on all bounded operators is assumed.
 
+`6692fe8` derives the actual Lyapunov derivative identity
+`d = -m^2 + m eta(d) m`, where `d = -E(R^2)`, at every genuine resolvent point.
+`5f94a49` proves actual matrix creator Gram contraction; `872b04d` supplies an
+actual positive star-algebra embedding of deterministic matrices. The exact
+completion-of-square certificate `fb67bf9` proves, for EVERY positive definite Z,
+`P <= embed(C0 + Z + eta(Z^-1))`, without positivity or commutativity of the
+Hermitian coefficients. Empty dimensions are included in this comparison.
+
+`0eebeb2` defines real spectral maxima and identifies the finite Hermitian matrix
+maximum with its actual largest eigenvalue. `094e84d` proves the full finite-matrix
+core variational formula for the genuine Fock top edge:
+`sup spectrum Real P = inf_{Z.PosDef} lambdaMax(C0 + Z + eta(Z^-1))`.
+The matrix dimension is nonempty so its genuine spectral maximum exists. The
+upper bound uses the true square certificate; every x above the edge supplies
+an actual positive definite witness Z = m(x)^-1 with variational matrix x I.
+No minimizer at the edge, singular limit, or quantitative truncation is asserted.
+This core theorem does not alone complete all auxiliary obligations of Goal 5.
+
 ## Next dependencies
 
-1. Actual Lyapunov identities obtained by differentiating actual matrix Dyson,
-   and further right-exterior bounds for the spectral-edge variational goal.
+1. Positive-state and density-matrix spectral-edge inequalities, further
+   exterior bounds, quantitative finite-depth Fock approximations, and singular
+   or deterministic edge certificates.
 2. Matrix upper-half-plane argument invertibility and pointwise physical
    uniqueness, beyond the normalized analytic branch theorem.
 3. Compatibility with the generated closed matrix C-star model and analytic norm
@@ -91,3 +110,9 @@ unintended function-space instances. Explicit typed arguments to `Matrix.smul_mu
 finite matrix sums should use `Matrix.sum_apply`. These are elaboration issues,
 not mathematical obstructions. Inspect each verification result before publication;
 a successful source guard does not imply a successful build.
+
+A failed Lyapunov proof approach rewrote the self-referential rearrangement
+`d = -(m^2 - m eta(d) m)` across the entire target. This rewrote occurrences
+of d inside its own right-hand side and exhausted elaboration heartbeats, even
+with a large limit. A directional calculation proves the same identity promptly
+at the default limit; no increased limit remains in the published theorem.

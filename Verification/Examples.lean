@@ -436,4 +436,13 @@ example {𝕜 A I : Type*} [NormedField 𝕜] [NormedRing A] [NormedAlgebra 𝕜
     ![z, w] (by intro k; fin_cases k <;> simp [hz, hw])
   simpa [List.ofFn_succ] using h
 
+-- One-particle reflection gives a genuine full-Fock field reflection.
+example {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+    (h : H) :
+    (Fock.secondQuantization (LinearIsometryEquiv.neg ℂ : H ≃ₗᵢ[ℂ] H)).conjStarAlgEquiv
+      (Fock.tensorCreation H h + Fock.tensorAnnihilation H h) =
+        Fock.tensorCreation H (-h) + Fock.tensorAnnihilation H (-h) := by
+  simpa using Fock.secondQuantization_conj_field
+    (LinearIsometryEquiv.neg ℂ : H ≃ₗᵢ[ℂ] H) h
+
 end FreeProbability.Examples

@@ -1,5 +1,6 @@
 import FreeProbability.Combinatorics.NoncrossingPairing
 import FreeProbability.Combinatorics.NoncrossingRestriction
+import Mathlib.Data.Fintype.BigOperators
 
 /-!
 # Decomposition of noncrossing pairings at the partner of zero
@@ -460,5 +461,63 @@ noncomputable def firstPartnerEquiv (n : ℕ) : NoncrossingPairing (n + 2) ≃
   invFun x := glue x.1 x.2.1 x.2.2
   left_inv := glue_firstDecomposition
   right_inv x := by obtain ⟨k, L, R⟩ := x; exact firstDecomposition_glue k L R
+
+/-- Encoding the outer two endpoints and the two open intervals as one finite position type. -/
+def splitPositionEncode (k : Fin (n + 1)) :
+    Option (Option (Fin k.val ⊕ Fin (n - k.val))) → Fin (n + 2)
+  | none => 0
+  | some none => splitPartner k
+  | some (some (.inl a)) => insideEmbedding k a
+  | some (some (.inr a)) => outsideEmbedding k a
+
+/-- The inverse classification of a global position into the four pieces. -/
+def splitPositionDecode (k : Fin (n + 1)) (a : Fin (n + 2)) :
+    Option (Option (Fin k.val ⊕ Fin (n - k.val))) :=
+  if h0 : a.val = 0 then none
+  else if hq : a.val = k.val + 1 then some none
+  else if hi : a.val < k.val + 1 then some (some (.inl ⟨a.val - 1, by omega⟩))
+  else some (some (.inr ⟨a.val - (k.val + 2), by have := a.isLt; have := k.isLt; omega⟩))
+
+@[simp] theorem splitPositionDecode_zero (k : Fin (n + 1)) : splitPositionDecode k 0 = none := by
+  simp [splitPositionDecode]
+
+@[simp] theorem splitPositionDecode_splitPartner (k : Fin (n + 1)) :
+    splitPositionDecode k (splitPartner k) = some none := by simp [splitPositionDecode]
+
+@[simp] theorem splitPositionDecode_inside (k : Fin (n + 1)) (a : Fin k.val) :
+    splitPositionDecode k (insideEmbedding k a) = some (some (.inl a)) := by
+  have ha := a.isLt
+  have hne := ne_of_lt ha
+  simp [splitPositionDecode, ha, hne]
+
+@[simp] theorem splitPositionDecode_outside (k : Fin (n + 1)) (a : Fin (n - k.val)) :
+    splitPositionDecode k (outsideEmbedding k a) = some (some (.inr a)) := by
+  have hq : k.val + 2 + a.val ≠ k.val + 1 := by omega
+  have hi : ¬k.val + 2 + a.val < k.val + 1 := by omega
+  simp [splitPositionDecode, hq, hi]
+
+/-- Exact enumeration of all positions by the two endpoints and interval positions. -/
+def splitPositionEquiv (k : Fin (n + 1)) :
+    Option (Option (Fin k.val ⊕ Fin (n - k.val))) ≃ Fin (n + 2) where
+  toFun := splitPositionEncode k
+  invFun := splitPositionDecode k
+  left_inv a := by
+    rcases a with _ | (_ | (a | a)) <;> simp [splitPositionEncode]
+  right_inv a := by
+    rcases splitPosition_cases k a with rfl | rfl | ⟨b, rfl⟩ | ⟨b, rfl⟩ <;>
+      simp [splitPositionEncode]
+
+/-- Products over positions factor over the four genuine disjoint pieces. -/
+theorem prod_splitPositions {M : Type*} [CommMonoid M] (k : Fin (n + 1))
+    (f : Fin (n + 2) → M) :
+    (∏ a, f a) = f 0 * f (splitPartner k) *
+      (∏ a : Fin k.val, f (insideEmbedding k a)) *
+      (∏ a : Fin (n - k.val), f (outsideEmbedding k a)) := by
+  classical
+  have h := Fintype.prod_equiv (splitPositionEquiv k)
+    (fun a => f (splitPositionEncode k a)) f (fun _ => rfl)
+  rw [← h]
+  simp only [Fintype.prod_option, Fintype.prod_sum_type, splitPositionEncode]
+  simp only [mul_assoc]
 
 end FreeProbability.NoncrossingPairing

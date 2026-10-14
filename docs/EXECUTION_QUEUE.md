@@ -18,11 +18,11 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `03aff10d863da0ab4567d480dde250855884fc99`,
+Latest checked integration: `ba2ea90c5408aaa5375ed9e2c70d23ab2d7771d2`,
 published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
 and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
-Actual cyclic L2 PR #29 passes full builds 3728/3731, direct transitive audit
-4780 declarations and source guard.
+Positive Picard-series PR #30 passes full builds 3731/3734, direct transitive audit
+4824 declarations and source guard.
 Goals 1, 2, 3 and 6 are certified complete; seven full goals remain open.
 Every historical checkpoint below retains its original scope and date.
 
@@ -37,15 +37,15 @@ Every historical checkpoint below retains its original scope and date.
 | 7. Multiplicative convolution | Projection law/germ integrated; generic positive-pair path ready | Actual given-positive-pair S/law/marginal determination integrated; grouping reviewed pending integration, projection products next, physical support/edge and arbitrary-law realizations remain |
 | 8. Conditional subordination | Noncommutative L² and Goal 7 dependencies open | Normal conditional expectations, analytic subordination, exterior continuation and projection specialization |
 | 9. Haar freeness | Independent algebraic groundwork ready | Haar-unitary star law and free conjugation; orthogonal pairing integration precedes joint asymptotic estimates |
-| 10. OU and entropy | Actual Wick contractions, Haagerup, second quantization and all-level CP dilation integrated | Genuine native Cstar OU semigroup integrated at `d5c9801`; actual cyclic L2 active; normal/L1/entropy and dimension-independent regularization remain |
+| 10. OU and entropy | Actual Wick contractions, Haagerup, second quantization and all-level CP dilation integrated | Genuine native Cstar OU semigroup integrated at `d5c9801`; genuine cyclic L2 integrated at `03aff10`; strong continuity active; normal/L1/entropy and dimension-independent regularization remain |
 | 11. Follow-up milestones | Formal R and quantitative conditional moment CLT integrated | Positive free products, analytic convolution, operator-valued cumulants, annular/second-order and genus theory remain |
 
 ## Active assignments and isolation
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/integrate-projection-picard`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/projection-product-germs`, `/home/user/Projects/lean-fp-cumulants` | New `Analytic/ProjectionProduct*.lean`; frozen eight law/germ modules integrated | Actual moment equation and positive moment summability/support bridge; physical branch and sharp edge remain |
+| Coordinator | `docs/checked-picard-ledger`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Worker A (`cumulants`) | `feat/projection-product-germs`, `/home/user/Projects/lean-fp-cumulants` | New `Analytic/ProjectionProduct*.lean`; frozen eight law/germ modules integrated | Actual analytic Picard-series realization and moment identification; physical branch and sharp edge remain |
 | Worker B (`fock`) | `feat/fock-ou-continuity`, `/home/user/Projects/lean-fp-fock` | NEW `Fock/OrnsteinUhlenbeckContinuity*.lean`, `SecondQuantizationWOT*.lean` and agreed continuity notes; frozen L2 feature retained | Actual strong time continuity and WOT compression/conjugation groundwork |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
@@ -1811,3 +1811,22 @@ and lambda_L support remain missing. GitHub CI confirmed PR #27 run38566597996,
 A next NEW ProjectionProductPicardFormal module develops genuine formal
 coefficient equation/uniqueness, without equating formal Q with the actual germ.
 B strongtimecontinuity density helper active in NEW ContinuityDense module.
+
+### Published and checked Picard checkpoint
+
+PR #30 head `f4a332f` merged as `ba2ea90`; main full3731, Verification3734,
+direct audit4824, source guard and diff checks pass. Original mathematical
+histories and frozen notes preserved. No full goal newly certified. GitHub CI
+success confirmed through PR #29; PR #30 CI not yet queried.
+A `040d0cc` proves genuine formal Picard coefficient equation and generic
+implicit-series uniqueness over arbitrary semirings. It does not identify the
+series with the actual analytic q or law; that next NEW module is active.
+B strongtimecontinuity density helper active in NEW ContinuityDense, followed
+by native Cstar/cyclicL2 time continuity and actual WOT compression/conjugation.
+Read-only reviewer researches Haar-unitary conjugation as an independent ready
+Goal9 dependency; workers retain their current tasks, no switch or new assumption.
+All eleven goal statuses in the table remain current: Goals1,2,3,6 complete;
+Goal4 generic-base/entrywise realization, Goal5 quantitative/singular edges,
+Goal7 actual global branch/sharp support, Goal8 conditional subordination,
+Goal9 Haar conjugation/asymptotics, Goal10 normal/L1/entropy, Goal11 general
+free realizations/additive/second-order foundations remain open.

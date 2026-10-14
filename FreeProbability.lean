@@ -149,3 +149,4 @@ import FreeProbability.Fock.TensorOperators
 import FreeProbability.Fock.TensorSemicircular
 import FreeProbability.Fock.TensorCStarModel
 import FreeProbability.Fock.TensorJointLaw
+import FreeProbability.Analytic.FockResolventIntegrationByParts

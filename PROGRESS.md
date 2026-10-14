@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `18afd0f` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 2266 declarations.
+The latest checked and published integration is `8334d17` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 2453 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -82,7 +82,9 @@ decomposition and a genuine completed-tensor isometry are integrated at
 `871fc9f`. The ℓ²(I) levels are genuine completed tensor levels, with literal
 tensor creation; original-H tensor coherence and the unconditional full-Fock package are
 integrated at `5c2e9cb`. Explicit recursively completed tensor powers and the
-unitary onto their Hilbert sum are published and awaiting integration.
+unitary onto their Hilbert sum, exact tensor-domain operators and actual
+faithful tracial generated tensor C-star model with literal joint Wick/Catalan
+laws are integrated at `8334d17`.
 The spectral law and complete tensor-power identification remain open. None of the eleven full goals is
 declared complete by these supporting results.
 
@@ -107,8 +109,9 @@ Kreweras rotation/block-count and product-cumulant boxed convolution remain open
 The actual algebraic tensor free difference quotient satisfies the full
 noncommutative polynomial Leibniz rule. Polynomial and matrix-valued polynomial
 integration by parts in the actual faithful tracial Fock C-star state are
-integrated at `ea6149a`. Analytic extensions for exponentials and resolvents
-with explicit convergence domains remain open.
+integrated at `ea6149a`. Actual one-generator resolvent IBP on every resolvent-set point and its Cauchy
+quadratic equation are proved and undergoing integration. General polynomial
+resolvent, matrix analytic and exponential extensions remain open.
 
 ## Haar probability and concentration
 
@@ -166,7 +169,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 2266 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 2453 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

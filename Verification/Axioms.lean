@@ -488,3 +488,8 @@ run_cmd do
 #print axioms FreeProbability.Fock.tensorVacuumState_joint_free_wick
 #print axioms FreeProbability.Fock.tensorClosedVacuumState_joint_free_wick
 #print axioms FreeProbability.Fock.tensorClosedVacuumState_even_pow
+#print axioms FreeProbability.commutator_inverse_unit
+#print axioms FreeProbability.Fock.rightAnnihilation_resolvent_commutator
+#print axioms FreeProbability.Fock.vacuumExpectation_semicircular_mul_resolvent
+#print axioms FreeProbability.Fock.vacuumExpectation_resolvent_quadratic
+#print axioms FreeProbability.Fock.vacuumExpectation_semicircular_mul_resolvent_nonreal

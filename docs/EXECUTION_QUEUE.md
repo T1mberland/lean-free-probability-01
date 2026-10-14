@@ -18,8 +18,8 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `18afd0f`, published on `main`, with full builds,
-source guard and transitive audit passing for 2266 declarations. Genuine
+Latest checked integration: `8334d17`, published on `main`, with full builds,
+source guard and transitive audit passing for 2453 declarations. Genuine
 polynomial and closed-generator freeness is integrated in the faithful tracial
 C-star model. The all-order adjacent-product cumulant theorem and full freeness
 characterization are integrated. Joint Wick/Catalan and all-degree word IBP are integrated. Formal R-additivity and algebraic free CLT
@@ -571,3 +571,44 @@ Worker B switched from clean `f1657b9` to `feat/spectral-measures` based on chec
 main `ea6149a`; no tensor history was changed. Targeted RealRMK cache hydration
 fetched eight pinned cache files under the common lock. Actual positive real CFC
 functional is published as `c592166`; probability measure representation is next.
+
+### Checked integration checkpoint: exact tensor-domain semicircular system
+
+`8334d17` is checked and published on `main`, previous source mappings integrated.
+Full build 3501 jobs, Verification 3504 jobs, direct audit 2453 declarations
+and source guard pass. The actual recursively completed tensor-sum domain has
+bounded canonical operators, literal tensor action, selected basis semicircular
+fields and an intrinsic faithful tracial generated C-star algebra, genuine
+freeness and literal joint Wick/Catalan laws. Semicircular spectral law and
+arbitrary orthonormal-family/basis-independent interfaces remain separate.
+
+### Pending integration: actual resolvent IBP
+
+Coordinator source `3111620` gives
+`Fock.rightAnnihilation_resolvent_commutator`,
+`Fock.vacuumExpectation_semicircular_mul_resolvent`,
+`Fock.vacuumExpectation_resolvent_quadratic` and a nonreal-domain corollary.
+The generic inverse commutator is proved for actual units. Its sign yields
+[rightAnnihilation_i,R_j]=δij R_j Pvac R_j, and actual rank-one vacuum evaluation
+gives τ(s_i R_j)=δij τ(R_j)^2 throughout the actual operator resolvent set.
+The resolvent expectation satisfies G²-zG+1=0 using the genuine inverse identity
+and normalization. No power-series assumption, assumed spectral density or
+assumed transform formula is used. This is currently the raw bounded-Fock vacuum
+statement; membership/compatibility of the inverse in the generated C-star model
+and general polynomial/matrix resolvents are separate next tasks. Focused build,
+representative axiom audits, source guard and mathematical review pass. Combined
+full build 3502 jobs, Verification 3505 jobs and direct audit 2459 declarations
+pass. Main integration pending.
+
+### Newly ready review queue
+
+Spectral sources `c592166`, `d6ee62a`, `4a9dedf` construct positive real CFC
+functional, actual spectral probability measure, real CFC integral representation
+and faithfulness implies actual support=spectrum; first two reviewed, support
+review underway. No traciality is assumed. General complex/Cauchy representation
+and semicircular measure identification are the worker's next tasks.
+A's `608b229`, `86ddce2` give a quantitative non-iid triangular-array moment CLT,
+conditional on all-entry centering, actual averaged-second-moment convergence
+and uniform fixed-higher-order marginal cumulant bounds. A's `0f7d1dc` proves
+exact Kreweras adjacent-chord deletion, a genuine new prerequisite toward the
+previously recorded boxed-complement connectivity/block-count obligation.

@@ -38,23 +38,43 @@ Lean's deterministic elaboration limit. Naming the generic transported map
 and providing separately typed continuity proofs for its three factors solved
 that elaboration problem, without changing resource limits or mathematics.
 
-## Next native and sector identification milestones
+## Verified native and sector identification
 
-The next proof identifies the constructed all-operator embedding on a native
-orthonormal-family norm closure with the existing includedFamilyEmbedding.
-The actual all-vector field identities and continuous star-algebra maps should
-first show membership in the included norm closure, then equality on the dense
-polynomial star algebra and hence the native closure.
+Checkpoint 724e985 proves that the constructed all-operator embedding maps the
+whole native family norm closure into the included norm closure. This membership
+statement holds for ANY prescribed family. For an orthonormal family, the actual
+restricted `prefixNativeEmbedding` equals the existing
+`includedFamilyEmbedding` on the ENTIRE native closed algebra. The two genuine
+star homomorphisms agree on each literal generator, hence on the polynomial
+star algebra; its dense native inclusion and a closed continuous equalizer
+extend the equality to the norm closure.
 
-The empty-tail sector should be identified with the actual second-quantized
-isometry Γ(V), using vacuum and full source basis words. This must yield the
-literal full-space identity Φ(V)(T) Γ(V) = Γ(V) T for ALL source bounded T,
-not merely polynomial operators. It will establish the actual fullcompression
-left inverse and vacuum preservation of the representation.
+Checkpoint 6dec4e3 identifies Γ(V) with the actual empty-tail sector on ALL
+completed tensor Fock vectors. The explicit full-source-basis word identities
+follow by vacuum and creator induction. Equality of the actual bounded maps
+then follows through the convergent single-word Hilbert sum, with no
+finite-support restriction.
 
-These are current proof targets, not achievements asserted in this note.
-Further verified checkpoints will update the project ledger through the
-coordinator.
+Checkpoint 6ec5ec4 proves the literal full-space intertwining identity
+`isometryPrefixEmbedding V T ∘ Γ(V) = Γ(V) ∘ T` for EVERY source bounded
+operator T. Coordinatewise prefix amplification acts by T in the complete
+empty-tail sector, so the actual ambient compression is a left inverse on
+ALL source operators. The representation sends the vacuum orbit of T to its
+actual Γ(V) orbit and preserves the actual normalized ambient vacuum
+expectation. These full-operator assertions require no orthonormal-family
+assumption.
+
+All three final modules were focused compiled under the shared lock with exit
+0 checked before committing. Principal statements passed direct transitive
+standard-axiom audits and source-integrity/diff checks. Each mathematical
+checkpoint was immediately pushed successfully. The original nine prefix
+representation source modules were not modified.
+
+An implementation obstruction involved different decidable equality instances
+inside square-summable singleton expressions, which could print identically
+while preventing direct rewriting. A generic typed word-embedding lemma and
+explicit source/target operator expressions made the intended identities
+available without increasing proof resource limits.
 
 ## Remaining normal-extension boundary
 

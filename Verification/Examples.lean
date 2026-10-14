@@ -643,4 +643,11 @@ example {A : Type*} [CStarAlgebra A] [PartialOrder A] [StarOrderedRing A]
     ∃! w : ℝ, halfProjectionPhysicalDomain 2 w ∧ halfProjectionExteriorCurve 2 w = x :=
   φ.existsUnique_halfProjection_standard_physical_root hφ 2 (by norm_num) hf p hpB hp hE x hx
 
+-- The full operator representation is recovered by actual Gamma compression, for arbitrary isometries.
+example {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+    [NormedAddCommGroup K] [InnerProductSpace ℂ K] [CompleteSpace K]
+    (V : H →ₗᵢ[ℂ] K) (T : Fock.TensorFullFock H →L[ℂ] Fock.TensorFullFock H) :
+    Fock.secondQuantizationCompression V (Fock.isometryPrefixEmbedding V T) = T :=
+  Fock.isometryPrefixEmbedding_compression V T
+
 end FreeProbability.Examples

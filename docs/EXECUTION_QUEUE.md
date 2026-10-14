@@ -18,7 +18,7 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `bdd05e233dcac523f886247b984a2680cbf76327`,
+Latest checked integration: `b22509301b70a3923b509a99c65e06410ec4e530`,
 published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
 and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
 Corrected WOT-generated PR #35 passes full builds 3745/3748, direct transitive audit
@@ -2067,3 +2067,28 @@ Next independent tasks are the published complete prefix representation/sector
 integration, new suffix commutant prerequisites for normal OU, and abstract
 Haar-unitary entire-algebra integer conjugation freeness. No unfinished goal is
 certified by the presence of files alone.
+
+### Complete prefix representation and actual Gamma bridge integration feature
+
+Goal7 certificate PR39 merged at `b22509301b70a3923b509a99c65e06410ec4e530`;
+checked main full3762, Verification3765, direct audit5159, guard/diff and push.
+Twelve reviewed prefix modules and two frozen design notes through `0cb842d`
+are assembled. Ordered first-outside-letter splitting gives a complete Hilbert
+prefix/tail unitary; true coordinatewise amplification acts on ALL infinite
+Hilbert vectors and ALL bounded source operators. Its WOT continuity is proved
+on every norm ball, without claiming false global unbounded-net continuity.
+Arbitrary isometry transport preserves every creation/annihilation operator;
+the native ON-family restriction equals the previously constructed embedding.
+Actual Gamma(V) is exactly the complete empty-tail sector, giving ALL-source-
+operator intertwining, actual compression left inverse and vacuum-state identity.
+No spanning/countability/nontriviality assumption is added to the isometry.
+These are not yet a normal generated von Neumann embedding or normal OU result.
+Feature full3774, Verification3777, direct transitive audit5452, source/diff pass;
+an actual all-operator compression usage compiles. All important statement scopes
+were critically reviewed. Root owns NEW PrefixCommutant/PrefixVonNeumann helpers;
+B owns NEW suffix operator/commutant modules, with all12 prior sources frozen.
+A owns NEW Haar-unitary/conjugation modules in its isolated feature branch.
+Reviewer approved a literal doublecommutant prefix-block/suffix-range route that
+avoids general Kaplansky for range, plus a bounded finite-rank ALLB semigroup
+route. Both still require actual new kernel proofs. Positive order-sup normality
+and doublecommutant traciality remain explicit separate obligations.

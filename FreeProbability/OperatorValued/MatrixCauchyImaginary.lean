@@ -56,8 +56,10 @@ theorem operatorMatrixPencilCauchy_negativeImaginaryPart (C₀ : Matrix n n ℂ)
     (CStarMatrix.ofMatrix.injective hr)
   rw [map_sub, matrixExpectation_conjTranspose, map_smul] at he
   have hc : (Complex.I / 2) * (star z - z) = (z.im : ℂ) := by
-    apply Complex.ext <;>
-      simp [Complex.mul_re, Complex.mul_im]
+    apply Complex.ext
+    · simp [Complex.mul_re]
+      ring
+    · simp [Complex.mul_im]
   unfold matrixNegativeImaginaryPart operatorMatrixPencilCauchy
   rw [he, smul_smul, hc]
 

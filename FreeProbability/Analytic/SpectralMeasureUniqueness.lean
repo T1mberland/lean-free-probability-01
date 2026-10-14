@@ -90,4 +90,13 @@ theorem spectralMeasure_eq_of_power_moments
     expectation_cfc_eq_integral ψ hb _ f.continuous] at he
   exact Complex.ofReal_injective he
 
+/-- Exact equivalence between equality of actual bounded spectral laws and all algebraic moments. -/
+theorem spectralMeasure_eq_iff_power_moments :
+    spectralMeasure φ ha = spectralMeasure ψ hb ↔
+      ∀ n : ℕ, φ.expectation (a ^ n) = ψ.expectation (b ^ n) := by
+  constructor
+  · intro h n
+    rw [spectralMeasure_power_moment φ ha, spectralMeasure_power_moment ψ hb, h]
+  · exact spectralMeasure_eq_of_power_moments φ ψ ha hb
+
 end FreeProbability

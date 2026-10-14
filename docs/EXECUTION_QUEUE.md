@@ -18,8 +18,8 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `7d70927a91a88005964f9db525d5cd4154a29871`,
-published main after PR58. Full3893, Verification3896, direct transitive7172,
+Latest checked integration: `2464ff72d0d0b46a0bbd7eeb86d19710e037267b`,
+published main after PR59. Full3896, Verification3899, direct transitive7179,
 source guard/diff and explicit push passed. Earlier records below are historical.
 Goals 1, 2, 3, 6 and 7 are certified complete; six full goals remain open.
 Every historical checkpoint below retains its original scope and date.
@@ -42,9 +42,9 @@ Every historical checkpoint below retains its original scope and date.
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/orthogonal-almost-sure-integration`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/orthogonal-probability-random-inputs`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalMultiTraceProbability*.lean and agreed notes; prior sources frozen | Genuine independent random input product-law and Fubini bounds |
-| Worker B (`fock`) | `feat/fock-homogeneous-gram-ou`, `/home/user/Projects/lean-fp-fock` | NEW Fock/WickSuffixGramActualOU*.lean and agreed notes; prior sources frozen | Actual OU identity for finite homogeneous matrix positive suffix decomposition |
+| Coordinator | `feat/fock-homogeneous-ou-gram-integration`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Worker A (`cumulants`) | `feat/orthogonal-colored-entry-integration`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalColoredEntry*.lean and agreed notes; prior sources frozen | Actual finite independent-Haar color integration and Weingarten products |
+| Worker B (`fock`) | `feat/fock-homogeneous-gram-marginal`, `/home/user/Projects/lean-fp-fock` | NEW Fock/WickSuffixGramMarginal*/Order*.lean and agreed notes; prior sources frozen | Actual common marginal and full matrix rank/degree order bounds |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -2628,3 +2628,41 @@ Five full goals complete/six open; no fullGoal9/Goal5/Goal10 completion.
 Mean-square/probability/a.s. feature passes full3896, Verification3899, direct
 transitive7179, integrity/diff and all exact scope reviews. CI56 run38608452061,
 CI57 run38610503541 and CI58 run38611081396 confirmed success.
+
+### Actual amplified OU homogeneous positive suffix Grams
+
+PR59 checked main2464ff7 passes full3896, Verification3899, transitive7179,
+source/diff and push. TrueactualHaar mean-square/probability/a.s. and countable
+words are integrated. Reviewed B558a9c2..8333e75 with exact notes1564fd3
+assemble genuine global Wick star/common-suffix contractions, division-free
+telescoping/partial Gram sums, phase/order-preserving matrix coefficients,
+finite suffix-fiber regrouping and actual canonicalmatrix positive Grams.
+True native inverse/inclusion→wholeD actualP_t→faithfulσ identifies the
+weighted contraction polynomial with the ACTUAL amplified OU map.
+actualFamilyWordOUMatrix_amplitude_Gram is genuineP_t(FF*) positive suffix
+decomposition for EVERYfinitehomogeneousmatrixWickamplitude, EVERYt≥0,
+ANYONfamily, arbitraryalphabet/properH, ALLfiniteν includingempty, n0 retained.
+No matrixcoefficientscommute, no wholeVNimageonto premise is assumed.
+The preceding literal-polynomial identity and actualOU bridge have distinct
+proofs. Canonicalcone positivity uses fullHilbertblock operator reflection,
+not entrywise or product-vector positivity. All fifteen sources exactly
+reviewed, focusedbuilt and principaldirectstandardaxiomaudited. Earlier0c5fbe2
+was published afterfocusedbuild but beforeconfirming finalcombinedaudit;
+that audit later returnedEXIT0, correction is recorded in preservednotes,
+and coordinator waitedforconfirmationbeforeassembling. No sourcefailure.
+HomogeneousactualOU identity is proved; fullmixeddegreepositiveidentity,
+commonmarginal/orderbounds, matrixentropy/DPI/lsc and L1 remain separate.
+B NEW Marginal/Order modules have reviewed actualcommonρ c45b260 and
+fullmatrixCS9e73d12 pendingintegration, requesteddegree/rankorderbound active.
+A NEWColoredEntry* actualfiniteindependentHaar productintegration; frozen
+321f28e randominputs a.s./probability/sourceAE/countable chain pendingintegration.
+Root finite-depth feature64f884b proves genuinefinite-rankmatrixcompression
+and actualpencildepthpropagation; powerretention/quantitativeerror next.
+Five full goals complete/six open; this is not a fullGoal10 certificate.
+
+Actual homogeneous OU Gram feature passes full3911, Verification3914, direct
+transitive7356, integrity/diff and all fifteen module statement reviews.
+A reviewed but UNPROVED general mixed-degree length-flag entropy route is
+persisted in math-notes/ou-mixed-degree-entropy-flag-plan.md. It explicitly
+requires actualmixedGram, trace-decreasingDPI/failureflag, coherence/pinching,
+jointconvexity and JOINT lsc; boundednativeapproximation does not finishL1.

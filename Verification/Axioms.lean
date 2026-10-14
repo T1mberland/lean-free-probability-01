@@ -1214,3 +1214,15 @@ run_cmd do
 #print axioms FreeProbability.Orthogonal.probabilityMeasure_of_haar_marginal
 #print axioms FreeProbability.Orthogonal.centered_traceWord_tendstoInMeasure
 #print axioms FreeProbability.Orthogonal.ae_countable_centered_traceWords_tendsto
+#print axioms FreeProbability.Fock.star_wick
+#print axioms FreeProbability.Fock.wick_mul_star_common_suffix
+#print axioms FreeProbability.Fock.suffixGram_weight_telescoping
+#print axioms FreeProbability.Fock.matrixSuffixGram_nonneg
+#print axioms FreeProbability.Fock.finite_fiber_Gram
+#print axioms FreeProbability.Fock.matrixCutGram_pairs
+#print axioms FreeProbability.Fock.matrixCutGram_nonneg
+#print axioms FreeProbability.Fock.matrixHomogeneousDampedProduct_Gram
+#print axioms FreeProbability.Fock.actualFamilyWordOU_closedWick
+#print axioms FreeProbability.Fock.actualFamilyWordOUMatrix_entry
+#print axioms FreeProbability.Fock.actualFamilyWordOUMatrix_amplitude_Gram
+#print axioms FreeProbability.Fock.actualFamilyWordOUMatrix_amplitude_nonneg

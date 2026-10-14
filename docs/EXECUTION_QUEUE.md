@@ -18,8 +18,8 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `e69c705aea4a196206947f8d7e30fcfa9f710790`,
-published main after PR61. Full3916, Verification3919, direct transitive7383,
+Latest checked integration: `d3a87c27cb0eeeed58bdce377a9c075a0265f3b9`,
+published main after PR62. Full3923, Verification3926, direct transitive7448,
 source guard/diff and explicit push passed. Earlier records below are historical.
 Goals 1, 2, 3, 6 and 7 are certified complete; six full goals remain open.
 Every historical checkpoint below retains its original scope and date.
@@ -42,9 +42,9 @@ Every historical checkpoint below retains its original scope and date.
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/fock-suffix-gram-order-integration`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Coordinator | `feat/fock-finite-depth-resolvent`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
 | Worker A (`cumulants`) | `feat/orthogonal-colored-trace-criterion`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalColoredTrace*.lean and agreed notes; prior sources frozen | Actual multicolor centered trace criterion by strong induction |
-| Worker B (`fock`) | `feat/fock-mixed-suffix-gram`, `/home/user/Projects/lean-fp-fock` | NEW Fock/WickMixedSuffixGram*.lean and agreed notes; prior sources frozen | Actual full mixed-degree matrix positive suffix identity |
+| Worker B (`fock`) | `feat/tracial-l1-norm`, `/home/user/Projects/lean-fp-fock` | NEW Analytic/TracialL1*.lean and Fock/OrnsteinUhlenbeckL1*.lean and agreed notes; prior sources frozen | Genuine tracial L1 completion and actual OU contraction |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -2629,6 +2629,25 @@ Mean-square/probability/a.s. feature passes full3896, Verification3899, direct
 transitive7179, integrity/diff and all exact scope reviews. CI56 run38608452061,
 CI57 run38610503541 and CI58 run38611081396 confirmed success.
 
+### Next independent finite-depth operator milestone
+
+PR59 checked main2464ff7 passes full3896, Verification3899, transitive7179,
+source/diff and push. Genuine actualHaar mean-square/probability/a.s. and
+countable simultaneouswords are integrated; fullGoal9 obligations remain.
+CI54 job116002692744/run38607693716 is confirmedsuccess; all queried CI
+throughPR58 pass. Coordinator published c9acaaa genericgeometricinverse
+comparison (conditionalretainedpowers) and c1e7329 actualfinite-depthFock
+projection/rangefinite/strongnormlimit, reviewedstandardaxiomaudited.
+These feature sources are not yet integrated. Actualpencilpropagation,
+shiftedpositiveexterior resolvent estimate and singularboundary certificates
+remain. Plan1be805e records mandatoryshiftedcompression fornegativeb.
+B frozena273f45 actualhomogeneousmatrixGram polynomialidentity reviewed;
+new actualOUbridge530deec publishedbutfullmatriximageidentity active.
+A branchprobability-random-inputs works actualdata×Haar productbounds and
+independence/productlaw transfer, not an assumedconditionalexpectation.
+Five full goals complete, six open. Sources and central ledgers have isolated
+owners, builds remainserialized by common lock, all publishedpushesconfirmed.
+
 ### Actual amplified OU homogeneous positive suffix Grams
 
 PR59 checked main2464ff7 passes full3896, Verification3899, transitive7179,
@@ -2737,3 +2756,46 @@ transitive7448, integrity/diff and all seven precise source reviews. Concrete
 two-generator/arbitrary3×3 coefficientfactor8 canonicalcone usage compiles.
 Its local spectral-order instance required noncomputable section, repaired
 before publication; no resource or mathematical error was involved.
+
+### Quantitative full-exterior finite-depth matrix Cauchy bounds
+
+Checked main PR62 `d3a87c2` passes full3923/Verification3926/transitive7448 and
+source/diff/push. Coordinator feature sources through `f344965` prove actual
+finite rank/projection, general pencil propagation, shifted retained powers,
+automatic spectral shift norm, true inverse tail bounds and complete coefficient
+Hilbert operator-norm matrix Cauchy error `2q^(L+1)/(z−b)` with q=(b+‖H‖)/(z+‖H‖).
+Literal Cauchy/expectation, original-pencil spectrum and norm are identified.
+Eleven modules and every major precise statement were independently reviewed;
+focused builds/direct standard axiom audits passed before source commits.
+Ordinary rewrites with abstract block operator types were repaired with explicit
+operator types and congruence intermediates. A concrete negative-edge usage first
+failed due scalar cast rewriting and deterministic elaboration timeout; typed
+scalar spectral equalities and the explicit real-to-complex spectral parameter
+cast repaired the proof. A complex numeral parameter first caused excessive
+definitional unfolding when matching the real-exterior theorem; named input
+matrices preserve the exact scalar-drift setup in a separate verified usage module.
+Local irreducibility and splitting the file alone did not solve that mismatch.
+No toolchain/dependency revision or limits were changed.
+Remaining Goal5: restricted finite-dimensional inverse interface, singular edge
+limits and deterministic edge subspace certificates; five goals complete/six open.
+B mixed actual matrix suffix checkpoint `0eca6b2` is frozen/reviewed, awaiting
+sequential integration. New L1 branch proves actual τ|T| dual norm equality,
+dense complete closure, bounded actions and generic symmetric map extension;
+actual OU contraction wrapper is active. A colored entry cutoff `c372ff6` awaits
+integration; colored strong wordlength induction is active after actual run
+geometry/data/restoration and endpoint center LAST*FIRST proofs. Independence
+is on whole augmented data+Haar family, never merely pairwise or across-N.
+One implementation worker per isolated checkout; all heavy invocations share
+`/tmp/lean-fp-build.lock`, source cuts are frozen, only coordinator integrates.
+
+Finite-depth feature checkpoint passes full3934, Verification3938 (including the
+separate negative-exterior usage), direct transitive7590, integrity/diff and all
+source statement reviews. Concrete spectral parameter is explicitly cast from
+real -2 to complex; no heartbeats were increased. All verified source commits
+were pushed immediately. CI60 run38616185218, CI61 run38617821633 and CI62
+run38620201595 confirmed success. A full centered-colored criterion6d288ce is
+published and critically approved (all shorter run obligations discharged);
+expected/probability/countable wrappers are active. B actual OU L1 wrapper is
+uncommitted and its Γ unfolding attempts were interrupted143 for memory/time;
+published generic L1 sources remain verified. New positive-map star preservation
+is an alternative to expanding Γ. No additional concurrent heavy build is launched.

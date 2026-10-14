@@ -42,9 +42,17 @@ The combined source verifies the actual identity
 Integrating `8775e6e` requires `efc7f32` and renewed integration checks.
 Strict positive definiteness was subsequently verified in `2517611` and `aa623b8`: actual inverse matrices have strictly positive vacuum Gram forms by injectivity on finite vacuum vectors, with no faithfulness assumption on all bounded operators. The genuine affine matrix Cauchy transform consequently has strictly negative Hermitian imaginary part throughout the upper half-plane. Physical analytic branch uniqueness remains open.
 
+Actual analytic milestones `f0f64be` and `c72773e` subsequently establish derivative
+`-E(R^2)`, analyticity on the actual open resolvent domain, decay to zero, and
+normalization `z m(z) -> I` at infinity. The CLM continuity construction uses
+the explicitly chosen elementwise supremum norm on its ordinary matrix target;
+its entry bound is not a C-star matrix contractivity theorem.
+
 ## Next dependencies
 
-1. Actual matrix Cauchy analyticity on the true resolvent domain and decay at infinity.
+1. Dyson difference identity and uniqueness by contraction for small solution norms,
+   followed by analytic continuation on the connected upper half-plane to prove
+   uniqueness of the normalized analytic branch.
 2. Matrix upper-half-plane argument invertibility and physical analytic branch uniqueness,
    beyond an invertibility-conditioned Dyson identity.
 3. Real exterior resolvent guarantees, compatibility with the generated closed matrix C-star model and analytic norm

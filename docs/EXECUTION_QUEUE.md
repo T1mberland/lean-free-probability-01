@@ -18,7 +18,7 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `da78dfa1b1e5f7770f13a9fce05045bfe738633f`,
+Latest checked integration: `2260d14249be0ed6ce560c85e5009dccf318d086`,
 published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
 and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
 Corrected WOT-generated PR #35 passes full builds 3745/3748, direct transitive audit
@@ -2282,3 +2282,29 @@ error, awaiting integration. All goals statuses remain five complete/six open.
 
 Range feature checks pass: full3808, Verification3811, directtransitive5983,
 source integrity/diff. All eleven source modules reviewed, no new full goal.
+
+### Actual stable orthogonal FFT and entry integration
+
+PR47 checked main `2260d14249be0ed6ce560c85e5009dccf318d086` passes
+full3808/Verification3811/transitive5983, source/diff and push.
+Reviewed A chainc7a8dc1..e4b842f with exact notes17bd38e is assembled: actual
+invariant tensors for ALL ordinary perfect pairings (including crossings),
+true Gram as dimension raised to raw Setoid-join quotient loop count, actual
+stable independence/Gram inverse, genuine invariant-tensor spanning and full
+Haar entry-integration formula for N>=r at degree2r. Spanning follows actual
+reflection/permutation/45-degree fresh-color coefficient laws and strong
+induction on missing colors; no invariant spanning theorem is assumed.
+Major declarations: pairingTensor_inner, ordinaryPairingGram_inverse,
+span_pairingTensors_eq_fixedVectors, entryMoment_eq_weingarten_delta_sum.
+Degreezero/emptydimension cases are retained. The stable N>=r scope is explicit;
+low-dimensional spanning/integration remains a separate open obligation.
+A later published literal leading limits and uniform rescaled-entry estimates
+are separate integration checkpoints. Random-matrix expected/probability/a.s.
+joint asymptotic freeness and strong resolvent convergence remain unproved.
+Bbc3c599 has whole-ONfamily OU composition awaiting independent review and
+integration. Normality needs actual directed positive IsLUB preservation;
+no complete lattice on arbitrary noncommuting operator sets is asserted.
+Full goal statuses remain five certified, six open.
+
+Stable FFT/integration feature passes full3817, Verification3820, direct
+transitive6065, source/diff and independent mathematical review.

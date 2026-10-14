@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `427f72b` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 2636 declarations.
+The latest checked and published integration is `a1f942b` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 3029 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -85,9 +85,17 @@ integrated at `5c2e9cb`. Explicit recursively completed tensor powers and the
 unitary onto their Hilbert sum, exact tensor-domain operators and actual
 faithful tracial generated tensor C-star model with literal joint Wick/Catalan
 laws are integrated at `8334d17`.
-The semicircular density and arbitrary-orthonormal-family interfaces await
-integration. Goals 1 and 6 are certified complete at checked main `76af384` and
-`427f72b`, respectively; the other nine goals remain open. Completed tensor-power identification is already integrated.
+The canonical spectral density and full spectrum are integrated at `9a2bdad`.
+Every arbitrary orthonormal family in a complete complex Hilbert space now has
+a genuine adapted full F(H), including all H, literal completed-tensor creation,
+scalar vacuum and grading. Its literal generated C-star state is faithful and
+tracial, its fields are free with norm two, and actual joint Wick/Catalan and
+explicit spectral density laws hold. `exists_fullFock_semicircular_family`
+packages the general existence theorem without a spanning/countability assumption.
+Integrated through [PR #5](https://github.com/T1mberland/lean-free-probability-01/pull/5)
+at checked main `68de4fe`, with full builds, audits and arbitrary-family usage.
+Goals 1, 2 and 6 are certified complete; eight full goals remain open. Equality
+with an independently chosen basis model is an optional coherence extension.
 
 Formal R-transform additivity/scaling and the algebraic free CLT are integrated
 at `65ea73e`. The CLT gives explicit pairing-moment limits for
@@ -118,7 +126,11 @@ The actual algebraic tensor free difference quotient satisfies the full
 noncommutative polynomial Leibniz rule. Polynomial and matrix-valued polynomial
 integration by parts in the actual faithful tracial Fock C-star state are
 integrated at `ea6149a`. Actual one-generator resolvent IBP on every resolvent-set point and its Cauchy
-quadratic equation are integrated at `7386526`. General polynomial
+quadratic equation are integrated at `7386526`. Generated-algebra full domain
+and inverse compatibility, restricted-state resolvent IBP and actual unique
+lower-half-plane Cauchy branch are integrated through
+[PR #4](https://github.com/T1mberland/lean-free-probability-01/pull/4) at `0f40468`.
+General polynomial
 resolvent, matrix analytic and exponential extensions remain open.
 
 Actual spectral probability measures are constructed from positive CFC
@@ -130,13 +142,24 @@ all power moments are integrated at `ab262d5`;
 bounded-moment weak spectral-law and pointwise all-nonreal Cauchy convergence
 are integrated through [PR #2](https://github.com/T1mberland/lean-free-probability-01/pull/2)
 at `427f72b`. Full main build/audits and non-exterior Fock usage pass for 2636
-declarations, certifying Goal 6. Semicircular density identification remains
-pending integration.
+declarations, certifying Goal 6. The actual canonical Fock spectral law is identified with the independently
+proved semicircle density, and its full support/operator spectrum is `[-2,2]`,
+integrated through [PR #3](https://github.com/T1mberland/lean-free-probability-01/pull/3)
+at checked main `9a2bdad`. The arbitrary-family realization is published and
+awaits its integration checkpoint.
 
 A quantitative non-iid free triangular-array CLT is integrated at `8cb664e`: each entry is centered, averaged second moments converge, and each
 fixed higher-order marginal cumulant has a uniform bound. Normalized power
 moments then converge to the explicit pairing sequence. These are sufficient
 quantitative assumptions, not an optimal Lindeberg condition or a spectral limit.
+
+The actual finite-matrix Fock model has a coefficient-range conditional
+expectation, covariance positive at every matrix amplification, genuine scalar
+state complete positivity, all-order ordered/interspersed Wick laws and actual
+covariance moment recursion. These are integrated through
+[PR #6](https://github.com/T1mberland/lean-free-probability-01/pull/6) at `a1f942b`.
+They establish the concrete matrix case's foundations. General arbitrary-base
+CP covariance realization and analytic Dyson/physical-branch theory remain open.
 
 ## Haar probability and concentration
 
@@ -194,7 +217,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 2636 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 3029 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -204,32 +227,18 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 
 ## Next mathematical priorities
 
-The current assignments, integration hashes, design decisions and execution queue
-are maintained in [docs/EXECUTION_QUEUE.md](docs/EXECUTION_QUEUE.md). The verified
-starting snapshot was published as `faf32e8` on `main` and
-`feat/verified-baseline` in `T1mberland/lean-free-probability-01`. The integration
-build and audits still pass for 954 declarations. Cumulant/pairing and Fock workers
-have isolated worktrees; their active tasks are not yet integrated results.
+The exact dependency queue, isolated assignments, source hashes and integration
+checks are maintained in [docs/EXECUTION_QUEUE.md](docs/EXECUTION_QUEUE.md).
+Goals 1, 2 and 6 are certified complete; eight goals remain open.
 
-Pairing fundamentals were subsequently integrated and checked on `main` at
-`6ade2b4` (worker milestone `ab82d17`). Full builds, the source guard and the
-transitive axiom audit pass for 970 library declarations. Interval blocks and
-word-Fock operators were separately published worker milestones. Interval blocks
-are now integrated and checked at `f419315` (worker source `4df3696`); builds and
-audits pass for 973 declarations. The word-Fock milestone awaits its integration
-checkpoint. These prerequisites do not establish the full cumulant or Fock goals.
+1. Integrate actual entire exponential IBP, then full polynomial/matrix resolvent
+   identities and norm-convergent analytic extensions.
+2. Prove the actual matrix resolvent Dyson equation and its half-plane/exterior
+   properties; construct general arbitrary-base completely positive covariance.
+3. Integrate the actual projection spectral law, then positive free-product law,
+   S multiplication, projection-product support and physical spectral edge.
+4. Develop conditional L² projections/subordination, Wick contractions and OU,
+   noncommutative Lᵖ/entropy, and Haar freeness by distinct convergence modes.
 
-1. Complete cumulant calculus: develop adjacent products
-   and refinement/contraction fibers, then freeness implies mixed vanishing.
-2. Integrate genuine closed-generator freeness; prove joint Wick moments,
-   and identify the word model with completed Hilbert tensor powers.
-3. Develop free difference quotients and integration by parts, then operator-valued
-   semicircular covariance and Dyson resolvent identities.
-4. Construct spectral measures and faithful tracial analytic interfaces, then
-   spectral-edge certificates, convolution, projection-product laws, and subordination.
-5. Develop Haar conjugation and joint asymptotic freeness with distinct convergence
-   modes; then Wick words, free Gaussian OU, noncommutative integration and entropy.
-
-The detailed audit records the earliest missing dependencies for each target.
-Existing matrix and ReLU examples remain verified tools; their rational edge
-calculations do not establish a free spectral support theorem.
+Matrix and ReLU examples remain verified supporting tools. Their rational
+critical-point calculations do not establish a spectral-support theorem.

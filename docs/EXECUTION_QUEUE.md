@@ -18,18 +18,17 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `427f72b`, published on `main` through
-[PR #2](https://github.com/T1mberland/lean-free-probability-01/pull/2). Full builds
-3583/3586 jobs, source guard and transitive audit of 2636 declarations pass.
-Goals 1 and 6 are certified complete; nine full goals remain open. Explicit
-semicircle density, arbitrary-orthonormal-family Fock interfaces and matrix
-operator-valued models are published and queued for sequential integration.
-Historical checkpoints retain their scope.
+Latest checked integration: `a1f942b`, published on `main` through
+[PR #6](https://github.com/T1mberland/lean-free-probability-01/pull/6). Full builds
+3612/3615 jobs, source guard and transitive audit of 3029 declarations pass.
+Goals 1, 2 and 6 are certified complete; eight full goals remain open. Actual
+matrix covariance/Wick/recursion and entire exponential IBP are published and
+queued for sequential integration. Historical checkpoints retain their scope.
 
 | Goal | Status | Earliest work and dependency |
 | --- | --- | --- |
 | 1. Cumulant calculus | Complete on checked main `76af384`, PR #1 | All requested calculus and combinatorial subtargets verified; optional rotation/closed μ and Goal 7 S multiplication are separate |
-| 2. Full Fock systems | Active; faithful tracial C-star word model with exact norm two integrated | General-H full Fock and vector creation integrated; explicit tensor-sum operators/state/law published; spectral law remains |
+| 2. Full Fock systems | Complete on checked main `68de4fe`, PR #5 | All literal arbitrary-H/ON-family structure/state/Wick/spectral subtargets verified; independently chosen-model coherence optional |
 | 3. Free integration by parts | Active proof path selected | Actual polynomial tensor derivative/Leibniz and polynomial/matrix IBP integrated; analytic extensions remain |
 | 4. Operator-valued Dyson | Blocked on operator-valued realization | Completely positive covariance, amplified moments and Wick recursion precede Dyson and physical branch |
 | 5. Spectral edges | Blocked on goals 2, 4 and 6 | Faithful pencils and spectral/Dyson theory precede variational identity and certificates |
@@ -46,7 +45,7 @@ Historical checkpoints retain their scope.
 | --- | --- | --- | --- |
 | Coordinator | `main`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
 | Worker A (`cumulants`) | `feat/operator-valued-matrix`, `/home/user/Projects/lean-fp-cumulants` | New `OperatorValued/Matrix*.lean`; completed cumulant feature preserved | Actual matrix conditional expectation, all finite covariance amplification positivity, matrix semicircular realization |
-| Worker B (`fock`) | `feat/orthonormal-fock`, `/home/user/Projects/lean-fp-fock` | Current new `Fock/OrthonormalFamily*.lean`; completed spectral/density feature preserved | Arbitrary orthonormal-family adapted complete Fock and intrinsic generated state/freeness |
+| Worker B (`fock`) | `feat/fock-exponential-ibp`, `/home/user/Projects/lean-fp-fock` | New `Analytic/FockExponential*.lean`; published ON-family feature preserved | Actual Banach Duhamel commutator and entire exponential IBP |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -868,3 +867,136 @@ Density integration checks pass: full build 3589 jobs, Verification 3592,
 direct transitive audit 2730 declarations and source integrity guard. Actual
 endpoint spectrum and density fourth-moment usage examples kernel-compile.
 Main integration pending.
+
+### Checked PR integration: actual density and exact spectrum
+
+[PR #3](https://github.com/T1mberland/lean-free-probability-01/pull/3) merged
+head `1ef5e1c` as `9a2bdad`. Main full build 3589, Verification 3592,
+direct audit 2730 declarations and source guard pass, with endpoint/density
+usage. Worker B was clean at `466a0ca`; coordinator synced checked density
+main as `4dafad8`, pushed and verified focused builds and guard in B's actual
+worktree. B then published `2fe8a2f`, the direct arbitrary-family spectral
+wrapper and existence theorem. Read-only review approves full literal Goal 2
+scope; its integration and certification remain pending.
+
+From clean `2fe8a2f`, coordinator switched B to `feat/fock-exponential-ibp`
+from checked `9a2bdad`. Exclusive new `Analytic/FockExponential*.lean` proves
+actual Duhamel ray derivatives and norm-entire single-generator exponential
+IBP. The earlier ON branch and all published histories are preserved.
+
+### Pending PR: generated-algebra resolvents and physical scalar branch
+
+Coordinator `Analytic/FockResolventCStar` maps actual ring inverses through
+algebra homomorphisms at invertible inputs. Genuine spectral permanence gives
+full domain equality and intrinsic/ambient inverse compatibility. Actual
+restricted vacuum-state resolvent IBP and Cauchy quadratic now hold on every
+resolvent point, including real exterior points. The two quadratic roots have
+product one; inversion flips the imaginary sign, proving uniqueness of the
+strict lower-half-plane root. Existing strict Cauchy negativity identifies the
+actual upper-half-plane physical branch without a guessed square-root formula.
+A StarSubalgebra subtype algebra homomorphism avoids competing native/subalgebra
+instance elaboration; focused build passes with unchanged statements. Whole
+Goal 3 remains open (general polynomial/matrix analytic and exponential cases).
+
+Coordinator source `ae9e3f8` is published. Combined full build 3590 jobs,
+Verification 3593 jobs, direct transitive audit 2755 declarations and integrity
+guard pass. Mathematical review approves all seven statements. The physical
+branch usage computes actual `G(3i/2)=-i/2`. Main integration remains pending.
+
+### Checked PR integration: actual generated resolvents and physical branch
+
+[PR #4](https://github.com/T1mberland/lean-free-probability-01/pull/4) merged
+head `e19831f` as `0f40468`. Main full build 3590, Verification 3593,
+direct audit 2755 declarations and source guard pass, including the actual
+physical-branch value `G(3i/2)=-i/2`. General polynomial/matrix analytic and
+exponential extensions remain separate Goal 3 obligations.
+
+### Pending PR: full arbitrary-orthonormal-family semicircular realization
+
+Published worker milestones `b2d991f`, `1ef85fa`, `466a0ca`, `2fe8a2f`
+(with coordinator prerequisite sync `4dafad8`) are assembled with original
+history retained in integration merge `70aab26`. The extending Hilbert basis
+spans all H, so the complete Fock model is for H itself. Original-H creators
+have literal completed-tensor successor action, scalar vacuum, direct-sum
+grading and canonical relations. The literal norm-closed algebra generated by
+only the prescribed family's fields has an actual faithful tracial vacuum
+state, genuine freeness, all-order joint Wick/Catalan moments and the actual
+semicircle density/full spectrum. No spanning/countability or supplied-state
+hypothesis is used. `exists_fullFock_semicircular_family` packages the general
+existence statement; fixed independently chosen-model coherence remains optional.
+All four modules reviewed; no collisions or mathematical objections. Combined
+build and audit results are recorded below; main integration and Goal 2
+certification remain pending. The arbitrary-family usage combines faithfulness,
+sixth moment five and the actual density without any spanning assumption.
+
+Combined ON-family full build passes 3594 jobs, Verification 3597 jobs,
+direct transitive audit 2913 declarations and source guard. Arbitrary-family
+usage kernel-compiles.
+
+### Checked PR integration: full arbitrary-family Fock goal
+
+[PR #5](https://github.com/T1mberland/lean-free-probability-01/pull/5) merged
+head `458d944` as `68de4fe`. Main full build 3594 jobs, Verification 3597,
+direct audit 2913 declarations and source guard pass, with arbitrary-family
+usage. All literal Goal 2 subtargets are certified; eight goals remain open.
+GitHub PR CI runs for #2 (`38538477082`), #3 (`38538933882`), #4
+(`38540161510`) and #5 (`38540587555`) subsequently completed successfully.
+
+### Pending PR: actual matrix semicircular calculus
+
+Published original A commits `a594efa`, `bf0e7eb`, `0a751c2`, `fa59547`,
+`a01f261`, `9a6c7a8`, `3582815`, `13dce41` are assembled as `e705793`;
+`e1fb2bb`, `ab1d85c`, `8b7be88`, `c38c759` as `be2986c`, retaining original
+history. Actual matrix range-target conditional expectation fixes coefficients
+and is a two-sided bimodule retract. Hermitian coefficient covariance is positive
+at every finite amplification. Any scalar C-star probability state is bundled
+as a genuine completely positive map on ALL positive C-star matrix inputs,
+using actual cone closure rather than a Gram-only positivity premise.
+Actual closed-Fock coefficient sums give the Hermitian semicircular matrix
+model, centering and exact covariance. All-order ordered joint/interspersed
+matrix Wick identities preserve noncommuting coefficients. Actual matrix tensor
+FDQ calculus, power cuts and expectation contraction prove
+`closedMatrixMoment_recursion`: M(k+1)=sum_{j<k} eta(Mj)M(k-1-j), with M0=I,
+M1=0, derived from actual polynomial IBP. No moment law is assumed.
+All twelve sources have independent mathematical review and no collisions.
+The first eight passed full build 3608, Verification 3611 and audit 2983 plus
+integrity guard. Final related recursion additions undergo combined checks.
+The concrete two noncommuting Pauli coefficients give actual covariance 2I;
+a generic fourth-moment usage retains both noncrossing nestings.
+General arbitrary-base CP-covariance realization, actual analytic Dyson and
+physical matrix branch remain unproved Goal 4 obligations. Formal power-series
+Dyson, currently assigned A, is not a substitute for the actual resolvent equation.
+
+Final related matrix recursion checks pass: full build 3612 jobs, Verification
+3615 jobs, direct transitive audit 3029 declarations and source guard. Both
+Pauli covariance and ordered fourth-moment usage kernel-compile. The fourth
+moment simplifier required retaining the covariance linear-map head; expanded
+map-sum normal forms were mathematically equal but syntactically different.
+No statement or proof requirement was weakened. Main integration pending.
+
+### Checked PR integration: actual matrix covariance/Wick/recursion
+
+[PR #6](https://github.com/T1mberland/lean-free-probability-01/pull/6) merged
+head `4a91c65` as `a1f942b`. Main full build 3612, Verification 3615,
+direct audit 3029 declarations and source guard pass. Both concrete Pauli
+and generic fourth-moment usage pass. Goal 4 remains open as specified above.
+
+### Pending PR: actual projection probability law
+
+Coordinator source `c49bb0d` proves actual spectral concentration on {0,1},
+exact ENNReal-weighted Dirac decomposition and identification of the mass at
+one with the original state expectation. Finite probability masses give
+alpha=Re(phi(p)) in [0,1], hence the actual law
+`(1-alpha) delta0 + alpha delta1`. No Bernoulli law, faithfulness or trace is
+assumed. Generic `measure_eq_two_dirac_of_concentration` works even without
+finiteness, given distinct measurable singleton points. The existing analytic
+idempotent S germ is rewritten with the same real trace parameter under its
+precise nonzero-first-moment domain. This proves the projection piece of Goal 7,
+not free-positive convolution, S multiplication or the product spectral edge.
+Read-only review approves all eight statements, with no collisions. Full build
+3613 jobs, Verification 3616, direct audit 3038 declarations and source guard
+pass. The half-trace two-atom usage kernel-compiles. Main integration pending.
+Important proof choices: first power integral determines actual weights;
+measure order bounds use pointwise ENNReal add positivity (Measure has no
+CanonicallyOrderedAdd instance); native let-bound measures are rewritten through
+explicit equality types. No theorem statements were weakened.

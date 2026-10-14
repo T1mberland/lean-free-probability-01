@@ -176,4 +176,64 @@ example {I : Type*} (i : I) :
   rw [Fock.fockSpectralLaw_eq_semicircleMeasure]
   simpa [catalan_two] using Semicircular.semicircleMeasure_even_moment 2
 
+/-- The unique physical branch computes an actual Cauchy value inside the norm-two disk. -/
+example {I : Type*} (i : I) :
+    (Fock.closedGeneratedVacuumState I).cauchyTransform
+      (Fock.closedSemicircular i) ((3 / 2 : ℂ) * Complex.I) =
+        -(1 / 2 : ℂ) * Complex.I := by
+  symm
+  apply Fock.closedSemicircular_cauchyTransform_physical_branch
+  · norm_num
+  · norm_num [Complex.ext_iff, pow_two, Complex.mul_re, Complex.mul_im]
+  · norm_num
+
+/-- Any orthonormal family, including a nonspanning family, has an actual faithful
+Fock realization with sixth moment five and the explicit spectral density. -/
+example {I H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+    {e : I → H} (he : Orthonormal ℂ e) :
+    ∃ d : Fock.OrthonormalFamilyExtension e,
+      IsFaithful d.state.toProbabilitySpace ∧
+      ∀ i, d.state.expectation (d.generator i ^ 6) = 5 ∧
+        d.spectralLaw i = Semicircular.semicircleMeasure := by
+  obtain ⟨d, hf, _, _, hd⟩ := Fock.exists_fullFock_semicircular_family he
+  refine ⟨d, hf, fun i => ⟨?_, (hd i).2.2.2.2.1⟩⟩
+  simpa [catalan_three] using d.even_moment i 3
+
+/-- Two noncommuting Hermitian Pauli coefficients give actual matrix covariance 2I. -/
+example :
+    let C : Fin 2 → Matrix (Fin 2) (Fin 2) ℂ :=
+      ![!![1, 0; 0, -1], !![0, 1; 1, 0]]
+    matrixExpectation (Fock.closedGeneratedVacuumState (Fin 2)).toProbabilitySpace
+      (Fock.closedMatrixSemicircular C ^ 2) = (2 : ℂ) • 1 := by
+  intro C
+  calc
+    _ = matrixCovariance C 1 := by
+      simpa only [map_one, mul_one, ← pow_two] using
+        Fock.closedMatrixSemicircular_covariance C 1
+    _ = _ := by
+      ext r c
+      fin_cases r <;> fin_cases c <;>
+        norm_num [C, matrixCovariance, Matrix.mul_apply, Fin.sum_univ_two]
+
+/-- The actual fourth operator-valued moment retains both noncrossing nestings. -/
+example {I n : Type*} [Fintype I] [Fintype n] [DecidableEq n]
+    (C : I → Matrix n n ℂ) :
+    Fock.closedMatrixMoment C 4 =
+      matrixCovariance C 1 * matrixCovariance C 1 +
+        matrixCovariance C (matrixCovariance C 1) := by
+  have h2 : Fock.closedMatrixMoment C 2 = matrixCovariance C 1 := by
+    simpa using Fock.closedMatrixMoment_recursion C 1
+  simpa [Finset.sum_range_succ, h2, -matrixCovariance_apply] using
+    Fock.closedMatrixMoment_recursion C 3
+
+/-- The half-trace projection's actual law is the equal two-atom probability. -/
+example {A : Type*} [CStarAlgebra A] [PartialOrder A] [StarOrderedRing A]
+    (φ : StarProbabilitySpace A) {p : A} (hp : IsSelfAdjoint p)
+    (hpi : IsIdempotentElem p) (hα : φ.expectation p = (1 / 2 : ℂ)) :
+    spectralMeasure φ hp =
+      ENNReal.ofReal (1 / 2 : ℝ) • MeasureTheory.Measure.dirac 0 +
+        ENNReal.ofReal (1 / 2 : ℝ) • MeasureTheory.Measure.dirac 1 := by
+  rw [spectralMeasure_projection φ hp hpi, hα]
+  norm_num
+
 end FreeProbability.Examples

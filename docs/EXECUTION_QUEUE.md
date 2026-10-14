@@ -18,12 +18,12 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `272452cd7a53169da0d30f9bc236fd5b4ad92b14`,
+Latest checked integration: `bdd05e233dcac523f886247b984a2680cbf76327`,
 published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
 and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
 Corrected WOT-generated PR #35 passes full builds 3745/3748, direct transitive audit
 5008 declarations and source guard.
-Goals 1, 2, 3 and 6 are certified complete; seven full goals remain open.
+Goals 1, 2, 3, 6 and 7 are certified complete; six full goals remain open.
 Every historical checkpoint below retains its original scope and date.
 
 | Goal | Status | Earliest work and dependency |
@@ -2046,3 +2046,24 @@ A clean isolated worktree now uses `feat/haar-conjugation`, based on checked
 main272452c, owning only NEW HaarUnitary/HaarConjugationWords/HaarConjugation
 and agreed notes. Next target is entire-algebra integer Haar conjugate freeness.
 B continues new suffix amplification/commutant work; frozen prefix integration next.
+
+### Goal7 completion certificate at checked main bdd05e2
+
+Physical branch PR38 merged as `bdd05e233dcac523f886247b984a2680cbf76327`.
+Post-merge full lake build3762, Verification3765, direct transitive audit5159,
+source integrity/diff and explicit main push pass. PR37 supplies actual law edge.
+The read-only reviewer checked every literal Goal7 requirement in PROJECT_GOAL:
+actual given-free-positive sandwich convolution with cross-realization marginal
+law independence and analytic S multiplication under nonzero means; actual
+projection two-atom law and S germ; all finite free half-projection product laws;
+actual greatest law-support point lambda_L; full actual physical Cauchy branch,
+unique root, exact parameterization/image and critical-to-support connection,
+including the L2 infinite-coordinate boundary; faithful actual ambient spectral
+edge and full exterior operator resolvent/Cauchy identification.
+Goal7 is certified complete at this checked integration. Convolution is for given
+free positive elements; universal free-product realization is still Goal11.
+Goals 1,2,3,6,7 are complete; goals 4,5,8,9,10,11 remain open.
+Next independent tasks are the published complete prefix representation/sector
+integration, new suffix commutant prerequisites for normal OU, and abstract
+Haar-unitary entire-algebra integer conjugation freeness. No unfinished goal is
+certified by the presence of files alone.

@@ -685,4 +685,15 @@ example {n : Type*} [Fintype n] [DecidableEq n] (i j : Fin 4 → n) :
       (Orthogonal.tensorBasisVector 4 j)) i = Orthogonal.entryMoment i j :=
   Orthogonal.tensorPowerAverage_basis_coefficient 4 i j
 
+-- At half damping, the actual whole-algebra OU norm is bounded by four times state L2.
+example {I H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+    (e : I → H) (he : Orthonormal ℂ e) (T : Fock.tensorFamilyDoubleAlgebra e) :
+    ‖Fock.ouVonNeumannTimeCP e (Real.log 2) (Real.log_pos (by norm_num)).le T‖ ≤
+      4 * ‖Fock.ouVonNeumannVacuumVector e T‖ := by
+  have h := Fock.norm_ouVonNeumannTimeCP_le_L2 e he (Real.log 2)
+    (Real.log_pos (by norm_num)) T
+  rw [Real.exp_neg, Real.exp_log (by norm_num : (0 : ℝ) < 2)] at h
+  norm_num at h ⊢
+  exact h
+
 end FreeProbability.Examples

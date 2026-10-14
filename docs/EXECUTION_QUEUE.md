@@ -18,8 +18,8 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `f6bf741755cd2c9ef78f08d0a0c92f0d3a29a2a0`,
-published main after PR55. Full3873, Verification3876, direct transitive6722,
+Latest checked integration: `f217432c18e16de0fd2ac0f0d4241c244c011185`,
+published main after PR56. Full3882, Verification3885, direct transitive6956,
 source guard/diff and explicit push passed. Earlier records below are historical.
 Goals 1, 2, 3, 6 and 7 are certified complete; six full goals remain open.
 Every historical checkpoint below retains its original scope and date.
@@ -34,17 +34,17 @@ Every historical checkpoint below retains its original scope and date.
 | 6. Spectral distributions | Complete on checked main `427f72b`, PR #2 | Actual compact laws/CFC/support/Cauchy/moment compatibility and bounded weak/Cauchy convergence |
 | 7. Multiplicative convolution | Complete on checked main `bdd05e2`, certified PR39 | Actual positive-pair S/law and arbitrary-length projection physical branch/edge/spectrum; universal free-product realization belongs to Goal11 |
 | 8. Conditional subordination | Noncommutative L² and Goal 7 dependencies open | Normal conditional expectations, analytic subordination, exterior continuation and projection specialization |
-| 9. Haar freeness | Genuine Haar conjugation and stable orthogonal FFT/integration verified | Actual sharp pairing-distance inverse estimates integrated; centered expected trace decay in current integration feature; joint probability/a.s. convergence, strong resolvent convergence and low-dimensional integration remain |
-| 10. OU and entropy | Genuine whole-ONfamily von Neumann unital CP semigroup with faithful tracial vacuum and actual normality integrated PR51 | Exact Hilbert generator/domain integrated PR53; proper-family cyclic L2 bridge, L1 extension, complete-coefficient regularization and entropy remain |
+| 9. Haar freeness | Genuine Haar conjugation and stable orthogonal FFT/integration verified | Actual sharp pairing-distance inverse estimates integrated; centered single-trace expected decay integrated PR55; multi-trace expected bounds pending integration; joint probability/a.s. convergence, strong resolvent convergence and low-dimensional integration remain |
+| 10. OU and entropy | Genuine whole-ONfamily von Neumann unital CP semigroup with faithful tracial vacuum and actual normality integrated PR51 | Exact Hilbert generator/domain integrated PR53; Original cyclic L2 bridge integrated PR56; complete-coefficient positive-time regularization in current feature, L1 extension and matrix entropy remain |
 | 11. Follow-up milestones | Formal R and quantitative conditional moment CLT integrated | Positive free products, analytic convolution, operator-valued cumulants, annular/second-order and genus theory remain |
 
 ## Active assignments and isolation
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/fock-family-cyclic-integration`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Coordinator | `feat/wick-damped-reconstruction`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
 | Worker A (`cumulants`) | `feat/orthogonal-multitrace-bounds`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalMultiTrace*.lean and agreed notes; prior sources frozen | Genuine multi-trace Haar expansion and centered moment/variance bounds |
-| Worker B (`fock`) | `feat/fock-family-native-image`, `/home/user/Projects/lean-fp-fock` | NEW Fock/FamilyCyclicBasisNative*.lean and agreed notes; prior sources frozen | Exact original native Cstar image under faithful word representation |
+| Worker B (`fock`) | `feat/fock-positive-suffix-gram`, `/home/user/Projects/lean-fp-fock` | NEW Fock/WickSuffixGram*.lean and agreed notes; prior sources frozen | Actual finite matrix positive suffix decomposition |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -2537,3 +2537,34 @@ separately as an unproved plan, not a mathematical achievement.
 Original cyclic representation feature passes full3882, Verification3885,
 directtransitive6956, integrity/diff and all nine module statement reviews.
 CI54 run38607693716 and CI55 run38608060530 still in progress when queried.
+
+### Genuine positive-time completed Wick and native OU regularization
+
+PR56 checked mainf217432 passes full3882, Verification3885, transitive6956,
+source/diff and push. Original-family cyclic representation is integrated.
+Reviewed B359200d/0554f84 notes9881bb9 construct exact isometric native
+Cstar word equivalence and wholeD native membership detection. Rootf97326e,
+e52f41d,384a532,2950c98 prove actual operatornorm full Wick series for EVERY
+completedFock f and EVERYcomplex |z|<1, with map bound (1−|z|)^−2, exact
+positive-time OU vacuum identity and originalclosedword membership. Genuine
+ALLrightcommutation/vacuum separation identifies actual representedPt(T)
+with this series, so EVERYwholeONfamilyD T enters the ORIGINALnormclosed
+familyCstar at t>0. Actualoperatornorm≤(1−e^-t)^−2‖TΩ‖, independent of
+alphabet/ambientdimension. No spanning/countable/nonempty assumption.
+Major names: familyWordRepresentation_ou_eq_dampedWick,
+ouVonNeumannTimeCP_mem_native, norm_ouVonNeumannTimeCP_le_L2.
+Focusednewmoduleswarningfree, directstandardaxiomaudits and exactstatement
+reviews pass. NestedCLM norm proof initially hit typeclass/whnf timeout;
+explicit codomain and ContinuousLinearMap.opNorm_smul_le fixed inference,
+without increasing limits. Scalar L2→operator regularization is proved;
+complete matrix entropy, noncommutativeL1 extension/approximation and mixed
+degree conditionalentropy remain separate. Reviewedplan persisted as
+math-notes/ou-positive-suffix-gram-plan.md. B now owns NEW WickSuffixGram*
+finiteactualmatrixdecomposition; candidate positivity is verifiedbutits
+OU-image identity remains open. A NEW multi-trace/secondmoment modules have
+actualN^-m expectedbounds pendingintegration; variance/a.s. still active.
+Five full goals complete, six open; this is not full Goal10 completion.
+
+Full regularization feature passes full3888, Verification3891, directtransitive
+7083, integrity/diff and exact six-module reviews. Actual t=log2 factor-four
+state-L2 usage compiles. Goal10 L1 and matrix entropy remain open.

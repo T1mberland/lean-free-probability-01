@@ -43,7 +43,7 @@ Every historical checkpoint below retains its original scope and date.
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
 | Coordinator | `main`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/operator-valued-matrix`, `/home/user/Projects/lean-fp-cumulants` | New `OperatorValued/Matrix*.lean` and matrix math notes; completed features preserved | Full actual right-exterior spectral bounds, then generic closure freeness on a new branch |
+| Worker A (`cumulants`) | `feat/freeness-norm-closure`, `/home/user/Projects/lean-fp-cumulants` | New `Algebraic/FreenessClosure*.lean`; completed matrix feature preserved | Generic closure freeness from continuous centered products |
 | Worker B (`fock`) | `feat/second-quantization`, `/home/user/Projects/lean-fp-fock` | New `Fock/SecondQuantization*.lean`; published Wick/analytic features preserved | Actual lift of one-particle Hilbert unitaries, full tensor/vacuum/creator coherence for rotation dilation |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
@@ -1337,3 +1337,32 @@ Next pending integration is A's actual full-right-exterior spectral order bound.
 B second-quantization branch was prepared earlier, but sending messages to its
 completed turn did not resume implementation; explicit followup now launched
 the task. No second-quantization achievement is claimed.
+
+### Pending spectral-gap PR and safe worker reassignment
+
+Published `60db445` proves actual full-right-exterior order bounds, with explicit
+real inversion before complex coercion: m positive definite, m<=gap^-1 I and
+m^-1>=gap I, gap=x-actualb>0. The upper inequality covers empty matrix sizes;
+nonempty size is retained where actual strict/inverse edge statements need it.
+Generic strictly-positive inverse-order lemma uses actual C-star resolvent.
+No norm-radius domain, coefficient positivity or commutation is substituted.
+Combined review approves all four statements. Design notes `b614038` preserved.
+Known failed approach: a target let Lean infer inversion after Complex coercion,
+causing pathological definitional equality reductions in HSub aliases. Explicit
+REAL inverse cast and typed final target repaired it, without heartbeat increases.
+
+Coordinator switched A's clean published b614038 worktree to
+`feat/freeness-norm-closure` from checked `5131911`. Only NEW
+Algebraic/FreenessClosure*.lean ownership; original matrix branch remains published.
+B's completed tensor-level/graded full-space unitary lift `d9315af` is published,
+vacuum and norm preservation verified in its feature; actual creator/adjoint
+conjugation is underway. This is not OU complete positivity or a normal extension.
+CI for PRs #12 through #15 now confirmed successful: runs 38552187192,
+38552538959, 38552835986, 38553324621 respectively.
+
+Combined exterior feature full build 3664, Verification 3667, direct audit 3794
+and source guard pass. Usage chooses x=actualb+1 and proves actualm PosDef,
+m<=I and m^-1>=I simultaneously, with domain proved and no radius premise.
+B creator/adjoint checkpoint `a714b43` published, independently queued for review
+and integration; Γ(U) now acts on every completed vector, transported actual FullFock.
+Functor/composition and vacuum expectation interfaces remain active worker tasks.

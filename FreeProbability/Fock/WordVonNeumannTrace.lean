@@ -1,19 +1,12 @@
 import FreeProbability.Fock.WordVonNeumann
 import FreeProbability.Fock.WickProductWordAction
+import FreeProbability.Fock.WickProductCreationGram
 
 /-! # Actual reversed-adjoint Wick vacuum vectors -/
 noncomputable section
 open scoped Classical InnerProductSpace BigOperators
 namespace FreeProbability.Fock
 variable {I : Type*}
-
-theorem star_creationWord (w : List I) : star (creationWord w) = annihilationWord w.reverse := by
-  induction w with
-  | nil => simp
-  | cons i w ih =>
-    rw [creationWord_cons, star_mul, ih, List.reverse_cons, annihilationWord_append]
-    simp only [annihilationWord_cons, annihilationWord_nil, mul_one]
-    rfl
 
 theorem star_annihilationWord (w : List I) : star (annihilationWord w) = creationWord w.reverse := by
   have h := congrArg star (star_creationWord w.reverse)

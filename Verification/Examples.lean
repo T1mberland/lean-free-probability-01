@@ -558,4 +558,12 @@ example {I H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [Complete
   simp only [ht] at h
   exact h
 
+-- A summable positive moment series at t=2 bounds the actual support by 1/2.
+open MeasureTheory in
+example (μ : Measure ℝ) (hpos : ∀ᵐ x ∂μ, 0 ≤ x)
+    (hint : ∀ n : ℕ, Integrable (fun x : ℝ => x ^ n) μ)
+    (hs : Summable (fun n : ℕ => (2 : ℝ) ^ n * ∫ x : ℝ, x ^ n ∂μ)) :
+    μ.support ⊆ Set.Iic (1 / 2 : ℝ) :=
+  support_subset_Iic_of_summable_positive_moments μ hpos hint 2 (by norm_num) hs
+
 end FreeProbability.Examples

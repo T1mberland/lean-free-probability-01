@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `149ec02` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 4389 declarations.
+The latest checked and published integration is `d5c9801` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 4660 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -240,7 +240,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 4389 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 4660 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -435,3 +435,18 @@ The actual zero-time identity and time-addition semigroup law hold on EVERY
 element of the native norm closure, by continuous linear Wick extensionality
 through `a16a85e`; a time1/time2/time3 usage is included.
 Normal, L2/L1 and entropy extensions remain open; Goal 10 remains incomplete.
+
+### Actual projection moment/support prerequisites
+
+Native OU PR #27 merged as `d5c9801`; checked main full3722, Verification3725,
+direct audit4660 and source guard. Two new reviewed projection modules through
+`b01daeb` are assembled separately. Actual selected inverse germs imply the
+local moment equation and normalized equation `2^L q = z(1+q)^L`, for L>=1.
+For any nonnegative probability law with integrable moments and b>0, actual
+support<=b is equivalent to genuine moment-series summability at EVERY
+0<t<1/b. Tonelli proves the forward support bound from pointwise geometric
+summability; support bounds supply converse geometric moment majorants.
+The actual finite-product law wrapper discharges positivity and integrability.
+These are proven general prerequisites. Subcritical summability for the actual
+half-projection law at the proposed lambda_L remains unproved, so Goal 7 remains
+open. No formal polynomial or critical point is counted as an edge proof.

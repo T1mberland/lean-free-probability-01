@@ -18,11 +18,11 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `149ec02b011b167af8f431c251ca615a3bf61beb`,
+Latest checked integration: `d5c980179026bbdacc39668879180c8ad4ea9b97`,
 published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
 and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
-Finite product-law PR #26 passes full builds 3712/3715, direct transitive audit
-4389 declarations and source guard.
+Native OU semigroup PR #27 passes full builds 3722/3725, direct transitive audit
+4660 declarations and source guard.
 Goals 1, 2, 3 and 6 are certified complete; seven full goals remain open.
 Every historical checkpoint below retains its original scope and date.
 
@@ -37,14 +37,14 @@ Every historical checkpoint below retains its original scope and date.
 | 7. Multiplicative convolution | Projection law/germ integrated; generic positive-pair path ready | Actual given-positive-pair S/law/marginal determination integrated; grouping reviewed pending integration, projection products next, physical support/edge and arbitrary-law realizations remain |
 | 8. Conditional subordination | Noncommutative L² and Goal 7 dependencies open | Normal conditional expectations, analytic subordination, exterior continuation and projection specialization |
 | 9. Haar freeness | Independent algebraic groundwork ready | Haar-unitary star law and free conjugation; orthogonal pairing integration precedes joint asymptotic estimates |
-| 10. OU and entropy | Actual Wick contractions, Haagerup, second quantization and all-level CP dilation integrated | Genuine native Cstar OU semigroup verified on integration feature; actual cyclic L2 active; normal/L1/entropy and dimension-independent regularization remain |
+| 10. OU and entropy | Actual Wick contractions, Haagerup, second quantization and all-level CP dilation integrated | Genuine native Cstar OU semigroup integrated at `d5c9801`; actual cyclic L2 active; normal/L1/entropy and dimension-independent regularization remain |
 | 11. Follow-up milestones | Formal R and quantitative conditional moment CLT integrated | Positive free products, analytic convolution, operator-valued cumulants, annular/second-order and genus theory remain |
 
 ## Active assignments and isolation
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/integrate-native-ou-semigroup`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Coordinator | `feat/integrate-projection-moment-support`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
 | Worker A (`cumulants`) | `feat/projection-product-germs`, `/home/user/Projects/lean-fp-cumulants` | New `Analytic/ProjectionProduct*.lean`; frozen eight law/germ modules integrated | Actual moment equation and positive moment summability/support bridge; physical branch and sharp edge remain |
 | Worker B (`fock`) | `feat/fock-ou-l2`, `/home/user/Projects/lean-fp-fock` | NEW `Fock/OrnsteinUhlenbeckL2*.lean` and agreed L2 notes; frozen native OU semigroup retained | Actual complete-Hilbert degree damping, native vacuum intertwining and genuine cyclic L2 contraction |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
@@ -1721,3 +1721,37 @@ verified together. L2/normal/L1/entropy remain open; no new full goal is certifi
 A genuine positive probability-law support iff subcritical positive moment-series
 summability bridge `b01daeb` is now published; actual half-projection summability
 at the proposed lambda_L is still a missing proof, not a supplied conclusion.
+
+### Checked native OU and pending actual moment/support interface
+
+PR #27 head `7e4a98b` merged as `d5c9801`; main full3722, Verification3725,
+direct audit4660, source guard and diff checks pass. All nine native OU modules
+and frozen notes integrated. Goal 10 normal/L2/L1/entropy remain open.
+Two reviewed projection prerequisites `e5a6259`, `b01daeb` now assembled:
+actual local moment polynomial/q equations and general positive moment
+summability iff actual support bound. Usage at t2 implies support<=1/2.
+This is a proved conditional support criterion, not actual proposed-edge
+summability. A builds positive Picard majorants in NEW files; lambda_L and
+physical branch remain missing. B actual degree damping `f8a6240` reviewed,
+native vacuum intertwining/cyclic L2 space still active.
+
+Pinned normality audit: VonNeumannAlgebra.Basic bundles double commutants;
+bicommutant theorem/concrete WStar equivalence are TODO. WOT supports continuous
+pre/postcomposition, coefficient tests, semitopological multiplication and star;
+actual WOT-closed generated star algebra is available by topologicalClosure.
+Only WOT-closure<=doublecommutant is currently provided. No ready Kaplansky,
+ultraweak normal-map extension or bicommutant equality was found. Needed next:
+WOT continuity of actual compression/conjugation (direct coefficient proof),
+then genuinely WOT-continuous included embedding (prefix/tail amplification or
+bounded L2 argument), actual range/semigroup extension by WOT density, and the
+separate normal/bicommutant interface. Norm contraction alone proves none of this.
+
+Moment/support integration feature passes full3724, Verification3727, direct
+transitive audit4682, source guard and diff checks. Concrete positive moment
+summability at t2 implies actual support<=1/2. No half-projection summability
+at lambda_L is asserted. GitHub CI independently confirmed success for
+PR #23 run38564315636, #24 run38564762039, #25 run38565088819,
+and #26 run38565462216. Native OU PR #27 CI not yet confirmed.
+B actual completed-degree Wick vacuum `b586c84` and genuine all-native OU
+vacuum implementation/state L2 contraction `570f486` published; exact complete
+cyclic-space restriction remains active and source review is queued.

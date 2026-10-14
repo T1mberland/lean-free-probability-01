@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `427f72b` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 2636 declarations.
+The latest checked and published integration is `9a2bdad` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 2730 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -130,8 +130,11 @@ all power moments are integrated at `ab262d5`;
 bounded-moment weak spectral-law and pointwise all-nonreal Cauchy convergence
 are integrated through [PR #2](https://github.com/T1mberland/lean-free-probability-01/pull/2)
 at `427f72b`. Full main build/audits and non-exterior Fock usage pass for 2636
-declarations, certifying Goal 6. Semicircular density identification remains
-pending integration.
+declarations, certifying Goal 6. The actual canonical Fock spectral law is identified with the independently
+proved semicircle density, and its full support/operator spectrum is `[-2,2]`,
+integrated through [PR #3](https://github.com/T1mberland/lean-free-probability-01/pull/3)
+at checked main `9a2bdad`. The arbitrary-family realization is published and
+awaits its integration checkpoint.
 
 A quantitative non-iid free triangular-array CLT is integrated at `8cb664e`: each entry is centered, averaged second moments converge, and each
 fixed higher-order marginal cumulant has a uniform bound. Normalized power
@@ -194,7 +197,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 2636 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 2730 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

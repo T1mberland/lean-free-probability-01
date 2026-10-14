@@ -186,3 +186,4 @@ import FreeProbability.Semicircular.SpectralDensityMeasure
 import FreeProbability.Analytic.SpectralMeasureCompactMoments
 import FreeProbability.Semicircular.SpectralDensitySupport
 import FreeProbability.Semicircular.SpectralIdentification
+import FreeProbability.Analytic.FockResolventCStar

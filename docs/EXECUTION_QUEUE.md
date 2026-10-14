@@ -18,9 +18,9 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `427f72b`, published on `main` through
-[PR #2](https://github.com/T1mberland/lean-free-probability-01/pull/2). Full builds
-3583/3586 jobs, source guard and transitive audit of 2636 declarations pass.
+Latest checked integration: `9a2bdad`, published on `main` through
+[PR #3](https://github.com/T1mberland/lean-free-probability-01/pull/3). Full builds
+3589/3592 jobs, source guard and transitive audit of 2730 declarations pass.
 Goals 1 and 6 are certified complete; nine full goals remain open. Explicit
 semicircle density, arbitrary-orthonormal-family Fock interfaces and matrix
 operator-valued models are published and queued for sequential integration.
@@ -46,7 +46,7 @@ Historical checkpoints retain their scope.
 | --- | --- | --- | --- |
 | Coordinator | `main`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
 | Worker A (`cumulants`) | `feat/operator-valued-matrix`, `/home/user/Projects/lean-fp-cumulants` | New `OperatorValued/Matrix*.lean`; completed cumulant feature preserved | Actual matrix conditional expectation, all finite covariance amplification positivity, matrix semicircular realization |
-| Worker B (`fock`) | `feat/orthonormal-fock`, `/home/user/Projects/lean-fp-fock` | Current new `Fock/OrthonormalFamily*.lean`; completed spectral/density feature preserved | Arbitrary orthonormal-family adapted complete Fock and intrinsic generated state/freeness |
+| Worker B (`fock`) | `feat/fock-exponential-ibp`, `/home/user/Projects/lean-fp-fock` | New `Analytic/FockExponential*.lean`; published ON-family feature preserved | Actual Banach Duhamel commutator and entire exponential IBP |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -868,3 +868,38 @@ Density integration checks pass: full build 3589 jobs, Verification 3592,
 direct transitive audit 2730 declarations and source integrity guard. Actual
 endpoint spectrum and density fourth-moment usage examples kernel-compile.
 Main integration pending.
+
+### Checked PR integration: actual density and exact spectrum
+
+[PR #3](https://github.com/T1mberland/lean-free-probability-01/pull/3) merged
+head `1ef5e1c` as `9a2bdad`. Main full build 3589, Verification 3592,
+direct audit 2730 declarations and source guard pass, with endpoint/density
+usage. Worker B was clean at `466a0ca`; coordinator synced checked density
+main as `4dafad8`, pushed and verified focused builds and guard in B's actual
+worktree. B then published `2fe8a2f`, the direct arbitrary-family spectral
+wrapper and existence theorem. Read-only review approves full literal Goal 2
+scope; its integration and certification remain pending.
+
+From clean `2fe8a2f`, coordinator switched B to `feat/fock-exponential-ibp`
+from checked `9a2bdad`. Exclusive new `Analytic/FockExponential*.lean` proves
+actual Duhamel ray derivatives and norm-entire single-generator exponential
+IBP. The earlier ON branch and all published histories are preserved.
+
+### Pending PR: generated-algebra resolvents and physical scalar branch
+
+Coordinator `Analytic/FockResolventCStar` maps actual ring inverses through
+algebra homomorphisms at invertible inputs. Genuine spectral permanence gives
+full domain equality and intrinsic/ambient inverse compatibility. Actual
+restricted vacuum-state resolvent IBP and Cauchy quadratic now hold on every
+resolvent point, including real exterior points. The two quadratic roots have
+product one; inversion flips the imaginary sign, proving uniqueness of the
+strict lower-half-plane root. Existing strict Cauchy negativity identifies the
+actual upper-half-plane physical branch without a guessed square-root formula.
+A StarSubalgebra subtype algebra homomorphism avoids competing native/subalgebra
+instance elaboration; focused build passes with unchanged statements. Whole
+Goal 3 remains open (general polynomial/matrix analytic and exponential cases).
+
+Coordinator source `ae9e3f8` is published. Combined full build 3590 jobs,
+Verification 3593 jobs, direct transitive audit 2755 declarations and integrity
+guard pass. Mathematical review approves all seven statements. The physical
+branch usage computes actual `G(3i/2)=-i/2`. Main integration remains pending.

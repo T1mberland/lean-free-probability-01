@@ -561,3 +561,10 @@ run_cmd do
 #print axioms FreeProbability.Fock.fockSpectralLaw_support
 #print axioms FreeProbability.Fock.spectrum_closedSemicircular_real
 #print axioms FreeProbability.Fock.spectrum_semicircular_real
+#print axioms FreeProbability.algHom_map_ringInverse_of_isUnit
+#print axioms FreeProbability.semicircular_quadratic_lower_root_unique
+#print axioms FreeProbability.Fock.closedSemicircular_mem_resolventSet_iff
+#print axioms FreeProbability.Fock.coe_resolvent_closedSemicircular
+#print axioms FreeProbability.Fock.closedGeneratedVacuumState_semicircular_mul_resolvent
+#print axioms FreeProbability.Fock.closedSemicircular_cauchyTransform_quadratic
+#print axioms FreeProbability.Fock.closedSemicircular_cauchyTransform_physical_branch

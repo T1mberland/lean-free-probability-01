@@ -176,4 +176,15 @@ example {I : Type*} (i : I) :
   rw [Fock.fockSpectralLaw_eq_semicircleMeasure]
   simpa [catalan_two] using Semicircular.semicircleMeasure_even_moment 2
 
+/-- The unique physical branch computes an actual Cauchy value inside the norm-two disk. -/
+example {I : Type*} (i : I) :
+    (Fock.closedGeneratedVacuumState I).cauchyTransform
+      (Fock.closedSemicircular i) ((3 / 2 : ℂ) * Complex.I) =
+        -(1 / 2 : ℂ) * Complex.I := by
+  symm
+  apply Fock.closedSemicircular_cauchyTransform_physical_branch
+  · norm_num
+  · norm_num [Complex.ext_iff, pow_two, Complex.mul_re, Complex.mul_im]
+  · norm_num
+
 end FreeProbability.Examples

@@ -548,3 +548,16 @@ run_cmd do
 #print axioms FreeProbability.tendsto_spectralProbabilityMeasure_of_bounded_power_moments
 #print axioms FreeProbability.tendsto_complex_spectralIntegral_of_bounded_power_moments
 #print axioms FreeProbability.tendsto_cauchyTransform_all_nonreal_of_bounded_power_moments
+#print axioms FreeProbability.Fock.fockSpectralLaw_even_moment
+#print axioms FreeProbability.Fock.fockSpectralLaw_support_eq_spectrum
+#print axioms FreeProbability.Semicircular.weightedSqrtMoment_even
+#print axioms FreeProbability.Semicircular.weightedSqrtMoment_odd
+#print axioms FreeProbability.Semicircular.integral_semicircleDensity_even
+#print axioms FreeProbability.Semicircular.semicircleMeasure_even_moment
+#print axioms FreeProbability.Semicircular.semicircleMeasure_odd_moment
+#print axioms FreeProbability.probabilityMeasure_eq_of_compact_power_moments
+#print axioms FreeProbability.Fock.fockSpectralLaw_eq_semicircleMeasure
+#print axioms FreeProbability.Semicircular.semicircleMeasure_support
+#print axioms FreeProbability.Fock.fockSpectralLaw_support
+#print axioms FreeProbability.Fock.spectrum_closedSemicircular_real
+#print axioms FreeProbability.Fock.spectrum_semicircular_real

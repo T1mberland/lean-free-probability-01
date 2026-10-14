@@ -18,13 +18,13 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `76af384`, published on `main` through
-[PR #1](https://github.com/T1mberland/lean-free-probability-01/pull/1). Full builds
-3574/3577 jobs, source guard and transitive audit of 2626 declarations pass.
-Goal 1 is certified complete against every literal requested subtarget; ten
-full goals remain open. Weak spectral laws, explicit semicircle density, arbitrary
-orthonormal-family Fock interfaces and matrix operator-valued models are published
-and queued for sequential integration. Historical checkpoints retain their scope.
+Latest checked integration: `427f72b`, published on `main` through
+[PR #2](https://github.com/T1mberland/lean-free-probability-01/pull/2). Full builds
+3583/3586 jobs, source guard and transitive audit of 2636 declarations pass.
+Goals 1 and 6 are certified complete; nine full goals remain open. Explicit
+semicircle density, arbitrary-orthonormal-family Fock interfaces and matrix
+operator-valued models are published and queued for sequential integration.
+Historical checkpoints retain their scope.
 
 | Goal | Status | Earliest work and dependency |
 | --- | --- | --- |
@@ -33,7 +33,7 @@ and queued for sequential integration. Historical checkpoints retain their scope
 | 3. Free integration by parts | Active proof path selected | Actual polynomial tensor derivative/Leibniz and polynomial/matrix IBP integrated; analytic extensions remain |
 | 4. Operator-valued Dyson | Blocked on operator-valued realization | Completely positive covariance, amplified moments and Wick recursion precede Dyson and physical branch |
 | 5. Spectral edges | Blocked on goals 2, 4 and 6 | Faithful pencils and spectral/Dyson theory precede variational identity and certificates |
-| 6. Spectral distributions | Active worker B | Continuous functional calculus and positive-functional representation precede spectral measure and faithful support identification |
+| 6. Spectral distributions | Complete on checked main `427f72b`, PR #2 | Actual measures/CFC/support/Cauchy/moment compatibility and bounded convergence are integrated; uniform/derivative convergence is separate |
 | 7. Multiplicative convolution | Blocked on goals 1, 2 and 6 | Positive realizations, S-transform multiplication and actual spectral laws; rational critical-point computations are supporting special cases |
 | 8. Conditional subordination | Blocked on goals 6 and 7 and noncommutative L² | Normal conditional expectations, analytic subordination, then exterior continuation and projection specialization |
 | 9. Haar freeness | Independent algebraic groundwork ready | Haar-unitary star law and free conjugation; general orthogonal pairing integration precedes asymptotic trace estimates |
@@ -827,3 +827,44 @@ build 3574 jobs, Verification 3577 jobs, direct audit 2626 declarations and
 source guard pass. Boxed-product usage and independent exact-goal review pass.
 Goal 1 is complete. GitHub Actions was still running at merge; local checks
 are the verified evidence recorded here, with no claim of CI completion.
+
+### Checked PR integration: spectral distributions and convergence
+
+[PR #2](https://github.com/T1mberland/lean-free-probability-01/pull/2) merged
+head `415f92e` as `427f72b`. Main full build 3583 jobs, Verification 3586,
+direct audit 2636 declarations and source guard pass. The Fock sequence example
+at `z=I` compiles, and exact Goal 6 review approves the statements. Goal 6 is
+complete; nine goals remain open. PR #1 GitHub Actions run `38537828341`
+subsequently completed successfully; PR #2 CI completion is not yet claimed.
+
+### Pending PR: actual semicircle density and full operator spectrum
+
+Worker sources/integration mappings: `d927565`→`64a4790`, `2f8a5ed`→`59c09b6`,
+`64cd736`→`e6b1f54`, `2322a53`→`6d7b495`, `00432f6`→`dd48978`,
+`edb2f06`→`b4aff6f`. Actual compact Fock probability laws are constructed from
+the previously proved CFC state. Independently evaluated square-root integrals
+prove all Catalan/odd moments and normalization of
+`semicircleMeasure = volume.withDensity(ofReal(sqrt(4-x²)/(2π)))`.
+A general compact probability moment-uniqueness theorem then identifies the
+actual Fock law with this explicit measure. Positive interior density and closed
+support prove full support `[-2,2]`; faithfulness and spectral permanence yield
+the exact spectrum of both the generated-algebra element and original bounded
+operator. No semicircle-law premise is assumed. Mathematical review approves
+all sources; combined checks and main integration pending.
+
+### Arbitrary orthonormal-family completion scope
+
+Read-only review of published `466a0ca` confirms the adapted model is the FULL
+F(H), including all H through the actual extending Hilbert basis, not only the
+span of the supplied family. Scalar vacuum and Hilbert direct-sum grading are
+actual, completed tensor successors are onto unitaries, and original-H creation
+has literal tensor action. The literal Goal 2 construction permits this basis
+choice depending on an arbitrary ON family. Equality with an independently fixed
+chosen-basis realization is an optional coherence extension, not a missing
+existence hypothesis. Direct actual adapted spectral-law/density wrappers remain
+queued; full Goal 2 is not certified before their integration and all checks.
+
+Density integration checks pass: full build 3589 jobs, Verification 3592,
+direct transitive audit 2730 declarations and source integrity guard. Actual
+endpoint spectrum and density fourth-moment usage examples kernel-compile.
+Main integration pending.

@@ -1054,3 +1054,10 @@ run_cmd do
 #print axioms FreeProbability.Fock.isometryPrefixEmbedding_inclusion_comp
 #print axioms FreeProbability.Fock.isometryPrefixEmbedding_compression
 #print axioms FreeProbability.Fock.isometryPrefixEmbedding_vacuum_expectation
+#print axioms FreeProbability.Fock.hilbertSumOperatorBlock_commutes
+#print axioms FreeProbability.Fock.hilbertAmplification_commutes_of_blocks
+#print axioms FreeProbability.Fock.hilbertAmplification_mem_doubleCentralizer
+#print axioms FreeProbability.Fock.mulEquiv_mem_doubleCentralizer
+#print axioms FreeProbability.Fock.prefixOperatorEmbedding_mem_doubleCentralizer
+#print axioms FreeProbability.Fock.isometryPrefixEmbedding_mem_doubleCentralizer
+#print axioms FreeProbability.Fock.isometryPrefixEmbedding_mem_familyDoubleCentralizer

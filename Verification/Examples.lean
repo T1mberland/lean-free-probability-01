@@ -650,4 +650,13 @@ example {H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [Complete
     Fock.secondQuantizationCompression V (Fock.isometryPrefixEmbedding V T) = T :=
   Fock.isometryPrefixEmbedding_compression V T
 
+-- Literal generated double commutants transport for arbitrary field families.
+example {I H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+    [NormedAddCommGroup K] [InnerProductSpace ℂ K] [CompleteSpace K]
+    (V : H →ₗᵢ[ℂ] K) (e : I → H) (T : Fock.TensorFullFock H →L[ℂ] Fock.TensorFullFock H)
+    (hT : T ∈ Set.centralizer (Set.centralizer (Set.range (Fock.tensorFamilyField e)))) :
+    Fock.isometryPrefixEmbedding V T ∈ Set.centralizer
+      (Set.centralizer (Set.range (Fock.tensorFamilyField (fun i => V (e i))))) :=
+  Fock.isometryPrefixEmbedding_mem_familyDoubleCentralizer V e hT
+
 end FreeProbability.Examples

@@ -556,3 +556,37 @@ under the shared build lock. The existing default library build, source guard
 and direct transitive audit remain; mathematical sources and pins are unchanged.
 Published sharp projection upper support and law-polynomial continuation remain
 queued for integration; lower edge and physical branch are active.
+
+### Actual sharp projection-product law edge integration feature
+
+Checked main `73ce833` includes CI Verification coverage (full3745,
+Verification3748, direct transitive audit5008 and source guard).
+Seven reviewed analytic modules through `3d8a9d9`, with frozen notes `37b2f94`,
+are assembled for integration. Actual expectation Taylor coefficients transfer
+from the constructed Picard germ, giving true moment summability and support
+bounds. Critical scalar supersolutions prove the sharp upper bound for ALL L>=2.
+Analytic continuation of the true LAW moment series, its positivity and the
+GLOBAL scalar curve maximum prohibit any smaller support bound. Consequently
+`StarProbabilitySpace.iteratedHalfProjection_law_support_isGreatest` proves
+lambda_L belongs to the actual support and is its greatest point; the right-edge
+corollary identifies its supremum. No faithfulness assumption is needed for the
+law edge. An actual three-projection usage gives greatest support point 27/32.
+`iteratedHalfProjection_realCauchyTransform_eq_momentSum` identifies the actual
+law Cauchy integral throughout x>lambda_L, without an ambient resolvent premise.
+The separately reviewed physical branch chain through `401d9ff` and notes
+`b3a58a5` is published but not yet integrated; Goal7 remains open at this feature.
+A owns NEW PhysicalLimits/PhysicalSpectrum modules in its isolated worktree.
+B owns NEW SecondQuantizationSuffix modules, with all12 prefix/identification
+sources frozen at `0cb842d` pending integration. Reviewer is read-only.
+Next independent tasks: integrate the physical branch and faithful spectrum
+corollaries; integrate prefix/sector/ALLoperator identification; develop suffix
+commutants toward the normal OU extension. No normality claim follows from
+bounded-WOT continuity alone; unbounded amplification continuity is false.
+
+Feature checks pass: full lake build3752, Verification3755, direct transitive
+axiom audit5089 declarations, source guard/diff. Concrete 27/32 usage compiles.
+Its first compilation required qualifying MeasureTheory.Measure; this was a
+usage namespace error, not a failure of any mathematical source.
+GitHub CI confirmed PR34 run38571454427, PR35 run38572925297 and
+PR36 run38573679338 success. Physical and prefix chains critically reviewed
+at final published tips; their separate integrations remain queued.

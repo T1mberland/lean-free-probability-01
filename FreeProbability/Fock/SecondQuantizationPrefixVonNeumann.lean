@@ -1,5 +1,6 @@
 import FreeProbability.Fock.SecondQuantizationPrefixCommutant
 import FreeProbability.Fock.SecondQuantizationPrefixTransportCreators
+import FreeProbability.Fock.SecondQuantizationPrefixTransportBoundedWOT
 
 /-! # Literal double-commutant transport for the actual Fock representation -/
 
@@ -59,5 +60,21 @@ theorem isometryPrefixEmbedding_mem_doubleCentralizer (V : H →ₗᵢ[ℂ] K)
     rfl
   rw [he]
   simpa only [Set.image_image] using htarget
+
+/-- The literal double commutant of ANY given field family maps into the
+literal double commutant of its actual included fields. -/
+theorem isometryPrefixEmbedding_mem_familyDoubleCentralizer {I : Type*}
+    (V : H →ₗᵢ[ℂ] K) (e : I → H) {T : TensorFullFock H →L[ℂ] TensorFullFock H}
+    (hT : T ∈ Set.centralizer (Set.centralizer (Set.range (tensorFamilyField e)))) :
+    isometryPrefixEmbedding V T ∈ Set.centralizer
+      (Set.centralizer (Set.range (tensorFamilyField (fun i => V (e i))))) := by
+  have himage : isometryPrefixEmbedding V '' Set.range (tensorFamilyField e) =
+      Set.range (tensorFamilyField (fun i => V (e i))) := by
+    rw [← Set.range_comp']
+    congr 1
+    funext i
+    exact isometryPrefixEmbedding_field V e i
+  rw [← himage]
+  exact isometryPrefixEmbedding_mem_doubleCentralizer V _ hT
 
 end FreeProbability.Fock

@@ -119,3 +119,7 @@ import FreeProbability.Algebraic.CumulantRCLikeFreeCLT
 import FreeProbability.Algebraic.CumulantFreeCLTDistribution
 import FreeProbability.Fock.CumulantLaw
 import FreeProbability.Fock.FreeCLTRealization
+import FreeProbability.Combinatorics.NoncrossingRefinementEquiv
+import FreeProbability.Combinatorics.NoncrossingRefinementBlocks
+import FreeProbability.Combinatorics.RefinementMomentCumulant
+import FreeProbability.Combinatorics.NoncrossingMobius

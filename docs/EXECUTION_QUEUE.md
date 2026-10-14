@@ -18,8 +18,8 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `65ea73e`, published on `main`, with full builds,
-source guard and transitive audit passing for 1736 declarations. Genuine
+Latest checked integration: `cf3c085`, published on `main`, with full builds,
+source guard and transitive audit passing for 1739 declarations. Genuine
 polynomial and closed-generator freeness is integrated in the faithful tracial
 C-star model. The all-order adjacent-product cumulant theorem and full freeness
 characterization are integrated. Joint Wick/Catalan and all-degree word IBP are integrated. Formal R-additivity and algebraic free CLT
@@ -353,3 +353,28 @@ no spectral or operator-norm convergence is claimed. Focused builds and major
 axiom audits and read-only review pass. Combined full build 3469 jobs,
 Verification 3472 jobs, direct audit 1739 declarations and source guard pass.
 Main integration pending.
+
+### Checked integration checkpoint: concrete free-CLT target
+
+`cf3c085` is checked and published on `main`: sources `1557ef0`, `848bf59` are
+integrated. Full build 3469 jobs, Verification 3472 jobs, direct audit 1739
+declarations and source guard pass. Actual semicircular cumulants and
+variance-one polynomial/star CLT converge to a constructed faithful tracial
+C-star target. Arbitrary-variance explicit pairing moment limits were already
+integrated; actual-target arbitrary nonnegative variance scaling remains ready.
+
+### Pending integration: full refinement and Möbius inversion
+
+Sources/integration mappings: `428fe53`→`6f51e87`, `f9be448`→`3cc39c3`,
+`f784e03`→`37992d1`, `01aa2a9`→`8858742`. The entire lower NC refinement
+interval is order-isomorphic to the product of its ordered-block NC lattices;
+actual blocks and contributions factor with proved disjointness. The complete
+refinement zeta convolution holds for any normalized moment function. Actual
+mathlib incidence-algebra Möbius inversion gives `partitionCumulant_eq_mobius_sum`
+for every partition and `freeCumulant_eq_mobius_sum` for nonempty words; the
+empty-word exclusion is necessary because its scalar cumulant is zero.
+`cumulant_eq_mobius_sum` specializes to actual probability spaces. Mathematical
+review and combined checks pass: full build 3474 jobs, Verification 3477 jobs,
+direct transitive audit 1768 declarations and source guard. Main integration
+pending. Kreweras complement and full
+multi-product cumulant fibers remain separate obligations.

@@ -399,3 +399,11 @@ run_cmd do
 #print axioms FreeProbability.Fock.closedSemicircular_hasSemicircularCumulants
 #print axioms FreeProbability.Fock.freeCLT_convergesTo_closedSemicircular
 #print axioms FreeProbability.Fock.freeCLT_convergesInStarDistribution_closedSemicircular
+#print axioms FreeProbability.NoncrossingPartition.blockRefinementOrderIso
+#print axioms FreeProbability.NoncrossingPartition.blocks_refineBlocks
+#print axioms FreeProbability.orderedPartitionContribution_refineBlocks
+#print axioms FreeProbability.orderedMoment_eq_sum_refinementCumulants
+#print axioms FreeProbability.partitionMoment_eq_sum_refinementCumulants
+#print axioms FreeProbability.partitionCumulant_eq_mobius_sum
+#print axioms FreeProbability.freeCumulant_eq_mobius_sum
+#print axioms FreeProbability.cumulant_eq_mobius_sum

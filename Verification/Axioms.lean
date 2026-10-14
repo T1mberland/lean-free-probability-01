@@ -1102,3 +1102,9 @@ run_cmd do
 #print axioms FreeProbability.Orthogonal.tensorPowerMatrix_mem_orthogonal
 #print axioms FreeProbability.Orthogonal.tensorPowerAverage_orthogonal_projection
 #print axioms FreeProbability.Orthogonal.tensorPowerAverage_basis_coefficient
+#print axioms FreeProbability.Fock.wordSemicircularVonNeumannAlgebra_vacuum_faithful
+#print axioms FreeProbability.Fock.wordSemicircularVonNeumannAlgebra_vacuum_tracial
+#print axioms FreeProbability.Fock.star_vacuum_eq_conjugateReversal
+#print axioms FreeProbability.Fock.tensorFamilyDoubleAlgebra_coe
+#print axioms FreeProbability.Fock.tensorFamilyVonNeumannVacuumState_faithful
+#print axioms FreeProbability.Fock.tensorFamilyVonNeumannVacuumState_tracial

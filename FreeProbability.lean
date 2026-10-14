@@ -378,3 +378,7 @@ import FreeProbability.OperatorValued.CovarianceGram
 import FreeProbability.Algebraic.CompactHaarAverage
 import FreeProbability.Algebraic.CompactHaarAverageProjection
 import FreeProbability.RandomMatrix.OrthogonalTensorAverage
+import FreeProbability.Fock.WordVonNeumann
+import FreeProbability.Fock.WordVonNeumannTrace
+import FreeProbability.Fock.TensorFamilyVonNeumann
+import FreeProbability.Fock.TensorFamilyVonNeumannFaithfulness

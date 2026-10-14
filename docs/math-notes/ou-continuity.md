@@ -72,8 +72,10 @@ neither the theorem nor the proof resource limits.
 
 Ambient WOT continuity is not a normal extension theorem for the native OU
 self-map. The included native algebra embedding is currently a norm-isometric
-star homomorphism. Its WOT continuity, or an explicit normal amplification
-representation, still needs a separate proof. A norm-isometric homomorphism
+star homomorphism. Its WOT continuity on norm-bounded sets, or an explicit normal amplification
+representation, still needs a separate proof. Infinite amplification need not
+be globally WOT-continuous on unbounded nets; normality requires the correct
+bounded or ultraweak interface and a proved extension argument. A norm-isometric homomorphism
 alone does not establish this bridge.
 
 Pinned mathlib provides the concrete weak operator topology and its coefficient

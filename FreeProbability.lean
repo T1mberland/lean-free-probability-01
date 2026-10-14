@@ -322,3 +322,4 @@ import FreeProbability.Analytic.ProjectionProductPicardPolynomial
 import FreeProbability.Analytic.ProjectionProductPicardStabilization
 import FreeProbability.Fock.OrnsteinUhlenbeckContinuityDense
 import FreeProbability.Fock.OrnsteinUhlenbeckContinuityHilbert
+import FreeProbability.Fock.SecondQuantizationWOTCompression

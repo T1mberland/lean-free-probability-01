@@ -1135,3 +1135,10 @@ run_cmd do
 #print axioms FreeProbability.positiveOperator_nonneg_of_strong_tendsto
 #print axioms FreeProbability.monotoneOperator_exists_isLUB
 #print axioms FreeProbability.operatorDoubleCentralizer_exists_isLUB
+#print axioms FreeProbability.operator_isLUB_map_of_boundedWOT_continuous
+#print axioms FreeProbability.operator_isLUB_map_of_boundedWOT_continuous_of_nonneg
+#print axioms FreeProbability.Fock.tensorFamilyDoubleAlgebra_order_eq_inherited
+#print axioms FreeProbability.Fock.tensorFamilyDoubleAlgebra_isLUB_coe
+#print axioms FreeProbability.Fock.ouDoubleCommutantRawCP_isLUB
+#print axioms FreeProbability.Fock.ouVonNeumannCP_isLUB
+#print axioms FreeProbability.Fock.ouVonNeumannTimeCP_isLUB

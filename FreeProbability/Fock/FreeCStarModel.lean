@@ -1,5 +1,6 @@
 import FreeProbability.Fock.ClosedFreeness
 import FreeProbability.Fock.CStarModel
+import FreeProbability.Algebraic.DistributionComparison
 
 /-! # Freely independent canonical generators in the faithful tracial C-star model -/
 
@@ -7,28 +8,6 @@ noncomputable section
 open scoped Classical
 
 namespace FreeProbability
-
-/-- Pulling free subalgebras back along an algebra homomorphism preserves freeness
-for the pulled-back expectation. Injectivity is not needed. -/
-theorem FreelyIndependent.comap {𝕜 A D I : Type*} [Field 𝕜]
-    [Ring A] [Algebra 𝕜 A] [Ring D] [Algebra 𝕜 D]
-    {φ : ProbabilitySpace 𝕜 A} {B : I → Subalgebra 𝕜 A}
-    (h : FreelyIndependent φ B) (f : D →ₐ[𝕜] A) :
-    FreelyIndependent (φ.comap f) (fun i => (B i).comap f) := by
-  intro w hw halt hmem hzero
-  let g : I × D → I × A := fun x => (x.1, f x.2)
-  have halt' : (w.map g).IsChain (fun x y => x.1 ≠ y.1) :=
-    (List.isChain_map g).mpr halt
-  have hm : ∀ x ∈ w.map g, x.2 ∈ B x.1 := by
-    intro x hx
-    obtain ⟨y, hy, rfl⟩ := List.mem_map.mp hx
-    exact hmem y hy
-  have hz : ∀ x ∈ w.map g, φ.expectation x.2 = 0 := by
-    intro x hx
-    obtain ⟨y, hy, rfl⟩ := List.mem_map.mp hx
-    exact hzero y hy
-  have hr := h (w.map g) (by simpa using hw) halt' hm hz
-  simpa [g, List.map_map, Function.comp_def, ProbabilitySpace.comap, map_list_prod] using hr
 
 namespace Fock
 

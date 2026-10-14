@@ -18,18 +18,15 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `7386526`, published on `main`, with full builds,
-source guard and transitive audit passing for 2459 declarations. Genuine
-polynomial and closed-generator freeness is integrated in the faithful tracial
-C-star model. The all-order adjacent-product cumulant theorem and full freeness
-characterization are integrated. Joint Wick/Catalan and all-degree word IBP are integrated. Formal R-additivity and algebraic free CLT
-are integrated; full refinement/Möbius is integrated. All-vector creation,
-Hilbert-basis transport, complete length decomposition and tensor completion
-are integrated through completed ℓ²(I) tensor levels. Original-H tensor coherence and the unconditional general-H full-Fock
-package are integrated. Explicit tensor-power presentation/operator transport,
-general interval products and Kreweras are published and queued. Coordinator
-polynomial/matrix IBP is integrated. Generic interval products, Kreweras
-maximal complement and free alternating-moment formula are integrated.
+Latest checked integration: `9ca8caa`, published on `main`, with full builds,
+source guard and transitive audit passing for 2493 declarations. Full cumulant
+characterization/Möbius/generic interval products/Kreweras moments, genuine
+tensor-domain free semicircular system with faithful tracial C-star state,
+polynomial/matrix and single-generator resolvent IBP, iid moment free CLT and
+actual spectral probability measures/faithful support are integrated. Non-iid
+CLT is undergoing integration; Kreweras deletion/count and complex/Cauchy
+spectral representation are published and queued. Full targets remain open as
+specified below; historical checkpoints retain their checked scope.
 
 | Goal | Status | Earliest work and dependency |
 | --- | --- | --- |
@@ -639,3 +636,36 @@ and global name scans approved. Combined full build 3515 jobs, Verification
 Main integration pending. Targeted pinned RMK
 and Support cache artifacts reused/downloaded under the common lock; no
 revision/toolchain update or unnecessary dependency rebuild.
+
+### Checked integration checkpoint: spectral measures and faithful support
+
+`9ca8caa` is checked and published on `main`, previous source mappings integrated.
+Full build 3515 jobs, Verification 3518 jobs, direct audit 2493 declarations
+and source guard pass. The actual spectral probability measure, real CFC integral
+representation and faithful support=spectrum are complete. DNS interrupted
+publication of `9ca8caa` and worker `707f09a`; local commits were preserved,
+failures reported immediately and normal SSH retries succeeded. No connector
+publication/history reconciliation was needed for this occurrence.
+
+### Pending integration: quantitative non-iid free CLT
+
+Sources/integration mappings: `608b229`→`691197c`, `86ddce2`→`bd5e0c0`.
+`FreelyIndependent.norm_cumulant_normalized_sum_le` gives an actual finite-size
+higher-order estimate; `freeCLT_triangular_cumulants` and
+`freeCLT_triangular_pairingMoments` give full limits for varying ambient algebras
+without identical distribution. Hypotheses explicitly require each entry
+centered, true averaged second-moment convergence and uniform bounds on each
+fixed higher-order marginal cumulant. No positivity/trace/spectral convergence
+is assumed or concluded. This is a conditional quantitative non-iid theorem,
+not a replacement for the completed iid CLT or an optimal Lindeberg result.
+Mathematical review and global name scan approved; full build 3517 jobs,
+Verification 3520 jobs, direct audit 2503 declarations and source guard pass.
+Main integration pending.
+
+A's `9403369`, `acaeae1` now prove the genuine positive-degree Kreweras block
+count through exact signature deletions and boundary-free NC reduction. Both
+reviewed and queued; complementary connectivity/top join fiber still remains.
+B's `707f09a`, `3c19e01` give complex CFC and actual all-resolvent-set Cauchy
+spectral integral representation, avoiding global-continuity restrictions.
+Complex CFC reviewed; Cauchy review and integration next. Compact moment-law
+uniqueness is the next independent spectral task.

@@ -502,3 +502,7 @@ run_cmd do
 #print axioms FreeProbability.integral_square_eq_zero_iff
 #print axioms FreeProbability.spectralMeasureOnSpectrum_support_eq_univ
 #print axioms FreeProbability.spectralMeasure_support_eq_spectrum
+#print axioms FreeProbability.FreelyIndependent.norm_cumulant_normalized_sum_le
+#print axioms FreeProbability.freeCLT_triangular_higher_cumulants
+#print axioms FreeProbability.freeCLT_triangular_cumulants
+#print axioms FreeProbability.freeCLT_triangular_pairingMoments

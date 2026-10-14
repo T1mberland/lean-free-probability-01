@@ -187,4 +187,16 @@ example {I : Type*} (i : I) :
   · norm_num [Complex.ext_iff, pow_two, Complex.mul_re, Complex.mul_im]
   · norm_num
 
+/-- Any orthonormal family, including a nonspanning family, has an actual faithful
+Fock realization with sixth moment five and the explicit spectral density. -/
+example {I H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+    {e : I → H} (he : Orthonormal ℂ e) :
+    ∃ d : Fock.OrthonormalFamilyExtension e,
+      IsFaithful d.state.toProbabilitySpace ∧
+      ∀ i, d.state.expectation (d.generator i ^ 6) = 5 ∧
+        d.spectralLaw i = Semicircular.semicircleMeasure := by
+  obtain ⟨d, hf, _, _, hd⟩ := Fock.exists_fullFock_semicircular_family he
+  refine ⟨d, hf, fun i => ⟨?_, (hd i).2.2.2.2.1⟩⟩
+  simpa [catalan_three] using d.even_moment i 3
+
 end FreeProbability.Examples

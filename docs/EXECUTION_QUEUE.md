@@ -86,6 +86,26 @@ Published next milestones awaiting integration: interval blocks (`4df3696`) and
 complete word-Fock creation/adjoint operators with canonical relation and first
 two vacuum moments (`778c6b0`). Neither is recorded as integrated yet.
 
+### Checked integration checkpoint: interval blocks
+
+`f419315` is checked and published on `main`; worker source `4df3696` was
+integrated through `dd6d9bb`. Declarations:
+`NoncrossingPartition.exists_least_representative`, `.exists_interval_block`,
+and `.exists_Icc_block`. Full builds, direct audit and source guard pass for
+973 declarations. Worker A is pursuing restriction/deletion calculus next.
+
+### Independent spectral-measure proof path
+
+For a positive normalized state and self-adjoint `a`, pull the real part of the
+expectation back along `cfcHom` on the compact real spectrum. Positivity follows
+from `cfcHom_mono` and the existing positive-state API. `RealRMK.rieszMeasure` and
+`RealRMK.integral_rieszMeasure` then give a regular measure; evaluating one gives
+probability normalization. Push forward along the spectrum subtype inclusion.
+This path does not need traciality or Fock space. Full support needs faithfulness,
+using nonzero continuous bump functions and injectivity of the functional
+calculus. Complex Cauchy integral representation remains a subsequent theorem.
+This is a reviewed strategy, not a completed declaration.
+
 - Following pairing fundamentals: construct noncrossing interval restriction and
   deletion/insertion equivalences; prove unit insertion, then adjacent products.
 - Following creation operators: vacuum action and adjoint relations, semicircular

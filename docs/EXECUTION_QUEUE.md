@@ -18,8 +18,8 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `a123904ee26ab288fb0905095f1169824425abd9`,
-published main after PR49. Full3828, Verification3831, direct transitive6256,
+Latest checked integration: `f502be11e46b15e19eebc46ed02a4444f08e8038`,
+published main after PR50. Full3833, Verification3836, direct transitive6270,
 source guard/diff and explicit push passed. Earlier records below are historical.
 Goals 1, 2, 3, 6 and 7 are certified complete; six full goals remain open.
 Every historical checkpoint below retains its original scope and date.
@@ -42,9 +42,9 @@ Every historical checkpoint below retains its original scope and date.
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/positive-operator-monotone-limits`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/orthogonal-trace-words`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalTraceContractions.lean and agreed notes; prior sources frozen | Actual matrixunit cyclic trace and paired-delta network factorization |
-| Worker B (`fock`) | `feat/fock-number-resolvent`, `/home/user/Projects/lean-fp-fock` | NEW Fock/OrnsteinUhlenbeckNumberResolvent*.lean and agreed notes; prior sources frozen | Actual bounded inverse of number operator plus identity |
+| Coordinator | `feat/ou-von-neumann-normality`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Worker A (`cumulants`) | `feat/orthogonal-trace-words`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalPairingCycleCount.lean and agreed notes; prior sources frozen | Actual two-to-one half-orbit quotient count |
+| Worker B (`fock`) | `feat/fock-ou-generator`, `/home/user/Projects/lean-fp-fock` | NEW Fock/OrnsteinUhlenbeckGenerator*.lean and agreed notes; prior sources frozen | Actual right strong derivative and exact generator-domain characterization |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -2363,3 +2363,36 @@ yet. Five full goals complete, six open; no normality/entropy/freeness completio
 
 Monotone-limit feature passes full3833, Verification3836, directtransitive6270,
 source/diff, all focused builds and mathematical statement reviews.
+
+### Actual OU normality in the directed-positive-supremum sense
+
+PR50 checked main `f502be11e46b15e19eebc46ed02a4444f08e8038` passes full3833,
+Verification3836, directtransitive6270, source/diff and push. Genuine arbitrary
+bounded monotone operator convergence/actual DC suprema are integrated.
+CI48 38594675047, CI49 38595244923 andCI50 38597812853 confirmed success.
+Root7615cbe/8ef8aa0 prove generic monotone norm-contraction bounded-WOT
+continuity preserves actual directed operator IsLUB, and actual OU normality
+for EVERY prescribed family. Positive nets get their norm bound automatically
+from their supplied supremum: no extra uniform-bound, ON, spanning, trace or
+faith hypothesis remains in ouVonNeumannCP_isLUB/TimeCP_isLUB.
+Canonical Cstar order is proved exactly equal to inherited ambient Loewner
+subtype order (tensorFamilyDoubleAlgebra_order_eq_inherited). Local consistent
+LE/Preorder/PartialOrder instances avoid competing subtype instance inference.
+Explicit CP coe rewrites removed a real elaboration timeout; no proof limit
+was increased. The actual intrinsic supremum is identified with the constructed
+ambient strong supremum by DC membership and subtype uniqueness; it is not
+assumed ambient. Images then have a genuine actual strong supremum identified
+via bounded WOT continuity and Hausdorff uniqueness.
+All nine generic/actual public statements focused-build and standard-axiom
+audited, source/diff passed, precise statements/collision/order bridge reviewed.
+Normality means preservation of every increasing positive nonempty directed
+net with its actual IsLUB. Unbounded-net global WOT continuity is not asserted.
+ON-family time-add semigroup plus this normality is genuine normal OU on the
+whole actual von Neumann algebra; L1, regularization and entropy remain open.
+A cycle components c27cddd frozen, actual cycle-count new module active;
+B actual strong right generator derivative452c87c frozen, reverse domain
+characterization active. These feature results still await integration.
+All full goals statuses remain five complete/six open.
+
+Actualnormality feature passes full3835, Verification3838, directtransitive6296,
+source/diff, focused warning-free new modules and exact mathematical review.

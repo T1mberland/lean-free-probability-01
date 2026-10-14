@@ -18,9 +18,9 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `cfcc7a562cb1a8917f66ae5d5953d70568b4ec06`,
-published on main through [PR #18](https://github.com/T1mberland/lean-free-probability-01/pull/18).
-Full builds 3670/3673, direct transitive audit 3837 declarations and source guard pass.
+Latest checked integration: `1767b485a1c5eddbe1337e281137b3454f10b0a7`,
+published on main through [PR #19](https://github.com/T1mberland/lean-free-probability-01/pull/19).
+Full builds 3672/3675, direct transitive audit 3848 declarations and source guard pass.
 Goals 1, 2, 3 and 6 are certified complete; seven full goals remain open.
 Every historical checkpoint below retains its original scope and date.
 
@@ -44,7 +44,7 @@ Every historical checkpoint below retains its original scope and date.
 | --- | --- | --- | --- |
 | Coordinator | `main`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
 | Worker A (`cumulants`) | `feat/multiplicative-resolvent-germ`, `/home/user/Projects/lean-fp-cumulants` | New `Analytic/MultiplicativeResolvent*.lean`; completed closure/norm features preserved | Actual two-inverse factorization and centered alternating geometric expectations |
-| Worker B (`fock`) | `feat/fock-isometry-compression`, `/home/user/Projects/lean-fp-fock` | New `Fock/SecondQuantizationIsometry*.lean`, `SecondQuantizationCompression*.lean`; published unitary feature preserved | Genuine cross-space Fock isometry and all-level CP compression |
+| Worker B (`fock`) | `feat/fock-ou-rotation`, `/home/user/Projects/lean-fp-fock` | New `Fock/OrnsteinUhlenbeckRotation*.lean`, `OrnsteinUhlenbeckDilation*.lean` and agreed OU notes; published CP feature preserved | Actual real doubled rotation and rotated CP compression, then true Wick range/scaling |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -1478,3 +1478,39 @@ and optional new docs/math-notes/ou-dilation.md. Real doubled rotation uses
 WithLp2(H×H), and actual inclusion/compression next; OU range and Wick scaling
 remain open. A actual alternating power/sandwich source `550a3db` is reviewed,
 not integrated, and actual geometric expectation is its current task.
+
+### Checked Neumann estimate PR and pending complete-positive compression
+
+PR #19 merged head `d62bbf4` as `1767b485a1c5eddbe1337e281137b3454f10b0a7`.
+Main full 3672, Verification 3675, direct audit 3848 and source guard pass.
+CI PR #16 run38554310501, #17 run38555172606 and #18 run38555739529 confirmed success.
+
+B originals `d34f086`, `1d85daa`, `bedad89`, `1ce5594` are preserved
+in a separate CP integration. All four source modules critically reviewed.
+Actual nonsurjective one-particle isometry lifts to completed tensor levels and
+entire Hilbert sum with scalar sector/vacuum preservation and creation transport.
+Compression Γ* T Γ has unit, norm contraction, positivity and vacuum invariance.
+True canonical matrix block star-algebra equivalence and all-level amplified
+Γ compression identify the WHOLE native positive cone, not a supplied Gram-only
+input premise. Bundled CP works for every finite size including empty.
+Usage applies its native all-matrix CP interface to arbitrary operator-valued
+Gram input and arbitrary nonsurjective Hilbert embeddings. The theorem itself
+is stronger than this example and covers ALL positive matrix inputs.
+B one-particle doubled rotation `cfa690e` is published on a subsequent branch;
+no countability/spanning or completion premise in that one-particle unitary proof.
+Rotated full-Fock CP compression, time parameterization and actual range remain.
+
+A conditional actual inverse-expectation `123f760` is published with explicit
+marginal inverse means and all Neumann domains; this is NOT yet the S theorem.
+Actual inverse-germ bound `8d59bb2` now discharges centered correction smallness
+from nonzero marginal means and χ derivative/right normalization, including w0.
+Actual S germ proof is active; positive sandwich law and global arbitrary-law
+free realization/physical projection support remain distinct Goal 7 obligations.
+
+Combined genuine CP feature passes full build 3677, Verification 3680,
+direct transitive audit 3952 declarations and source guard. Native bundled
+all-matrix CP usage compiles with arbitrary Hilbert embeddings and finite sizes.
+A actual S-germ wrapper is written but not yet kernel verified; its statement
+will not be claimed before compilation, mathematical review and integration.
+B subsequent doubled rotation `cfa690e` and A `123f760`/`8d59bb2` conditional
+expectation + actual germ bounds are independently reviewed, not in this CP PR.

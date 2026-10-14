@@ -600,4 +600,15 @@ example {X H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [Comple
       (𝓝 (Fock.secondQuantizationCompressionWOT V S)) :=
   ((Fock.secondQuantizationCompressionWOT_continuous V).tendsto S).comp h
 
+-- The actual two-half-projection moment germ is the constructed analytic Picard fraction.
+open scoped Topology in
+example {A : Type*} [CStarAlgebra A] [PartialOrder A] [StarOrderedRing A]
+    (φ : StarProbabilitySpace A) (hφ : IsTracial φ.toProbabilitySpace)
+    {B : Fin 2 → Subalgebra ℂ A} (hf : FreelyIndependent φ.toProbabilitySpace B)
+    (p : Fin 2 → A) (hpB : ∀ i, p i ∈ B i) (hp : ∀ i, IsStarProjection (p i))
+    (hE : ∀ i, φ.expectation (p i) = (1 / 2 : ℂ)) :
+    φ.momentGeneratingFunction (iteratedPositiveProduct 2 p) =ᶠ[𝓝 0]
+      (fun z => halfProjectionAnalyticSum 2 z / (1 - halfProjectionAnalyticSum 2 z)) :=
+  φ.momentGeneratingFunction_eq_picard_fraction_eventually hφ 1 hf p hpB hp hE
+
 end FreeProbability.Examples

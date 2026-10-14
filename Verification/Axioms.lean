@@ -1,0 +1,221 @@
+import FreeProbability
+import Lean.Util.CollectAxioms
+
+/-! Audit every declaration in the library namespace, including transitive dependencies.
+Only Lean's standard logical axioms are allowed. This is an inspection command,
+not a proof mechanism; mathematical proofs remain checked by Lean's kernel. -/
+
+open Lean Elab Command in
+run_cmd do
+  let env ← getEnv
+  let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
+  let mut count : Nat := 0
+  for (name, _) in env.constants.toList do
+    if (`FreeProbability).isPrefixOf name then
+      count := count + 1
+      for ax in ← collectAxioms name do
+        unless allowed.contains ax do
+          throwError "Forbidden axiom {ax} in {name}"
+  unless count > 0 do
+    throwError "No library declarations were audited"
+  logInfo m!"Axiom audit passed for {count} library declarations."
+
+#print axioms FreeProbability.ProbabilitySpace.expectation_center
+#print axioms FreeProbability.FreelyIndependent.expectation_mul
+#print axioms FreeProbability.FreelyIndependent.mixed_moments_unique
+#print axioms FreeProbability.jointDistribution_eq_iff_moments
+#print axioms FreeProbability.FreelyIndependent.jointDistribution_unique
+#print axioms FreeProbability.convergesInDistribution_iff_moments
+#print axioms FreeProbability.IsTracial.sameStarDistribution_unitary_conjugate
+#print axioms FreeProbability.normalizedTrace_star_mul_self_nonneg
+#print axioms FreeProbability.normalizedTrace_isFaithful
+#print axioms FreeProbability.FreelyIndependent.expectation_four
+#print axioms FreeProbability.FreelyIndependent.expectation_idempotent_product_sq
+#print axioms FreeProbability.ConditionalExpectation.decomposition_unique
+#print axioms FreeProbability.FreelyIndependentOver.expectation_mul
+#print axioms FreeProbability.NoncrossingPartition.block_card_lt_of_ne_indiscrete
+#print axioms FreeProbability.moment_cumulant_formula_all
+#print axioms FreeProbability.freeCumulant_unique_of_moment_formula
+#print axioms FreeProbability.expectation_eq_sum_cumulants
+#print axioms FreeProbability.partitionMultilinear
+#print axioms FreeProbability.cumulantMultilinear_eq
+#print axioms FreeProbability.cumulant_update_add
+#print axioms FreeProbability.cumulant_update_smul
+#print axioms FreeProbability.NoncrossingPartition.exists_singleton_of_no_adjacent
+#print axioms FreeProbability.MixedCumulantsVanish.freelyIndependent
+#print axioms FreeProbability.freeCumulant_map
+#print axioms FreeProbability.labeledCumulant_eq
+#print axioms FreeProbability.det_rankOne_secular
+#print axioms FreeProbability.rankOne_isEigenvalue_iff
+#print axioms FreeProbability.rankOne_noOutliers_above
+#print axioms FreeProbability.rankOne_inverse
+#print axioms FreeProbability.rankOne_resolvent
+#print axioms FreeProbability.sameDistribution_of_free_marginals
+#print axioms FreeProbability.sameStarDistribution_of_selfAdjoint_free_marginals
+#print axioms FreeProbability.Orthogonal.eq_haar
+#print axioms FreeProbability.Orthogonal.integrable_entryMonomial
+#print axioms FreeProbability.Orthogonal.entryMoment_eq_zero_of_odd
+#print axioms FreeProbability.Orthogonal.entryMoment_eq_zero_of_odd_row_count
+#print axioms FreeProbability.Orthogonal.entryMoment_eq_zero_of_odd_column_count
+#print axioms FreeProbability.Orthogonal.integral_entry_mul
+#print axioms FreeProbability.ReLU.TriangularData.product_gram
+#print axioms FreeProbability.ReLU.TriangularData.cavity_product
+#print axioms FreeProbability.ReLU.triangularMatrix_secular_iff
+#print axioms FreeProbability.ReLU.projectionParameter_at_critical
+#print axioms FreeProbability.ReLU.edgeSecularExpression_eq
+#print axioms FreeProbability.ReLU.cavityLimitExpression_at_critical_lt_one
+#print axioms FreeProbability.ReLU.projectionParameter_minimum
+#print axioms FreeProbability.ReLU.projectionParameter_eq_edge_iff
+#print axioms FreeProbability.ReLU.cavityLimitExpression_lt_one_on_physical
+#print axioms FreeProbability.ReLU.cavityLimitExpression_strictMonoOn
+#print axioms FreeProbability.ReLU.cavityLimitExpression_two_lt_one
+#print axioms FreeProbability.ReLU.projectionParameter_two_isGLB
+#print axioms FreeProbability.ReLU.projectionParameter_two_tendsto
+#print axioms FreeProbability.hermitian_resolvent_form_eq
+#print axioms FreeProbability.hermitian_norm_zero_extension
+#print axioms FreeProbability.realResolventForm_strictAntiOn
+#print axioms FreeProbability.posSemidef_norm_mono
+#print axioms FreeProbability.rankOne_norm_le_iff_resolvent_le
+#print axioms FreeProbability.rankOne_norm_lt_iff_resolvent_lt
+#print axioms FreeProbability.rankOne_exterior_eigenvalue_indices_subsingleton
+#print axioms FreeProbability.ReLU.bulkGram_norm
+#print axioms FreeProbability.ReLU.cavitySecular_strictAntiOn
+#print axioms FreeProbability.ReLU.triangularMatrix_norm_gap_iff
+#print axioms FreeProbability.ReLU.triangularMatrix_norm_sq_ge_bulk
+#print axioms FreeProbability.ReLU.triangularMatrix_secular_iff_exterior
+#print axioms FreeProbability.ReLU.triangularMatrix_exterior_eigenvalue_indices_subsingleton
+#print axioms FreeProbability.Orthogonal.planeMixerMatrix_mem
+#print axioms FreeProbability.Orthogonal.integral_entry_pow_four
+#print axioms FreeProbability.Orthogonal.integral_entry_sq_mul_sq_all
+#print axioms FreeProbability.Orthogonal.integrable_row_product_four
+#print axioms FreeProbability.Orthogonal.integral_row_product_four
+#print axioms FreeProbability.hermitian_trace_sq_le_card_mul_norm_sq
+#print axioms FreeProbability.Orthogonal.integral_rowQuadraticForm
+#print axioms FreeProbability.Orthogonal.integral_rowQuadraticForm_sq
+#print axioms FreeProbability.Orthogonal.variance_rowQuadraticForm_of_symmetric
+#print axioms FreeProbability.Orthogonal.variance_rowQuadraticForm_le
+#print axioms FreeProbability.Orthogonal.measure_rowQuadraticForm_deviation_le
+#print axioms FreeProbability.Orthogonal.integral_rowLinearForm_pow_four_norm
+#print axioms FreeProbability.Orthogonal.integral_bilinearRowForm_pow_four_le
+#print axioms FreeProbability.Orthogonal.measure_bilinearRowForm_deviation_le
+#print axioms FreeProbability.ae_tendsto_zero_of_summable_deviations
+#print axioms FreeProbability.Orthogonal.summable_bilinear_deviation_bounds
+#print axioms FreeProbability.Orthogonal.ae_bilinearRowForm_tendsto_zero_of_dimension_growth
+#print axioms FreeProbability.Orthogonal.ae_bilinearRowForm_tendsto_zero
+#print axioms FreeProbability.Orthogonal.exists_mulVec_eq_of_norm_eq
+#print axioms FreeProbability.Orthogonal.norm_mulVec
+#print axioms FreeProbability.Orthogonal.vectorLaw_eq_of_norm_eq
+#print axioms FreeProbability.Orthogonal.vectorLaw_map_mulVec
+#print axioms FreeProbability.Orthogonal.vectorLaw_sphere
+#print axioms FreeProbability.Orthogonal.eq_vectorLaw_of_invariant_sphere
+#print axioms FreeProbability.Orthogonal.gaussianVector_map_mulVec
+#print axioms FreeProbability.Orthogonal.gaussianDirection_ae_norm_one
+#print axioms FreeProbability.Orthogonal.gaussianDirection_eq_vectorLaw
+#print axioms FreeProbability.Orthogonal.vectorLaw_eq_normalized_gaussian
+#print axioms FreeProbability.Orthogonal.gaussianVector_map_positiveSet
+#print axioms FreeProbability.Orthogonal.gaussianVector_map_gateRank
+#print axioms FreeProbability.Orthogonal.positiveSet_haar_hasLaw
+#print axioms FreeProbability.Orthogonal.gateRank_haar_hasLaw
+#print axioms FreeProbability.Orthogonal.haar_gateRank_extreme_probability
+#print axioms FreeProbability.ReLU.gateProjection_rank
+#print axioms FreeProbability.ReLU.gateProjection_haar_rank_hasLaw
+#print axioms FreeProbability.ReLU.gatedWeight_product_norm_le_one
+#print axioms FreeProbability.Orthogonal.centered_gateRank_subgaussian
+#print axioms FreeProbability.Orthogonal.gaussianVector_gateRank_deviation_le
+#print axioms FreeProbability.Orthogonal.haar_gateRank_deviation_le
+#print axioms FreeProbability.Orthogonal.ae_binomial_half_density_tendsto
+#print axioms FreeProbability.Orthogonal.ae_haar_gateRank_density_tendsto
+#print axioms FreeProbability.Orthogonal.ae_haar_gateRank_eventually_nontrivial
+#print axioms FreeProbability.integral_add_pow_four_of_indep
+#print axioms FreeProbability.integral_sum_pow_two_of_iIndep
+#print axioms FreeProbability.integral_sum_pow_four_of_iIndep
+#print axioms FreeProbability.integral_sum_pow_four_le
+#print axioms FreeProbability.measure_average_deviation_le
+#print axioms FreeProbability.ae_array_average_tendsto_zero
+#print axioms FreeProbability.ae_product_law_average_tendsto
+#print axioms FreeProbability.Orthogonal.gaussian_positiveSquared_memLp_four
+#print axioms FreeProbability.Orthogonal.integral_gaussian_positiveSquared
+#print axioms FreeProbability.Orthogonal.ae_gaussian_average_sq_tendsto
+#print axioms FreeProbability.Orthogonal.ae_gaussian_average_positiveSquared_tendsto
+#print axioms FreeProbability.Orthogonal.ae_gaussian_positiveEnergyFraction_tendsto
+#print axioms FreeProbability.Orthogonal.positiveEnergyFraction_direction
+#print axioms FreeProbability.measure_product_average_deviation_le
+#print axioms FreeProbability.Orthogonal.gaussian_positiveEnergyFraction_deviation_le
+#print axioms FreeProbability.Orthogonal.vectorLaw_map_positiveEnergyFraction
+#print axioms FreeProbability.Orthogonal.haar_positiveEnergyFraction_deviation_le
+#print axioms FreeProbability.Orthogonal.ae_haar_positiveEnergyFraction_tendsto
+#print axioms FreeProbability.ReLU.gateProjection_mulVec_norm_sq
+#print axioms FreeProbability.ReLU.ae_haar_gateEnergyFraction_tendsto
+#print axioms FreeProbability.ReLU.ae_haar_gateAmplitude_tendsto
+#print axioms FreeProbability.ReLU.ae_haar_gateProjection_mulVec_eventually_ne_zero
+#print axioms FreeProbability.hasLaw_prod_fst_of_fiber_law
+#print axioms FreeProbability.measure_prod_event_le_of_fiber_bound
+#print axioms FreeProbability.Orthogonal.fresh_haar_direction_joint_hasLaw
+#print axioms FreeProbability.Orthogonal.fresh_haar_gateRank_joint_hasLaw
+#print axioms FreeProbability.Orthogonal.fresh_haar_positiveEnergyFraction_joint_hasLaw
+#print axioms FreeProbability.Orthogonal.fresh_haar_positiveEnergyFraction_deviation_le
+#print axioms FreeProbability.Orthogonal.fresh_haar_gateRank_deviation_le
+#print axioms FreeProbability.ReLU.haar_gateProjection_mulVec_zero_probability
+#print axioms FreeProbability.ReLU.fresh_haar_gateProjection_mulVec_zero_le
+#print axioms FreeProbability.ReLU.forwardState_succ_scaled
+#print axioms FreeProbability.ReLU.splitWeights_hasLaw
+#print axioms FreeProbability.ReLU.forwardState_zero_probability_le
+#print axioms FreeProbability.ReLU.forwardPreactivation_energy_deviation_le
+#print axioms FreeProbability.ReLU.forwardPreactivation_gateRank_deviation_le
+#print axioms FreeProbability.summable_pow_of_dimension_growth
+#print axioms FreeProbability.tsum_ne_top_of_geometric_quadratic_bound
+#print axioms FreeProbability.ReLU.ae_forwardState_eventually_ne_zero
+#print axioms FreeProbability.ReLU.ae_forwardPreactivation_energy_tendsto
+#print axioms FreeProbability.ReLU.ae_forwardPreactivation_gateDensity_tendsto
+#print axioms FreeProbability.ReLU.ae_forwardPreactivation_gateAmplitude_tendsto
+#print axioms FreeProbability.ReLU.ae_forwardPreactivation_gateRank_eventually_nontrivial
+#print axioms FreeProbability.ReLU.continuous_joint_forwardState
+#print axioms FreeProbability.ReLU.randomForwardState_zero_probability_le
+#print axioms FreeProbability.ReLU.randomForwardPreactivation_energy_deviation_le
+#print axioms FreeProbability.ReLU.randomForwardPreactivation_gateRank_deviation_le
+#print axioms FreeProbability.ReLU.ae_randomForwardState_eventually_ne_zero
+#print axioms FreeProbability.ReLU.ae_randomForwardPreactivation_energy_tendsto
+#print axioms FreeProbability.ReLU.ae_randomForwardPreactivation_gateDensity_tendsto
+#print axioms FreeProbability.ReLU.ae_randomForwardPreactivation_gateAmplitude_tendsto
+#print axioms FreeProbability.ReLU.ae_randomForwardPreactivation_gateRank_eventually_nontrivial
+#print axioms FreeProbability.ProbabilitySpace.nontrivial
+#print axioms FreeProbability.StarProbabilitySpace.expectation_nonneg
+#print axioms FreeProbability.StarProbabilitySpace.expectation_star_mul_norm_sq_le
+#print axioms FreeProbability.StarProbabilitySpace.continuousExpectation_norm
+#print axioms FreeProbability.StarProbabilitySpace.expectation_norm_le
+#print axioms FreeProbability.StarProbabilitySpace.expectation_pow_norm_le
+#print axioms FreeProbability.StarProbabilitySpace.expectation_star_mul_re_le
+#print axioms FreeProbability.StarProbabilitySpace.hasSum_expectation_inverse
+#print axioms FreeProbability.StarProbabilitySpace.hasSum_momentGeneratingFunction
+#print axioms FreeProbability.StarProbabilitySpace.hasSum_cauchyTransform
+#print axioms FreeProbability.StarProbabilitySpace.cauchyTransform_norm_le
+#print axioms FreeProbability.StarProbabilitySpace.cauchyTransform_eq_of_powerMoments
+#print axioms FreeProbability.StarProbabilitySpace.momentGeneratingFunction_eq_of_powerMoments
+#print axioms FreeProbability.StarProbabilitySpace.analyticAt_momentGeneratingFunction_zero
+#print axioms FreeProbability.StarProbabilitySpace.hasStrictDerivAt_momentGeneratingFunction_zero
+#print axioms FreeProbability.StarProbabilitySpace.hasDerivAt_cauchyTransform
+#print axioms FreeProbability.StarProbabilitySpace.momentInverse_eventually_left_inverse
+#print axioms FreeProbability.StarProbabilitySpace.momentInverse_eventually_right_inverse
+#print axioms FreeProbability.StarProbabilitySpace.analyticAt_momentInverse_zero
+#print axioms FreeProbability.StarProbabilitySpace.analyticAt_sTransform_zero
+#print axioms FreeProbability.StarProbabilitySpace.sTransform_zero
+#print axioms FreeProbability.inverse_one_sub_smul_idempotent
+#print axioms FreeProbability.StarProbabilitySpace.momentGeneratingFunction_idempotent
+#print axioms FreeProbability.StarProbabilitySpace.cauchyTransform_idempotent
+#print axioms FreeProbability.StarProbabilitySpace.momentInverse_idempotent_eventually
+#print axioms FreeProbability.StarProbabilitySpace.sTransform_idempotent_eventually
+#print axioms FreeProbability.StarProbabilitySpace.momentInverse_eq_of_eventually_right_inverse
+#print axioms FreeProbability.StarProbabilitySpace.sTransform_smul_eventually
+#print axioms FreeProbability.StarProbabilitySpace.sTransform_eventually_eq_of_powerMoments
+#print axioms FreeProbability.StarProbabilitySpace.selfAdjoint_mem_resolventSet_of_im_ne_zero
+#print axioms FreeProbability.StarProbabilitySpace.cauchyTransform_sub_star
+#print axioms FreeProbability.StarProbabilitySpace.cauchyTransform_im
+#print axioms FreeProbability.StarProbabilitySpace.expectation_inverse_mul_star_re_pos
+#print axioms FreeProbability.StarProbabilitySpace.cauchyTransform_im_neg
+#print axioms FreeProbability.StarProbabilitySpace.cauchyTransform_norm_le_inv_im
+#print axioms FreeProbability.StarProbabilitySpace.analyticOnNhd_cauchyTransform
+#print axioms FreeProbability.StarProbabilitySpace.cauchyTransform_eqOn_of_powerMoments
+#print axioms FreeProbability.StarProbabilitySpace.cauchyTransform_eq_of_powerMoments_nonreal
+#print axioms FreeProbability.StarProbabilitySpace.tendsto_cauchyTransform_of_powerMoments
+#print axioms FreeProbability.StarProbabilitySpace.tendsto_expectation_inverse_of_powerMoments
+#print axioms FreeProbability.StarProbabilitySpace.tendsto_momentGeneratingFunction_of_powerMoments

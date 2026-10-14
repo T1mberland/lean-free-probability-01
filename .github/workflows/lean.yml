@@ -1,0 +1,23 @@
+name: Lean verification
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          auto-config: false
+          build: true
+      - name: Source integrity guard
+        run: python3 scripts/check_integrity.py
+      - name: Audit transitive theorem axioms
+        run: lake env lean Verification/Axioms.lean

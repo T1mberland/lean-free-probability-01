@@ -18,9 +18,9 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `8d38c42`, published on `main` through
-[PR #7](https://github.com/T1mberland/lean-free-probability-01/pull/7). Full builds
-3613/3616 jobs, source guard and transitive audit of 3038 declarations pass.
+Latest checked integration: `9715c11`, published on `main` through
+[PR #8](https://github.com/T1mberland/lean-free-probability-01/pull/8). Full builds
+3618/3621 jobs, source guard and transitive audit of 3148 declarations pass.
 Goals 1, 2 and 6 are certified complete; eight full goals remain open. Actual
 matrix covariance/Wick/recursion and entire exponential IBP are published and
 queued for sequential integration. Historical checkpoints retain their scope.
@@ -45,7 +45,7 @@ queued for sequential integration. Historical checkpoints retain their scope.
 | --- | --- | --- | --- |
 | Coordinator | `main`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
 | Worker A (`cumulants`) | `feat/operator-valued-matrix`, `/home/user/Projects/lean-fp-cumulants` | New `OperatorValued/Matrix*.lean`; completed cumulant feature preserved | Actual matrix conditional expectation, all finite covariance amplification positivity, matrix semicircular realization |
-| Worker B (`fock`) | `feat/polynomial-resolvent-ibp`, `/home/user/Projects/lean-fp-fock` | New `Analytic/FockPolynomialResolvent*.lean`; published exponential/ON features preserved | Actual full-domain scalar/matrix polynomial resolvent IBP and generated-state transport |
+| Worker B (`fock`) | `feat/analytic-series-ibp`, `/home/user/Projects/lean-fp-fock` | New `Analytic/FockAnalyticSeries*.lean`; published resolvent/exponential/ON features preserved | General actual analytic power-series IBP with explicit value/derivative norm-summability |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -1038,3 +1038,56 @@ then focused builds and source guard passed in B's actual worktree. B now reuses
 the integrated generic inverse homomorphism helper and published `31e3618`
 for closed scalar-state transport; matrix closed-state transport is active.
 Only coordinator performs integration merges; workers own disjoint new files.
+
+### Checked PR integration: entire scalar and matrix exponential IBP
+
+[PR #8](https://github.com/T1mberland/lean-free-probability-01/pull/8) merged
+head `a7dfb5c` as `9715c11`. Main full build 3618, Verification 3621,
+direct audit 3148 declarations and source guard pass, including mixed actual
+exponential usage at unrestricted large imaginary parameter. PR #6 CI run
+`38541695353` and #7 run `38542953659` also subsequently succeeded.
+
+### Pending PR: actual affine matrix resolvent Dyson
+
+A originals `81f634c`, `aad1504`, `3497b44`, `88c578b`, `b875863`,
+`ada440a`, `4614f12` are assembled as `476449e` with original history retained.
+The formal centered moment-series equation and uniqueness, actual affine moment
+recursion and affine formal equation are explicitly formal/moment statements.
+Separately, actual CStarMatrix operator resolvents and rank-one boundary
+commutators prove the full actual inverse Dyson equation. Arbitrary deterministic
+matrix argument B has domain exactly IsUnit(embed B-H), preserving noncommuting
+matrix order. Actual m is the entrywise vacuum of the WHOLE actual inverse.
+The identity (B-eta(m))m=I makes det(m) invertible, hence m is genuinely
+invertible; actual inverse Dyson follows. Substituting B=zI-C0 proves actual
+affine m(z)^-1=zI-C0-eta(m(z)) on the entire resolvent set. Hermitian C0 and
+coefficients imply every nonreal z lies in the actual domain, without positivity,
+commutation or exterior radius assumptions. The finite empty-matrix case is
+handled by the actual determinant-one/trivial-ring identities.
+All seven modules have mathematical review and no collisions. A concrete
+noncommuting Hermitian drift/coefficient example at z=I kernel-compiles.
+Combined build/audit counts are recorded below; main integration pending.
+General arbitrary-base covariance realization, half-plane/exterior positivity,
+physical uniqueness and entrywise/reduced model matching remain Goal 4 obligations.
+
+### Worker feature regression and isolated next tasks
+
+A `8775e6e` was published with a linter-cleanup proof regression after a failed
+verification result was overlooked. It was reported immediately, never integrated
+or certified, and corrected by pushed `efc7f32` after inspected successful focused
+build/axiom/guard checks. Root's current Dyson PR pins earlier verified `4614f12`.
+Worker-owned `docs/math-notes/matrix-development.md` at `dfd75d8` records the
+regression, inverse proof design and precise remaining blockers. Future integration
+must include both regression and correction, verify the combined tree, and avoid
+claiming standalone `8775e6e` verified. Strict matrix imaginary positivity is active,
+using actual vacuum-vector norm and inverse action, without faithfulness on all
+bounded Fock operators. The PSD corrected feature is not yet integrated.
+B's whole polynomial resolvent branch completed/pushed at clean `8ac8c1a` and
+has mathematical review. Coordinator reassigned its clean worktree to
+`feat/analytic-series-ibp` from checked `9715c11`, preserving the published
+resolvent branch. Exclusive new FockAnalyticSeries modules prove genuine norm
+convergence with explicit value and derivative coefficient bounds; no central
+files or A-owned Matrix modules are shared.
+
+Actual affine Dyson combined checks pass: full build 3625 jobs, Verification
+3628 jobs, direct transitive audit 3295 declarations and source guard.
+Noncommuting Hermitian affine usage at z=I compiles. Main integration pending.

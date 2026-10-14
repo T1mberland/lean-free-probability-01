@@ -13,13 +13,13 @@ integration checkout passes the full build and audits.
 - Lean 4.34.1 and mathlib `d13f23b723b8a846827a245b89c10fc7d3f11612` remain pinned.
 - Baseline integration checks: `lake build` (3404 jobs), `lake build Verification`
   (3406 jobs), direct transitive axiom audit (954 declarations), source guard.
-- All eleven goals remain open. Existing results and their scope are listed in
+- At the baseline, all eleven goals remained open. Existing results and their scope are listed in
   the dependency audit; none is considered complete merely by having a module.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `8cb664e`, published on `main`, with full builds,
-source guard and transitive audit passing for 2503 declarations. Full cumulant
+Latest checked integration: `ab262d5`, published on `main`, with full builds,
+source guard and transitive audit passing for 2520 declarations. Full cumulant
 characterization/Möbius/generic interval products/Kreweras moments, genuine
 tensor-domain free semicircular system with faithful tracial C-star state,
 polynomial/matrix and single-generator resolvent IBP, iid moment free CLT and
@@ -47,8 +47,8 @@ specified below; historical checkpoints retain their checked scope.
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
 | Coordinator | `main`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/cumulant-characterization`, `/home/user/Projects/lean-fp-cumulants` | New cumulant-related `Combinatorics` and `Algebraic` files except B's three reserved pairing files; coordinator owns the existing `CumulantFreeness.lean` header and polynomial FDQ/IBP files | Generic interval products and Kreweras published; interleaving factorization and multiplicative moment calculus |
-| Worker B (`fock`) | `feat/spectral-measures`, `/home/user/Projects/lean-fp-fock` | Current new `Analytic/SpectralMeasure*.lean`; completed Fock checkpoint on `feat/fock-semicircular`, pairing files owned exclusively: `Combinatorics/NoncrossingPairingDecomposition.lean`, `NoncrossingPairingWeights.lean`, `NoncrossingPairingCatalan.lean` | Tensor-domain faithful tracial C-star/Wick published; new feat/spectral-measures for actual spectral measures |
+| Worker A (`cumulants`) | `feat/operator-valued-matrix`, `/home/user/Projects/lean-fp-cumulants` | New `OperatorValued/Matrix*.lean`; completed cumulant feature preserved | Actual matrix conditional expectation, all finite covariance amplification positivity, matrix semicircular realization |
+| Worker B (`fock`) | `feat/orthonormal-fock`, `/home/user/Projects/lean-fp-fock` | Current new `Fock/OrthonormalFamily*.lean`; completed spectral/density feature preserved | Arbitrary orthonormal-family adapted complete Fock and intrinsic generated state/freeness |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -715,6 +715,94 @@ for full support. Baseline analytic transform convergence is only in the exterio
 region under eventual uniform source bounds and explicit target norm condition.
 Weak measure convergence and all-nonreal Cauchy convergence are being proved
 separately. They are not inferred from the exterior theorem or claimed prematurely.
+
+### Checked integration checkpoint: Cauchy law and spectral determinacy
+
+`ab262d5` is checked and published on `main`, previous source mappings integrated.
+Full build 3521 jobs, Verification 3524 jobs, direct audit 2520 declarations
+and source guard pass. Actual complex CFC/Cauchy representation on the whole
+resolvent domain and spectral law equality iff all power moments are complete.
+Weak law/full nonreal transform convergence under explicit bounds remain active.
+
+### Pending integration: Kreweras deletions/count/raw connectivity
+
+Sources/integration mappings: `0fe24b6`→`243d2dc`, `955cadb`→`98f85de`,
+`bb081f0`→`476127d`, `ea139ba`→`a2a3c46`, `0f7d1dc`→`da0456d`,
+`15d5ce4`→`90751b9`, `9403369`→`ed7c9e5`, `acaeae1`→`dee4866`,
+`b88ad6b`→`3a48bab`, `caebd84`→`07eca02`, `b6947cf`→`4548bd9`,
+`b25eb57`→`d9c7cdf`, `292e68e`→`1e92f7f`, `9a45c36`→`1fcc5ed`,
+`0417fd3`→`7f55eca`.
+Actual alternating pair products and (a*b)^n moments have the Kreweras formula.
+Adjacent original chords and noninitial singleton insertion have exact
+complement transports; a boundary-free reduction yields
+`card_blocks_add_kreweras` for n>0. At n=0 the usual n+1 count is false, and all
+empty identities are handled separately. Raw interval joins are genuinely NC
+without extra closure merges. Actual refinement block maps give strict block
+count for proper refinement. `interleave_sup_pairKernel` and
+`sup_val_of_le_kreweras` prove compatible joins are RAW joins;
+`sup_kreweras_val_eq_top` is genuine raw connectivity, not merely NC closure top.
+All mathematical reviews and name scans approved; combined checks pending.
+The finite incidence-graph connected block-count bound and exact doubled
+pairing top-fiber iff still precede boxed product cumulants. Worker graph bound
+currently compiles but is not yet published/integrated. Thirty-five uncached
+mathlib graph dependencies were built serially under the common lock; they are
+preserved. Future missing mathlib targets are hydrated from the pinned cache
+first, avoiding unnecessary dependency rebuilds. The worker-owned obstruction
+record is integrated from its published checkpoints; later updates remain on
+its branch until reviewed and integrated.
+
+### Pending integration: complete requested cumulant calculus
+
+Additional sources/integration mappings: `18bee10`→`920f0d0`,
+`c0011e6`→`12ef517`, `eb9bdcf`→`0d8e604`, `89c22f2`→`c7af250`,
+`6301f8b`→`a1a4676`, `20ddb01`→`60480d6`, `0fb2000`→`fd7d800`,
+`b84b8b4`→`598546f`, `ddc03b5`→`8842e0d`.
+Actual incidence-graph connectivity and finite edge bound give the connected
+block-count bound without assuming a tree. Genuine K count and strict refinement
+then prove the exact doubled top fiber q=K(p), including the separate empty case.
+`FreelyIndependent.cumulant_prod_eq_kreweras_sum` and its repeated-product variant
+are the full actual boxed formulas for positive-order coordinatewise products
+of two free tuples, with no trace, positivity, commutation or connectivity
+premises. The optional actual K incidence tree, finite-poset Möbius order-isomorphism
+invariance and finite dependent-product μ formula are also integrated into this
+feature. Source guard caught a forbidden token only in a documentation comment;
+`c0011e6` rephrases it with no proof change or audit relaxation. The targeted
+pinned graph cache hydrated 33 missing files instead of rebuilding dependencies.
+All mathematical reviews/global name scans approved. Final combined full build passes
+3574 jobs, Verification 3577 jobs, direct transitive audit 2626 declarations,
+and source guard. The ordinary second-cumulant centered-free-product usage
+example also kernel-compiles. Main integration and certification remain pending.
+
+Read-only literal Goal 1 audit confirms all requested mathematical subtargets
+are covered by these sources and existing integrated prerequisites. Rotation
+identities and explicit Catalan closed-form μ coefficients are useful extensions,
+not requirements named in the goal specification. Goal 1 will be certified only
+after this integration passes the main build/audits and meaningful boxed usage.
+No whole-project completion is implied.
+
+### Safe worker reassignment after verified branch checkpoints
+
+Worker A completed/pushed through clean `ddc03b5`, then coordinator switched its
+isolated worktree to `feat/operator-valued-matrix` from checked main `ab262d5`.
+Exclusive files are new `OperatorValued/Matrix*.lean`; actual scalar-state matrix
+conditional expectation `a594efa` and all finite amplified Hermitian covariance
+positivity `bf0e7eb` are published. General arbitrary-B completely positive
+semicircular realization remains a separate Goal 4 obligation.
+Worker B completed/pushed the spectral/density checkpoint through clean `edb2f06`,
+then coordinator switched its isolated worktree to `feat/orthonormal-fock` from
+checked main `ab262d5`. Exclusive new `Fock/OrthonormalFamily*.lean` extends an
+arbitrary ON family to a true Hilbert basis and builds a family-adapted complete
+Fock realization. It does not identify operators on the preexisting fixed
+chosen-basis tensor model without a separate proved unitary. Both earlier branches
+and all published histories are preserved; no uncommitted work was overwritten.
+
+### PR integration workflow
+
+The user requested PRs and appropriate merges. Successive verified integration
+checkpoints now use explicit PRs targeting `main`, preserving atomic source
+commits with merge commits. Local full builds, mathematical statement review,
+transitive audits and source checks precede each merge; GitHub protections are
+respected. Main is checked again after merging.
 
 ### Pending PR: actual weak spectral laws and all-nonreal transforms
 

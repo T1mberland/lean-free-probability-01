@@ -18,8 +18,8 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `f502be11e46b15e19eebc46ed02a4444f08e8038`,
-published main after PR50. Full3833, Verification3836, direct transitive6270,
+Latest checked integration: `62ca93b0c632efc860c3d3bc8881b2014324357c`,
+published main after PR51. Full3835, Verification3838, direct transitive6296,
 source guard/diff and explicit push passed. Earlier records below are historical.
 Goals 1, 2, 3, 6 and 7 are certified complete; six full goals remain open.
 Every historical checkpoint below retains its original scope and date.
@@ -35,16 +35,16 @@ Every historical checkpoint below retains its original scope and date.
 | 7. Multiplicative convolution | Complete on checked main `bdd05e2`, certified PR39 | Actual positive-pair S/law and arbitrary-length projection physical branch/edge/spectrum; universal free-product realization belongs to Goal11 |
 | 8. Conditional subordination | Noncommutative L² and Goal 7 dependencies open | Normal conditional expectations, analytic subordination, exterior continuation and projection specialization |
 | 9. Haar freeness | Genuine Haar conjugation and stable orthogonal FFT/integration verified | Sharp pairing-distance inverse estimates and trace-word cancellation; joint expected/probability/a.s. convergence, strong resolvent convergence and low-dimensional integration remain |
-| 10. OU and entropy | Actual Wick contractions, Haagerup, second quantization and all-level CP dilation integrated | Genuine native Cstar OU semigroup integrated at `d5c9801`; genuine cyclic L2 integrated at `03aff10`; strong continuity active; normal/L1/entropy and dimension-independent regularization remain |
+| 10. OU and entropy | Genuine whole-ONfamily von Neumann unital CP semigroup with faithful tracial vacuum and actual normality integrated PR51 | True Hilbert generator reviewed/pending integration; proper-family cyclic L2 bridge, L1 extension, complete-coefficient regularization and entropy remain |
 | 11. Follow-up milestones | Formal R and quantitative conditional moment CLT integrated | Positive free products, analytic convolution, operator-valued cumulants, annular/second-order and genus theory remain |
 
 ## Active assignments and isolation
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/ou-von-neumann-normality`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/orthogonal-trace-words`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalPairingCycleCount.lean and agreed notes; prior sources frozen | Actual two-to-one half-orbit quotient count |
-| Worker B (`fock`) | `feat/fock-ou-generator`, `/home/user/Projects/lean-fp-fock` | NEW Fock/OrnsteinUhlenbeckGenerator*.lean and agreed notes; prior sources frozen | Actual right strong derivative and exact generator-domain characterization |
+| Coordinator | `feat/weingarten-distance-asymptotics-integration`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Worker A (`cumulants`) | `feat/orthogonal-trace-words`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalPermutationNetwork*.lean and agreed notes; prior sources frozen | Actual permutation-network ordered cycle traces |
+| Worker B (`fock`) | `feat/fock-von-neumann-cyclic`, `/home/user/Projects/lean-fp-fock` | NEW Fock/OrnsteinUhlenbeckVonNeumannCyclic*.lean and agreed notes; prior sources frozen | WholeD vacuum in original native cyclicspace and actual L2 extension agreement |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -2396,3 +2396,37 @@ All full goals statuses remain five complete/six open.
 
 Actualnormality feature passes full3835, Verification3838, directtransitive6296,
 source/diff, focused warning-free new modules and exact mathematical review.
+
+### Actual fixed-order Weingarten leading limits and sharp distance decay
+
+PR51 checked main `62ca93b0c632efc860c3d3bc8881b2014324357c` passes full3835,
+Verification3838, directtransitive6296, source/diff and push. True positive
+directed-supremum normality of actual OU maps is integrated; Goal10 L1 and
+entropy still open. Reviewed A sourcechaind6d807b..46b45bd andnotesb110052
+are assembled: genuine loop-count diagonal/offdiagonal, normalized true Gram
+and literal inverse limits, actual rescaled Haar entry leading sum with
+uniform moving-dimension tuple error, general finite raw-Setoid join-card
+triangle, exact pairing distance and true distance-sensitive inverse decay.
+N^r G_N^-1 entries tend todelta; eventualuniformrescaledweight error≤2M/N,
+actual rescaledentryMoment error≤2M^3/N, and actualrescaledinverseentry≤
+(r M^r+2 M^(r+1)) N^-d(p,q), whereM=numberofordinarypairings,
+d=r−actualrawjoinloopcount. Degreezero literalrescaledweight=1 evenN0.
+The sharperrate uses finite inverse identity R=Σ(k<r)E^k+R E^r and genuine
+distance triangle; no infinite Neumann convergence hypothesis is assumed.
+All six modules and precise fixed-r/eventual/stable scopes reviewed.
+Major declarations: tendsto_rescaledWeingartenWeight,
+eventually_rescaled_entryMoment_error_le, pairingDistance_triangle and
+eventually_rescaledWeingartenWeight_distance_bound.
+No normalized traceword convergence follows merely from entrywise estimates.
+A actualcomplextrace, networkfactorization, rawpartner/cycle/count checkpoints
+04269e9 awaitintegration; newpermutationnetwork trace active.
+B actualfullrightgenerator d6966ae awaitsfinalcalculusreview/integration;
+newproper-family wholeD cyclicrange/L2bridge active onbranch9017a0a.
+Next root fullhomogeneous ℓ2 Wickextension via LinearMap.extendOfNorm, then
+actualpositive-time normconvergent Wick reconstruction and vacuum identification.
+Five full goals complete/six open; no asymptotic freeness or entropy completion.
+
+Weingarten-rate feature passes full3841, Verification3844, directtransitive6336,
+source/diff and all statement reviews. A reviewed centered multi-trace plan is
+persisted in math-notes/haar-centered-trace-plan.md; its O(N^-m)/a.s. claims
+remain unproved pending actual paired cycle orientation and operator-norm bounds.

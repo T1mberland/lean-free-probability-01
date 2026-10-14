@@ -1142,3 +1142,12 @@ run_cmd do
 #print axioms FreeProbability.Fock.ouDoubleCommutantRawCP_isLUB
 #print axioms FreeProbability.Fock.ouVonNeumannCP_isLUB
 #print axioms FreeProbability.Fock.ouVonNeumannTimeCP_isLUB
+#print axioms FreeProbability.Orthogonal.pairingLoopCount_eq_iff
+#print axioms FreeProbability.Orthogonal.tendsto_normalizedPairingGram_inverse
+#print axioms FreeProbability.Orthogonal.tendsto_rescaledWeingartenWeight
+#print axioms FreeProbability.Orthogonal.eventually_rescaledWeingartenWeight_error_le
+#print axioms FreeProbability.Orthogonal.eventually_rescaled_entryMoment_error_le
+#print axioms FreeProbability.Orthogonal.card_quotient_join_triangle
+#print axioms FreeProbability.Orthogonal.pairingDistance_triangle
+#print axioms FreeProbability.Orthogonal.eventually_rescaledWeingartenWeight_distance_bound
+#print axioms FreeProbability.Orthogonal.rescaledWeingartenWeight_zero

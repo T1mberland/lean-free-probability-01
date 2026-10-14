@@ -311,3 +311,5 @@ import FreeProbability.Fock.OrnsteinUhlenbeckSemigroupCP
 import FreeProbability.Fock.OrnsteinUhlenbeckSemigroupWickAction
 import FreeProbability.Fock.OrnsteinUhlenbeckSemigroupDensity
 import FreeProbability.Fock.OrnsteinUhlenbeckSemigroupLaws
+import FreeProbability.Analytic.ProjectionProductMomentEquation
+import FreeProbability.Analytic.ProjectionProductMomentSupport

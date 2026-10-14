@@ -22,6 +22,7 @@ completion criterion.
 | `Combinatorics.NoncrossingPairing` | Intrinsic two-element-block pairings, unique partners and their fixed-point-free involution, even size, and existence of an adjacent pair |
 | `Combinatorics.NoncrossingInterval` | Every equivalence class has a least representative; every nonempty noncrossing partition has an actual convex interval block, represented by inclusive endpoints |
 | `Combinatorics.NoncrossingSingletonInsertion`, `BlockWordTransport` | Arbitrary-position singleton insertion/deletion equivalence, exact actual-block transport, ordered block-word compatibility and singleton contribution/sum factorization |
+| `Combinatorics.NoncrossingLattice`, `NoncrossingAdjacent` | Complete refinement lattice with least noncrossing closure, adjacent contraction equivalence/order isomorphism and quotient adjunction |
 | `Fock.WordSpace`, `Fock.VacuumState` | Complete Hilbert word model, bounded isometric canonical creation and adjoint annihilation, operator-wide canonical relation, positive normalized vacuum state, self-adjoint centered candidates with variance one and norm at most two |
 | `Fock.WickWord`, `Fock.RightOperators` | Polynomial Wick operators generate orthonormal word vectors from the vacuum; vacuum separating for the commutant; unitary word reversal and genuinely commuting left/right semicircular operators |
 | `Fock.GeneratedState`, `Fock.ClosedGeneratedState` | Actual restricted positive normalized vacuum states, proved faithful and tracial on both polynomial generated algebra and its operator-norm closure; completeness of the closed generated algebra |
@@ -45,8 +46,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `84af7d3` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 1200 declarations.
+The latest checked and published integration is `3678bca` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 1234 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -54,7 +55,8 @@ Exact source/integration hashes are preserved in the execution ledger.
 `cumulant_update_center` are integrated from worker source `36a6578`. They require
 neither freeness nor positivity nor traciality. The adjacent-product identity and
 freeness implies mixed vanishing remain open. Lattice/adjacent-contraction
-milestones are separately published and awaiting integration.
+milestones (`a54a473`, `c84f43d`) are integrated at `3678bca`. Explicit raw-adjacent
+merge and whole-word centering proofs are published but awaiting integration.
 
 The complete word-Hilbert model has bounded creation/adjoints, canonical operator
 relations, a positive vacuum state, Wick vectors and commuting right operators.
@@ -127,7 +129,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 1200 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 1234 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

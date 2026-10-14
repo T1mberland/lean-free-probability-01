@@ -18,9 +18,10 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `84af7d3`, published on `main`, with full builds,
-source guard and transitive audit passing for 1200 declarations. Unit-cumulant
-calculus is integrated. Lattice/adjacent-contraction and norm-two/C-star-model
+Latest checked integration: `3678bca`, published on `main`, with full builds,
+source guard and transitive audit passing for 1234 declarations. Unit-cumulant
+calculus and lattice/adjacent contraction are integrated. Raw adjacent merge,
+whole-word centering and norm-two/C-star-model
 feature milestones are published but await integration. Historical checkpoints
 below retain the state at each checkpoint; this paragraph records current status.
 
@@ -166,6 +167,17 @@ invariance follow from actual multilinearity, with no freeness/trace/positivity
 assumption. The noncommutative ordered product deletion and proper-block
 strong-induction step are audited. Full builds, direct audit and source guard
 pass for 1200 declarations; a third-order centering usage example is checked.
+
+### Checked integration checkpoint: noncrossing lattice and adjacent quotient
+
+`3678bca` is checked and published on `main`; sources `a54a473`, `c84f43d`
+were integrated through `cee3530`, `f90dcf2`. Arbitrary intersections give the
+actual complete refinement lattice; joins use least noncrossing closure, not an
+unjustified raw-setoid join. Adjacent contraction is an actual equivalence and
+order isomorphism with partitions relating the two adjacent positions, with
+`contract_le_iff` as quotient adjunction. Full builds, direct audit and source
+guard pass for 1234 declarations. Special raw adjacent-join preservation is
+published separately (`8fe5122`) and not assumed by this module.
 
 ### Independent spectral-measure proof path
 

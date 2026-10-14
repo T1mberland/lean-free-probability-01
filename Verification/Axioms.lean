@@ -308,3 +308,14 @@ run_cmd do
 #print axioms FreeProbability.NoncrossingPartition.duplicate_contract
 #print axioms FreeProbability.NoncrossingPartition.contract_le_iff
 #print axioms FreeProbability.NoncrossingPartition.contract_duplicate
+#print axioms FreeProbability.Fock.norm_chainVector_sq
+#print axioms FreeProbability.Fock.inner_chainVector_creation
+#print axioms FreeProbability.Fock.inner_chainVector_semicircular
+#print axioms FreeProbability.Fock.semicircular_rayleigh_bound
+#print axioms FreeProbability.Fock.norm_semicircular
+#print axioms FreeProbability.Fock.generatedVacuumState_isTracial
+#print axioms FreeProbability.Fock.closedGeneratedVacuumState_isTracial
+#print axioms FreeProbability.Fock.norm_closedSemicircular
+#print axioms FreeProbability.Fock.isSelfAdjoint_closedSemicircular
+#print axioms FreeProbability.Fock.closedGeneratedVacuumState_centered
+#print axioms FreeProbability.Fock.closedGeneratedVacuumState_variance_one

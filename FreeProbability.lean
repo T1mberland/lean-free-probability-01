@@ -34,6 +34,8 @@ import FreeProbability.Fock.WickWord
 import FreeProbability.Fock.RightOperators
 import FreeProbability.Fock.GeneratedState
 import FreeProbability.Fock.ClosedGeneratedState
+import FreeProbability.Fock.SemicircularNorm
+import FreeProbability.Fock.CStarModel
 import FreeProbability.Algebraic.CumulantFreeness
 import FreeProbability.Algebraic.CumulantUnit
 import FreeProbability.Matrix.RankOneSecular

@@ -1,0 +1,130 @@
+# Actual multiplicative convolution: verified scope and next dependencies
+
+## Given free pair: actual analytic identity
+
+The published chain ends at `822abe4` on `feat/multiplicative-resolvent-germ`.
+Sources are verified in this isolated development branch; integration into the
+stable branch and its central audit remain the coordinator's responsibility.
+
+`9409551` proves that freeness passes to actual topological closures whenever the
+expectation is continuous. Its generality is a topological ring algebra over a
+Hausdorff topological field with continuous scalar action. It needs no norm,
+positivity, trace, or completeness. `bebd9c4` proves that the ACTUAL inverse
+`Ring.inverse (1 - z • a)` belongs to the closure of the original subalgebra
+when `norm (z • a) < 1`: it is the limit of finite geometric sums. The assertion
+that every closed complex subalgebra is inverse closed on the full resolvent set
+is neither needed nor made.
+
+`68a4488` proves the genuine Neumann remainder bound
+`norm (inverse (1-x) - 1) <= norm x / (1 - norm x)` in any Banach ring, even when
+the unit norm is not one. A continuous normalized expectation gives the centered
+bound with constant `1 + norm E * norm 1`, and its centered inverse is O(z).
+`712446a` specializes this to the actual positive normalized C-star state:
+constant two in the remainder bound, and constant four on the half-unit ball.
+Nontriviality and norm one are derived from state normalization.
+
+`bb3f211` gives the exact actual noncommutative factorization. Write
+
+- U = inverse(1 - s a), V = inverse(1 - t b), c = 1+w;
+- X = U - c I, Y = V - c I;
+- T = (w c)^(-1) X Y, gamma = s t c / w.
+
+For w and c nonzero, `U (1 - gamma a b) V = c (1 - T)`. If the three actual
+input factors are units, the actual product factor is a unit and its inverse is
+`V c^(-1) inverse(1-T) U`. Unit transport uses explicit invertible outer factors
+and concrete units. No one-sided inverse or directly-finite assumption enters
+this argument; such a shortcut would fail in general operator algebras.
+
+`550a3db` proves all four families of alternating centered power moments directly
+from freeness, and the complete sandwich sequence
+`E[(Y+cI)(XY)^n(X+dI)] = if n=0 then cd else 0`.
+`123f760` sums a genuinely convergent Neumann series to get the actual product
+resolvent expectation c, conditional on the two actual input resolvent means c
+and norm T < 1. This intermediate alone is not the S-transform theorem.
+
+`8d59bb2` discharges the correction smallness on genuine inverse moment germs:
+centered resolvents along chi_a(w) and chi_b(w) are O(w), their correction T is
+O(w), including w=0, and hence its norm is eventually smaller than one.
+`4faa20f` then proves `StarProbabilitySpace.sTransform_mul_eventually` for ANY
+given free elements a,b with nonzero marginal first moments. The product first
+moment is nonzero by actual freeness. All Neumann norm, input mean, and correction
+hypotheses are discharged; the final theorem assumes no trace, faithfulness,
+self-adjointness, positivity of a/b, or multiplicative-transform identity.
+The germ identity includes the removable value at zero. A globally continuous
+candidate `w/(1+w) * S_a(w) * S_b(w)` is an actual right inverse near zero;
+existing local-inverse uniqueness identifies chi_ab with it.
+
+## Given positive free pair: actual probability law
+
+`f55038c` defines the actual positive multiplication model
+`positiveMultiplicativeSandwich a b = CFC.sqrt a * b * CFC.sqrt a`.
+It is positive when b is positive. Under a trace and positive a, all its power
+moments equal the ordered ab power moments, by genuine cyclicity of powers.
+Its actual S-transform therefore equals S_a S_b for the given free pair and
+nonzero marginal means. The proof never assumes freeness of sqrt a or a
+spectral-invariance property of an arbitrary subalgebra.
+
+`76803c6` constructs `positiveMultiplicativeProbabilityLaw`, the actual standard
+spectral ProbabilityMeasure of that sandwich. It has compact support contained
+in the nonnegative real line without faithfulness; its integral power moments
+are the ordered product moments under a trace.
+
+`53b8bd2` proves independence from the given realization: two positive free pairs
+in DIFFERENT ambient C-star algebras with tracial states and the same genuine
+marginal spectral ProbabilityMeasures have exactly the same actual positive
+product ProbabilityMeasure. No nonzero first moments or faithful-state premise
+is needed for law determination. The proof reuses the existing general
+`sameDistribution_of_free_marginals`, literal alternating pair words, cyclic
+sandwich moments, and actual compact spectral moment uniqueness.
+
+`822abe4` proves actual law symmetry under a trace for positive a,b, even before
+assuming freeness, and both literal-unit identities with the original spectral
+ProbabilityMeasure.
+
+## Remaining mathematical dependencies
+
+1. Grouping arbitrary free subalgebras into disjoint families: freeness of the
+   algebras generated by all B_i whose label g(i) equals j. The intended theorem
+   has no finiteness, countability, trace, or positivity assumptions. This is the
+   earliest dependency for actual iterated projection products and associativity
+   of positive multiplication realizations.
+2. Actual CFC square-root membership in the appropriate closed self-adjoint
+   generated subalgebra, where an iterated positive multiplication construction
+   needs it. Pairwise freeness of an original tuple does not replace joint
+   freeness or the grouping theorem.
+3. For L free half-trace projections, deriving the actual L-fold product law
+   and its physical exterior branch, then the genuine right spectral edge.
+   The formal scalar curve
+   `z_L(w) = (w+1/2)^L / (w (1+w)^(L-1))` has positive critical point
+   `w=1/(L-2)` for L>2 and value `L^L/(2^L (L-1)^(L-1))`; for L=2 the edge is
+   the endpoint at w tending to infinity. These calculus observations have NOT
+   been counted as a verified physical support or spectral-edge result.
+4. Existence of a common free positive realization for ARBITRARY compact input
+   probability laws. The present law is defined for GIVEN actual free elements;
+   its independence from choices is proved when such realizations exist. No
+   total convolution operation on all compact probability laws or general
+   reduced-free-product realization has been silently assumed.
+5. Faithful support equality with the operator spectrum, when an eventual
+   physical-support theorem requests it, is distinct from constructing and
+   identifying the actual probability law. No faithfulness is needed above.
+
+## Verification and implementation observations
+
+Every published mathematical module in this chain compiled warning-free in a
+focused build under the shared build lock. Important statements were printed and
+all transitive audits used only the standard permitted foundations. The source
+integrity guard and Git diff checks passed before each commit; every commit was
+pushed immediately and push success was inspected.
+
+Exact scalar type annotations matter in actual operator order comparisons:
+putting a Complex annotation after an inverse can propagate the expected type
+inside the inverse, whereas a theorem may produce the real inverse followed by
+coercion. Explicit real typing avoids pathological reduction of matrix and
+operator subtraction. This engineering issue is recorded separately in
+`matrix-development.md`.
+
+The spectral-law build initially missed a targeted cache precheck for approximately
+20 support/Riesz prerequisites in this isolated cache. They compiled normally
+under the lock, and their valid artifacts were retained. This was an infrastructure
+workflow miss, not a resource failure or a mathematical proof failure. Future
+uncached Mathlib imports must hydrate the targeted pinned cache first.

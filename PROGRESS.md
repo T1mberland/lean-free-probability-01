@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `cf3c085` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 1739 declarations.
+The latest checked and published integration is `168898a` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 1768 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -62,7 +62,8 @@ merge, whole-word centering, restriction/local-refinement and exact adjacent-fib
 sum proofs are integrated at `1708387`. The fiber theorem concerns arbitrary
 block weights, not an assumed cumulant product identity. Ordered fusion and duplicated-block transports are integrated prerequisites of
 the all-order adjacent-product theorem. Full refinement/Möbius inversion is
-published and reviewed, awaiting integration.
+integrated at `168898a`, including arbitrary normalized moment functions and
+every partition.
 
 The complete word-Hilbert model has bounded creation/adjoints, canonical operator
 relations, a positive vacuum state, Wick vectors and commuting right operators.
@@ -76,8 +77,9 @@ usage examples.
 Exact norm two and explicit C-star-model compatibility (`f881b61`, `7310a7b`) are
 integrated at `2058aab`. Genuine polynomial/closed-marginal freeness and its
 faithful-C-star-ambient bridge (`7350c11`, `54fde61`, `de87f86`) are integrated at `041906e`, including repeated nonadjacent colors. The full
-joint noncrossing Wick formula and Catalan moments are integrated at `648a7d6`. The spectral law, arbitrary-vector creation and general completed
-Hilbert tensor-power identification remain open. None of the eleven full goals is
+joint noncrossing Wick formula and Catalan moments are integrated at `648a7d6`. Arbitrary-vector creation, chosen-Hilbert-basis transport, the completed length
+decomposition and a genuine completed-tensor isometry are undergoing integration.
+The spectral law and complete tensor-power identification remain open. None of the eleven full goals is
 declared complete by these supporting results.
 
 Formal R-transform additivity/scaling and the algebraic free CLT are integrated
@@ -147,7 +149,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 1739 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 1768 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

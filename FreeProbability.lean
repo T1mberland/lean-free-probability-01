@@ -123,3 +123,8 @@ import FreeProbability.Combinatorics.NoncrossingRefinementEquiv
 import FreeProbability.Combinatorics.NoncrossingRefinementBlocks
 import FreeProbability.Combinatorics.RefinementMomentCumulant
 import FreeProbability.Combinatorics.NoncrossingMobius
+import FreeProbability.Fock.VectorCreation
+import FreeProbability.Fock.HilbertBasisModel
+import FreeProbability.Fock.LengthDecomposition
+import FreeProbability.Fock.TensorCompletion
+import FreeProbability.Fock.TensorLevels

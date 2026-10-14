@@ -6,7 +6,8 @@ import Mathlib.Analysis.CStarAlgebra.ContinuousLinearMap
 
 All structure is inherited from the concrete bounded operators and norm closure.
 The basis generators have norm two, are self-adjoint, centered and of variance
-one. Freeness and their full semicircular joint law remain separate obligations.
+one. Freeness and the full joint Wick law are proved in `FreeCStarModel` and
+`WickFormula`; the semicircular spectral measure remains an analytic obligation.
 -/
 
 noncomputable section

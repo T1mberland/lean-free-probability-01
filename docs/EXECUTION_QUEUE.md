@@ -18,17 +18,18 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `cf3c085`, published on `main`, with full builds,
-source guard and transitive audit passing for 1739 declarations. Genuine
+Latest checked integration: `168898a`, published on `main`, with full builds,
+source guard and transitive audit passing for 1768 declarations. Genuine
 polynomial and closed-generator freeness is integrated in the faithful tracial
 C-star model. The all-order adjacent-product cumulant theorem and full freeness
 characterization are integrated. Joint Wick/Catalan and all-degree word IBP are integrated. Formal R-additivity and algebraic free CLT
-are integrated; full refinement/Möbius and all-vector creation are
-published and reviewed, queued for integration.
+are integrated; full refinement/Möbius is integrated. All-vector creation,
+Hilbert-basis transport, complete length decomposition and tensor completion
+are undergoing integration.
 
 | Goal | Status | Earliest work and dependency |
 | --- | --- | --- |
-| 1. Cumulant calculus | Active; core iff and adjacent/unit/scalar calculus integrated | Integrate full refinement/Möbius; multi-product calculus and Kreweras remain |
+| 1. Cumulant calculus | Active; core iff and adjacent/unit/scalar calculus integrated | Full refinement/Möbius integrated; multi-product calculus and Kreweras remain |
 | 2. Full Fock systems | Active; faithful tracial C-star word model with exact norm two integrated | Freeness, literal joint Wick and Catalan integrated; integrate arbitrary-vector creation, then completed tensor identification and spectral law |
 | 3. Free integration by parts | Active proof path selected | All-degree actual word IBP integrated; polynomial tensor-bimodule derivation bundling and matrix/analytic extensions remain |
 | 4. Operator-valued Dyson | Blocked on operator-valued realization | Completely positive covariance, amplified moments and Wick recursion precede Dyson and physical branch |
@@ -378,3 +379,31 @@ review and combined checks pass: full build 3474 jobs, Verification 3477 jobs,
 direct transitive audit 1768 declarations and source guard. Main integration
 pending. Kreweras complement and full
 multi-product cumulant fibers remain separate obligations.
+
+### Checked integration checkpoint: Möbius inversion
+
+`168898a` is checked and published on `main`; prior pending source mappings are
+now integrated. Full build 3474 jobs, Verification 3477 jobs, direct audit 1768
+declarations and source guard pass. Genuine lattice Möbius inversion is complete;
+Kreweras complement/general multi-product identities are separate Goal 1 tasks.
+The single pinned IncidenceAlgebra cache artifact was downloaded successfully;
+no revision or toolchain changed.
+
+### Pending integration: arbitrary vectors and complete Hilbert sums
+
+Sources/integration mappings: `10a56ef`→`2268da9`, `200886a`→`efac3a9`,
+`743e27e`→`1976ef7`, `aef7967`→`3d134fd`. Arbitrary ℓ²-vector creation has
+exact norm and adjoint Gram relation; actual HilbertBasis representation
+transports it to every vector of the original complex Hilbert space.
+`lengthDecomposition` is a surjective complete Hilbert-sum equivalence, including
+infinite amplitudes and arbitrary index types. `completedTensorEquiv` identifies
+the GENUINE completion of ℓ²(I,ℂ) ⊗ E with ℓ²(I,E) for complete complex Hilbert E;
+the algebraic tensor is never asserted complete. Source `2c0598f` → `75cd2c3` proves actual scalar vacuum level, successor
+completed-tensor/level equivalence and literal arbitrary-vector tensor creation.
+Together with length decomposition, the ℓ²(I) model has genuine completed tensor
+levels. Explicit original-H tensor coherence remains ongoing. No trace
+claim is made for generators indexed by all complex vectors. Combined checks
+pending; vector/basis/length/tensor reviews and global name scans approved.
+The initial combined build passed before adding tensor levels. The final combined
+full build 3480 jobs, Verification 3483 jobs, direct audit 1942 declarations and
+source guard pass. Main integration pending.

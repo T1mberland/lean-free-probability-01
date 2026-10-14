@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `95c414c` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 3794 declarations.
+The latest checked and published integration is `714c2de` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 3802 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -240,7 +240,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 3794 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 3802 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -300,7 +300,22 @@ main `95c414c` (full 3664, Verification 3667, audit 3794 and source guard).
 Quantitative finite Fock approximation, singular edge limits and deterministic
 edge-subspace results remain open for Goal 5.
 
-Generic topological closure freeness (`9409551`) is published and reviewed,
-undergoing integration. Continuous expectation and topological algebra operations
-suffice, without positivity, traciality, norms or completeness. Actual near-zero
-Neumann-inverse membership is the next missing analytic S-product dependency.
+Generic topological closure freeness and actual near-zero Neumann-inverse
+membership (`9409551`, `bebd9c4`) are integrated through
+[PR #17](https://github.com/T1mberland/lean-free-probability-01/pull/17) at checked
+main `714c2de` (full 3666, Verification 3669, audit 3802 and source guard).
+Continuous expectation and topological algebra operations suffice for closure,
+without positivity, traciality, norms or completeness. Genuine Banach inverse
+membership has explicit norm-small domains. Norm centering bounds and actual
+multiplicative resolvent factorization are the next analytic S-product steps.
+
+Second quantization of arbitrary complex Hilbert unitaries is published/reviewed
+through `550505c`, undergoing integration. Genuine completed tensor levels and
+infinite Hilbert sum preserve scalar vacuum and every grading; actual bounded
+creation, adjoint and fields conjugate correctly, including original-H FullFock
+transport. Composition/identity/inverse and all bounded-operator vacuum
+expectation invariance are proved. Arbitrary complex rotations map the real
+generated algebra to its rotated image; preservation of a fixed real algebra is
+not asserted. Nonsurjective Fock isometry `d34f086` and scalar compression
+`1d85daa` are published on a subsequent feature, not included here. All-level
+complete positivity and actual OU range/semigroup/normal extensions remain open.

@@ -18,9 +18,9 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `95c414cd826de444bf47f8769a0b615794c40e75`,
-published on main through [PR #16](https://github.com/T1mberland/lean-free-probability-01/pull/16).
-Full builds 3664/3667, direct transitive audit 3794 declarations and source guard pass.
+Latest checked integration: `714c2de1c093bf5ccea46e2ecfbbbcc5fc36bda1`,
+published on main through [PR #17](https://github.com/T1mberland/lean-free-probability-01/pull/17).
+Full builds 3666/3669, direct transitive audit 3802 declarations and source guard pass.
 Goals 1, 2, 3 and 6 are certified complete; seven full goals remain open.
 Every historical checkpoint below retains its original scope and date.
 
@@ -43,8 +43,8 @@ Every historical checkpoint below retains its original scope and date.
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
 | Coordinator | `main`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/freeness-norm-closure`, `/home/user/Projects/lean-fp-cumulants` | New `Algebraic/FreenessClosure*.lean`; completed matrix feature preserved | Generic closure freeness from continuous centered products |
-| Worker B (`fock`) | `feat/second-quantization`, `/home/user/Projects/lean-fp-fock` | New `Fock/SecondQuantization*.lean`; published Wick/analytic features preserved | Actual lift of one-particle Hilbert unitaries, full tensor/vacuum/creator coherence for rotation dilation |
+| Worker A (`cumulants`) | `feat/multiplicative-resolvent-germ`, `/home/user/Projects/lean-fp-cumulants` | New `Analytic/MultiplicativeResolvent*.lean`; completed closure/norm features preserved | Actual two-inverse factorization and centered alternating geometric expectations |
+| Worker B (`fock`) | `feat/fock-isometry-compression`, `/home/user/Projects/lean-fp-fock` | New `Fock/SecondQuantizationIsometry*.lean`, `SecondQuantizationCompression*.lean`; published unitary feature preserved | Genuine cross-space Fock isometry and all-level CP compression |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -1397,3 +1397,39 @@ Combined closure + actual Neumann feature passes full build 3666, Verification
 application and two-variable actual inverse centered factorization both compile.
 New generic inverse remainder and centered O(z) bounds `68a4488` are published
 but NOT in this PR; review and independent integration are queued separately.
+
+### Checked closure PR and pending unitary second quantization
+
+PR #17 merged head `20beab7` as `714c2de1c093bf5ccea46e2ecfbbbcc5fc36bda1`.
+Main full 3666, Verification 3669, direct audit 3802 and source guard pass.
+Four original B commits `d9315af`, `a714b43`, `a8fea3f`, `550505c` preserved
+in separate second-quantization integration. All four source modules and exact
+completed all-vector statements independently reviewed with no collisions.
+Actual Hilbert unitary covariance includes vacuum, tensor degree, creation,
+adjoint, self-adjoint fields and original-H FullFock model transport, plus
+composition/identity/inverse and vacuum expectation for ANY bounded T. The
+latter is unitary invariance, not a claim of traciality on all bounded operators.
+Concrete one-particle negation use verifies actual completed Fock field reflection.
+Goal 10 still needs OU CP, range and normal/Lp/entropy extensions.
+
+A clean `712446a` closure-norm branch was preserved; coordinator created
+`feat/multiplicative-resolvent-germ` from checked `714c2de`, merged original
+`68a4488`/`712446a` dependency proofs and immediately published the branch.
+Exclusive new Analytic/MultiplicativeResolvent*.lean ownership. Generic remainder
+bound starts at power1, so ||inverse(1-x)-1||<=q/(1-q) needs no normone factor.
+Centered norm constant is 1+||phiCLM||*||1||; continuity-to-CLM requires a
+nontrivially normed field, correctly explicit. Positive C-star specialization
+derives normalized nontriviality and constant2 (constant4 on q<=1/2). These
+bounds are published but not in this unitary PR.
+
+B clean `550505c` preserved and branch `feat/fock-isometry-compression` created
+from that necessary unitary dependency. New cross-Hilbert isometry `d34f086`
+and scalar compression `1d85daa` published, not in this PR. Next is true
+canonical CStarMatrix cone compatibility for all finite amplification levels.
+Actual rotation must use WithLp2(H×H), not the ordinary sup-norm product.
+
+Combined unitary second-quantization integration passes full build 3670,
+Verification 3673, direct audit 3837 and source guard. Concrete one-particle
+reflection field conjugation compiles. Review also approves generic and positive
+centering norm sources `68a4488`, `712446a`, still queued separately; no unsupported
+unit-norm premise is inserted into their generic statements.

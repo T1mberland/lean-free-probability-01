@@ -257,3 +257,7 @@ import FreeProbability.OperatorValued.MatrixEdgeDensityBounds
 import FreeProbability.OperatorValued.MatrixCauchySpectralBounds
 import FreeProbability.Algebraic.FreenessClosure
 import FreeProbability.Algebraic.FreenessClosureResolvent
+import FreeProbability.Fock.SecondQuantizationTensor
+import FreeProbability.Fock.SecondQuantizationOperators
+import FreeProbability.Fock.SecondQuantizationFunctor
+import FreeProbability.Fock.SecondQuantizationFields

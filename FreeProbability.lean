@@ -375,3 +375,6 @@ import FreeProbability.Fock.SecondQuantizationSuffixFields
 import FreeProbability.Fock.SecondQuantizationSuffixTransport
 import FreeProbability.Fock.SecondQuantizationSuffixOrthogonal
 import FreeProbability.OperatorValued.CovarianceGram
+import FreeProbability.Algebraic.CompactHaarAverage
+import FreeProbability.Algebraic.CompactHaarAverageProjection
+import FreeProbability.RandomMatrix.OrthogonalTensorAverage

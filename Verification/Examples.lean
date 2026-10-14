@@ -679,4 +679,10 @@ example {B : Type*} [CStarAlgebra B] [PartialOrder B] [StarOrderedRing B]
     0 ≤ ∑ i, ∑ j, star (b i) * η (star (a i) * a j) * b j :=
   cp_covariance_quadratic_nonneg η a b
 
+-- Actual degree-four tensor Haar projection coefficients are the genuine entry moments.
+example {n : Type*} [Fintype n] [DecidableEq n] (i j : Fin 4 → n) :
+    ((Orthogonal.tensorPowerRepresentation (n := n) 4).averageCLM
+      (Orthogonal.tensorBasisVector 4 j)) i = Orthogonal.entryMoment i j :=
+  Orthogonal.tensorPowerAverage_basis_coefficient 4 i j
+
 end FreeProbability.Examples

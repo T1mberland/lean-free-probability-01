@@ -1093,3 +1093,12 @@ run_cmd do
 #print axioms FreeProbability.cstarMatrix_starSquare_quadratic_nonneg
 #print axioms FreeProbability.cstarMatrix_quadratic_nonneg
 #print axioms FreeProbability.cp_covariance_quadratic_nonneg
+#print axioms FreeProbability.CompactIsometricRepresentation.action_average
+#print axioms FreeProbability.CompactIsometricRepresentation.range_averageCLM
+#print axioms FreeProbability.CompactIsometricRepresentation.averageCLM_isSelfAdjoint
+#print axioms FreeProbability.CompactIsometricRepresentation.ker_averageCLM
+#print axioms FreeProbability.CompactIsometricRepresentation.averageCLM_orthogonal_projection
+#print axioms FreeProbability.Orthogonal.tensorPowerMatrix_mul
+#print axioms FreeProbability.Orthogonal.tensorPowerMatrix_mem_orthogonal
+#print axioms FreeProbability.Orthogonal.tensorPowerAverage_orthogonal_projection
+#print axioms FreeProbability.Orthogonal.tensorPowerAverage_basis_coefficient

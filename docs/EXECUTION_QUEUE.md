@@ -18,7 +18,7 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `96193a7ac5c7316c62adf98cd543c25cea6241a4`,
+Latest checked integration: `cb517b9b37493f3f00aa34775a360c4b87bde36d`,
 published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
 and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
 Corrected WOT-generated PR #35 passes full builds 3745/3748, direct transitive audit
@@ -2196,3 +2196,32 @@ source integrity/diff. Actual three-coefficient nonunital-covariance usage compi
 All six public declarations critically reviewed and collision-free.
 CI39 run38579919914, CI41 run38582089296, CI42 run38582719980 and
 CI43 run38583117617 confirmed success. All queried CI through PR43 pass.
+
+### Actual compact Haar projection and orthogonal tensor coefficients feature
+
+CP covariance PR44 merged as `cb517b9b37493f3f00aa34775a360c4b87bde36d`;
+checked main full3789, Verification3792, direct audit5661, source/diff and push.
+Reviewed actual compact Haar averaging/projection through `eb16668` and exact
+notes `34dcc10` are assembled. For genuine continuous isometric representations
+on complete REAL Hilbert spaces, including infinite spaces, actual normalized
+Haar Bochner averaging is norm contraction, selfadjoint and idempotent, with
+range exactly fixed vectors and kernel exactly their orthogonal complement.
+No assumed invariant projection or complex averaging extension is substituted.
+Reviewed `2196e3f` and notes `5a2f0e8` construct the ACTUAL orthogonal tensor
+representation on every finite tuple degree; true monoid/orthogonality/continuity
+are proved. Its actual averaging coefficients are the genuine entryMoment
+integrals. Degree zero and empty dimensions are included without false size
+assumptions. Invariant-tensor pairing spanning/FFT/Weingarten and random-matrix
+asymptotic freeness remain unproved Goal9 obligations.
+A now owns NEW OrthogonalPairingInvariant, constructing invariant tensors for
+ALL perfect pairings (crossings included), without a spanning assumption.
+B all-vector creator defect39a6281 is published and reviewed separately;
+adjoint/field commutant and rotated doublecommutant compression range are active.
+Next root tasks include genuine doublecommutant faith/trace and directed-positive
+sup normality prerequisites; Cstar-native OU does not certify Goal10 normality.
+Five full goals complete and six open; no new full goal completed by this feature.
+
+Compact/tensor feature checks pass full3792, Verification3795, direct audit5744,
+source integrity/diff. Actual degree-four Haar-projection coefficient usage compiles.
+All three modules and exact real/degenerate-dimension scopes critically reviewed;
+no FFT or new full-goal completion is claimed.

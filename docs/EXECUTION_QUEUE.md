@@ -18,7 +18,7 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `cb517b9b37493f3f00aa34775a360c4b87bde36d`,
+Latest checked integration: `9148022d6f19f95820ca57bcf5b4f81a0cc4d122`,
 published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
 and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
 Corrected WOT-generated PR #35 passes full builds 3745/3748, direct transitive audit
@@ -2225,3 +2225,35 @@ Compact/tensor feature checks pass full3792, Verification3795, direct audit5744,
 source integrity/diff. Actual degree-four Haar-projection coefficient usage compiles.
 All three modules and exact real/degenerate-dimension scopes critically reviewed;
 no FFT or new full-goal completion is claimed.
+
+### Actual Fock von Neumann vacuum checkpoint
+
+PR45 is checked main `9148022d6f19f95820ca57bcf5b4f81a0cc4d122`: full3792,
+Verification3795, direct transitive5744, integrity/diff and push pass. CI44
+38584228682 and CI45 38584939394 are confirmed successful.
+Root source commits c6942e9, d16719b, 5ec2477, 5aa789b, corrected86ae568
+and29330f8 construct literal word and actual tensor-family double-commutant
+von Neumann algebras with closed Cstar carriers. Entire word algebra vacuum is
+faithful and tracial; actual tensor-family vacuum is faithful and tracial for
+EVERY orthonormal family, without spanning, countability or nonempty assumptions.
+Major declarations: wordSemicircularVonNeumannAlgebra_vacuum_faithful/tracial,
+tensorFamilyVonNeumannVacuumState_faithful/tracial. Trace uses actual anti-linear
+word conjugation and right Wick commutation, not an assumed weak density theorem.
+An initial feature snapshot repeated existing star_creationWord;86ae568 removed
+it and imported the existing theorem. Corrected whole-library audit passes.
+Reviewer approved precise statements and all five new transport declaration names.
+
+Published independent checkpoints awaiting integration: A df43a3e has actual
+stable orthogonal FFT/Weingarten formula for N>=r and literal normalized inverse
+leading limits; low N and joint random-matrix convergence remain open. B4e47415
+has actual double-commutant OU range, intrinsic unital CP contraction/time-zero,
+and WOT continuity on uniform norm balls. Normality and whole-algebra time
+composition are not claimed. A exclusively owns new OrthogonalWeingartenBounds;
+B exclusively owns new OrnsteinUhlenbeckVonNeumannVacuum modules. Next: prove
+all-vector rotation sandwich equals degree damping and use faithful vacuum to
+establish time composition on ON-family algebras, then directed positive sup
+preservation/normality. Full goals4,5,8,9,10,11 remain open.
+
+Feature integration checks: full3797, Verification3800, transitive5857, source
+integrity and diff pass. New ON-family whole-algebra faith/trace focused build
+and individual standard-axiom audits pass; no new full goal is certified.

@@ -43,21 +43,27 @@ convolution for actual products of two free tuples, and
 `a * b`. Positive order is necessary under the library's zero empty-cumulant
 convention: the empty partition contribution equals one. No traciality,
 positivity, or commutativity is assumed. Rotation and order anti-isomorphism
-remain separate unproved complement identities. Analytic S-transform
+remain separate optional complement identities. Analytic S-transform
 multiplicativity and spectral convolution realization remain open.
 
-## Multiplicative Möbius interval factors
+## Optional multiplicative Möbius interval extensions
 
-The actual finite noncrossing Möbius function and all-partition inversion are
-proved in `NoncrossingMobius`. The lower refinement interval is order-isomorphic
-to the product of the noncrossing lattices on its actual blocks.
+The literal Goal 1 subtargets are covered by the verified cumulant calculus,
+actual noncrossing combinatorics, full lattice inversion, generic interval product
+identities, and actual boxed free-product formulas. The refinements in this
+section are useful optional extensions, not blockers to those requested results.
+Integration status remains the coordinator's responsibility.
 
-Mathlib's incidence-algebra implementation supplies the binary-product Möbius
-identity `mu_prod_mu`, but its source lists the general Pi identity as a TODO.
-It also lacks a ready order-isomorphism invariance theorem. Before the desired
-blockwise Möbius factorization can be reused directly, prove these two general
-incidence-algebra dependencies or supply equivalent uniqueness arguments.
-Closed Catalan coefficients remain a further mathematical obligation.
+The lower refinement interval is already order-isomorphic to the product of the
+noncrossing lattices on its actual blocks. Two reusable incidence dependencies
+are now proved: `incidence_mu_orderIso` gives finite-poset order-isomorphism
+invariance over arbitrary coefficient rings; `incidence_mu_pi` gives the actual
+Möbius function of a finite dependent product of finite posets as the coordinate
+product over commutative coefficient rings. Combining these with the existing
+block-refinement order isomorphism supplies the intended interval-factor route.
+That final specialization and closed Catalan coefficients are optional further
+extensions. Rotation/order anti-isomorphism of the complement is also optional
+rather than a missing premise of the now-proved boxed formula.
 
 ## Verified quantified non-iid CLT extension
 

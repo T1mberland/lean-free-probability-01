@@ -18,11 +18,9 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `2260d14249be0ed6ce560c85e5009dccf318d086`,
-published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
-and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
-Corrected WOT-generated PR #35 passes full builds 3745/3748, direct transitive audit
-5008 declarations and source guard.
+Latest checked integration: `914cb5e9a768b82d4229db2c568b879c74474e0b`,
+published main after PR48. Full3817, Verification3820, direct transitive6065,
+source guard/diff and explicit push passed. Earlier records below are historical.
 Goals 1, 2, 3, 6 and 7 are certified complete; six full goals remain open.
 Every historical checkpoint below retains its original scope and date.
 
@@ -34,9 +32,9 @@ Every historical checkpoint below retains its original scope and date.
 | 4. Operator-valued Dyson | Actual finite-matrix model, Wick, Dyson and physical theory integrated | General arbitrary-base CP covariance realization and entrywise-model comparison remain |
 | 5. Spectral edges | Actual core variational equality, state/density bounds and exterior derivative/Lyapunov integrated | Actual exterior spectral-gap bounds integrated; quantitative finite-depth Fock approximation, singular limits and deterministic edge subspaces remain |
 | 6. Spectral distributions | Complete on checked main `427f72b`, PR #2 | Actual compact laws/CFC/support/Cauchy/moment compatibility and bounded weak/Cauchy convergence |
-| 7. Multiplicative convolution | Projection law/germ integrated; generic positive-pair path ready | Actual given-positive-pair S/law/marginal determination integrated; grouping reviewed pending integration, projection products next, physical support/edge and arbitrary-law realizations remain |
+| 7. Multiplicative convolution | Complete on checked main `bdd05e2`, certified PR39 | Actual positive-pair S/law and arbitrary-length projection physical branch/edge/spectrum; universal free-product realization belongs to Goal11 |
 | 8. Conditional subordination | Noncommutative L² and Goal 7 dependencies open | Normal conditional expectations, analytic subordination, exterior continuation and projection specialization |
-| 9. Haar freeness | Independent algebraic groundwork ready | Haar-unitary star law and free conjugation; orthogonal pairing integration precedes joint asymptotic estimates |
+| 9. Haar freeness | Genuine Haar conjugation and stable orthogonal FFT/integration verified | Sharp pairing-distance inverse estimates and trace-word cancellation; joint expected/probability/a.s. convergence, strong resolvent convergence and low-dimensional integration remain |
 | 10. OU and entropy | Actual Wick contractions, Haagerup, second quantization and all-level CP dilation integrated | Genuine native Cstar OU semigroup integrated at `d5c9801`; genuine cyclic L2 integrated at `03aff10`; strong continuity active; normal/L1/entropy and dimension-independent regularization remain |
 | 11. Follow-up milestones | Formal R and quantitative conditional moment CLT integrated | Positive free products, analytic convolution, operator-valued cumulants, annular/second-order and genus theory remain |
 
@@ -44,9 +42,9 @@ Every historical checkpoint below retains its original scope and date.
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `fix/ci-verification-modules`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/projection-product-germs`, `/home/user/Projects/lean-fp-cumulants` | New `Analytic/ProjectionProduct*.lean`; frozen eight law/germ modules integrated | Actual law-moment polynomial continuation and sharp lower edge/physical branch; sharp upper support published |
-| Worker B (`fock`) | `feat/fock-prefix-tail`, `/home/user/Projects/lean-fp-fock` | NEW `Fock/SecondQuantizationPrefix*.lean` and agreed prefix-tail notes; corrected WOT feature frozen | Actual ordered word bijection/full Hilbert prefix-tail representation and bounded-WOT amplification |
+| Coordinator | `feat/fock-von-neumann-ou-semigroup-integration`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Worker A (`cumulants`) | `feat/compact-haar-averaging`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalPairingDistance.lean and agreed notes; prior sources frozen | Actual raw-join pairing-distance triangle for sharp inverse/trace estimates |
+| Worker B (`fock`) | `feat/fock-von-neumann-ou-symmetry`, `/home/user/Projects/lean-fp-fock` | NEW Fock/OrnsteinUhlenbeckVonNeumannVacuumSymmetry*.lean and agreed notes; prior sources frozen | Actual whole-algebra state L2 symmetry |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -2308,3 +2306,29 @@ Full goal statuses remain five certified, six open.
 
 Stable FFT/integration feature passes full3817, Verification3820, direct
 transitive6065, source/diff and independent mathematical review.
+
+### Actual whole-von-Neumann OU semigroup feature
+
+PR48 checked main `914cb5e9a768b82d4229db2c568b879c74474e0b` passes full3817,
+Verification3820, directtransitive6065, source/diff and push. Actual stable FFT
+and Haar integration are integrated, with low-dimensional scope still open.
+Reviewed B chain6bd59b3..687195a assembles genuine finite-rank norm-bounded
+WOT approximations to EVERY bounded operator; actual intrinsic unital CP
+contractions on every prescribed-family D_e; exact bounded-WOT continuity;
+ALLcompleted-vector rotation sandwich=degree damping; actual ANYbounded-T
+vacuum identity; and WHOLEONfamily D_e semigroup law with timezero.
+The semigroup uses only degreeDamping_add and genuine faithful vacuum separation,
+not weak polynomial density or an all-B(H) semigroup assertion.
+Major declarations: ouVacuumSandwich_eq_degreeDamping, ouVonNeumannTimeCP_add,
+ouVonNeumannTimeContinuous_add, ouVonNeumannTimeCP_state_L2_le,
+ouVonNeumannTimeCP_vacuum_strong_continuous. Actual state L2 contraction and
+strong time continuity of every vacuum image hold ANYfamily; ON gives injective
+faithful state interpretation. No nonspanning cyclic space=ambient identification.
+Normality still requires actual bounded positive directed-net IsLUB preservation.
+Next root prerequisite positive operator energy and strong monotone convergence;
+B newbranchsymmetry owns NEW VacuumSymmetry modules. A owns NEW genuine raw
+pairing distance triangle. All eleven integrated-source statements reviewed;
+no full Goal10 or random-matrix asymptotic freeness completion is claimed.
+
+Whole-von-Neumann semigroup feature passes full3828, Verification3831,
+direct transitive6256, source/diff, precise mathematical review and named audits.

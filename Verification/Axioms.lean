@@ -1121,3 +1121,11 @@ run_cmd do
 #print axioms FreeProbability.Orthogonal.span_pairingTensors_eq_fixedVectors
 #print axioms FreeProbability.Orthogonal.tensorPowerAverage_eq_pairingGram_inverse
 #print axioms FreeProbability.Orthogonal.entryMoment_eq_weingarten_delta_sum
+#print axioms FreeProbability.Fock.finiteTensorWordSandwich_tendsto_WOT
+#print axioms FreeProbability.Fock.ouVonNeumannTimeCP_zero
+#print axioms FreeProbability.Fock.ouVonNeumannTimeWOTNormBall_continuous
+#print axioms FreeProbability.Fock.ouVacuumSandwich_eq_degreeDamping
+#print axioms FreeProbability.Fock.ouVonNeumannTimeCP_add
+#print axioms FreeProbability.Fock.ouVonNeumannTimeContinuous_add
+#print axioms FreeProbability.Fock.ouVonNeumannTimeCP_state_L2_le
+#print axioms FreeProbability.Fock.ouVonNeumannTimeCP_vacuum_strong_continuous

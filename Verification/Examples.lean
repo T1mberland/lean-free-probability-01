@@ -89,4 +89,9 @@ example {𝕜 A I : Type*} [Field 𝕜] [Ring A] [Algebra 𝕜 A]
     ⟨0, 1, by simpa using hij⟩
   simpa using h
 
+/-- The all-order Catalan theorem gives the genuine sixth moment. -/
+example {I : Type*} (i : I) :
+    (Fock.closedGeneratedVacuumState I).expectation (Fock.closedSemicircular i ^ 6) = 5 := by
+  simpa [catalan_three] using Fock.closedGeneratedVacuumState_even i 3
+
 end FreeProbability.Examples

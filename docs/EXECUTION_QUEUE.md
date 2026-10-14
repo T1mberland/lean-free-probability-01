@@ -18,11 +18,11 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `041906e`, published on `main`, with full builds,
-source guard and transitive audit passing for 1403 declarations. Genuine
+Latest checked integration: `e54c402`, published on `main`, with full builds,
+source guard and transitive audit passing for 1481 declarations. Genuine
 polynomial and closed-generator freeness is integrated in the faithful tracial
 C-star model. The all-order adjacent-product cumulant theorem and full freeness
-characterization are undergoing integration. Joint Wick/Catalan and algebraic
+characterization are integrated. Joint Wick/Catalan and algebraic
 free-CLT milestones are published and queued for review/integration.
 
 | Goal | Status | Earliest work and dependency |
@@ -279,3 +279,27 @@ GitHub connector as `0138b7555e43ac153c1d1d02224c153d4a2490fa`; the matching loc
 commit was `8ebf75af94fdfdec3a4cfc12e2857088fcbaa47a`. Coordinator reconciliation
 merge `a860eb6` preserved both histories and was pushed successfully after DNS
 recovered. No shared history was rewritten. Workers then resumed.
+
+### Checked integration checkpoint: full freeness characterization
+
+`e54c402` is checked and published on `main`, full build 3443 jobs,
+Verification 3446 jobs, transitive audit 1481 declarations and source guard.
+The earlier pending source mappings above are now integrated. Full all-order
+algebraic freeness iff mixed cumulants vanish and actual adjacent-product
+calculus hold. Möbius inversion/Kreweras remain separate Goal 1 obligations.
+
+### Pending integration: actual joint Wick and Catalan moments
+
+Sources/integration mappings: `629978b`→`e2bcbe6`, `04ff2f2`→`2a84510`,
+`27ba7c5`→`6894027`, `9898bed`→`8313535`, `790afa1`→`ea6ee91`,
+`86ae38e`→`5f2e2bb`, `8ebf75a`→`89adb4d`, `d61905d`→`d2d471c`,
+`04df539`→`7639c43`. Rank-one vacuum boundary commutators give actual
+all-degree word IBP. The independently constructed first-partner pairing
+equivalence and weighted recursion imply literal joint Wick for actual Fock
+operators, then Catalan even and zero odd moments in the faithful tracial
+C-star model. Read-only review and combined checks pass: full build 3451 jobs, Verification
+3454 jobs, transitive audit 1684 declarations, source guard and genuine sixth
+moment usage. Main integration remains pending. The single
+pinned Catalan mathlib cache artifact was reused from the isolated worker cache;
+no dependency revision or toolchain changed. Spectral density identification,
+polynomial tensor derivative packaging and general tensor identification remain.

@@ -97,3 +97,10 @@ import FreeProbability.Combinatorics.DuplicateBlockEnumeration
 import FreeProbability.Combinatorics.CoveringAdjacentSums
 import FreeProbability.Algebraic.CumulantAdjacentProduct
 import FreeProbability.Algebraic.CumulantCharacterization
+import FreeProbability.Fock.BoundaryCommutator
+import FreeProbability.Fock.WordIntegrationByParts
+import FreeProbability.Combinatorics.NoncrossingPairingDecomposition
+import FreeProbability.Combinatorics.NoncrossingPairingWeights
+import FreeProbability.Combinatorics.NoncrossingPairingCatalan
+import FreeProbability.Fock.WickFormula
+import FreeProbability.Fock.CatalanMoments

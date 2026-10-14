@@ -373,3 +373,14 @@ run_cmd do
 #print axioms FreeProbability.FreelyIndependent.cumulant_ofFn_eq_zero_of_mixed
 #print axioms FreeProbability.FreelyIndependent.mixedCumulantsVanish
 #print axioms FreeProbability.freelyIndependent_iff_mixedCumulantsVanish
+#print axioms FreeProbability.Fock.vacuumExpectation_operatorWord_cons
+#print axioms FreeProbability.NoncrossingPairing.firstPartnerEquiv
+#print axioms FreeProbability.NoncrossingPairing.pairingWeight_eq_prod_pairs
+#print axioms FreeProbability.NoncrossingPairing.pairingWeight_glue
+#print axioms FreeProbability.NoncrossingPairing.pairingSum_succ_succ
+#print axioms FreeProbability.NoncrossingPairing.card_even_convolution
+#print axioms FreeProbability.NoncrossingPairing.card_even_eq_catalan
+#print axioms FreeProbability.Fock.joint_free_wick
+#print axioms FreeProbability.Fock.closedGeneratedVacuumState_joint_free_wick
+#print axioms FreeProbability.Fock.closedGeneratedVacuumState_even
+#print axioms FreeProbability.Fock.closedGeneratedVacuumState_odd

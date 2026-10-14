@@ -18,8 +18,8 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `ea6149a`, published on `main`, with full builds,
-source guard and transitive audit passing for 2146 declarations. Genuine
+Latest checked integration: `18afd0f`, published on `main`, with full builds,
+source guard and transitive audit passing for 2266 declarations. Genuine
 polynomial and closed-generator freeness is integrated in the faithful tracial
 C-star model. The all-order adjacent-product cumulant theorem and full freeness
 characterization are integrated. Joint Wick/Catalan and all-degree word IBP are integrated. Formal R-additivity and algebraic free CLT
@@ -29,7 +29,7 @@ are integrated through completed ℓ²(I) tensor levels. Original-H tensor coher
 package are integrated. Explicit tensor-power presentation/operator transport,
 general interval products and Kreweras are published and queued. Coordinator
 polynomial/matrix IBP is integrated. Generic interval products, Kreweras
-maximal complement and free alternating-moment formula are undergoing integration.
+maximal complement and free alternating-moment formula are integrated.
 
 | Goal | Status | Earliest work and dependency |
 | --- | --- | --- |
@@ -534,3 +534,40 @@ worktree/cache. Targeted pinned RealRMK cache hydration is authorized when absen
 Worker A continues Kreweras product-cumulant combinatorics in its exclusive files.
 Coordinator integrates sequentially, then selects analytic IBP extensions or
 free-CLT variance scaling; reviewer remains read-only.
+
+### Checked integration checkpoint: general products and Kreweras moments
+
+`18afd0f` is checked and published on `main`, previous source mappings integrated.
+Full build 3496 jobs, Verification 3499 jobs, direct audit 2266 declarations
+and source guard pass. Independently specified consecutive products and genuine
+Kreweras maximality/interleaving/alternating moments are complete. Actual pair
+products and (a*b)^n corollaries are published (`0fe24b6`, `955cadb`) and queued.
+Worker obstruction record `bb081f0` in `docs/math-notes/cumulant-obstructions.md`
+precisely separates boxed top-fiber connectivity/tree counting and missing
+Pi Möbius/order-isomorphism APIs. No boxed/S-transform result is claimed.
+Worker A advances a conditional non-iid triangular-array CLT while these
+mathematical dependencies remain open.
+
+### Pending integration: exact tensor-domain semicircular model
+
+Sources/integration mappings: `8466cf7`→`d465a86`, `90ca303`→`f348f65`,
+`c5e9ec3`→`9cbe9c1`, `73dc31f`→`fb92008`, `f1657b9`→`cfc3534`.
+TensorPower's successor is literally the genuine completion of original H
+⊗ previous power; the zero level is explicitly scalar-unitary for universe
+consistency. The full-Fock unitary is onto the actual completed tensor-power
+Hilbert sum. Creation/annihilation act on that exact domain and creation sends
+a degree-n vector to its literal completed h⊗f in degree n+1. Chosen orthonormal
+basis fields have actual norm two/selfadjointness and freeness in intrinsic
+closed singleton algebras. The literal norm-closed generated tensor C-star state
+is proved positive, normalized, faithful and tracial. Actual literal joint Wick
+and Catalan laws hold there. No trace is asserted on all bounded operators or
+all complex-vector fields. Mathematical reviews/global name scans approved;
+combined full build 3501 jobs, Verification 3504 jobs, direct audit 2453
+declarations and source guard pass. Main integration pending. Arbitrary
+orthonormal-family/basis-independent transport
+and semicircular spectral measure/density remain separate obligations.
+
+Worker B switched from clean `f1657b9` to `feat/spectral-measures` based on checked
+main `ea6149a`; no tensor history was changed. Targeted RealRMK cache hydration
+fetched eight pinned cache files under the common lock. Actual positive real CFC
+functional is published as `c592166`; probability measure representation is next.

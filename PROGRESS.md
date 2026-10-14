@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `ea6149a` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 2146 declarations.
+The latest checked and published integration is `18afd0f` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 2266 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -99,9 +99,9 @@ case.
 
 `cumulant_consecutiveProducts` and its all-partition join-fiber formula are
 integrated at `7bb8314` for any supplied finite adjacent-fusion plan. The independent monotone surjective quotient, pointwise sorted fiber-product
-identity and corresponding top join-fiber cumulant theorem are proved and
-undergoing integration. The actual Kreweras greatest compatible complement
-and free alternating-moment formula are likewise undergoing integration.
+identity and corresponding top join-fiber cumulant theorem are integrated at
+`18afd0f`. The actual Kreweras greatest compatible complement and free
+alternating-moment formula are also integrated at that checkpoint.
 Kreweras rotation/block-count and product-cumulant boxed convolution remain open.
 
 The actual algebraic tensor free difference quotient satisfies the full
@@ -166,7 +166,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 2146 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 2266 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

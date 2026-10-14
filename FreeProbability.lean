@@ -144,3 +144,8 @@ import FreeProbability.Combinatorics.NoncrossingInterleave
 import FreeProbability.Combinatorics.NoncrossingInterleaveContribution
 import FreeProbability.Algebraic.CumulantMonochromatic
 import FreeProbability.Algebraic.KrewerasMultiplicativeMoments
+import FreeProbability.Fock.TensorPower
+import FreeProbability.Fock.TensorOperators
+import FreeProbability.Fock.TensorSemicircular
+import FreeProbability.Fock.TensorCStarModel
+import FreeProbability.Fock.TensorJointLaw

@@ -449,3 +449,11 @@ run_cmd do
 #print axioms FreeProbability.Fock.fullFockGrading
 #print axioms FreeProbability.Fock.fullFockTensorLevel
 #print axioms FreeProbability.Fock.fullCreation_tensorLevel
+#print axioms FreeProbability.freeDifferenceQuotient_generator
+#print axioms FreeProbability.wordDifferenceQuotient_append
+#print axioms FreeProbability.freeDifferenceQuotient_mul
+#print axioms FreeProbability.wordDifferenceQuotient_eq_sum
+#print axioms FreeProbability.Fock.vacuumState_polynomial_integrationByParts
+#print axioms FreeProbability.Fock.closedGeneratedVacuumState_polynomial_integrationByParts
+#print axioms FreeProbability.matrixFreeDifferenceQuotient_mul
+#print axioms FreeProbability.Fock.closedGeneratedVacuumState_matrixPolynomial_integrationByParts

@@ -133,3 +133,6 @@ import FreeProbability.Combinatorics.ConsecutiveFusion
 import FreeProbability.Algebraic.CumulantConsecutiveProducts
 import FreeProbability.Fock.BasisTensorLevels
 import FreeProbability.Fock.FullFock
+import FreeProbability.Algebraic.FreeDifferenceQuotient
+import FreeProbability.Fock.PolynomialIntegrationByParts
+import FreeProbability.Fock.MatrixPolynomialIntegrationByParts

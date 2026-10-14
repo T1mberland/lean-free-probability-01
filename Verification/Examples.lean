@@ -2,6 +2,8 @@ import FreeProbability
 
 /-! Small applications of the public interfaces, checked with the audit target. -/
 
+open scoped TensorProduct
+
 namespace FreeProbability.Examples
 
 /-- An odd-order pairing sum is zero for every choice of weights. This is the
@@ -93,5 +95,12 @@ example {𝕜 A I : Type*} [Field 𝕜] [Ring A] [Algebra 𝕜 A]
 example {I : Type*} (i : I) :
     (Fock.closedGeneratedVacuumState I).expectation (Fock.closedSemicircular i ^ 6) = 5 := by
   simpa [catalan_three] using Fock.closedGeneratedVacuumState_even i 3
+
+/-- Differentiating a noncommutative repeated-letter word preserves its ordered factors. -/
+example {I : Type*} (i j : I) (hij : i ≠ j) :
+    freeDifferenceQuotient i (wordMonomial (𝕜 := ℂ) [i, j, i]) =
+      (1 : WordPolynomial ℂ I) ⊗ₜ[ℂ] wordMonomial [j, i] +
+        wordMonomial [i, j] ⊗ₜ[ℂ] (1 : WordPolynomial ℂ I) := by
+  simp [wordDifferenceQuotient, hij, ← wordMonomial_append]
 
 end FreeProbability.Examples

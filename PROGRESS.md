@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `7bb8314` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 2042 declarations.
+The latest checked and published integration is `5c2e9cb` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 2083 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -80,7 +80,9 @@ faithful-C-star-ambient bridge (`7350c11`, `54fde61`, `de87f86`) are integrated 
 joint noncrossing Wick formula and Catalan moments are integrated at `648a7d6`. Arbitrary-vector creation, chosen-Hilbert-basis transport, the completed length
 decomposition and a genuine completed-tensor isometry are integrated at
 `871fc9f`. The ℓ²(I) levels are genuine completed tensor levels, with literal
-tensor creation; original-H tensor coherence is published, awaiting integration.
+tensor creation; original-H tensor coherence and the unconditional full-Fock package are
+integrated at `5c2e9cb`. Explicit recursively completed tensor powers and the
+unitary onto their Hilbert sum are published and awaiting integration.
 The spectral law and complete tensor-power identification remain open. None of the eleven full goals is
 declared complete by these supporting results.
 
@@ -100,6 +102,12 @@ integrated at `7bb8314` for any supplied finite adjacent-fusion plan. Every
 monotone surjective finite quotient admits such a plan on the worker branch;
 pointwise fiber-product identification is being completed before claiming the
 independently specified grouping theorem. Kreweras remains open.
+
+The actual algebraic tensor free difference quotient satisfies the full
+noncommutative polynomial Leibniz rule. Polynomial and matrix-valued polynomial
+integration by parts in the actual faithful tracial Fock C-star state are proved
+and undergoing integration. Analytic extensions for exponentials and resolvents
+with explicit convergence domains remain open.
 
 ## Haar probability and concentration
 
@@ -157,7 +165,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 2042 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 2083 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

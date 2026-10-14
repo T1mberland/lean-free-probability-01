@@ -18,15 +18,17 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `7bb8314`, published on `main`, with full builds,
-source guard and transitive audit passing for 2042 declarations. Genuine
+Latest checked integration: `5c2e9cb`, published on `main`, with full builds,
+source guard and transitive audit passing for 2083 declarations. Genuine
 polynomial and closed-generator freeness is integrated in the faithful tracial
 C-star model. The all-order adjacent-product cumulant theorem and full freeness
 characterization are integrated. Joint Wick/Catalan and all-degree word IBP are integrated. Formal R-additivity and algebraic free CLT
 are integrated; full refinement/Möbius is integrated. All-vector creation,
 Hilbert-basis transport, complete length decomposition and tensor completion
-are integrated through completed ℓ²(I) tensor levels. Original-H tensor coherence
-is published, awaiting integration.
+are integrated through completed ℓ²(I) tensor levels. Original-H tensor coherence and the unconditional general-H full-Fock
+package are integrated. Explicit tensor-power presentation/operator transport,
+general interval products and Kreweras are published and queued. Coordinator
+polynomial/matrix IBP is undergoing integration.
 
 | Goal | Status | Earliest work and dependency |
 | --- | --- | --- |
@@ -47,8 +49,8 @@ is published, awaiting integration.
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
 | Coordinator | `main`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/cumulant-characterization`, `/home/user/Projects/lean-fp-cumulants` | New cumulant-related `Combinatorics` and `Algebraic` files except B's three reserved pairing files; coordinator owns the existing `CumulantFreeness.lean` header | Core iff, additive formal R and moment free CLT published; full refinement product and Möbius inversion |
-| Worker B (`fock`) | `feat/fock-semicircular`, `/home/user/Projects/lean-fp-fock` | New `Fock`/`Semicircular` files and exclusively `Combinatorics/NoncrossingPairingDecomposition.lean`, `NoncrossingPairingWeights.lean`, `NoncrossingPairingCatalan.lean` | Actual joint Wick/Catalan published; arbitrary-vector creation and general Hilbert transport |
+| Worker A (`cumulants`) | `feat/cumulant-characterization`, `/home/user/Projects/lean-fp-cumulants` | New cumulant-related `Combinatorics` and `Algebraic` files except B's three reserved pairing files; coordinator owns the existing `CumulantFreeness.lean` header | Generic interval products and Kreweras published; interleaving factorization and multiplicative moment calculus |
+| Worker B (`fock`) | `feat/fock-semicircular`, `/home/user/Projects/lean-fp-fock` | New `Fock`/`Semicircular` files and exclusively `Combinatorics/NoncrossingPairingDecomposition.lean`, `NoncrossingPairingWeights.lean`, `NoncrossingPairingCatalan.lean` | Tensor powers/direct-sum unitary and tensor operators published; selected tensor-domain semicircular state and Wick transport |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -456,3 +458,42 @@ and spectral density identification remain separate obligations. Original-H
 coherence and FullFock package reviewed; full build 3485 jobs, Verification
 3488 jobs, direct transitive audit 2083 declarations and source guard pass.
 Main integration pending.
+
+### Checked integration checkpoint: unconditional general-H full Fock
+
+`5c2e9cb` is checked and published on `main`, previous source mappings integrated.
+Full build 3485 jobs, Verification 3488 jobs, direct audit 2083 declarations
+and source guard pass. General-H original tensor coherence and unconditional
+chosen-basis full-Fock existence are complete. Explicit recursive TensorPower,
+its genuine complete Hilbert sum/unitary and operators on that exact domain
+are separately published (`8466cf7`, `90ca303`). Their intrinsic generated
+algebra and joint-law transport remain queued; spectral measures remain open.
+
+### Pending integration: polynomial and matrix integration by parts
+
+Coordinator sources: `6d077fb` definitions and word Leibniz; `19b414a` full
+polynomial tensor bimodule Leibniz; `b590295` literal prefix/suffix derivative
+sum and all-polynomial IBP; `c22ae11` actual faithful tracial C-star wrapper;
+`c5d2237` matrix amplification and matrix tensor Leibniz.
+`freeDifferenceQuotient_mul` uses left multiplication on the first tensor factor
+and right multiplication on the second. `tensorPolynomialExpectation` is the
+actual bilinear product of evaluated expectations, never a multiplicative
+expectation homomorphism. Polynomial IBP follows actual vacuum word recursion;
+no Wick/freeness/IBP assumption is used. Finite rectangular matrix-valued
+polynomials satisfy the genuine idMatrix ⊗ τ identity, with scalar semicircular
+matrix multiplication; matrix Leibniz is also proved. Focused builds, source
+guard and representative axiom audits pass; polynomial review approved,
+closed-state/matrix review and name scan approved. Combined full build 3488
+jobs, Verification 3491 jobs, direct audit 2146 declarations, source guard and
+noncommutative repeated-letter derivative usage pass. Main integration pending.
+Norm-convergent analytic
+extensions, especially exponential/resolvent domains, remain Goal 3 obligations.
+
+### Implementation observations
+
+- Pinned `MonoidAlgebra` wraps Finsupp. Linear extension must use its actual
+  coefficient linear equivalence, not a definitional Finsupp coercion.
+- Pinned TensorProduct.inductionOn derives zero from elementary tensors and
+  accepts only elementary/addition cases. No deprecated induction was retained.
+- StarSubalgebra inclusion `.val` may simplify to `.subtype`; explicit map
+  equations/pointwise proofs avoided inappropriate rewrite matching.

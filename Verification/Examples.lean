@@ -659,4 +659,11 @@ example {I H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [Comple
       (Set.centralizer (Set.range (Fock.tensorFamilyField (fun i => V (e i))))) :=
   Fock.isometryPrefixEmbedding_mem_familyDoubleCentralizer V e hT
 
+-- Every integer-conjugated ENTIRE algebra copy is free, under the original entire-algebra freeness.
+example {A : Type*} [Ring A] [StarRing A] [Algebra ℂ A] [StarModule ℂ A]
+    (φ : ProbabilitySpace ℂ A) (u : unitary A) (hu : IsHaarUnitary φ u)
+    (B : Subalgebra ℂ A) (hf : FreelyIndependent φ (haarBasePair u B)) :
+    FreelyIndependent φ (haarConjugatedAlgebra u B) :=
+  freelyIndependent_haarConjugatedAlgebras φ u hu B hf
+
 end FreeProbability.Examples

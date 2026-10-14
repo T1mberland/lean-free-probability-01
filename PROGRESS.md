@@ -694,3 +694,32 @@ source integrity/diff. Arbitrary-family literal doublecommutant usage compiles.
 All new mathematical statements critically reviewed; no new full goal completed.
 GitHub CI37 failed-job retry run38579133371 succeeds, confirming the download
 failure was transient; CI38 run38579730062 succeeds. CI40 still in progress.
+
+### Actual entire-algebra Haar conjugation integration feature
+
+Literal doublecommutant PR41 merged as `bbdba56fe5665164cac06b2375719c0f0020aa9b`;
+checked main full3776, Verification3779, direct audit5465, source/diff and push.
+Four reviewed Haar modules and exact notes through `f8cc8f8` are assembled.
+`IsHaarUnitary` uses genuine unitary GROUP integer powers; its complete starword
+law is proved. `freelyIndependent_haarConjugatedAlgebras` gives ALL integer copies
+of the ENTIRE supplied algebra, from original whole-base/whole-Haar freeness.
+Exact telescoping of centered alternating words uses adjacent label differences,
+allowing nonadjacent repetitions. Joint and joint star distributions are preserved.
+`freelyIndependent_independentHaarConjugatedAlgebras` treats an arbitrary indexed
+jointly free family of entire Haar algebras and the entire base algebra, including
+empty/infinite index sets. None requires trace, positivity or topology.
+This completes the abstract Haar-conjugation subtarget only; Goal9 still needs
+general orthogonal pairing integration and random asymptotic freeness.
+A clean branch `feat/compact-haar-averaging` from checked bbdba56 owns NEW compact
+Haar Bochner averaging/projection modules. B continues suffix source-commutator
+and rotated-range proofs; root handles integration and remaining independent
+prerequisites. All earlier worker source/notes remain frozen.
+Reviewer identifies Goal4 arbitrary-CP Gram positivity and ordered nested Wick
+recursion as ready independent prerequisites. General CP realization still lacks
+correspondence/nullspace completion, interior balanced tensor, adjointable-operator
+and full Hilbert-module Fock interfaces. Existing scalar GNS is not that theorem.
+
+Haar feature checks pass full3780, Verification3783, direct transitive audit5549,
+source integrity/diff. Entire integer-family usage compiles. All four exact
+module statements and declaration collisions critically reviewed.
+GitHub CI40 run38580290981 now confirmed success; later CI not yet queried.

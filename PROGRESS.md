@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `619788f` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 4865 declarations.
+The latest checked and published integration is `6087183` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 4926 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -240,7 +240,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 4865 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 4926 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -530,3 +530,18 @@ Consequently actual W=Q/(1-Q) as a germ, without an assumed desired identity.
 Actual moment Taylor/radius transfer, critical supersolution calibration,
 supercritical lower bound and global physical/support edge remain open.
 No new full goal is certified.
+
+### Actual WOT-generated compression and faithfulness integration feature
+
+Analytic Picard identification PR #34 merged as `6087183`; checked main full3741,
+Verification3744, direct audit4926 and source guard. Four reviewed WOT-generated
+modules and frozen notes through `9fd4245` are assembled at the corrected tip.
+Actual included WOT closures reduce the Gamma inclusion projection, giving true
+intertwining and compression multiplication with the right factor in that closure.
+Compression maps into the original WOT closure and is a continuous unital star
+homomorphism. The full adapted right-field basis proves a separating vacuum
+and actual quadratic faithfulness for ANY ON family, without spanning assumptions.
+Consequently the restricted compression is injective. Onto/inverse bounded-WOT
+continuity, explicit normal embedding, bicommutant and normal OU remain unproved.
+Development commit `cc7a9c3` had an unchecked final scalar-cast error; only the
+fully repaired/audited `2f05d90` combined with `ae16261` is assembled here.

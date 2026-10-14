@@ -18,11 +18,11 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `619788f56344e0dc44d5c28cbf4e54df568a1eb1`,
+Latest checked integration: `6087183b5c7750a99cfd659925ca557196711106`,
 published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
 and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
-Ambient WOT PR #33 passes full builds 3737/3740, direct transitive audit
-4865 declarations and source guard.
+Actual analytic Picard PR #34 passes full builds 3741/3744, direct transitive audit
+4926 declarations and source guard.
 Goals 1, 2, 3 and 6 are certified complete; seven full goals remain open.
 Every historical checkpoint below retains its original scope and date.
 
@@ -44,9 +44,9 @@ Every historical checkpoint below retains its original scope and date.
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/integrate-analytic-picard`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Coordinator | `feat/integrate-wot-generated`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
 | Worker A (`cumulants`) | `feat/projection-product-germs`, `/home/user/Projects/lean-fp-cumulants` | New `Analytic/ProjectionProduct*.lean`; frozen eight law/germ modules integrated | Actual analytic Picard-series realization and moment identification; physical branch and sharp edge remain |
-| Worker B (`fock`) | `feat/fock-wot-generated-algebras`, `/home/user/Projects/lean-fp-fock` | NEW `Fock/SecondQuantizationWOTGenerated*.lean`, `SecondQuantizationPrefix*.lean` and agreed generated-closure notes | Actual WOT generated closure compression/reducing/faithfulness; bounded-WOT normality bridge remains |
+| Worker B (`fock`) | `feat/fock-prefix-tail`, `/home/user/Projects/lean-fp-fock` | NEW `Fock/SecondQuantizationPrefix*.lean` and agreed prefix-tail notes; corrected WOT feature frozen | Actual ordered word bijection/full Hilbert prefix-tail representation and bounded-WOT amplification |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -1931,3 +1931,33 @@ exit0/audit/guard before repaircommit. New2f05d90 preserves history and reports
 finalfocusedexit0, five std3 audits, guard/diff andpushconfirmed. Review of
 correctedtip queued; no WOTfaithfulness is markedintegrated yet. This was a
 genuine Lean elaboration error, not infrastructure exhaustion.
+
+### Checked actual Picard and pending corrected WOT generated closure
+
+PR #34 head `f1616f9` merged as `6087183`; checked main full3741,
+Verification3744, direct audit4926, source guard/diff andexplicitpushmain pass.
+Corrected WOT source `7dbdabd`, `9729bd3`, `2f05d90`, `ae16261` plusfrozen
+notes9fd4245 assembled. Allfour critically reviewed ONLYatcorrectedfaithtip,
+notuncheckedcc7 snapshot. TruewholeWOTclosure reducing/intertwining/mul,
+actualrange/continuousunitalstarhom, fulladaptedright separatingvacuum and
+quadraticfaith, actualinjectivity. No nonspanning-family fullFockcyclic premise.
+Originalfailed developmentcommitpreserved, no rewriting sharedhistory.
+Coordinator switched B's CLEAN9fd to feat/fock-prefix-tail fromchecked6087183,
+exactprerequisite merge pushedconfirmed. NEWPrefix* andagreednotes only.
+Suggestedbasiswordsplit List(Sum I J)≃ListI×(Unit⊕J×List(Sum I J)), then
+actualfullHilbertsum fiberunitary andbounded coordinatewise amplification;
+bounded-WOT coefficientapproximation, no falseglobalWOTnormality shortcut.
+A reviewed0ae1e0e nowproves TRUEactualmomentnormsummability andactualmeasure
+support<=1/t fromconcretescalarPicard supersolutionr<1. Criticalcalibration,
+sharp lowerbound and globalphysicalbranch remain open; no Goal7completion.
+
+Corrected WOT-generated feature passes full3745, Verification3748, direct
+transitive audit5008 declarations, source guard and diff checks. Allfour
+modules criticallyreviewed atfinalcorrectedtip, notes9fd4245 retained/read.
+ActualwholeincludedWOTclosure compressiontrivialkernel usage compiles.
+No originaluncheckedfaithsnapshot is separatelyintegrated. Actualonto/normal
+inverse remainmissing; prefix-tail sourcework52adc8f ispublished separately.
+GitHub CIconfirmed PR #30 run38568229416, #31 run38568630658,
+#32 run38569500389 and #33 run38570520383 success. LaterPRCI notyetqueried.
+A sharpactualupper89223d8 andscalarallq globalthresholdobstruction66f54e3
+are published separately; actuallawlower/physicalbranch stillactive.

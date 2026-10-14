@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `ab262d5` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 2520 declarations.
+The latest checked and published integration is `76af384` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 2626 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -85,8 +85,9 @@ integrated at `5c2e9cb`. Explicit recursively completed tensor powers and the
 unitary onto their Hilbert sum, exact tensor-domain operators and actual
 faithful tracial generated tensor C-star model with literal joint Wick/Catalan
 laws are integrated at `8334d17`.
-The spectral law and complete tensor-power identification remain open. None of the eleven full goals is
-declared complete by these supporting results.
+The semicircular density and arbitrary-orthonormal-family interfaces await
+integration. Goal 1 is certified complete at checked main `76af384`; the other
+ten goals remain open. Completed tensor-power identification is already integrated.
 
 Formal R-transform additivity/scaling and the algebraic free CLT are integrated
 at `65ea73e`. The CLT gives explicit pairing-moment limits for
@@ -104,10 +105,14 @@ integrated at `7bb8314` for any supplied finite adjacent-fusion plan. The indepe
 identity and corresponding top join-fiber cumulant theorem are integrated at
 `18afd0f`. The actual Kreweras greatest compatible complement and free
 alternating-moment formula are also integrated at that checkpoint.
-Genuine positive-degree complementary block count and raw connectivity are
-reviewed and undergoing integration. The full boxed product-cumulant theorem and all named Goal 1 subtargets are
-reviewed and awaiting final integration checks. Rotation/closed-form μ identities
-are optional extensions.
+Genuine positive-degree complementary block count, raw connectivity and the
+actual boxed product-cumulant formula are integrated via
+[PR #1](https://github.com/T1mberland/lean-free-probability-01/pull/1) at `76af384`.
+`FreelyIndependent.cumulant_prod_eq_kreweras_sum` and its repeated-product
+variant require no trace, positivity or commutation assumptions. The full
+build, kernel audit, integrity guard and boxed usage example pass on main.
+Every literal Goal 1 subtarget is covered; rotation/closed-form μ identities
+are optional extensions. Analytic S multiplication remains Goal 7.
 
 The actual algebraic tensor free difference quotient satisfies the full
 noncommutative polynomial Leibniz rule. Polynomial and matrix-valued polynomial
@@ -185,7 +190,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 2520 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 2626 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

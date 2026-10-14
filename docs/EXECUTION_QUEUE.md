@@ -18,19 +18,17 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `ab262d5`, published on `main`, with full builds,
-source guard and transitive audit passing for 2520 declarations. Full cumulant
-characterization/Möbius/generic interval products/Kreweras moments, genuine
-tensor-domain free semicircular system with faithful tracial C-star state,
-polynomial/matrix and single-generator resolvent IBP, iid moment free CLT and
-actual spectral probability measures/faithful support are integrated. Quantitative non-iid
-CLT is integrated; Kreweras deletion/count and complex/Cauchy
-spectral representation are published and queued. Full targets remain open as
-specified below; historical checkpoints retain their checked scope.
+Latest checked integration: `76af384`, published on `main` through
+[PR #1](https://github.com/T1mberland/lean-free-probability-01/pull/1). Full builds
+3574/3577 jobs, source guard and transitive audit of 2626 declarations pass.
+Goal 1 is certified complete against every literal requested subtarget; ten
+full goals remain open. Weak spectral laws, explicit semicircle density, arbitrary
+orthonormal-family Fock interfaces and matrix operator-valued models are published
+and queued for sequential integration. Historical checkpoints retain their scope.
 
 | Goal | Status | Earliest work and dependency |
 | --- | --- | --- |
-| 1. Cumulant calculus | Active; core iff and adjacent/unit/scalar calculus integrated | Full refinement/Möbius integrated; generic interval products/Kreweras moments undergoing integration; boxed product cumulants and rotation/block counts remain |
+| 1. Cumulant calculus | Complete on checked main `76af384`, PR #1 | All requested calculus and combinatorial subtargets verified; optional rotation/closed μ and Goal 7 S multiplication are separate |
 | 2. Full Fock systems | Active; faithful tracial C-star word model with exact norm two integrated | General-H full Fock and vector creation integrated; explicit tensor-sum operators/state/law published; spectral law remains |
 | 3. Free integration by parts | Active proof path selected | Actual polynomial tensor derivative/Leibniz and polynomial/matrix IBP integrated; analytic extensions remain |
 | 4. Operator-valued Dyson | Blocked on operator-valued realization | Completely positive covariance, amplified moments and Wick recursion precede Dyson and physical branch |
@@ -803,3 +801,29 @@ checkpoints now use explicit PRs targeting `main`, preserving atomic source
 commits with merge commits. Local full builds, mathematical statement review,
 transitive audits and source checks precede each merge; GitHub protections are
 respected. Main is checked again after merging.
+
+### Pending PR: actual weak spectral laws and all-nonreal transforms
+
+Worker sources `d24b590`→`e123b38`, `ce0a337`→`45a9e76` construct the
+actual `ProbabilityMeasure` weak topology and prove convergence from all power
+moments under an eventual common operator-norm bound. Ambient C-star algebras
+may vary, and the filter is arbitrary. Continuous real/complex integrals converge;
+Cauchy transforms converge at every nonreal point, without an exterior radius
+restriction. This is pointwise convergence, not uniform convergence or convergence
+of derivatives. Read-only Goal 6 audit approves the exact statements and confirms
+canonical C-star orders supply the public order interfaces. Main integration,
+full checks and usage verification remain pending before Goal 6 certification.
+
+Combined full build passes 3530 jobs, Verification 3533 jobs, direct transitive
+axiom audit 2530 declarations and source guard. A canonical Fock-generator
+sequence usage example proves convergence at `z = I` inside the norm-two disk,
+using the actual all-order Catalan moments and the full nonreal theorem.
+
+### Checked PR integration: complete cumulant calculus
+
+[PR #1](https://github.com/T1mberland/lean-free-probability-01/pull/1) merged
+head `8adf5f1` as `76af384`; all atomic source commits are retained. Main full
+build 3574 jobs, Verification 3577 jobs, direct audit 2626 declarations and
+source guard pass. Boxed-product usage and independent exact-goal review pass.
+Goal 1 is complete. GitHub Actions was still running at merge; local checks
+are the verified evidence recorded here, with no claim of CI completion.

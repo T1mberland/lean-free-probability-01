@@ -132,4 +132,35 @@ example {𝕜 A : Type*} [Field 𝕜] [Ring A] [Algebra 𝕜 A]
       · rw [hp, hd a hca, zero_mul]
       · rw [hp, NoncrossingPartition.kreweras_indiscrete, hd b hcb, mul_zero]
 
+/-- Arbitrarily varying canonical generators converge at z = I, inside the
+norm-two disk where an exterior geometric-series argument does not apply. -/
+example {I : Type*} (i : I) (j : ℕ → I) :
+    Filter.Tendsto
+      (fun n => (Fock.closedGeneratedVacuumState I).cauchyTransform
+        (Fock.closedSemicircular (j n)) Complex.I)
+      Filter.atTop
+      (nhds ((Fock.closedGeneratedVacuumState I).cauchyTransform
+        (Fock.closedSemicircular i) Complex.I)) := by
+  let _ : PartialOrder (Fock.closedSemicircularAlgebra I) := CStarAlgebra.spectralOrder _
+  let _ : StarOrderedRing (Fock.closedSemicircularAlgebra I) := CStarAlgebra.spectralOrderedRing _
+  apply tendsto_cauchyTransform_all_nonreal_of_bounded_power_moments
+    (Fock.closedGeneratedVacuumState I) (fun _ : ℕ => Fock.closedGeneratedVacuumState I)
+    (Fock.closedSemicircular i) (Fock.isSelfAdjoint_closedSemicircular i)
+    (fun n => Fock.closedSemicircular (j n))
+    (fun n => Fock.isSelfAdjoint_closedSemicircular (j n)) Filter.atTop
+    ?_ 2 ?_ Complex.I (by simp)
+  · intro k
+    have he (q : I) : (Fock.closedGeneratedVacuumState I).expectation
+        (Fock.closedSemicircular q ^ k) =
+        if Even k then (catalan (k / 2) : ℂ) else 0 := by
+      change Fock.vacuumExpectation
+        ((Fock.closedSemicircularAlgebra I).val (Fock.closedSemicircular q ^ k)) = _
+      rw [map_pow]
+      exact Fock.vacuumExpectation_semicircular_pow q k
+    simpa only [he] using
+      (tendsto_const_nhds : Filter.Tendsto
+        (fun _ : ℕ => if Even k then (catalan (k / 2) : ℂ) else 0) Filter.atTop
+        (nhds (if Even k then (catalan (k / 2) : ℂ) else 0)))
+  · exact Filter.Eventually.of_forall (fun n => by simp)
+
 end FreeProbability.Examples

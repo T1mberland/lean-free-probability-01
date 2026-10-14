@@ -177,3 +177,6 @@ import FreeProbability.Algebraic.KrewerasProductCumulants
 import FreeProbability.Combinatorics.NoncrossingKrewerasTree
 import FreeProbability.Combinatorics.IncidenceOrderIso
 import FreeProbability.Combinatorics.IncidencePiMobius
+
+import FreeProbability.Analytic.SpectralMeasureConvergence
+import FreeProbability.Analytic.SpectralMeasureNonrealConvergence

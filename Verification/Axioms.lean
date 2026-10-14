@@ -542,3 +542,9 @@ run_cmd do
 #print axioms FreeProbability.NoncrossingPartition.incidenceGraph_kreweras_isTree
 #print axioms FreeProbability.incidence_mu_orderIso
 #print axioms FreeProbability.incidence_mu_pi
+
+#print axioms FreeProbability.tendsto_real_cfc_of_bounded_power_moments
+#print axioms FreeProbability.tendsto_spectralIntegral_of_bounded_power_moments
+#print axioms FreeProbability.tendsto_spectralProbabilityMeasure_of_bounded_power_moments
+#print axioms FreeProbability.tendsto_complex_spectralIntegral_of_bounded_power_moments
+#print axioms FreeProbability.tendsto_cauchyTransform_all_nonreal_of_bounded_power_moments

@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `4c9b9f2` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 4330 declarations.
+The latest checked and published integration is `149ec02` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 4389 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -240,7 +240,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 4330 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 4389 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -417,3 +417,21 @@ of factors among given free realizations. Projection support lies in [0,1].
 No nonzero-mean or faithfulness assumption is needed for law uniqueness.
 The sharper lambda_L support edge and global physical branch remain unproved;
 these actual local germs and elementary support bounds do not complete Goal 7.
+
+### Native generated-algebra OU integration feature
+
+Finite projection laws PR #26 merged as `149ec02`; checked main full3712,
+Verification3715, direct audit4389, source guard and diff checks pass.
+The current feature assembles genuine native OU prerequisites through `ae643c8`.
+Actual included-family closures reduce the inclusion projection; compression
+is multiplicative there, faithful and onto the original closure. Its inverse
+is a unital isometric star-algebra embedding. Genuine Wick-span norm density
+proves rotated compression lands in the original algebra. Injective native
+matrix inclusion reflects every C-star positive cone, giving actual complete
+positivity of the restricted map. For arbitrary ON families, `familyOUTime`
+is a unital norm-contracting vacuum-preserving CP self-map of the literal native
+generated algebra with exact Wick multiplier `(exp (-t))^length`.
+The actual zero-time identity and time-addition semigroup law hold on EVERY
+element of the native norm closure, by continuous linear Wick extensionality
+through `a16a85e`; a time1/time2/time3 usage is included.
+Normal, L2/L1 and entropy extensions remain open; Goal 10 remains incomplete.

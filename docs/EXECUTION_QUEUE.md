@@ -18,11 +18,11 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `4c9b9f267f0975897ac1a95e69f4a8c6fc529d2e`,
+Latest checked integration: `149ec02b011b167af8f431c251ca615a3bf61beb`,
 published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
 and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
-Native-family coherence PR #25 passes full builds 3704/3707, direct transitive audit
-4330 declarations and source guard.
+Finite product-law PR #26 passes full builds 3712/3715, direct transitive audit
+4389 declarations and source guard.
 Goals 1, 2, 3 and 6 are certified complete; seven full goals remain open.
 Every historical checkpoint below retains its original scope and date.
 
@@ -37,16 +37,16 @@ Every historical checkpoint below retains its original scope and date.
 | 7. Multiplicative convolution | Projection law/germ integrated; generic positive-pair path ready | Actual given-positive-pair S/law/marginal determination integrated; grouping reviewed pending integration, projection products next, physical support/edge and arbitrary-law realizations remain |
 | 8. Conditional subordination | Noncommutative L² and Goal 7 dependencies open | Normal conditional expectations, analytic subordination, exterior continuation and projection specialization |
 | 9. Haar freeness | Independent algebraic groundwork ready | Haar-unitary star law and free conjugation; orthogonal pairing integration precedes joint asymptotic estimates |
-| 10. OU and entropy | Actual Wick contractions and homogeneous Haagerup integrated | Unitary second quantization integrated; cross-space isometry/CP compression in progress; completely positive OU, normal Lp/entropy and dimension-independent regularization remain |
+| 10. OU and entropy | Actual Wick contractions, Haagerup, second quantization and all-level CP dilation integrated | Genuine native Cstar OU semigroup verified on integration feature; actual cyclic L2 active; normal/L1/entropy and dimension-independent regularization remain |
 | 11. Follow-up milestones | Formal R and quantitative conditional moment CLT integrated | Positive free products, analytic convolution, operator-valued cumulants, annular/second-order and genus theory remain |
 
 ## Active assignments and isolation
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `main`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/projection-product-germs`, `/home/user/Projects/lean-fp-cumulants` | New `Analytic/ProjectionProduct*.lean` and agreed projection notes; complete grouping feature preserved | Actual closed-star-prefix CFC membership, iterated positive free projection law and S germ |
-| Worker B (`fock`) | `feat/fock-ou-semigroup`, `/home/user/Projects/lean-fp-fock` | New `Fock/OrnsteinUhlenbeckEmbedding*.lean`, `OrnsteinUhlenbeckSemigroup*.lean` and agreed semigroup notes; complete nativefaith/dilation features preserved | Actual included-algebra embedding, Wick range and original-algebra OU CP semigroup |
+| Coordinator | `feat/integrate-native-ou-semigroup`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Worker A (`cumulants`) | `feat/projection-product-germs`, `/home/user/Projects/lean-fp-cumulants` | New `Analytic/ProjectionProduct*.lean`; frozen eight law/germ modules integrated | Actual moment equation and positive moment summability/support bridge; physical branch and sharp edge remain |
+| Worker B (`fock`) | `feat/fock-ou-l2`, `/home/user/Projects/lean-fp-fock` | NEW `Fock/OrnsteinUhlenbeckL2*.lean` and agreed L2 notes; frozen native OU semigroup retained | Actual complete-Hilbert degree damping, native vacuum intertwining and genuine cyclic L2 contraction |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -1677,3 +1677,47 @@ semigroup law are active in new modules; normal/Lp/entropy remain open.
 Finite projection-law integration feature passes full3712, Verification3715,
 direct transitive audit4389 declarations, source guard and diff checks.
 The actual two-half-projection product mean1/4 usage compiles.
+
+### Checked finite product laws and pending native OU semigroup
+
+PR #26 head `079434f` merged as `149ec02`; main full3712, Verification3715,
+direct audit4389, source guard and diff checks pass. Eight actual finite-law/germ
+modules integrated; Goal 7 physical branch and lambda_L support remain open.
+Current feature retains `e8a476f`, `c2e1ef1`, `6f7fac7`, `7bbab95`, `1927013`,
+`3d3a45d`, `ae643c8`: included-algebra reducing compression, true onto faithful
+isometric embedding, arbitrary-family Wick span density, actual rotated range,
+all-native-matrix-cone CP and genuine native OU Wick eigenvalues. First six
+modules reviewed; latest Wickaction review active. Native time-zero and semigroup
+identities active, not yet claimed. Normal/Lp/entropy obligations remain.
+
+Native Wick-density extensionality `26a7e28` and genuine full norm-closure
+OU zero/time-addition laws `a16a85e` are published and retained separately.
+No cyclic-density assumption is inserted: continuity plus actual polynomial
+adjoin dense inclusion proves extensionality. Semigroup review is active;
+full combined integration checks now run. Normal/L2/L1/entropy remain open.
+
+Read-only reviewer approved all nine native OU mathematical modules including
+full closure semigroup laws `a16a85e`; notes frozen `9ef581a` retained. Full
+library build3722 passed. Initial numerical usage broad `simpa` hit a deterministic
+200000-heartbeat elaboration timeout; direct dependent `rw` could not form a
+motive. Explicit typed time equality and `simp only` resolved it; focused usage
+build passes without changing the theorem or resource limits. Final full checks
+now repeat with the repaired example.
+
+Coordinator switched B's clean frozen checkpoint to `feat/fock-ou-l2` from
+checked149ec02, merged exact9ef581a prerequisite and immediately pushed confirmed.
+Exclusive NEW `OrnsteinUhlenbeckL2*.lean` and agreed NEW `docs/math-notes/ou-l2.md`.
+Actual degree damping on all complete Hilbert-sum vectors is published `f8a6240`;
+native OU vacuum intertwining and the genuine cyclic L2 contraction are active.
+A new actual local moment polynomial relation `e5a6259` is published separately;
+generic positive moment summability-to-support bound is active. No physical
+branch or sharp support edge is claimed.
+
+Native OU integration feature passes full3722, Verification3725, direct audit4660
+library declarations, source guard and diff checks after repaired numerical usage.
+All nine mathematical modules critically reviewed; frozen notes9ef581a read.
+The native CP self-map, exact Wick multipliers and full-closure semigroup are
+verified together. L2/normal/L1/entropy remain open; no new full goal is certified.
+A genuine positive probability-law support iff subcritical positive moment-series
+summability bridge `b01daeb` is now published; actual half-projection summability
+at the proposed lambda_L is still a missing proof, not a supplied conclusion.

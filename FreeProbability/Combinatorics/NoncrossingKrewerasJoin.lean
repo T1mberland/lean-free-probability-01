@@ -35,7 +35,7 @@ theorem insertSingleton_succ_sup_duplicate (p q : NoncrossingPartition n) (i : F
     _ = _ := (ConsecutiveFusion.duplicate_sup p q i).symm
 
 /-- Every actual Kreweras complement joins the original partition to top.
-This is proved by deletion, not assumed as a complement axiom. -/
+This is proved by deletion, not assumed as a complement premise. -/
 theorem sup_kreweras_eq_top (p : NoncrossingPartition n) : p ⊔ p.kreweras = ⊤ := by
   induction n with
   | zero =>

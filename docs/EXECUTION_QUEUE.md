@@ -18,12 +18,12 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `648a7d6`, published on `main`, with full builds,
-source guard and transitive audit passing for 1684 declarations. Genuine
+Latest checked integration: `65ea73e`, published on `main`, with full builds,
+source guard and transitive audit passing for 1736 declarations. Genuine
 polynomial and closed-generator freeness is integrated in the faithful tracial
 C-star model. The all-order adjacent-product cumulant theorem and full freeness
-characterization are integrated. Joint Wick/Catalan and all-degree word IBP are integrated. Algebraic free CLT
-is undergoing integration; full refinement/Möbius and all-vector creation are
+characterization are integrated. Joint Wick/Catalan and all-degree word IBP are integrated. Formal R-additivity and algebraic free CLT
+are integrated; full refinement/Möbius and all-vector creation are
 published and reviewed, queued for integration.
 
 | Goal | Status | Earliest work and dependency |
@@ -31,14 +31,14 @@ published and reviewed, queued for integration.
 | 1. Cumulant calculus | Active; core iff and adjacent/unit/scalar calculus integrated | Integrate full refinement/Möbius; multi-product calculus and Kreweras remain |
 | 2. Full Fock systems | Active; faithful tracial C-star word model with exact norm two integrated | Freeness, literal joint Wick and Catalan integrated; integrate arbitrary-vector creation, then completed tensor identification and spectral law |
 | 3. Free integration by parts | Active proof path selected | All-degree actual word IBP integrated; polynomial tensor-bimodule derivation bundling and matrix/analytic extensions remain |
-| 4. Operator-valued Dyson | Blocked on semicircular realization | Completely positive covariance, amplified moments and Wick recursion precede Dyson and physical branch |
+| 4. Operator-valued Dyson | Blocked on operator-valued realization | Completely positive covariance, amplified moments and Wick recursion precede Dyson and physical branch |
 | 5. Spectral edges | Blocked on goals 2, 4 and 6 | Faithful pencils and spectral/Dyson theory precede variational identity and certificates |
 | 6. Spectral distributions | Independent research ready | Continuous functional calculus and positive-functional representation precede spectral measure and faithful support identification |
 | 7. Multiplicative convolution | Blocked on goals 1, 2 and 6 | Positive realizations, S-transform multiplication and actual spectral laws; rational critical-point computations are supporting special cases |
 | 8. Conditional subordination | Blocked on goals 6 and 7 and noncommutative L² | Normal conditional expectations, analytic subordination, then exterior continuation and projection specialization |
 | 9. Haar freeness | Independent algebraic groundwork ready | Haar-unitary star law and free conjugation; general orthogonal pairing integration precedes asymptotic trace estimates |
-| 10. OU and entropy | Blocked on Wick and tracial realization | Wick basis/contractions, completely positive second quantization, normal noncommutative Lᵖ and entropy precede dimension-independent bound |
-| 11. Follow-up milestones | Active; formal R and algebraic CLT undergoing integration | Positive free products, R-additivity/CLT, operator-valued cumulants, annular and genus theory have separate dependencies |
+| 10. OU and entropy | Wick/tracial prerequisites integrated; OU construction ready | Wick basis/contractions, completely positive second quantization, normal noncommutative Lᵖ and entropy precede dimension-independent bound |
+| 11. Follow-up milestones | Active; formal R and algebraic CLT integrated | Positive free products, R-additivity/CLT, operator-valued cumulants, annular and genus theory have separate dependencies |
 
 ## Active assignments and isolation
 
@@ -330,3 +330,26 @@ appropriate. No uniform norm bound, spectral convergence or strong convergence
 is introduced. Read-only mathematics review and global name scan approved;
 combined checks pass: full build 3467 jobs, Verification 3470 jobs,
 direct transitive audit 1736 declarations and source guard. Main integration pending.
+
+### Checked integration checkpoint: formal R and moment free CLT
+
+`65ea73e` is checked and published on `main`; previous source mappings are now
+integrated. Full build 3467 jobs, Verification 3470 jobs, direct audit 1736
+declarations and source guard pass. Formal R-additivity/scaling and explicit
+real/complex moment free CLT are established. Analytic R identification,
+positive additive convolution, operator-valued/annular/genus theory remain.
+
+### Pending integration: concrete free-CLT target
+
+Coordinator source `1557ef0` proves
+`Fock.closedSemicircular_hasSemicircularCumulants` by actual Fock moments and
+uniqueness of recursive inversion. Source `848bf59` gives
+`Fock.freeCLT_convergesTo_closedSemicircular` and
+`Fock.freeCLT_convergesInStarDistribution_closedSemicircular`: centered unitvariance
+iid free triangular arrays converge to the actual faithful tracial C-star
+semicircular generator. No assumed target realization remains in these
+variance-one statements. Star convergence needs self-adjoint source entries;
+no spectral or operator-norm convergence is claimed. Focused builds and major
+axiom audits and read-only review pass. Combined full build 3469 jobs,
+Verification 3472 jobs, direct audit 1739 declarations and source guard pass.
+Main integration pending.

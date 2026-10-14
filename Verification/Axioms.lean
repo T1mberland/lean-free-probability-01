@@ -396,3 +396,6 @@ run_cmd do
 #print axioms FreeProbability.freeCLT_pairingMoments_rclike
 #print axioms FreeProbability.freeCLT_convergesInDistribution
 #print axioms FreeProbability.freeCLT_convergesInStarDistribution
+#print axioms FreeProbability.Fock.closedSemicircular_hasSemicircularCumulants
+#print axioms FreeProbability.Fock.freeCLT_convergesTo_closedSemicircular
+#print axioms FreeProbability.Fock.freeCLT_convergesInStarDistribution_closedSemicircular

@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `648a7d6` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 1684 declarations.
+The latest checked and published integration is `65ea73e` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 1736 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -60,8 +60,9 @@ integrated at `e54c402`. Lattice/adjacent-contraction
 milestones (`a54a473`, `c84f43d`) are integrated at `3678bca`. Explicit raw-adjacent
 merge, whole-word centering, restriction/local-refinement and exact adjacent-fiber
 sum proofs are integrated at `1708387`. The fiber theorem concerns arbitrary
-block weights, not an assumed cumulant product identity. Ordered fusion and
-duplicated-block transports are the next separately published prerequisites.
+block weights, not an assumed cumulant product identity. Ordered fusion and duplicated-block transports are integrated prerequisites of
+the all-order adjacent-product theorem. Full refinement/Möbius inversion is
+published and reviewed, awaiting integration.
 
 The complete word-Hilbert model has bounded creation/adjoints, canonical operator
 relations, a positive vacuum state, Wick vectors and commuting right operators.
@@ -79,13 +80,16 @@ joint noncrossing Wick formula and Catalan moments are integrated at `648a7d6`. 
 Hilbert tensor-power identification remain open. None of the eleven full goals is
 declared complete by these supporting results.
 
-Formal R-transform additivity/scaling and the algebraic free CLT are published
-and undergoing integration. The CLT gives explicit pairing-moment limits for
+Formal R-transform additivity/scaling and the algebraic free CLT are integrated
+at `65ea73e`. The CLT gives explicit pairing-moment limits for
 centered identically distributed free triangular arrays over real or complex
 scalars, allowing varying ambient algebras. Convergence to a supplied
 semicircular-cumulant realization is conditional on that realization; no norm
 or spectral convergence is claimed. Analytic R-transform identification remains
-separate from the formal series theorem.
+separate from the formal series theorem. The actual Fock semicircular-cumulant
+law and variance-one polynomial/star CLT with that concrete target are proved
+and undergoing integration, removing the target-existence assumption in that
+case.
 
 ## Haar probability and concentration
 
@@ -143,7 +147,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 1684 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 1736 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

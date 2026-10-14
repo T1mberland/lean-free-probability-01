@@ -538,4 +538,14 @@ example {I H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [Complete
     (hz : (Fock.tensorFamilyVacuumState e).expectation (star T * T) = 0) : T = 0 :=
   Fock.tensorFamilyVacuumState_faithful e he T hz
 
+-- Two actual free half projections have the derived product mean 1/4.
+example {A : Type*} [CStarAlgebra A] [PartialOrder A] [StarOrderedRing A]
+    (φ : StarProbabilitySpace A) (hφ : IsTracial φ.toProbabilitySpace)
+    {B : Fin 2 → Subalgebra ℂ A} (hf : FreelyIndependent φ.toProbabilitySpace B)
+    (p : Fin 2 → A) (hpB : ∀ i, p i ∈ B i) (hp : ∀ i, IsStarProjection (p i))
+    (hE : ∀ i, φ.expectation (p i) = (1 / 2 : ℂ)) :
+    φ.expectation (iteratedPositiveProduct 2 p) = (1 / 4 : ℂ) := by
+  rw [φ.expectation_iteratedHalfProjectionProduct hφ 2 hf p hpB hp hE]
+  norm_num
+
 end FreeProbability.Examples

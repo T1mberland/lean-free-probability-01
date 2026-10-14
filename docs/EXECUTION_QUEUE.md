@@ -18,11 +18,11 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `8231e1385b4fb4ecb159a7a0bb65dc155e479668`,
+Latest checked integration: `4c9b9f267f0975897ac1a95e69f4a8c6fc529d2e`,
 published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
 and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
-Rotation-dilation PR #24 passes full builds 3700/3703, direct transitive audit
-4208 declarations and source guard.
+Native-family coherence PR #25 passes full builds 3704/3707, direct transitive audit
+4330 declarations and source guard.
 Goals 1, 2, 3 and 6 are certified complete; seven full goals remain open.
 Every historical checkpoint below retains its original scope and date.
 
@@ -1653,3 +1653,27 @@ normal/Lp/entropy extensions remain open and no new full goal is certified.
 Native-family integration feature passes full3704, Verification3707, direct
 transitive audit4330, source guard and diff checks. Arbitrary native-family
 faithfulness usage compiles. No statement about faithfulness on all operators.
+
+### Checked native faithfulness and pending finite projection laws
+
+PR #25 head `dad7179` merged as `4c9b9f2`; checked main full3704,
+Verification3707, direct audit4330, source guard and diff checks pass.
+Next focused feature preserves A's eight mathematical modules through `ac57b17`
+and frozen notes `999c240`. All eight reviewed: genuine sqrt membership,
+closed-star grouping, actual positive iteration, derived marginal means, actual
+finite S multiplication, half-projection rational S/selected chi, compact actual
+law and [0,1] projection support, cross-ambient marginal-law determination.
+Usage derives actual two-half-projection product mean1/4 from original family.
+No assumed prefix freedom or inverse germ is inserted. Physical branch and sharp
+lambda_L support still require a new global analytic/support argument. Reviewer
+identified q=w/(1+w), chi=2^L q/(1+q)^L; L2 critical q=1 corresponds to infinite w.
+Missing bridge: holomorphic real-valued Cauchy continuation implies a support gap,
+or a rigorous positive moment-series/radius route. Record this as an unproved
+obligation, not a presumed continuation from the algebraic relation.
+B actual native OU self-map `3d3a45d` is published/reviewed, with every native
+finite matrix cone via injective inclusion order reflection. Wick action and
+semigroup law are active in new modules; normal/Lp/entropy remain open.
+
+Finite projection-law integration feature passes full3712, Verification3715,
+direct transitive audit4389 declarations, source guard and diff checks.
+The actual two-half-projection product mean1/4 usage compiles.

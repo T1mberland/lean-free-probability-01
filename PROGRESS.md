@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `36ede12` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 4037 declarations.
+The latest checked and published integration is `3b5fa1d` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 4066 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -240,7 +240,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 4037 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 4066 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -373,3 +373,16 @@ Actual fiber joins, iterated-group composition and membership are exact; closed
 group freeness adds only expectation/topological-operation continuity. A concrete
 three-algebra use proves the whole join of the first two is free from the third.
 This is the next iterated projection-product dependency, beyond pairwise freeness.
+
+### Reviewed rotation dilation integration checkpoint
+
+Grouped freeness PR #23 is merged as `3b5fa1d`; main full 3690, Verification
+3693, direct transitive audit 4066 and source guard pass. The new integration
+feature preserves original Fock rotation/dilation history through `0904736`.
+It constructs the true doubled Hilbert rotation, its second quantization and
+unital vacuum-preserving completely positive compression at every finite matrix
+level. Strong creation/annihilation intertwining yields all-cut normal-order and
+literal canonical Wick scaling by `(exp (-t))^degree`, for every nonnegative t.
+The map here has the doubled operator algebra as its domain. An original generated
+algebra self-map, semigroup law, normal extension and entropy theorem remain separate.
+All ten modules received critical read-only review; a zero-time Wick usage is added.

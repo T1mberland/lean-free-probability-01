@@ -345,4 +345,24 @@ example :
     fin_cases r <;> fin_cases c <;> norm_num [C, Matrix.conjTranspose]
   · simp
 
+-- Every point above the true edge has an exact positive Dyson test matrix,
+-- even when the drift and random coefficient do not commute.
+open scoped ComplexOrder in
+example (x : ℝ) :
+    let C₀ : Matrix (Fin 2) (Fin 2) ℂ := !![1, 0; 0, -1]
+    let C : Fin 1 → Matrix (Fin 2) (Fin 2) ℂ := fun _ => !![0, 1; 1, 0]
+    Fock.operatorMatrixPencilTopEdge C₀ C < x →
+      ∃ Z : Matrix (Fin 2) (Fin 2) ℂ, Z.PosDef ∧
+        C₀ + Z + C 0 * Z⁻¹ * C 0 = (x : ℂ) • 1 := by
+  intro C₀ C hx
+  have hC₀ : C₀.IsHermitian := by
+    ext r c
+    fin_cases r <;> fin_cases c <;> norm_num [C₀, Matrix.conjTranspose]
+  have hC : ∀ i, (C i).IsHermitian := by
+    intro i
+    ext r c
+    fin_cases r <;> fin_cases c <;> norm_num [C, Matrix.conjTranspose]
+  simpa [matrixCovariance, Fin.sum_univ_succ] using
+    Fock.operatorMatrixPencil_variational_witness C₀ C hC₀ hC x hx
+
 end FreeProbability.Examples

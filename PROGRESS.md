@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `be0f163` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 3594 declarations.
+The latest checked and published integration is `3f6b367` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 3707 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -240,7 +240,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 3594 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 3707 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -277,10 +277,16 @@ Verification 3647, audit 3594 and source guard pass. Declaration
 by (degree+1) times actual vacuum norm for arbitrary color sets. Goal 10 remains
 open beyond its Wick prerequisite.
 
-Matrix physical theory through worker `6692fe8` is reviewed and undergoing
-integration: strict negative imaginary part, actual analyticity/derivative and
+Matrix physical theory through worker `6692fe8` is integrated through
+[PR #13](https://github.com/T1mberland/lean-free-probability-01/pull/13) at checked
+main `3f6b367` (full 3656, Verification 3659, audit 3707, source guard): strict negative imaginary part, actual analyticity/derivative and
 normalization at infinity, uniqueness of normalized analytic upper-half-plane
 Dyson branches, full real-right-exterior positive definiteness and differentiated
 Lyapunov identities. No fixed-point uniqueness for all matrices at one argument
 is claimed. General arbitrary-base CP covariance and entrywise comparison remain
-open. Core edge variational `094e84d` is reviewed but separately queued.
+open. Core edge variational `094e84d` is reviewed and undergoing separate integration.
+It identifies the actual real-spectrum top edge with the infimum over ALL positive
+definite Z of the actual largest eigenvalue of C₀+Z+Σ Cᵢ Z⁻¹ Cᵢ. No positivity
+or commutation assumptions are imposed on the Hermitian coefficients.
+Positive-state/density bounds, quantitative finite Fock approximation, singular
+edge limits and deterministic edge-subspace results remain open for Goal 5.

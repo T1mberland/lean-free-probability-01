@@ -961,3 +961,11 @@ run_cmd do
 #print axioms FreeProbability.Fock.degreeDamping_strong_continuous
 #print axioms FreeProbability.Fock.familyOUL2_joint_continuous
 #print axioms FreeProbability.Fock.familyOUL2_strong_continuous
+#print axioms FreeProbability.Fock.boundedCompressionWOT_coefficient
+#print axioms FreeProbability.Fock.boundedCompressionWOT_continuous
+#print axioms FreeProbability.Fock.unitaryConjugationWOT_coefficient
+#print axioms FreeProbability.Fock.unitaryConjugationWOT_continuous
+#print axioms FreeProbability.Fock.secondQuantizationCompressionWOT_toCLM
+#print axioms FreeProbability.Fock.secondQuantizationCompressionWOT_continuous
+#print axioms FreeProbability.Fock.secondQuantizationConjugationWOT_toCLM
+#print axioms FreeProbability.Fock.secondQuantizationConjugationWOT_continuous

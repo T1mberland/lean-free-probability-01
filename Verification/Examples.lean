@@ -588,4 +588,16 @@ example {I H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [Complete
   have h := (Fock.familyOUTime_strong_continuous e he T).continuousAt (x := (0 : ℝ≥0))
   simpa only [NNReal.coe_zero, Fock.familyOUTime_zero] using h.tendsto
 
+-- Actual compression preserves arbitrary WOT limits; no uniform bound is needed for this fixed sandwich.
+open scoped Topology in
+example {X H K : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+    [NormedAddCommGroup K] [InnerProductSpace ℂ K] [CompleteSpace K]
+    (V : H →ₗᵢ[ℂ] K) (l : Filter X)
+    (T : X → (Fock.TensorFullFock K →WOT[ℂ] Fock.TensorFullFock K))
+    (S : Fock.TensorFullFock K →WOT[ℂ] Fock.TensorFullFock K)
+    (h : Filter.Tendsto T l (𝓝 S)) :
+    Filter.Tendsto (fun x => Fock.secondQuantizationCompressionWOT V (T x)) l
+      (𝓝 (Fock.secondQuantizationCompressionWOT V S)) :=
+  ((Fock.secondQuantizationCompressionWOT_continuous V).tendsto S).comp h
+
 end FreeProbability.Examples

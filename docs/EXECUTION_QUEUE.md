@@ -18,11 +18,11 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `470d11e29589a6227701ec985ea0255cbda34653`,
+Latest checked integration: `2470d2a5b5c23357f2a8a95880dd77df8b5f0810`,
 published on main after actual S/law [PR #22](https://github.com/T1mberland/lean-free-probability-01/pull/22)
 and README badge [PR #21](https://github.com/T1mberland/lean-free-probability-01/pull/21).
-Positive Picard-series PR #30 passes full builds 3731/3734, direct transitive audit
-4824 declarations and source guard.
+Strong OU continuity PR #32 passes full builds 3733/3736, direct transitive audit
+4842 declarations and source guard.
 Goals 1, 2, 3 and 6 are certified complete; seven full goals remain open.
 Every historical checkpoint below retains its original scope and date.
 
@@ -44,9 +44,9 @@ Every historical checkpoint below retains its original scope and date.
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/integrate-ou-continuity`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Coordinator | `feat/integrate-fock-wot`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
 | Worker A (`cumulants`) | `feat/projection-product-germs`, `/home/user/Projects/lean-fp-cumulants` | New `Analytic/ProjectionProduct*.lean`; frozen eight law/germ modules integrated | Actual analytic Picard-series realization and moment identification; physical branch and sharp edge remain |
-| Worker B (`fock`) | `feat/fock-ou-continuity`, `/home/user/Projects/lean-fp-fock` | NEW `Fock/OrnsteinUhlenbeckContinuity*.lean`, `SecondQuantizationWOT*.lean` and agreed continuity notes; frozen L2 feature retained | Actual strong time continuity and WOT compression/conjugation groundwork |
+| Worker B (`fock`) | `feat/fock-wot-generated-algebras`, `/home/user/Projects/lean-fp-fock` | NEW `Fock/SecondQuantizationWOTGenerated*.lean`, `SecondQuantizationPrefix*.lean` and agreed generated-closure notes | Actual WOT generated closure compression/reducing/faithfulness; bounded-WOT normality bridge remains |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -1864,3 +1864,39 @@ compression, still active; normalincludedembedding remains unproved.
 A `c640cc0` proves generic absoluteconvergence and literalcomplex evaluation
 for formal addition/multiplication/powers and implicit Q, published separately.
 Actual projection normalized-moment identification is still pending.
+
+### Checked strong continuity and pending ambient WOT maps
+
+PR #32 head `a2bbdf1` merged as `2470d2a`; main full3733, Verification3736,
+direct audit4842, source guard and diff checks pass. New reviewed WOT module
+`d4f9e1f` assembled, notes `d934c4b` retained. Target pinned WeakOperatorTopology
+cache hydrated under lock: three existing cached artifacts, no network files,
+no toolchain/revision change. Arbitrary actual W-adjoint/T/W coefficients and
+unitary inverse pullback prove genuine globalWOTcontinuity; wrappers match
+existing actualGammaoperators by rfl. ArbitraryfilterWOTlimit usage included.
+Coordinator switched B's CLEANd934 to feat/fock-wot-generated-algebras from
+checked2470d2a, exact dependency merge pushedconfirmed. NEW WOTGenerated*/Prefix*
+and agreed notes only. Actualclosurecompression/reducing/faithfulness next.
+
+Important mathematical plan correction: infinite T-tensor-I amplification is
+normal/ultraweak continuous but generally NOT globally WOTcontinuous on unbounded
+nets. Reviewer supplied rank-one finite-subset-directed counterexample with
+T_S killing every fixed vector eventually but one amplified entangled coefficient
+identically1. Use normbounded-WOT convergence (finite puretensor approximation
+plus uniformnormcontrol), then separately establish proper normality equivalence.
+WOTclosure membership alone gives potentiallyunbounded nets; extending native
+Cstar maps requires bounded approximation/Kaplansky or a new actualrepresentation
+argument. Fixedsandwich/conjugation remain globalWOTcontinuous. Frozen notes
+corrected by coordinator to state bounded-WOT scope, no weaker goal substitution.
+
+Ambient WOT integration feature passes full3737, Verification3740, direct
+transitive audit4865, source guard and diff checks. New module critically
+reviewed, exact Γwrapperidentity axioms audited. Arbitraryfilter compression
+WOTlimit usage compiles. Frozen continuitynotes retained/read; coordinator
+corrected proposed native amplification continuity to BOUNDED-WOT scope after
+reviewer's rigorous unbounded-net counterexample. No native normality claimed.
+B actualgeneratedWOTclosure reducing/intertwining/compressionmul `7dbdabd`
+is published separately; range/faithfulness stillactive. A constructedanalytic
+complexPicardsum `380c8a4` and ACTUALnormalizedq/W localmatching `b9bf87d`
+are published; fullstatementreviewqueued. Taylor/radius transfer, critical
+supersolution, supercritical loweredge and physicalbranch remain unproved.

@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `2464ff7` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 7179 declarations.
+The latest checked and published integration is `9f5bd91` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 7356 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -1237,3 +1237,41 @@ A reviewed but UNPROVED general mixed-degree length-flag entropy route is
 persisted in math-notes/ou-mixed-degree-entropy-flag-plan.md. It explicitly
 requires actualmixedGram, trace-decreasingDPI/failureflag, coherence/pinching,
 jointconvexity and JOINT lsc; boundednativeapproximation does not finishL1.
+
+### Actual independent random inputs and Haar convergence
+
+PR60 checked main9f5bd91 passes full3911, Verification3914, transitive7356,
+source/diff and push. ActualhomogeneousmatrixOUGram identity is integrated;
+fullmixedidentity/entropy/L1 remainopen. Reviewed A chainbdfb597..7bec383 and
+notes321f28e is assembled: truecomplexifiedHaarunitary/opnormbounds, actual
+inputmeasurability, derivedsquaredintegrability, honestdata×HaarFubini and
+actualIndepFun jointlaw transfer; genuineuniformN^-2 secondmoments and
+a.s./inmeasure limits for randomcentered boundedinputs independentofHaar.
+Inputlaws Y_N mayvaryN; NOacrossNindependence or assumedconditional
+expectation/integrability/convergence premise. Input factors may be internally
+dependent. SourceAEcentering and normbounds are proved equivalent toactual
+pushforwardAEhypotheses; countablewordcollections shareone convergenceevent.
+Major names: independent_inputs_haar_measurePreserving,
+eventually_independent_inputs_traceWordSecondMoment_bound,
+ae_independent_inputs_traceWord_tendsto_of_source,
+ae_countable_independent_inputs_traceWords_tendsto_of_source.
+All five new sources exactlyreviewed/focusedbuilt/directstandardaxiomaudited.
+Finiteentrypolynomial induction repairedan ordinarymeasurability elaboration
+timeout; no limitsraised. Expected/probability/a.s. modes remaindistinct.
+FullmultipleHaarcenteredcriterion isnext: reviewedUNPROVEDstrongwordlength
+inductionplan in math-notes/haar-colored-centered-trace-induction-plan.md.
+It requiresWHOLEdata+othercolors tupleindependentselectedHaar, notmerely
+pairwiseindependence. Nativeendpointproductorder A_last*A_first is explicit.
+A newcoloredtracebranch proves centering/telescoping/cyclicsegmentation and
+thatinduction; coloredentry3sourcec372ff6 reviewedpendingintegration.
+B frozen0b185ca commonmarginal/fullmatrixrankdegreebounds reviewedpartially
+pendingintegration; NEW WickMixedSuffixGram* actualmixedidentity active.
+Root finite-depth64f884b truefinite-rankmatrixQ/pencilpropagation pending
+integration; actualretainedpowers/quantitativeexteriorresolvents next.
+Five full goals complete, six open; fullGoal9 includingjointstar-law/strong
+interfaces is not certified by this single-Haar random-input feature.
+
+Independent random-input feature passes full3916, Verification3919, direct
+transitive7383, integrity/diff and all five exact mathematical source reviews.
+Actualdata-Haarjointlaw/variableinputlaws/sourceAE andcountable scopes verified.
+No multicolorcenteredcriterion orstrongconvergencecompletion is claimed.

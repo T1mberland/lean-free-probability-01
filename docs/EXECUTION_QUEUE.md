@@ -18,8 +18,8 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `afebf5d124a58113aab90e211e195e8c233e3013`,
-published main after PR52. Full3841, Verification3844, direct transitive6336,
+Latest checked integration: `72035bafdd9bc2cfb062445aa2f1294a467f3715`,
+published main after PR53. Full3856, Verification3859, direct transitive6458,
 source guard/diff and explicit push passed. Earlier records below are historical.
 Goals 1, 2, 3, 6 and 7 are certified complete; six full goals remain open.
 Every historical checkpoint below retains its original scope and date.
@@ -35,16 +35,16 @@ Every historical checkpoint below retains its original scope and date.
 | 7. Multiplicative convolution | Complete on checked main `bdd05e2`, certified PR39 | Actual positive-pair S/law and arbitrary-length projection physical branch/edge/spectrum; universal free-product realization belongs to Goal11 |
 | 8. Conditional subordination | Noncommutative L² and Goal 7 dependencies open | Normal conditional expectations, analytic subordination, exterior continuation and projection specialization |
 | 9. Haar freeness | Genuine Haar conjugation and stable orthogonal FFT/integration verified | Sharp pairing-distance inverse estimates and trace-word cancellation; joint expected/probability/a.s. convergence, strong resolvent convergence and low-dimensional integration remain |
-| 10. OU and entropy | Genuine whole-ONfamily von Neumann unital CP semigroup with faithful tracial vacuum and actual normality integrated PR51 | True Hilbert generator reviewed/pending integration; proper-family cyclic L2 bridge, L1 extension, complete-coefficient regularization and entropy remain |
+| 10. OU and entropy | Genuine whole-ONfamily von Neumann unital CP semigroup with faithful tracial vacuum and actual normality integrated PR51 | Exact Hilbert generator/domain integrated PR53; proper-family cyclic L2 bridge, L1 extension, complete-coefficient regularization and entropy remain |
 | 11. Follow-up milestones | Formal R and quantitative conditional moment CLT integrated | Positive free products, analytic convolution, operator-valued cumulants, annular/second-order and genus theory remain |
 
 ## Active assignments and isolation
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/fock-ou-generator-integration`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/orthogonal-trace-words`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalPairingNetworkTransfer*.lean and agreed notes; prior sources frozen | Actual oriented paired networks, raw component/selected orbit equality, phase-preserving trace transfer |
-| Worker B (`fock`) | `feat/fock-family-cyclic-basis`, `/home/user/Projects/lean-fp-fock` | NEW Fock/OrnsteinUhlenbeckFamilyCyclicBasis*.lean and agreed notes; prior sources frozen | Actual ON-family original cyclic Hilbert basis and WordSpace unitary |
+| Coordinator | `feat/wick-homogeneous-completion`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Worker A (`cumulants`) | `feat/orthogonal-multitrace-bounds`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalMultiTrace*.lean and agreed notes; prior sources frozen | Genuine multi-trace Haar expansion and centered moment/variance bounds |
+| Worker B (`fock`) | `feat/fock-family-native-image`, `/home/user/Projects/lean-fp-fock` | NEW Fock/FamilyCyclicBasisNative*.lean and agreed notes; prior sources frozen | Exact original native Cstar image under faithful word representation |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -2463,3 +2463,26 @@ Five full goals complete, six open; noncommutativeL1/matrixentropy stillopen.
 Generator feature passes full3856, Verification3859, directtransitive6458,
 source/diff and fifteen source-statement reviews. True Hilbert generator/domain
 complete; intrinsic L1 and matrix entropy remain distinct missing results.
+
+### Complete homogeneous Wick coefficient reconstruction
+
+PR53 is checked/published main72035ba: full3856, Verification3859, direct
+transitive6458, integrity/diff and push pass. Root453b325/0eb17cf prove actual
+dense finite coefficient embedding and bounded Wick extension to EVERY
+WordLevel I n coefficient vector, including empty and uncountable alphabets.
+Exact norm bound (n+1)‖f‖, exact vacuum recovery, injectivity and membership
+in the original normclosed semicircular algebra are proved, not assumed.
+All fifteen new declarations independently reviewed; principal direct axiom
+audits use only standard logical axioms. Focused new modules warning-free.
+No noncommutative L1, matrix entropy or full Goal10 completion is claimed.
+Next root milestone: positive-time normconvergent full Wick reconstruction.
+A frozen5d3f9f6 has genuine centered single-Haar expected trace O(1/N) and
+limit zero, awaiting integration/review; variance/a.s. remain open. New task
+multi-trace expansion and N^-m bounds. B frozencc4dbd3 has actual original
+cyclic basis and faithful word representation/right commutation, pending
+integration; new task native Cstar image equality. Five full goals complete,
+six open; statuses and unproved obligations remain explicit above.
+
+Wick feature integration checks pass: full3858, Verification3861, direct
+transitive6499, source guard/diff and independent exact statement review.
+Actual all-coefficient vacuum recovery and closed-algebra membership are verified.

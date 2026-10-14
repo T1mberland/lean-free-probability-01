@@ -441,3 +441,5 @@ import FreeProbability.Fock.OrnsteinUhlenbeckGeneratorError
 import FreeProbability.Fock.OrnsteinUhlenbeckGeneratorScalar
 import FreeProbability.Fock.OrnsteinUhlenbeckVonNeumannVacuumSymmetry
 import FreeProbability.Fock.OrnsteinUhlenbeckVonNeumannVacuumSymmetryPositive
+import FreeProbability.Fock.WickHomogeneousCoefficients
+import FreeProbability.Fock.WickHomogeneousCompletion

@@ -1163,3 +1163,9 @@ run_cmd do
 #print axioms FreeProbability.Fock.ouGenerator_graph_iff
 #print axioms FreeProbability.Fock.ouGenerator_domain_iff
 #print axioms FreeProbability.Fock.ouGenerator_hasDerivWithinAt_iff
+#print axioms FreeProbability.Fock.homogeneousCoefficientEmbedding_denseRange
+#print axioms FreeProbability.Fock.norm_homogeneousWickLinear_le
+#print axioms FreeProbability.Fock.norm_homogeneousWickCompletion_apply_le
+#print axioms FreeProbability.Fock.homogeneousWickCompletion_vacuum
+#print axioms FreeProbability.Fock.homogeneousWickCompletion_mem_closedAlgebra
+#print axioms FreeProbability.Fock.homogeneousWickCompletion_injective

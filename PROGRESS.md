@@ -1043,3 +1043,17 @@ Five full goals complete, six open; noncommutativeL1/matrixentropy stillopen.
 Generator feature passes full3856, Verification3859, directtransitive6458,
 source/diff and fifteen source-statement reviews. True Hilbert generator/domain
 complete; intrinsic L1 and matrix entropy remain distinct missing results.
+
+## Full homogeneous Wick coefficient extension
+
+Published root453b325/0eb17cf extends actual finite Wick reconstruction to all
+complete homogeneous ℓ² coefficients with degree bound n+1, exact vacuum
+recovery, injectivity and original normclosed-algebra membership. Arbitrary
+alphabets and degree zero are retained. This feature awaits checked integration;
+full positive-time reconstruction, L1 and matrix entropy remain obligations.
+Latest checked main72035ba (PR53) includes the exact weighted Hilbert generator
+and domain. Five full goals are complete; goals4,5,8,9,10,11 remain open.
+
+Wick feature integration checks pass: full3858, Verification3861, direct
+transitive6499, source guard/diff and independent exact statement review.
+Actual all-coefficient vacuum recovery and closed-algebra membership are verified.

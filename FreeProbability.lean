@@ -252,3 +252,5 @@ import FreeProbability.OperatorValued.MatrixScalarEmbedding
 import FreeProbability.OperatorValued.MatrixSquareCertificate
 import FreeProbability.OperatorValued.MatrixSpectralMaximum
 import FreeProbability.OperatorValued.MatrixEdgeVariational
+import FreeProbability.OperatorValued.MatrixEdgeStateBounds
+import FreeProbability.OperatorValued.MatrixEdgeDensityBounds

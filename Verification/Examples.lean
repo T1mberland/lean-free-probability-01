@@ -365,4 +365,30 @@ example (x : ℝ) :
   simpa [matrixCovariance, Fin.sum_univ_succ] using
     Fock.operatorMatrixPencil_variational_witness C₀ C hC₀ hC x hx
 
+-- A singular density tests a genuinely noncommuting two-coefficient pencil.
+open scoped ComplexOrder in
+example :
+    let C₀ : Matrix (Fin 2) (Fin 2) ℂ := !![1, 0; 0, -1]
+    let C : Fin 2 → Matrix (Fin 2) (Fin 2) ℂ :=
+      ![!![1, 0; 0, -1], !![0, 1; 1, 0]]
+    3 ≤ Fock.operatorMatrixPencilTopEdge C₀ C := by
+  intro C₀ C
+  let ρ : Matrix (Fin 2) (Fin 2) ℂ := Matrix.diagonal ![1, 0]
+  have hρ : ρ.PosSemidef := by
+    apply Matrix.PosSemidef.diagonal
+    intro i
+    fin_cases i <;> norm_num
+  have htr : ρ.trace = 1 := by
+    norm_num [ρ, Matrix.trace, Fin.sum_univ_succ]
+  have hC₀ : C₀.IsHermitian := by
+    ext r c
+    fin_cases r <;> fin_cases c <;> norm_num [C₀, Matrix.conjTranspose]
+  have hC : ∀ i, (C i).IsHermitian := by
+    intro i
+    fin_cases i <;> ext r c <;> fin_cases r <;> fin_cases c <;>
+      norm_num [C, Matrix.conjTranspose]
+  have h := Fock.operatorMatrixPencilTopEdge_density_lower ρ hρ htr C₀ C hC₀ hC
+  norm_num [ρ, C₀, C, Matrix.trace, Matrix.mul_apply, Fin.sum_univ_succ] at h
+  exact h
+
 end FreeProbability.Examples

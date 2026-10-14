@@ -26,6 +26,7 @@ completion criterion.
 | `Fock.WordSpace`, `Fock.VacuumState` | Complete Hilbert word model, bounded isometric canonical creation and adjoint annihilation, operator-wide canonical relation, positive normalized vacuum state, self-adjoint centered candidates with variance one and norm at most two |
 | `Fock.WickWord`, `Fock.RightOperators` | Polynomial Wick operators generate orthonormal word vectors from the vacuum; vacuum separating for the commutant; unitary word reversal and genuinely commuting left/right semicircular operators |
 | `Fock.GeneratedState`, `Fock.ClosedGeneratedState` | Actual restricted positive normalized vacuum states, proved faithful and tracial on both polynomial generated algebra and its operator-norm closure; completeness of the closed generated algebra |
+| `Fock.SemicircularNorm`, `Fock.CStarModel` | Exact operator norm two from finite-chain Rayleigh bounds; inherited C-star structure and faithful/tracial probability interfaces; actual subtype generators with norm two, selfadjointness, centering and variance one |
 | `Analytic.MomentSeries`, `Transform`, `ProjectionTransform`, `TransformNaturality` | Actual operator inverse and resolvent expectations, convergent moment power/Laurent expansions, analytic inverse moment and S-transforms, exact idempotent transform, scalar scaling, and equality of transform germs from common moments |
 | `Analytic.CauchyHalfPlane`, `CauchyNaturality`, `MomentConvergence` | Resolvent-set analyticity, strict upper-half-plane imaginary-part negativity, norm bounds, equality from moments at every nonreal argument for selfadjoint variables, and transform convergence under an eventual uniform source norm bound |
 | `Matrix.RankOneSecular`, `HermitianResolvent` | Exact secular and Sherman–Morrison identities; spectral resolvent expansions; positivity and monotonicity; rank-one norm thresholds; at most one exterior eigenvalue counted with multiplicity |
@@ -46,8 +47,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `3678bca` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 1234 declarations.
+The latest checked and published integration is `2058aab` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 1270 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -68,10 +69,12 @@ is imposed. Fourth moment two and orthogonal two-letter Wick words are checked
 usage examples.
 
 Exact norm two and explicit C-star-model compatibility (`f881b61`, `7310a7b`) are
-published feature milestones awaiting integration. Freeness, the full joint
-noncrossing Wick formula, Catalan/spectral law, arbitrary-vector creation and
-general completed Hilbert tensor-power identification remain open. None of the
-eleven full goals is declared complete by these supporting results.
+integrated at `2058aab`. Genuine polynomial/closed-marginal freeness and its
+faithful-C-star-ambient bridge (`7350c11`, `54fde61`, `de87f86`) are published and
+reviewed, awaiting integration. The full joint noncrossing Wick formula,
+Catalan/spectral law, arbitrary-vector creation and general completed Hilbert
+tensor-power identification remain open. None of the eleven full goals is
+declared complete by these supporting results.
 
 ## Haar probability and concentration
 
@@ -129,7 +132,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 1234 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 1270 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -156,7 +159,7 @@ checkpoint. These prerequisites do not establish the full cumulant or Fock goals
 
 1. Complete cumulant calculus: develop adjacent products
    and refinement/contraction fibers, then freeness implies mixed vanishing.
-2. Integrate exact semicircular norm two; prove freeness and joint Wick moments,
+2. Integrate genuine closed-generator freeness; prove joint Wick moments,
    and identify the word model with completed Hilbert tensor powers.
 3. Develop free difference quotients and integration by parts, then operator-valued
    semicircular covariance and Dyson resolvent identities.

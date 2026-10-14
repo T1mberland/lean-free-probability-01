@@ -26,6 +26,11 @@ import FreeProbability.Combinatorics.NoncrossingPairing
 import FreeProbability.Combinatorics.NoncrossingInterval
 import FreeProbability.Combinatorics.NoncrossingLattice
 import FreeProbability.Combinatorics.NoncrossingAdjacent
+import FreeProbability.Combinatorics.NoncrossingAdjacentMerge
+import FreeProbability.Combinatorics.NoncrossingRestriction
+import FreeProbability.Combinatorics.NoncrossingBlockRefinement
+import FreeProbability.Combinatorics.BlockRefinementContribution
+import FreeProbability.Combinatorics.NoncrossingAdjacentFiber
 import FreeProbability.Combinatorics.NoncrossingSingletonInsertion
 import FreeProbability.Combinatorics.BlockWordTransport
 import FreeProbability.Fock.WordSpace
@@ -38,6 +43,7 @@ import FreeProbability.Fock.SemicircularNorm
 import FreeProbability.Fock.CStarModel
 import FreeProbability.Algebraic.CumulantFreeness
 import FreeProbability.Algebraic.CumulantUnit
+import FreeProbability.Algebraic.CumulantCenter
 import FreeProbability.Matrix.RankOneSecular
 import FreeProbability.Matrix.HermitianResolvent
 import FreeProbability.Algebraic.DistributionComparison

@@ -18,18 +18,18 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `3678bca`, published on `main`, with full builds,
-source guard and transitive audit passing for 1234 declarations. Unit-cumulant
-calculus and lattice/adjacent contraction are integrated. Raw adjacent merge,
-whole-word centering and norm-two/C-star-model
+Latest checked integration: `2058aab`, published on `main`, with full builds,
+source guard and transitive audit passing for 1270 declarations. Unit-cumulant
+calculus, lattice/adjacent contraction and norm-two/C-star model are integrated.
+Raw adjacent merge, whole-word centering and genuine closed-generator freeness
 feature milestones are published but await integration. Historical checkpoints
 below retain the state at each checkpoint; this paragraph records current status.
 
 | Goal | Status | Earliest work and dependency |
 | --- | --- | --- |
 | 1. Cumulant calculus | Active; one implication and unit/scalar calculus integrated | Adjacent-product contraction fibers, then freeness implies mixed vanishing; pairing decomposition, Kreweras and Möbius/product calculus remains |
-| 2. Full Fock systems | Active; word model and faithful tracial closed generated state integrated | General tensor-power identification, joint Wick, norm two, freeness, Catalan and spectral law remain |
-| 3. Free integration by parts | Ready for algebraic groundwork | Polynomial tensor-bimodule derivations independent of Fock; semicircular integration-by-parts requires Wick recursion |
+| 2. Full Fock systems | Active; faithful tracial C-star word model with exact norm two integrated | Integrate published freeness; general tensor-power identification, joint Wick, Catalan and spectral law remain |
+| 3. Free integration by parts | Active proof path selected | Right-annihilation vacuum-boundary commutator and telescoping word recursion; polynomial tensor-bimodule derivation bundling and matrix/analytic extensions remain |
 | 4. Operator-valued Dyson | Blocked on semicircular realization | Completely positive covariance, amplified moments and Wick recursion precede Dyson and physical branch |
 | 5. Spectral edges | Blocked on goals 2, 4 and 6 | Faithful pencils and spectral/Dyson theory precede variational identity and certificates |
 | 6. Spectral distributions | Independent research ready | Continuous functional calculus and positive-functional representation precede spectral measure and faithful support identification |
@@ -44,8 +44,8 @@ below retain the state at each checkpoint; this paragraph records current status
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
 | Coordinator | `main`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/cumulant-characterization`, `/home/user/Projects/lean-fp-cumulants` | New cumulant-related `Combinatorics` and `Algebraic` files; existing `Algebraic/CumulantFreeness.lean` if needed | Unit/scalar/centering cumulants published; adjacent products and reverse freeness next |
-| Worker B (`fock`) | `feat/fock-semicircular`, `/home/user/Projects/lean-fp-fock` | New `Fock` and `Semicircular` files | Closed faithful/tracial generated state published; exact norm two, freeness and full Wick next |
+| Worker A (`cumulants`) | `feat/cumulant-characterization`, `/home/user/Projects/lean-fp-cumulants` | New cumulant-related `Combinatorics` and `Algebraic` files except B's reserved pairing-decomposition file; existing `Algebraic/CumulantFreeness.lean` if needed | Exact adjacent fibers published; ordered fused-block transport and product identity, then reverse freeness |
+| Worker B (`fock`) | `feat/fock-semicircular`, `/home/user/Projects/lean-fp-fock` | New `Fock`/`Semicircular` files and exclusively `Combinatorics/NoncrossingPairingDecomposition.lean` | Closed freeness and C-star bridge published; sync main, right-annihilation moment recursion/IBP, then pairing split and literal NC Wick |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -178,6 +178,27 @@ order isomorphism with partitions relating the two adjacent positions, with
 `contract_le_iff` as quotient adjunction. Full builds, direct audit and source
 guard pass for 1234 declarations. Special raw adjacent-join preservation is
 published separately (`8fe5122`) and not assumed by this module.
+
+### Checked integration checkpoint: exact norm two and C-star compatibility
+
+`2058aab` is checked and published on `main`; sources `f881b61`, `7310a7b`
+were integrated through `293d29f`, `0f6f269`. Finite chains have squared norm
+`n+1` and Rayleigh numerator `2n`; `semicircular_rayleigh_bound` and an explicit
+positive-gap Archimedean argument prove `norm_semicircular = 2`.
+`CStarModel` verifies the inherited C-star structure and actual closed-generator
+norm/selfadjoint/centering/variance statements. Full builds, direct audit and
+source guard pass for 1270 declarations. No spectral law or full Wick formula
+is inferred from the norm alone.
+
+### Failed approach and implementation observations
+
+- A generic direct `.comap` proof term in `FreeCStarModel` caused Lean elaboration
+  `whnf`/`isDefEq` heartbeat timeouts at 200k and 800k; this was an elaboration
+  problem, not resource exhaustion. Explicit ambient parameters and direct
+  labeled-list transport compiled in 2.3s without retaining a raised heartbeat.
+- Continuous-linear-map scalar rewrites sometimes required pointwise extensionality
+  in one-color Wick spans; ordinary generic `zero_smul`/`add_smul` rewrites were
+  insufficient. The final proofs use the actual operator application API.
 
 ### Independent spectral-measure proof path
 

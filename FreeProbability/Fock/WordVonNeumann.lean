@@ -1,5 +1,7 @@
 import FreeProbability.Fock.GeneratedState
 import Mathlib.Analysis.VonNeumannAlgebra.Basic
+import Mathlib.Analysis.CStarAlgebra.ContinuousLinearMap
+import Mathlib.Topology.Algebra.StarSubalgebra
 
 /-! # The literal generated word von Neumann algebra and its separating vacuum -/
 noncomputable section
@@ -20,6 +22,14 @@ theorem wordSemicircularDoubleAlgebra_coe (I : Type*) :
     rw [StarSubalgebra.coe_centralizer, StarMemClass.star_coe_eq, Set.union_self]
   change (StarSubalgebra.centralizer ℂ (C : Set (WordSpace I →L[ℂ] WordSpace I)) : Set (WordSpace I →L[ℂ] WordSpace I)) = _
   rw [hd, hc]
+
+instance (I : Type*) : IsClosed
+    (wordSemicircularDoubleAlgebra I : Set (WordSpace I →L[ℂ] WordSpace I)) := by
+  rw [wordSemicircularDoubleAlgebra_coe]
+  exact Set.isClosed_centralizer _
+
+/-- The literal double commutant inherits the genuine closed C-star structure. -/
+example (I : Type*) : CStarAlgebra (wordSemicircularDoubleAlgebra I) := inferInstance
 
 /-- The literal generated von Neumann algebra, without a WOT-closure identification premise. -/
 def wordSemicircularVonNeumannAlgebra (I : Type*) : VonNeumannAlgebra (WordSpace I) where

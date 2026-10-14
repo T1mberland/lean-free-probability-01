@@ -46,4 +46,118 @@ theorem star_wick_vacuum (w : List I) :
     change creationWord (i :: w).reverse (word []) = word (i :: w).reverse
     rw [creationWord_word, List.append_nil]
 
+/-- Right Wick polynomials with the actual unreversed word as vacuum vector. -/
+def rightWick (w : List I) : WordSpace I →L[ℂ] WordSpace I :=
+  reversal * wick w.reverse * reversal
+
+theorem rightWick_vacuum (w : List I) : rightWick w (vacuum : WordSpace I) = word w := by
+  simp only [rightWick, mul_apply_eq_comp, reversal_vacuum, wick_vacuum, reversal_word,
+    List.reverse_reverse]
+
+theorem star_rightWick_vacuum (w : List I) :
+    star (rightWick w) (vacuum : WordSpace I) = word w.reverse := by
+  have hr : star (reversal : WordSpace I →L[ℂ] WordSpace I) = reversal := adjoint_reversal
+  simp only [rightWick, star_mul, hr, mul_apply_eq_comp, reversal_vacuum,
+    star_wick_vacuum, List.reverse_reverse, reversal_word]
+
+theorem commute_rightWick (T : WordSpace I →L[ℂ] WordSpace I)
+    (hT : ∀ i, Commute T (rightSemicircular i)) (w : List I) : Commute T (rightWick w) := by
+  have hs (i : I) : Commute (reversal * T * reversal) (semicircular i) := by
+    apply ContinuousLinearMap.ext
+    intro f
+    have h := congrArg (fun U : WordSpace I →L[ℂ] WordSpace I => reversal (U (reversal f)))
+      (hT i).eq
+    simpa only [rightSemicircular, mul_apply_eq_comp, reversal_reversal] using h
+  apply ContinuousLinearMap.ext
+  intro f
+  have h := congrArg (fun U : WordSpace I →L[ℂ] WordSpace I => reversal (U (reversal f)))
+    (commute_wick (reversal * T * reversal) hs w.reverse).eq
+  simpa only [rightWick, mul_apply_eq_comp, reversal_reversal] using h
+
+theorem reversal_coefficient (f : WordSpace I) (w : List I) : reversal f w = f w.reverse := by
+  rw [← inner_word_left, ← ContinuousLinearMap.adjoint_inner_left, adjoint_reversal,
+    reversal_word, inner_word_left]
+
+/-- Conjugate reversal is the genuine anti-linear vacuum involution. -/
+def vacuumConjugateReversal (f : WordSpace I) : WordSpace I := star (reversal f)
+
+theorem vacuumConjugateReversal_inner (f g : WordSpace I) :
+    inner ℂ (vacuumConjugateReversal f) g = inner ℂ (vacuumConjugateReversal g) f := by
+  let e : Equiv.Perm (List I) :=
+    Function.Involutive.toPerm (List.reverse : List I → List I) List.reverse_reverse
+  have he (w : List I) : e w = w.reverse := rfl
+  have h := e.tsum_eq (fun w => f w * g w.reverse)
+  simp only [he, List.reverse_reverse] at h
+  simpa only [vacuumConjugateReversal, lp.inner_eq_tsum, lp.star_apply,
+    reversal_coefficient, RCLike.inner_apply, starRingEnd_apply, star_star, mul_comm] using h
+
+/-- Every operator commuting with the full right fields obeys the actual vacuum conjugation law. -/
+theorem star_vacuum_eq_conjugateReversal (T : WordSpace I →L[ℂ] WordSpace I)
+    (hT : ∀ i, Commute T (rightSemicircular i)) :
+    star T (vacuum : WordSpace I) = vacuumConjugateReversal (T vacuum) := by
+  apply lp.ext
+  funext w
+  have hc := congrArg (fun U : WordSpace I →L[ℂ] WordSpace I => U vacuum)
+    (commute_rightWick T hT w).eq
+  calc
+    (star T (vacuum : WordSpace I)) w = inner ℂ (word w) (star T vacuum) :=
+      (inner_word_left w _).symm
+    _ = inner ℂ (T (word w)) vacuum := by
+      rw [ContinuousLinearMap.star_eq_adjoint, ContinuousLinearMap.adjoint_inner_right]
+    _ = inner ℂ (T (rightWick w vacuum)) vacuum := by rw [rightWick_vacuum]
+    _ = inner ℂ (rightWick w (T vacuum)) vacuum := congrArg (fun x => inner ℂ x vacuum) hc
+    _ = inner ℂ (T vacuum) (star (rightWick w) vacuum) := by
+      rw [ContinuousLinearMap.star_eq_adjoint, ContinuousLinearMap.adjoint_inner_right]
+    _ = inner ℂ (T vacuum) (word w.reverse) := by rw [star_rightWick_vacuum]
+    _ = star ((T vacuum) w.reverse) := by rw [← inner_conj_symm, inner_word_left, starRingEnd_apply]
+    _ = vacuumConjugateReversal (T vacuum) w := by
+      rw [vacuumConjugateReversal, lp.star_apply, reversal_coefficient]
+
+/-- Vacuum trace on the full right-field commutant, with no density premise. -/
+theorem vacuumExpectation_mul_comm_of_commute_right
+    (T U : WordSpace I →L[ℂ] WordSpace I)
+    (hT : ∀ i, Commute T (rightSemicircular i))
+    (hU : ∀ i, Commute U (rightSemicircular i)) :
+    vacuumExpectation (T * U) = vacuumExpectation (U * T) := by
+  change inner ℂ vacuum (T (U vacuum)) = inner ℂ vacuum (U (T vacuum))
+  calc
+    _ = inner ℂ (star T vacuum) (U vacuum) := by
+      rw [ContinuousLinearMap.star_eq_adjoint, ContinuousLinearMap.adjoint_inner_left]
+    _ = inner ℂ (vacuumConjugateReversal (T vacuum)) (U vacuum) := by
+      rw [star_vacuum_eq_conjugateReversal T hT]
+    _ = inner ℂ (vacuumConjugateReversal (U vacuum)) (T vacuum) :=
+      vacuumConjugateReversal_inner _ _
+    _ = inner ℂ (star U vacuum) (T vacuum) := by
+      rw [star_vacuum_eq_conjugateReversal U hU]
+    _ = _ := by
+      rw [ContinuousLinearMap.star_eq_adjoint, ContinuousLinearMap.adjoint_inner_left]
+
+/-- Genuine traciality of the vacuum on the literal generated von Neumann algebra. -/
+theorem wordSemicircularVonNeumannAlgebra_vacuum_tracial
+    {T U : WordSpace I →L[ℂ] WordSpace I}
+    (hT : T ∈ wordSemicircularVonNeumannAlgebra I)
+    (hU : U ∈ wordSemicircularVonNeumannAlgebra I) :
+    vacuumExpectation (T * U) = vacuumExpectation (U * T) :=
+  vacuumExpectation_mul_comm_of_commute_right T U
+    (wordSemicircularVonNeumannAlgebra_commute_right hT)
+    (wordSemicircularVonNeumannAlgebra_commute_right hU)
+
+/-- Actual positive normalized vacuum state on the literal generated double commutant. -/
+def wordVonNeumannVacuumState (I : Type*) : StarProbabilitySpace (wordSemicircularDoubleAlgebra I) where
+  expectation := vacuumLinear.comp (wordSemicircularDoubleAlgebra I).val.toLinearMap
+  map_one := vacuumExpectation_one
+  map_star T := vacuumExpectation_star (T : WordSpace I →L[ℂ] WordSpace I)
+  positive T := (vacuumState I).positive (T : WordSpace I →L[ℂ] WordSpace I)
+
+theorem wordVonNeumannVacuumState_isFaithful (I : Type*) :
+    IsFaithful (wordVonNeumannVacuumState I).toProbabilitySpace := by
+  intro T hT
+  apply Subtype.ext
+  exact wordSemicircularVonNeumannAlgebra_vacuum_faithful T.property hT
+
+theorem wordVonNeumannVacuumState_isTracial (I : Type*) :
+    IsTracial (wordVonNeumannVacuumState I).toProbabilitySpace := by
+  intro T U
+  exact wordSemicircularVonNeumannAlgebra_vacuum_tracial T.property U.property
+
 end FreeProbability.Fock

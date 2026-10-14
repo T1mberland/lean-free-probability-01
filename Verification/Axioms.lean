@@ -1261,3 +1261,16 @@ run_cmd do
 #print axioms FreeProbability.Fock.finiteDepthPencilOperator_norm_eq
 #print axioms FreeProbability.Fock.operatorMatrixPencilCauchy_finiteDepth_error
 #print axioms FreeProbability.Fock.finiteDepthPencilUpperEdge_scalar
+#print axioms FreeProbability.Fock.wick_mul_star_mixed_suffix_min
+#print axioms FreeProbability.Fock.mixedSuffix_prefix_Gram_partial
+#print axioms FreeProbability.Fock.mixedSuffix_summation_by_parts_shifted
+#print axioms FreeProbability.Fock.wick_mixed_damped_suffix_Gram
+#print axioms FreeProbability.Fock.mixedSuffix_nonempty_sum
+#print axioms FreeProbability.Fock.actualFamilyWordOU_Wick_mul_star_mixed
+#print axioms FreeProbability.Fock.real_scaled_mul_star_power
+#print axioms FreeProbability.Fock.actualFamilyWordOUMatrix_mixed_suffix_Gram
+#print axioms FreeProbability.Fock.actualFamilyWordOUMatrix_mixed_prefix_support
+#print axioms FreeProbability.Fock.mixedMatrixSuffixAmplitude_mul_star
+#print axioms FreeProbability.Fock.actualFamilyWordOUMatrix_mixed_amplitude_Gram
+#print axioms FreeProbability.Fock.actualFamilyWordOUMatrix_mixed_amplitude_nonneg
+#print axioms FreeProbability.Fock.actualFamilyWordOUMatrix_finsupp_suffixGram

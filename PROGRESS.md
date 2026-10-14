@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `d3a87c2` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 7448 declarations.
+The latest checked and published integration is `fa4067d` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 7590 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -1333,3 +1333,21 @@ usage H=−3I, z=−2 checks the domain correction.
 These are verified feature results pending integration checks; Goal5 still needs
 singular boundary limits and deterministic edge subspaces. Identification with a
 separately defined restricted finite-dimensional inverse remains an interface task.
+
+## Full actual mixed-degree matrix OU suffix identity
+
+Worker B frozen source `0eca6b2` assembles twelve new modules, reviewed and
+focused-built with twenty-eight principal standard axiom audits. For every ON
+family in any complete complex H, any finite matrix index, finite word support
+and arbitrary mixed-degree matrix coefficients, the ACTUAL amplified OU image
+of FF* equals the empty-suffix damped amplitude square plus
+`(1−exp(−t)^2)` times the sum of nonempty residual-suffix amplitude squares.
+`actualFamilyWordOUMatrix_mixed_amplitude_Gram` and `_nonneg` preserve true
+coefficient order and the full canonical matrix cone. No finite alphabet,
+homogeneity, spanning, countability or nonempty matrix index is assumed.
+`actualFamilyWordOUMatrix_finsupp_suffixGram` identifies the original candidate
+`matrixSuffixGram` with the actual map, discharging its equality obligation.
+Weights are real exp(−t); no false arbitrary-complex-parameter amplitude identity
+is claimed. Every finite suffix support is the actual union of supported tails.
+This feature is pending checked-main integration; entropy/DPI/L1 positive-input
+approximation and joint lower semicontinuity remain distinct obligations.

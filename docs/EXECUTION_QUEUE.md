@@ -18,8 +18,8 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `d3a87c27cb0eeeed58bdce377a9c075a0265f3b9`,
-published main after PR62. Full3923, Verification3926, direct transitive7448,
+Latest checked integration: `fa4067d9fd8ea56d8e39651e9a7871538e4fb333`,
+published main after PR63. Full3934, Verification3938, direct transitive7590,
 source guard/diff and explicit push passed. Earlier records below are historical.
 Goals 1, 2, 3, 6 and 7 are certified complete; six full goals remain open.
 Every historical checkpoint below retains its original scope and date.
@@ -30,20 +30,20 @@ Every historical checkpoint below retains its original scope and date.
 | 2. Full Fock systems | Complete on checked main `68de4fe`, PR #5 | Arbitrary H/ON family, literal completed tensors, faithful tracial generated state, joint Wick and actual spectral law |
 | 3. Free integration by parts | Complete on checked main `5706254`, PR #11 | Actual scalar/matrix polynomial FDQ, entire exponential, whole polynomial-resolvent domain and norm-analytic series with explicit bounds |
 | 4. Operator-valued Dyson | Actual finite-matrix model, Wick, Dyson and physical theory integrated | General arbitrary-base CP covariance realization and entrywise-model comparison remain |
-| 5. Spectral edges | Actual core variational equality, state/density bounds and exterior derivative/Lyapunov integrated | Actual exterior spectral-gap bounds integrated; quantitative finite-depth Fock approximation, singular limits and deterministic edge subspaces remain |
+| 5. Spectral edges | Actual core variational equality, state/density bounds and exterior derivative/Lyapunov integrated | Actual exterior spectral-gap and quantitative finite-depth matrix Cauchy operator-norm bounds integrated PR63; restricted finite-dimensional inverse API, singular limits and deterministic edge subspaces remain |
 | 6. Spectral distributions | Complete on checked main `427f72b`, PR #2 | Actual compact laws/CFC/support/Cauchy/moment compatibility and bounded weak/Cauchy convergence |
 | 7. Multiplicative convolution | Complete on checked main `bdd05e2`, certified PR39 | Actual positive-pair S/law and arbitrary-length projection physical branch/edge/spectrum; universal free-product realization belongs to Goal11 |
 | 8. Conditional subordination | General normal conditioning and subordination open | Normal conditional expectations, analytic subordination, exterior continuation and projection specialization; concrete free-Gaussian cyclic L2 is verified |
-| 9. Haar freeness | Haar conjugation, stable FFT/integration, sharp inverse bounds, true multi-trace/second moments and mean-square/probability/a.s. Haar-marginal limits integrated PR59 | Independent random inputs in current feature; colored integration pending. Multiple-Haar centered criterion, marginal joint star-law limits, strong spectral interfaces and low-dimensional integration remain |
-| 10. OU and entropy | Whole-ONfamily normal unital CP semigroup, full generator/domain, proper cyclic L2, native regularization and actual homogeneous matrix Gram integrated PR60 | Full mixed-degree matrix identity, noncommutative L1, matrix entropy/DPI/pinching and joint lsc; common marginal/order bounds pending integration |
+| 9. Haar freeness | Haar conjugation, stable FFT/integration, sharp inverse bounds, true multi-trace/second moments and mean-square/probability/a.s. Haar-marginal limits integrated PR59 | Independent random inputs integrated PR61; colored integration pending. Full multiple-Haar centered criterion and expected/probability/countable modes frozen 1e62838 await integration; joint star-law limits, strong spectral interfaces and low-dimensional integration remain |
+| 10. OU and entropy | Whole-ONfamily normal unital CP semigroup, full generator/domain, proper cyclic L2, native regularization and actual homogeneous matrix Gram integrated PR60 | Full mixed-degree matrix identity verified in current integration feature; common marginal/order bounds integrated PR62. Genuine tracial L1 completion and generic contraction verified on worker branch; actual OU wrapper, entropy/DPI/pinching and joint lsc remain |
 | 11. Follow-up milestones | Formal R and quantitative conditional moment CLT integrated | Positive free products, analytic convolution, operator-valued cumulants, annular/second-order and genus theory remain |
 
 ## Active assignments and isolation
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/fock-finite-depth-resolvent`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/orthogonal-colored-trace-criterion`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalColoredTrace*.lean and agreed notes; prior sources frozen | Actual multicolor centered trace criterion by strong induction |
+| Coordinator | `feat/fock-mixed-suffix-integration`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Worker A (`cumulants`) | `feat/orthogonal-colored-moment-limits`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalColoredMomentLimit*.lean and agreed notes; prior sources frozen | Actual joint star-moment limit packaging from free target marginal laws |
 | Worker B (`fock`) | `feat/tracial-l1-norm`, `/home/user/Projects/lean-fp-fock` | NEW Analytic/TracialL1*.lean and Fock/OrnsteinUhlenbeckL1*.lean and agreed notes; prior sources frozen | Genuine tracial L1 completion and actual OU contraction |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
@@ -2799,3 +2799,33 @@ expected/probability/countable wrappers are active. B actual OU L1 wrapper is
 uncommitted and its Γ unfolding attempts were interrupted143 for memory/time;
 published generic L1 sources remain verified. New positive-map star preservation
 is an alternative to expanding Γ. No additional concurrent heavy build is launched.
+
+### Actual full finite mixed matrix OU suffix integration
+
+PR63 checked mainfa4067d passes full3934, Verification3938, direct7590,
+source/diff and explicitpush. True quantitative full-real-exterior finite-depth
+matrixCauchy operator-norm errors are integrated; Goal5 boundarycertificates open.
+Reviewed B frozen0eca6b2 assembles twelve new mixed sources: unequaldegree
+contractions, actual partialprefixGrams/realweight telescoping, finite actual
+suffixwords↔lengths, genuinePt products and orderedmatrixcoefficients, exact
+arbitraryfiniteamplitude star-square regrouping and fullcanonicalpositive output.
+`actualFamilyWordOUMatrix_finsupp_suffixGram` literallyidentifies earliercandidate
+withACTUALamplifiedOU; noassumedmultiplier/decomposition. EveryONfamily/properH,
+arbitraryalphabet andfiniteν incl0, emptyS/degree0/t0 retained. Twenty-eight
+principal direct audits terminated before atomiccommits/push; no limitschanged.
+All twelve modules and public statements reviewed independently/collisionfree.
+Nextentropyflagneeds genuinelyvarying weighted marginals; nohomogeneous commonρ
+shortcut or arbitrarycomplex amplitude damping. Goal10 entropy/DPI/lsc open.
+A cleanfrozen1e62838 fullcenteredcoloredcriterion +actualexpected/prob/countable
+modes awaits integration; nextNEWmomentlimits branch startsgenericmixedword
+recursion andactualfree-targetmarginalpackaging, notstrongnormclaims.
+B analyticL1 cutoff067c845 reviewed plusboundedactions/symmetricgenericextension;
+actualOUstar bridge nowgenericfourpositive decomposition avoidsΓresourcegrowth.
+Rootnext quantitativefinite-dimensional restriction API/boundary certificates.
+Five full goals complete, six open; all sourceownersisolated/heavybuildserialized.
+
+Full mixed suffix feature passes full3946, Verification3951 (including genuine
+three-degree/arbitrary3×3 coefficient positivity usage), direct transitive7671,
+source/diff and all twelve exact module reviews. No homogeneity/alphabet/onto
+assumption was added. Concrete positive cone usage compiled warningfree; old
+Verification Examples453 letI and NoncrossingPairing113 warnings are unchanged.

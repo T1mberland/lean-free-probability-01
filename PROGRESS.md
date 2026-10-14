@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `5131911` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 3784 declarations.
+The latest checked and published integration is `95c414c` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 3794 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -240,7 +240,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 3784 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 3794 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -294,5 +294,13 @@ Positive-state/density bounds (`4246351`, `ae23f1c`) are integrated through
 [PR #15](https://github.com/T1mberland/lean-free-probability-01/pull/15) at checked
 main `5131911` (full 3663, Verification 3666, audit 3784 and source guard).
 A singular-density example gives an actual edge lower bound of three.
-Exterior spectral bounds, quantitative finite Fock approximation, singular edge
-limits and deterministic edge-subspace results remain open for Goal 5.
+Actual full-right-exterior spectral-gap bounds are integrated through
+[PR #16](https://github.com/T1mberland/lean-free-probability-01/pull/16) at checked
+main `95c414c` (full 3664, Verification 3667, audit 3794 and source guard).
+Quantitative finite Fock approximation, singular edge limits and deterministic
+edge-subspace results remain open for Goal 5.
+
+Generic topological closure freeness (`9409551`) is published and reviewed,
+undergoing integration. Continuous expectation and topological algebra operations
+suffice, without positivity, traciality, norms or completeness. Actual near-zero
+Neumann-inverse membership is the next missing analytic S-product dependency.

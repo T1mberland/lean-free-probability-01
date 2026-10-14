@@ -21,7 +21,7 @@ integration checkout passes the full build and audits.
 | Goal | Status | Earliest work and dependency |
 | --- | --- | --- |
 | 1. Cumulant calculus | Active; one implication already verified | Pairings, interval/deletion/insertion maps, unit insertion and adjacent products, then freeness implies mixed vanishing; Kreweras/lattice/product calculus remains |
-| 2. Full Fock systems | Active; concrete complete word model integrated | General tensor-power identification, joint Wick, norm two, freeness and faithful tracial generated algebra remain |
+| 2. Full Fock systems | Active; word model and faithful tracial closed generated state integrated | General tensor-power identification, joint Wick, norm two, freeness, Catalan and spectral law remain |
 | 3. Free integration by parts | Ready for algebraic groundwork | Polynomial tensor-bimodule derivations independent of Fock; semicircular integration-by-parts requires Wick recursion |
 | 4. Operator-valued Dyson | Blocked on semicircular realization | Completely positive covariance, amplified moments and Wick recursion precede Dyson and physical branch |
 | 5. Spectral edges | Blocked on goals 2, 4 and 6 | Faithful pencils and spectral/Dyson theory precede variational identity and certificates |
@@ -137,6 +137,18 @@ Reviewed published milestones awaiting integration: polynomial/closed faithful
 tracial generated states (`53f5bd8`, `979669a`) and general unit-cumulant vanishing
 with scalar/centering invariance (`36a6578`). No full Wick/freeness or norm-two
 result is counted from these supporting milestones.
+
+### Checked integration checkpoint: faithful tracial generated states
+
+`51bd061` is checked and published on `main`; sources `53f5bd8`, `979669a`
+were integrated through `56d675e`, `2ead787`. `generatedVacuumState_isFaithful`
+and the polynomial trace theorem use proved right commutation/cyclicity, not
+assumed faithfulness or trace. `closedGeneratedVacuumState_isFaithful` and
+`closedGeneratedVacuumState_tracial` extend to the actual operator-norm-closed
+generated algebra; an explicit completeness instance is provided. Full builds,
+direct audit and source guard pass for 1184 declarations. A commutator-expectation
+example checks the public closed trace interface. Exact norm two (`f881b61`) and
+unit/scalar cumulants (`36a6578`) await their integration checkpoints.
 
 ### Independent spectral-measure proof path
 

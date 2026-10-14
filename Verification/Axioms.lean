@@ -288,3 +288,11 @@ run_cmd do
 #print axioms FreeProbability.Fock.closedGeneratedVacuumState
 #print axioms FreeProbability.Fock.closedGeneratedVacuumState_isFaithful
 #print axioms FreeProbability.Fock.closedGeneratedVacuumState_tracial
+#print axioms FreeProbability.prod_ofFn_remove_unit
+#print axioms FreeProbability.expectation_eq_sum_orderedCumulants
+#print axioms FreeProbability.orderedContribution_zero_of_unit_induction
+#print axioms FreeProbability.cumulant_ofFn_eq_zero_of_unit
+#print axioms FreeProbability.cumulant_eq_zero_of_one_mem
+#print axioms FreeProbability.cumulant_update_algebraMap
+#print axioms FreeProbability.cumulant_update_add_algebraMap
+#print axioms FreeProbability.cumulant_update_center

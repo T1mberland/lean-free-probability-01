@@ -46,4 +46,11 @@ example {I : Type*} (T U : Fock.closedSemicircularAlgebra I) :
     (Fock.closedGeneratedVacuumState I).expectation (T * U - U * T) = 0 := by
   rw [map_sub, Fock.closedGeneratedVacuumState_tracial I T U, sub_self]
 
+/-- At order three, centering one coordinate leaves the cumulant unchanged. -/
+example {𝕜 A : Type*} [Field 𝕜] [Ring A] [Algebra 𝕜 A]
+    (φ : ProbabilitySpace 𝕜 A) (a b c : A) :
+    cumulant φ [a, φ.center b, c] = cumulant φ [a, b, c] := by
+  simpa using cumulant_update_center φ (by norm_num : 2 ≤ 3)
+    (fun i : Fin 3 => ![a, b, c] i) (1 : Fin 3)
+
 end FreeProbability.Examples

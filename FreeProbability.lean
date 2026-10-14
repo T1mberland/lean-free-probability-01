@@ -33,6 +33,7 @@ import FreeProbability.Fock.RightOperators
 import FreeProbability.Fock.GeneratedState
 import FreeProbability.Fock.ClosedGeneratedState
 import FreeProbability.Algebraic.CumulantFreeness
+import FreeProbability.Algebraic.CumulantUnit
 import FreeProbability.Matrix.RankOneSecular
 import FreeProbability.Matrix.HermitianResolvent
 import FreeProbability.Algebraic.DistributionComparison

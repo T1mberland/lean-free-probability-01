@@ -88,11 +88,23 @@ an actual positive definite witness Z = m(x)^-1 with variational matrix x I.
 No minimizer at the edge, singular limit, or quantitative truncation is asserted.
 This core theorem does not alone complete all auxiliary obligations of Goal 5.
 
+`4246351` proves the genuine positive-state lower bound
+`b >= Re phi(C0) + 2 sqrt(sum_i |phi(Ci)|^2)` for every actual normalized positive
+state on the coefficient matrices. Weighted Cauchy--Schwarz uses the actual CFC
+square root of each positive definite variational test; the full variational
+formula is proved, not supplied as a premise. `ae23f1c` constructs the actual
+state `phi(X) = trace(rho X)` for EVERY positive semidefinite density rho with
+trace one, including singular densities, and proves the resulting trace lower
+bound. All coefficients remain arbitrary Hermitian matrices. These statements
+are not an optimal density duality formula involving trace of a matrix square
+root.
+
 ## Next dependencies
 
-1. Positive-state and density-matrix spectral-edge inequalities, further
-   exterior bounds, quantitative finite-depth Fock approximations, and singular
-   or deterministic edge certificates.
+1. Full right-exterior order/spectral bounds for the actual m(x), quantitative
+   finite-depth Fock approximations, and singular or deterministic edge
+   certificates. The positive-state and actual density lower bounds are proved;
+   stronger optimized density formulas remain distinct possible extensions.
 2. Matrix upper-half-plane argument invertibility and pointwise physical
    uniqueness, beyond the normalized analytic branch theorem.
 3. Compatibility with the generated closed matrix C-star model and analytic norm

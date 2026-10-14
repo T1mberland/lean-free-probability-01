@@ -2,6 +2,7 @@ import FreeProbability.Algebraic.Distribution
 import Mathlib.LinearAlgebra.TensorProduct.Map
 import Mathlib.LinearAlgebra.Finsupp.LinearCombination
 import Mathlib.Algebra.Algebra.Bilinear
+import Mathlib.Algebra.BigOperators.Fin
 
 /-!
 # Algebraic free difference quotients
@@ -170,5 +171,26 @@ theorem freeDifferenceQuotient_mul (i : I) (p q : WordPolynomial 𝕜 I) :
       rw [hs u c, hs v d, smul_mul_smul_comm, map_smul, ← wordMonomial_append,
         freeDifferenceQuotient_wordMonomial, wordDifferenceQuotient_append]
       simp [smul_add, smul_smul, mul_comm]
+
+/-- The derivative is the literal finite sum of prefix–suffix tensors. -/
+theorem wordDifferenceQuotient_eq_sum (i : I) (w : List I) :
+    wordDifferenceQuotient (𝕜 := 𝕜) i w =
+      ∑ k : Fin w.length, if i = w.get k then
+        wordMonomial (w.take k.val) ⊗ₜ[𝕜] wordMonomial (w.drop (k.val + 1)) else 0 := by
+  induction w with
+  | nil => simp
+  | cons j w ih =>
+    simp only [List.length_cons]
+    rw [wordDifferenceQuotient, ih, map_sum, Fin.sum_univ_succ]
+    simp only [Fin.val_zero, Fin.val_succ, List.get_cons_zero,
+      List.take_zero, List.drop_succ_cons, List.drop_zero,
+      List.take_succ_cons, wordMonomial_nil]
+    congr 1
+    apply Finset.sum_congr rfl
+    intro k _
+    have hm : wordMonomial (𝕜 := 𝕜) (j :: w.take k.val) =
+        wordMonomial [j] * wordMonomial (w.take k.val) := wordMonomial_append [j] _
+    simp only [List.get_eq_getElem]
+    by_cases h : i = w[k.val] <;> simp [h, hm]
 
 end FreeProbability

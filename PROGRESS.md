@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `2464ff7` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 7179 declarations.
+The latest checked and published integration is `d3a87c2` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 7448 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -1199,3 +1199,112 @@ Five full goals complete/six open; no fullGoal9/Goal5/Goal10 completion.
 Mean-square/probability/a.s. feature passes full3896, Verification3899, direct
 transitive7179, integrity/diff and all exact scope reviews. CI56 run38608452061,
 CI57 run38610503541 and CI58 run38611081396 confirmed success.
+
+### Actual amplified OU homogeneous positive suffix Grams
+
+PR59 checked main2464ff7 passes full3896, Verification3899, transitive7179,
+source/diff and push. TrueactualHaar mean-square/probability/a.s. and countable
+words are integrated. Reviewed B558a9c2..8333e75 with exact notes1564fd3
+assemble genuine global Wick star/common-suffix contractions, division-free
+telescoping/partial Gram sums, phase/order-preserving matrix coefficients,
+finite suffix-fiber regrouping and actual canonicalmatrix positive Grams.
+True native inverse/inclusion→wholeD actualP_t→faithfulσ identifies the
+weighted contraction polynomial with the ACTUAL amplified OU map.
+actualFamilyWordOUMatrix_amplitude_Gram is genuineP_t(FF*) positive suffix
+decomposition for EVERYfinitehomogeneousmatrixWickamplitude, EVERYt≥0,
+ANYONfamily, arbitraryalphabet/properH, ALLfiniteν includingempty, n0 retained.
+No matrixcoefficientscommute, no wholeVNimageonto premise is assumed.
+The preceding literal-polynomial identity and actualOU bridge have distinct
+proofs. Canonicalcone positivity uses fullHilbertblock operator reflection,
+not entrywise or product-vector positivity. All fifteen sources exactly
+reviewed, focusedbuilt and principaldirectstandardaxiomaudited. Earlier0c5fbe2
+was published afterfocusedbuild but beforeconfirming finalcombinedaudit;
+that audit later returnedEXIT0, correction is recorded in preservednotes,
+and coordinator waitedforconfirmationbeforeassembling. No sourcefailure.
+HomogeneousactualOU identity is proved; fullmixeddegreepositiveidentity,
+commonmarginal/orderbounds, matrixentropy/DPI/lsc and L1 remain separate.
+B NEW Marginal/Order modules have reviewed actualcommonρ c45b260 and
+fullmatrixCS9e73d12 pendingintegration, requesteddegree/rankorderbound active.
+A NEWColoredEntry* actualfiniteindependentHaar productintegration; frozen
+321f28e randominputs a.s./probability/sourceAE/countable chain pendingintegration.
+Root finite-depth feature64f884b proves genuinefinite-rankmatrixcompression
+and actualpencildepthpropagation; powerretention/quantitativeerror next.
+Five full goals complete/six open; this is not a fullGoal10 certificate.
+
+Actual homogeneous OU Gram feature passes full3911, Verification3914, direct
+transitive7356, integrity/diff and all fifteen module statement reviews.
+A reviewed but UNPROVED general mixed-degree length-flag entropy route is
+persisted in math-notes/ou-mixed-degree-entropy-flag-plan.md. It explicitly
+requires actualmixedGram, trace-decreasingDPI/failureflag, coherence/pinching,
+jointconvexity and JOINT lsc; boundednativeapproximation does not finishL1.
+
+### Actual independent random inputs and Haar convergence
+
+PR60 checked main9f5bd91 passes full3911, Verification3914, transitive7356,
+source/diff and push. ActualhomogeneousmatrixOUGram identity is integrated;
+fullmixedidentity/entropy/L1 remainopen. Reviewed A chainbdfb597..7bec383 and
+notes321f28e is assembled: truecomplexifiedHaarunitary/opnormbounds, actual
+inputmeasurability, derivedsquaredintegrability, honestdata×HaarFubini and
+actualIndepFun jointlaw transfer; genuineuniformN^-2 secondmoments and
+a.s./inmeasure limits for randomcentered boundedinputs independentofHaar.
+Inputlaws Y_N mayvaryN; NOacrossNindependence or assumedconditional
+expectation/integrability/convergence premise. Input factors may be internally
+dependent. SourceAEcentering and normbounds are proved equivalent toactual
+pushforwardAEhypotheses; countablewordcollections shareone convergenceevent.
+Major names: independent_inputs_haar_measurePreserving,
+eventually_independent_inputs_traceWordSecondMoment_bound,
+ae_independent_inputs_traceWord_tendsto_of_source,
+ae_countable_independent_inputs_traceWords_tendsto_of_source.
+All five new sources exactlyreviewed/focusedbuilt/directstandardaxiomaudited.
+Finiteentrypolynomial induction repairedan ordinarymeasurability elaboration
+timeout; no limitsraised. Expected/probability/a.s. modes remaindistinct.
+FullmultipleHaarcenteredcriterion isnext: reviewedUNPROVEDstrongwordlength
+inductionplan in math-notes/haar-colored-centered-trace-induction-plan.md.
+It requiresWHOLEdata+othercolors tupleindependentselectedHaar, notmerely
+pairwiseindependence. Nativeendpointproductorder A_last*A_first is explicit.
+A newcoloredtracebranch proves centering/telescoping/cyclicsegmentation and
+thatinduction; coloredentry3sourcec372ff6 reviewedpendingintegration.
+B frozen0b185ca commonmarginal/fullmatrixrankdegreebounds reviewedpartially
+pendingintegration; NEW WickMixedSuffixGram* actualmixedidentity active.
+Root finite-depth64f884b truefinite-rankmatrixQ/pencilpropagation pending
+integration; actualretainedpowers/quantitativeexteriorresolvents next.
+Five full goals complete, six open; fullGoal9 includingjointstar-law/strong
+interfaces is not certified by this single-Haar random-input feature.
+
+Independent random-input feature passes full3916, Verification3919, direct
+transitive7383, integrity/diff and all five exact mathematical source reviews.
+Actualdata-Haarjointlaw/variableinputlaws/sourceAE andcountable scopes verified.
+No multicolorcenteredcriterion orstrongconvergencecompletion is claimed.
+
+### Actual common matrix marginal and full suffix Gram order bounds
+
+PR61 checked maine69c705 passes full3916, Verification3919, transitive7383,
+source/diff and push. Actualindependent-randominputHaarprobability/a.s. and
+sourceAE/countableinterfaces are integrated; multicolorcriterion remainsopen.
+Reviewed Bc45b260..611b9ab with exactnotes0b185ca is assembled: actualcommon
+entrywisevacuum matrixmarginalρ=ΣC_wC_wᴴ forEVERYcut/arbitraryfiniteS,
+fullHilbertvector andcanonicalmatrixCS, genuinecoefficientcone sandwich,
+actualprefixfibercardinality andtruefullmatrixinequality
+G_h≤cardI^h(h+1)^2 scalarEmbedρ forsupportlengths≥h; homogeneous h≤n
+corollary. Finitealphabet neededonlyforrankfactor; emptyalphabet0^0, empty
+matrixtype andsingularρ retained. No coefficientcommutativity/invertibility
+or entrywise/productvectorpositivity shortcut.
+Major names: matrixCutGram_vacuum_marginal, finiteMatrixOperatorGram_le,
+matrixWickTerm_mul_star_le, suffixFiber_card_le, matrixCutGram_le_homogeneous.
+All seven sources reviewed/focusedbuilt, twenty principalstandardaxiomaudits
+terminalbeforecommits. Typedintermediateoperators fixed a realCFC/elaboration
+timeout; no limitsraised. A two-generator/arbitrary3×3coefficient canonical
+cone usage checks the concretefactor8 atresidualdegree1.
+This proves matrixorderprerequisites, not entropy. B NEW WickMixedSuffixGram*
+unequaldegreecontractions/prefixpartials/realweighttelescoping verifiedpending
+integration; fullmixedfiniteactualOUidentity is next. A NEWColoredTrace*
+centering/perturbation verifiedpendingintegration; truecyclicsegmentation and
+augmentedjointindependence/wordlengthinduction active. RootGoal5actualmatrix
+powerretention andquantitativeexteriorerror followpublisheddepth64f884b.
+Five full goals complete, six open; fullGoal10 L1/DPI/lsc/entropy remainsopen.
+
+Common-marginal/order feature passes full3923, Verification3926, direct
+transitive7448, integrity/diff and all seven precise source reviews. Concrete
+two-generator/arbitrary3×3 coefficientfactor8 canonicalcone usage compiles.
+Its local spectral-order instance required noncomputable section, repaired
+before publication; no resource or mathematical error was involved.

@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `7d70927` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 7172 declarations.
+The latest checked and published integration is `2464ff7` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 7179 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,

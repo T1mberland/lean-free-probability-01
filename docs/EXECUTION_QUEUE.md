@@ -18,8 +18,8 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `7d70927a91a88005964f9db525d5cd4154a29871`,
-published main after PR58. Full3893, Verification3896, direct transitive7172,
+Latest checked integration: `2464ff72d0d0b46a0bbd7eeb86d19710e037267b`,
+published main after PR59. Full3896, Verification3899, direct transitive7179,
 source guard/diff and explicit push passed. Earlier records below are historical.
 Goals 1, 2, 3, 6 and 7 are certified complete; six full goals remain open.
 Every historical checkpoint below retains its original scope and date.
@@ -42,7 +42,7 @@ Every historical checkpoint below retains its original scope and date.
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/orthogonal-almost-sure-integration`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Coordinator | `feat/fock-finite-depth-resolvent`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
 | Worker A (`cumulants`) | `feat/orthogonal-probability-random-inputs`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalMultiTraceProbability*.lean and agreed notes; prior sources frozen | Genuine independent random input product-law and Fubini bounds |
 | Worker B (`fock`) | `feat/fock-homogeneous-gram-ou`, `/home/user/Projects/lean-fp-fock` | NEW Fock/WickSuffixGramActualOU*.lean and agreed notes; prior sources frozen | Actual OU identity for finite homogeneous matrix positive suffix decomposition |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
@@ -2628,3 +2628,22 @@ Five full goals complete/six open; no fullGoal9/Goal5/Goal10 completion.
 Mean-square/probability/a.s. feature passes full3896, Verification3899, direct
 transitive7179, integrity/diff and all exact scope reviews. CI56 run38608452061,
 CI57 run38610503541 and CI58 run38611081396 confirmed success.
+
+### Next independent finite-depth operator milestone
+
+PR59 checked main2464ff7 passes full3896, Verification3899, transitive7179,
+source/diff and push. Genuine actualHaar mean-square/probability/a.s. and
+countable simultaneouswords are integrated; fullGoal9 obligations remain.
+CI54 job116002692744/run38607693716 is confirmedsuccess; all queried CI
+throughPR58 pass. Coordinator published c9acaaa genericgeometricinverse
+comparison (conditionalretainedpowers) and c1e7329 actualfinite-depthFock
+projection/rangefinite/strongnormlimit, reviewedstandardaxiomaudited.
+These feature sources are not yet integrated. Actualpencilpropagation,
+shiftedpositiveexterior resolvent estimate and singularboundary certificates
+remain. Plan1be805e records mandatoryshiftedcompression fornegativeb.
+B frozena273f45 actualhomogeneousmatrixGram polynomialidentity reviewed;
+new actualOUbridge530deec publishedbutfullmatriximageidentity active.
+A branchprobability-random-inputs works actualdata×Haar productbounds and
+independence/productlaw transfer, not an assumedconditionalexpectation.
+Five full goals complete, six open. Sources and central ledgers have isolated
+owners, builds remainserialized by common lock, all publishedpushesconfirmed.

@@ -18,34 +18,33 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `287bcf7`, published on `main` through
-[PR #10](https://github.com/T1mberland/lean-free-probability-01/pull/10). Full builds
-3629/3632 jobs, source guard and transitive audit of 3337 declarations pass.
-Goals 1, 2 and 6 are certified complete; eight full goals remain open. Actual
-matrix covariance/Wick/recursion and entire exponential IBP are published and
-queued for sequential integration. Historical checkpoints retain their scope.
+Latest checked integration: `51319110b83751d612d56a8749eb8be07d66ef7c`,
+published on main through [PR #15](https://github.com/T1mberland/lean-free-probability-01/pull/15).
+Full builds 3663/3666, direct transitive audit 3784 declarations and source guard pass.
+Goals 1, 2, 3 and 6 are certified complete; seven full goals remain open.
+Every historical checkpoint below retains its original scope and date.
 
 | Goal | Status | Earliest work and dependency |
 | --- | --- | --- |
-| 1. Cumulant calculus | Complete on checked main `76af384`, PR #1 | All requested calculus and combinatorial subtargets verified; optional rotation/closed μ and Goal 7 S multiplication are separate |
-| 2. Full Fock systems | Complete on checked main `68de4fe`, PR #5 | All literal arbitrary-H/ON-family structure/state/Wick/spectral subtargets verified; independently chosen-model coherence optional |
-| 3. Free integration by parts | Active proof path selected | Actual polynomial tensor derivative/Leibniz and polynomial/matrix IBP integrated; analytic extensions remain |
-| 4. Operator-valued Dyson | Blocked on operator-valued realization | Completely positive covariance, amplified moments and Wick recursion precede Dyson and physical branch |
-| 5. Spectral edges | Blocked on goals 2, 4 and 6 | Faithful pencils and spectral/Dyson theory precede variational identity and certificates |
-| 6. Spectral distributions | Complete on checked main `427f72b`, PR #2 | Actual measures/CFC/support/Cauchy/moment compatibility and bounded convergence are integrated; uniform/derivative convergence is separate |
-| 7. Multiplicative convolution | Blocked on goals 1, 2 and 6 | Positive realizations, S-transform multiplication and actual spectral laws; rational critical-point computations are supporting special cases |
-| 8. Conditional subordination | Blocked on goals 6 and 7 and noncommutative L² | Normal conditional expectations, analytic subordination, then exterior continuation and projection specialization |
-| 9. Haar freeness | Independent algebraic groundwork ready | Haar-unitary star law and free conjugation; general orthogonal pairing integration precedes asymptotic trace estimates |
-| 10. OU and entropy | Wick/tracial prerequisites integrated; OU construction ready | Wick basis/contractions, completely positive second quantization, normal noncommutative Lᵖ and entropy precede dimension-independent bound |
-| 11. Follow-up milestones | Active; formal R and algebraic CLT integrated | Formal R and moment CLT with actual unitvariance target integrated; positive free products, analytic convolution, operator-valued/annular/genus theory remain |
+| 1. Cumulant calculus | Complete on checked main `76af384`, PR #1 | All requested calculus/combinatorics; optional rotation/closed μ and Goal 7 S multiplication separate |
+| 2. Full Fock systems | Complete on checked main `68de4fe`, PR #5 | Arbitrary H/ON family, literal completed tensors, faithful tracial generated state, joint Wick and actual spectral law |
+| 3. Free integration by parts | Complete on checked main `5706254`, PR #11 | Actual scalar/matrix polynomial FDQ, entire exponential, whole polynomial-resolvent domain and norm-analytic series with explicit bounds |
+| 4. Operator-valued Dyson | Actual finite-matrix model, Wick, Dyson and physical theory integrated | General arbitrary-base CP covariance realization and entrywise-model comparison remain |
+| 5. Spectral edges | Actual core variational equality, state/density bounds and exterior derivative/Lyapunov integrated | Actual exterior spectral bounds in progress; quantitative finite-depth Fock approximation, singular limits and deterministic edge subspaces remain |
+| 6. Spectral distributions | Complete on checked main `427f72b`, PR #2 | Actual compact laws/CFC/support/Cauchy/moment compatibility and bounded weak/Cauchy convergence |
+| 7. Multiplicative convolution | Projection law/germ integrated; generic positive-pair path ready | Positive sandwich law and cyclic moments, normclosure freeness, centered-resolvent analytic S multiplication; arbitrary-law realizations and projection-product support remain |
+| 8. Conditional subordination | Noncommutative L² and Goal 7 dependencies open | Normal conditional expectations, analytic subordination, exterior continuation and projection specialization |
+| 9. Haar freeness | Independent algebraic groundwork ready | Haar-unitary star law and free conjugation; orthogonal pairing integration precedes joint asymptotic estimates |
+| 10. OU and entropy | Actual Wick contractions and homogeneous Haagerup integrated | Second quantization in progress; completely positive OU, normal Lp/entropy and dimension-independent regularization remain |
+| 11. Follow-up milestones | Formal R and quantitative conditional moment CLT integrated | Positive free products, analytic convolution, operator-valued cumulants, annular/second-order and genus theory remain |
 
 ## Active assignments and isolation
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
 | Coordinator | `main`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/operator-valued-matrix`, `/home/user/Projects/lean-fp-cumulants` | New `OperatorValued/Matrix*.lean`; completed cumulant feature preserved | Actual matrix conditional expectation, all finite covariance amplification positivity, matrix semicircular realization |
-| Worker B (`fock`) | `feat/wick-contractions`, `/home/user/Projects/lean-fp-fock` | New `Fock/WickProduct*.lean`, `Fock/WickNorm*.lean`; published analytic features preserved | Actual Wick normal order, word norm bounds and reverse-overlap contractions |
+| Worker A (`cumulants`) | `feat/operator-valued-matrix`, `/home/user/Projects/lean-fp-cumulants` | New `OperatorValued/Matrix*.lean` and matrix math notes; completed features preserved | Full actual right-exterior spectral bounds, then generic closure freeness on a new branch |
+| Worker B (`fock`) | `feat/second-quantization`, `/home/user/Projects/lean-fp-fock` | New `Fock/SecondQuantization*.lean`; published Wick/analytic features preserved | Actual lift of one-particle Hilbert unitaries, full tensor/vacuum/creator coherence for rotation dilation |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -1327,3 +1326,14 @@ it to product of closures. Expectation continuity suffices; no positivity,
 traciality or completeness is needed. `ProbabilitySpace.center_mem`,
 `expectation_center`, `center_of_expectation_eq_zero`, `continuous_list_prod`
 and `List.ofFn_get` supply the intended interfaces. This task is still unproved.
+
+### Checked state/density PR and current execution frontier
+
+PR #15 merged head `4bf6b61` as `51319110b83751d612d56a8749eb8be07d66ef7c`.
+Main full 3663, Verification 3666, direct audit 3784 and source guard pass.
+Top dependency/assignment tables reconciled with every checked integration;
+historical checkpoint paragraphs are not current status claims.
+Next pending integration is A's actual full-right-exterior spectral order bound.
+B second-quantization branch was prepared earlier, but sending messages to its
+completed turn did not resume implementation; explicit followup now launched
+the task. No second-quantization achievement is claimed.

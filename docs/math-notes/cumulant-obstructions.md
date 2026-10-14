@@ -19,37 +19,32 @@ constructed complement. Hence maximality is proved, not assumed.
 moments as cumulant–moment Kreweras sums. These are algebraic moment identities.
 They do not prove an analytic S-transform identity or identify spectral support.
 
-## Boxed multiplicative cumulants
+## Verified boxed multiplicative cumulants
 
-The missing precise combinatorial statement is:
+The exact combinatorial statement is now proved:
+`interleave_sup_pairInterval_eq_top_iff` says that, for `q ≤ p.kreweras`, the
+interleaving of `p` and `q` joined with the adjacent original/complementary pair
+partition is top exactly when `q = p.kreweras`.
 
-For `q ≤ p.kreweras`, the interleaving of `p` and `q` joined with the interval
-partition of adjacent original/complementary pairs is top if and only if
-`q = p.kreweras`.
+The proof does not assume forest or connectivity hypotheses. Exact deletion
+identities give the actual count `|p| + |K(p)| = n + 1` for `n > 0`, and the
+actual join `p ∨ K(p) = top`. Raw joins with consecutive interval partitions are
+already noncrossing. Collapsing interleaved adjacent pairs recovers the raw join
+of the constituent partitions, so compatibility introduces no artificial closure
+merges. A bipartite graph on actual blocks has at most `n` index edges; raw top
+join implies genuine graph connectivity and hence at most `n + 1` vertices.
+A proper complementary refinement has strictly more blocks than `K(p)`, which
+contradicts this bound. The length-zero case is handled separately in the
+combinatorial equivalence.
 
-Combining this statement with the verified generic interval-product formula,
-mixed-block vanishing, and contribution factorization would prove the boxed
-convolution formula for actual free product cumulants.
-
-Maximal compatibility alone does not prove the missing statement. The actual
-complementary block count is now proved:
-`card_blocks_add_kreweras p hn` gives `|p| + |K(p)| = n + 1` for `n > 0`.
-At `n = 0` both block families are empty; the tree count does not apply.
-
-The proof uses exact complement deletion identities. An adjacent original chord
-forces a complementary singleton; `kreweras_of_adjacent` transports the whole
-complement through deletion. A noninitial original singleton gives a duplicated
-complementary position via `kreweras_of_singleton_succ`. Every partition on at
-least two positions has one of these two reductions, so a cyclic boundary case
-is unnecessary for the count.
-
-Remaining obligations are genuine connectivity of the bipartite block-incidence
-graph, and the implication from the alternating adjacent-pair top join to raw
-incidence connectivity. A strict complementary refinement has more blocks and
-cannot be connected with only `n` index edges. Establishing this reasoning in
-Lean still requires the relevant graph/setoid transport. Rotation and the order
-anti-isomorphism remain separate unproved identities. No conditional substitute
-is counted as the boxed formula.
+`FreelyIndependent.cumulant_prod_eq_kreweras_sum` consequently proves boxed
+convolution for actual products of two free tuples, and
+`cumulant_replicate_mul_eq_kreweras_sum` for every positive-order cumulant of
+`a * b`. Positive order is necessary under the library's zero empty-cumulant
+convention: the empty partition contribution equals one. No traciality,
+positivity, or commutativity is assumed. Rotation and order anti-isomorphism
+remain separate unproved complement identities. Analytic S-transform
+multiplicativity and spectral convolution realization remain open.
 
 ## Multiplicative Möbius interval factors
 

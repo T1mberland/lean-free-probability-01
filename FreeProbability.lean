@@ -28,6 +28,8 @@ import FreeProbability.Combinatorics.NoncrossingSingletonInsertion
 import FreeProbability.Combinatorics.BlockWordTransport
 import FreeProbability.Fock.WordSpace
 import FreeProbability.Fock.VacuumState
+import FreeProbability.Fock.WickWord
+import FreeProbability.Fock.RightOperators
 import FreeProbability.Algebraic.CumulantFreeness
 import FreeProbability.Matrix.RankOneSecular
 import FreeProbability.Matrix.HermitianResolvent

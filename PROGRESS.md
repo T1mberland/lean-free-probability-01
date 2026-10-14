@@ -20,6 +20,7 @@ completion criterion.
 | `Algebraic.CumulantFreeness`, `Combinatorics.CumulantNaturality` | Vanishing mixed cumulants implies freeness; cumulants commute with expectation-preserving maps |
 | `Combinatorics.NoncrossingPairing` | Intrinsic two-element-block pairings, unique partners and their fixed-point-free involution, even size, and existence of an adjacent pair |
 | `Combinatorics.NoncrossingInterval` | Every equivalence class has a least representative; every nonempty noncrossing partition has an actual convex interval block, represented by inclusive endpoints |
+| `Combinatorics.NoncrossingSingletonInsertion`, `BlockWordTransport` | Arbitrary-position singleton insertion/deletion equivalence, exact actual-block transport, ordered block-word compatibility and singleton contribution/sum factorization |
 | `Fock.WordSpace`, `Fock.VacuumState` | Complete Hilbert word model, bounded isometric canonical creation and adjoint annihilation, operator-wide canonical relation, positive normalized vacuum state, self-adjoint centered candidates with variance one and norm at most two |
 | `Analytic.MomentSeries`, `Transform`, `ProjectionTransform`, `TransformNaturality` | Actual operator inverse and resolvent expectations, convergent moment power/Laurent expansions, analytic inverse moment and S-transforms, exact idempotent transform, scalar scaling, and equality of transform germs from common moments |
 | `Analytic.CauchyHalfPlane`, `CauchyNaturality`, `MomentConvergence` | Resolvent-set analyticity, strict upper-half-plane imaginary-part negativity, norm bounds, equality from moments at every nonreal argument for selfadjoint variables, and transform convergence under an eventual uniform source norm bound |
@@ -53,6 +54,12 @@ exact norm two, the full joint Wick law, freeness, and faithful tracial vacuum
 restriction on the generated algebra remain open. Polynomial Wick and right
 operator milestones are being developed separately; the vacuum state on all
 bounded operators is not claimed faithful or tracial.
+
+Singleton insertion and ordered contribution transport are integrated, checked
+and published on `main` at `18f3ce7` (worker sources `8b88486`, `c8ea122`). Full
+builds, direct audit and source guard pass for 1070 declarations. The exact sum
+factorization is available for arbitrary block weights; unit cumulants and the
+reverse freeness implication remain open mathematical obligations.
 
 ## Haar probability and concentration
 

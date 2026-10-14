@@ -261,3 +261,17 @@ run_cmd do
 #print axioms FreeProbability.orderedPartitionContribution_get
 #print axioms FreeProbability.orderedPartitionContribution_insertSingleton
 #print axioms FreeProbability.sum_orderedPartitionContribution_singleton
+#print axioms FreeProbability.Fock.wick_mem_algebra
+#print axioms FreeProbability.Fock.wick_vacuum
+#print axioms FreeProbability.Fock.vacuumExpectation_wick_star_mul
+#print axioms FreeProbability.Fock.eq_zero_of_word
+#print axioms FreeProbability.Fock.commute_wick
+#print axioms FreeProbability.Fock.eq_zero_of_commute_semicircular_of_vacuum_eq_zero
+#print axioms FreeProbability.Fock.reversal_word
+#print axioms FreeProbability.Fock.reversal_mul_reversal
+#print axioms FreeProbability.Fock.reversal_reversal
+#print axioms FreeProbability.Fock.adjoint_reversal
+#print axioms FreeProbability.Fock.adjoint_rightSemicircular
+#print axioms FreeProbability.Fock.rightSemicircular_vacuum
+#print axioms FreeProbability.Fock.rightSemicircular_word_append
+#print axioms FreeProbability.Fock.commute_semicircular_rightSemicircular

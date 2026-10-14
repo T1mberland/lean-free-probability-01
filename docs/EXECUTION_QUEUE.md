@@ -72,6 +72,14 @@ Workers publish each commit immediately and never merge or edit central files.
 
 ## Next independent tasks
 
+### Publication infrastructure note
+
+GitHub currently advertises `feat/verified-baseline` as its default branch.
+`main` is nevertheless the explicit checked integration branch and is published
+after every checkpoint. The available GitHub connector has no repository-settings
+mutation, and no browser surface is available to change the default. This does
+not block commits, pushes, or mathematical work; no credentials were invented.
+
 ### Checked integration checkpoint: pairing fundamentals
 
 `6ade2b4` is checked and published on `main`; worker source milestone `ab82d17`
@@ -104,6 +112,17 @@ centering, covariance and semicircular norm at most two. Full builds, direct aud
 and source guard pass for 1039 declarations. A fourth-moment-two example is
 checked without assuming a full distribution. Generated trace/faithfulness,
 freeness, exact norm two and general tensor identification are not yet integrated.
+
+### Checked integration checkpoint: singleton insertion and ordered sums
+
+`18f3ce7` is checked and published on `main`; worker sources `8b88486`,
+`c8ea122` were integrated through `01cc71f`, `6ae4fff`. Singleton insertion is an
+equivalence at every prescribed position, with exact actual-block transport.
+`orderedBlockWord_image`, `orderedPartitionContribution_insertSingleton`, and
+`sum_orderedPartitionContribution_singleton` give exact ordered word/product/sum
+transport for arbitrary block weights. Full builds, direct audit and source guard
+pass for 1070 declarations. Unit-cumulant vanishing is the next obligation, not
+a hypothesis or a consequence asserted by the transport module.
 
 ### Independent spectral-measure proof path
 

@@ -35,4 +35,10 @@ example {I : Type*} (i : I) :
     Fock.vacuum, inner_add_right]
   norm_num [Fock.word, lp.single_apply]
 
+/-- Distinct ordered two-letter Wick words are orthogonal in the actual state. -/
+example {I : Type*} (i j : I) (h : i ≠ j) :
+    (Fock.vacuumState I).expectation (star (Fock.wick [i, j]) * Fock.wick [j, i]) = 0 := by
+  classical
+  simp [Fock.vacuumExpectation_wick_star_mul, h]
+
 end FreeProbability.Examples

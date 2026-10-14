@@ -460,4 +460,14 @@ example {I : Type*} (i : I) :
   norm_num at h
   exact h
 
+-- Native matrix cones use the genuine bundled CP API for arbitrary Hilbert
+-- embeddings, with no surjectivity or matrix-size restriction.
+example {H K N : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+    [NormedAddCommGroup K] [InnerProductSpace ℂ K] [CompleteSpace K] [Fintype N]
+    (V : H →ₗᵢ[ℂ] K)
+    (M : CStarMatrix N N (Fock.TensorFullFock K →L[ℂ] Fock.TensorFullFock K)) :
+    0 ≤ (star M * M).map (Fock.secondQuantizationCompressionCP V) :=
+  CompletelyPositiveMap.map_cstarMatrix_nonneg
+    (Fock.secondQuantizationCompressionCP V) (star M * M) (star_mul_self_nonneg M)
+
 end FreeProbability.Examples

@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `cfcc7a5` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 3837 declarations.
+The latest checked and published integration is `1767b48` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 3848 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -240,7 +240,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 3837 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 3848 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through
@@ -322,10 +322,21 @@ not asserted. Nonsurjective Fock isometry `d34f086` and scalar compression
 complete positivity and actual OU range/semigroup/normal extensions remain open.
 
 Generic actual Neumann remainder and centered O(z) bounds `68a4488`, with
-positive-state constants two/four `712446a`, are independently reviewed and
-undergoing integration. The generic estimate retains the actual expectation
+positive-state constants two/four `712446a`, are integrated through
+[PR #19](https://github.com/T1mberland/lean-free-probability-01/pull/19) at checked
+main `1767b48` (full 3672, Verification 3675, audit 3848 and source guard). The generic estimate retains the actual expectation
 operator norm and unit norm; positive-state normalization derives the universal
 constants, with no traciality or extra norm-one premise. Generic centered
 continuity-to-boundedness uses a nontrivially normed field. Actual two-inverse
 factorization `bb3f211` is published/reviewed on a separate multiplicative feature.
 Alternating geometric expectations and inverse-germ identification remain unproved.
+
+Genuine cross-space Fock isometry and unital norm-contractive completely positive
+compression through `1ce5594` are published and critically reviewed, undergoing
+integration. The exact finite Hilbert block star-algebra equivalence identifies
+ALL canonical C-star matrix positive cones, including empty dimensions.
+Amplified isometry compression and inverse cone reflection prove true bundled
+complete positivity, beyond a Gram-only criterion. No surjectivity, countability
+or nontriviality assumption is added. Actual doubled real rotation `cfa690e` is
+published separately, not included in this integration. OU range, Wick scaling,
+semigroup, normal extensions and entropy remain open.

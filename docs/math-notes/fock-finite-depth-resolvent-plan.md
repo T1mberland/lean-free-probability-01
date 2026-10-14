@@ -40,3 +40,15 @@ certificates remain later mathematical obligations, even after this bound.
 The queue is: retained-power generic estimate; actual finite-depth projection;
 actual pencil propagation; shifted-positive spectral bounds/compression;
 genuine matrix vacuum resolvent estimate; boundary certificates/singular limits.
+
+## Verified progress after the original plan
+
+The preceding plan is historical. Actual propagation, shifted power retention,
+spectral-shift bounds and the genuine coefficient-Hilbert operator-norm error
+are now proved in `FiniteDepthRetainedPowers`, `FiniteDepthPencilResolvent`,
+`FiniteDepthVacuumCompression` and `FiniteDepthCauchyIdentification`.
+The final declaration is `operatorMatrixPencilCauchy_finiteDepth_error`; it uses
+the existing pencil's actual spectrum and canonical C-star matrix norm, and
+identifies the original Cauchy matrix as the literal compressed resolvent.
+Remaining work is a standalone restricted finite-dimensional inverse API and
+boundary/singular/deterministic-edge certificates. No boundary theorem is claimed.

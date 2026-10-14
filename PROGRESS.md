@@ -1308,3 +1308,28 @@ transitive7448, integrity/diff and all seven precise source reviews. Concrete
 two-generator/arbitrary3×3 coefficientfactor8 canonicalcone usage compiles.
 Its local spectral-order instance required noncomputable section, repaired
 before publication; no resource or mathematical error was involved.
+
+## Actual quantitative finite-depth matrix Cauchy approximations
+
+Coordinator feature `feat/fock-finite-depth-resolvent` proves the genuine depth
+projection and finite-dimensional matrix range, propagation of the actual general
+pencil, retained shifted powers, and quantitative full exterior resolvent tails.
+Sources `c9acaaa`, `c1e7329`, `27768cb`, `64f884b`, `dc57768`, `d4f5b76`,
+`ae9f61d`, `7d593cc`, `0e44b74`, `f344965` are individually published and reviewed.
+For H=`operatorMatrixPencil C₀ C`, b its actual upper edge, c=‖H‖, z>b,
+q=(b+c)/(z+c)∈[0,1), the actual matrix vacuum compression of the shifted
+finite-depth inverse has full coefficient-Hilbert operator-norm error
+`2 q^(L+1)/(z−b)`. No positivity or commutation of Hermitian coefficients is
+imposed. `operatorMatrixPencilCauchy_finiteDepth_error` identifies the original
+matrix Cauchy transform, actual block spectrum/norm and literal vacuum expectation.
+The norm is genuine operator norm on ℓ²(n,ℂ), not the ordinary matrix elementwise
+norm. `finiteDepthPencilResolvent_error` first proves the all-vacuum-vector bound;
+`finiteDepthPencilVacuumCompression_error` upgrades it using the actual isometric J.
+The finite-depth inverse compresses H+cI and uses z+c; this preserves negative
+edges and negative real exterior points. Finite alphabet is needed for finite
+rank, and n is nonempty only when taking the actual spectral upper edge. Empty
+alphabet and zero geometric radius remain valid. The arbitrary-dimension negative-drift
+usage H=−3I, z=−2 checks the domain correction.
+These are verified feature results pending integration checks; Goal5 still needs
+singular boundary limits and deterministic edge subspaces. Identification with a
+separately defined restricted finite-dimensional inverse remains an interface task.

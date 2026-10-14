@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `8cb664e` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 2503 declarations.
+The latest checked and published integration is `427f72b` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 2636 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -85,8 +85,9 @@ integrated at `5c2e9cb`. Explicit recursively completed tensor powers and the
 unitary onto their Hilbert sum, exact tensor-domain operators and actual
 faithful tracial generated tensor C-star model with literal joint Wick/Catalan
 laws are integrated at `8334d17`.
-The spectral law and complete tensor-power identification remain open. None of the eleven full goals is
-declared complete by these supporting results.
+The semicircular density and arbitrary-orthonormal-family interfaces await
+integration. Goals 1 and 6 are certified complete at checked main `76af384` and
+`427f72b`, respectively; the other nine goals remain open. Completed tensor-power identification is already integrated.
 
 Formal R-transform additivity/scaling and the algebraic free CLT are integrated
 at `65ea73e`. The CLT gives explicit pairing-moment limits for
@@ -104,7 +105,14 @@ integrated at `7bb8314` for any supplied finite adjacent-fusion plan. The indepe
 identity and corresponding top join-fiber cumulant theorem are integrated at
 `18afd0f`. The actual Kreweras greatest compatible complement and free
 alternating-moment formula are also integrated at that checkpoint.
-Kreweras rotation/block-count and product-cumulant boxed convolution remain open.
+Genuine positive-degree complementary block count, raw connectivity and the
+actual boxed product-cumulant formula are integrated via
+[PR #1](https://github.com/T1mberland/lean-free-probability-01/pull/1) at `76af384`.
+`FreelyIndependent.cumulant_prod_eq_kreweras_sum` and its repeated-product
+variant require no trace, positivity or commutation assumptions. The full
+build, kernel audit, integrity guard and boxed usage example pass on main.
+Every literal Goal 1 subtarget is covered; rotation/closed-form μ identities
+are optional extensions. Analytic S multiplication remains Goal 7.
 
 The actual algebraic tensor free difference quotient satisfies the full
 noncommutative polynomial Leibniz rule. Polynomial and matrix-valued polynomial
@@ -118,8 +126,12 @@ functionals using Riesz representation; real continuous-functional-calculus
 expectations have their integral representation. Faithfulness gives actual
 support equal to real spectrum, without traciality. These declarations are
 integrated at `9ca8caa`. General complex/Cauchy representation and exact spectral-law determinacy by
-all power moments are undergoing integration;
-semicircular density identification remain subsequent tasks.
+all power moments are integrated at `ab262d5`;
+bounded-moment weak spectral-law and pointwise all-nonreal Cauchy convergence
+are integrated through [PR #2](https://github.com/T1mberland/lean-free-probability-01/pull/2)
+at `427f72b`. Full main build/audits and non-exterior Fock usage pass for 2636
+declarations, certifying Goal 6. Semicircular density identification remains
+pending integration.
 
 A quantitative non-iid free triangular-array CLT is integrated at `8cb664e`: each entry is centered, averaged second moments converge, and each
 fixed higher-order marginal cumulant has a uniform bound. Normalized power
@@ -182,7 +194,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 2503 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 2636 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

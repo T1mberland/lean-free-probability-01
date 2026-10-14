@@ -103,4 +103,77 @@ example {I : Type*} (i j : I) (hij : i ≠ j) :
         wordMonomial [i, j] ⊗ₜ[ℂ] (1 : WordPolynomial ℂ I) := by
   simp [wordDifferenceQuotient, hij, ← wordMonomial_append]
 
+/-- Boxed convolution gives the vanishing ordinary second cumulant of a
+product of centered free variables, without a trace or positivity assumption. -/
+example {𝕜 A : Type*} [Field 𝕜] [Ring A] [Algebra 𝕜 A]
+    (φ : ProbabilitySpace 𝕜 A) (B : Fin 2 → Subalgebra 𝕜 A)
+    (hf : FreelyIndependent φ B) (a b : A) (ha : a ∈ B 0) (hb : b ∈ B 1)
+    (hca : φ.expectation a = 0) (hcb : φ.expectation b = 0) :
+    cumulant φ [a * b, a * b] = 0 := by
+  classical
+  have hd (x : A) (hx : φ.expectation x = 0) :
+      orderedPartitionContribution (cumulant φ) (fun _ : Fin 2 => x)
+        (NoncrossingPartition.discrete 2) = 0 := by
+    unfold orderedPartitionContribution
+    have hs : ({0} : Finset (Fin 2)) ∈ (NoncrossingPartition.discrete 2).blocks := by
+      rw [NoncrossingPartition.blocks_discrete]
+      exact Finset.mem_image.mpr ⟨0, Finset.mem_univ _, rfl⟩
+    apply Finset.prod_eq_zero hs
+    simp [orderedBlockWord, cumulant, hx]
+  calc
+    _ = ∑ p : NoncrossingPartition 2,
+        orderedPartitionContribution (cumulant φ) (fun _ => a) p *
+          orderedPartitionContribution (cumulant φ) (fun _ => b) p.kreweras := by
+      simpa using hf.cumulant_replicate_mul_eq_kreweras_sum a b ha hb 2 (by norm_num)
+    _ = 0 := by
+      apply Finset.sum_eq_zero
+      intro p _
+      rcases p.two_eq_discrete_or_indiscrete with hp | hp
+      · rw [hp, hd a hca, zero_mul]
+      · rw [hp, NoncrossingPartition.kreweras_indiscrete, hd b hcb, mul_zero]
+
+/-- Arbitrarily varying canonical generators converge at z = I, inside the
+norm-two disk where an exterior geometric-series argument does not apply. -/
+example {I : Type*} (i : I) (j : ℕ → I) :
+    Filter.Tendsto
+      (fun n => (Fock.closedGeneratedVacuumState I).cauchyTransform
+        (Fock.closedSemicircular (j n)) Complex.I)
+      Filter.atTop
+      (nhds ((Fock.closedGeneratedVacuumState I).cauchyTransform
+        (Fock.closedSemicircular i) Complex.I)) := by
+  let _ : PartialOrder (Fock.closedSemicircularAlgebra I) := CStarAlgebra.spectralOrder _
+  let _ : StarOrderedRing (Fock.closedSemicircularAlgebra I) := CStarAlgebra.spectralOrderedRing _
+  apply tendsto_cauchyTransform_all_nonreal_of_bounded_power_moments
+    (Fock.closedGeneratedVacuumState I) (fun _ : ℕ => Fock.closedGeneratedVacuumState I)
+    (Fock.closedSemicircular i) (Fock.isSelfAdjoint_closedSemicircular i)
+    (fun n => Fock.closedSemicircular (j n))
+    (fun n => Fock.isSelfAdjoint_closedSemicircular (j n)) Filter.atTop
+    ?_ 2 ?_ Complex.I (by simp)
+  · intro k
+    have he (q : I) : (Fock.closedGeneratedVacuumState I).expectation
+        (Fock.closedSemicircular q ^ k) =
+        if Even k then (catalan (k / 2) : ℂ) else 0 := by
+      change Fock.vacuumExpectation
+        ((Fock.closedSemicircularAlgebra I).val (Fock.closedSemicircular q ^ k)) = _
+      rw [map_pow]
+      exact Fock.vacuumExpectation_semicircular_pow q k
+    simpa only [he] using
+      (tendsto_const_nhds : Filter.Tendsto
+        (fun _ : ℕ => if Even k then (catalan (k / 2) : ℂ) else 0) Filter.atTop
+        (nhds (if Even k then (catalan (k / 2) : ℂ) else 0)))
+  · exact Filter.Eventually.of_forall (fun n => by simp)
+
+/-- Both spectral endpoints belong to the spectrum of the actual bounded operator. -/
+example {I : Type*} (i : I) :
+    (-2 : ℝ) ∈ spectrum ℝ (Fock.semicircular i) ∧
+      (2 : ℝ) ∈ spectrum ℝ (Fock.semicircular i) := by
+  rw [Fock.spectrum_semicircular_real]
+  norm_num
+
+/-- The actual Fock spectral measure has the explicit density's fourth moment. -/
+example {I : Type*} (i : I) :
+    ∫ x : ℝ, x ^ 4 ∂Fock.fockSpectralLaw i = 2 := by
+  rw [Fock.fockSpectralLaw_eq_semicircleMeasure]
+  simpa [catalan_two] using Semicircular.semicircleMeasure_even_moment 2
+
 end FreeProbability.Examples

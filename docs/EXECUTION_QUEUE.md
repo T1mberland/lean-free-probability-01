@@ -13,29 +13,27 @@ integration checkout passes the full build and audits.
 - Lean 4.34.1 and mathlib `d13f23b723b8a846827a245b89c10fc7d3f11612` remain pinned.
 - Baseline integration checks: `lake build` (3404 jobs), `lake build Verification`
   (3406 jobs), direct transitive axiom audit (954 declarations), source guard.
-- All eleven goals remain open. Existing results and their scope are listed in
+- At the baseline, all eleven goals remained open. Existing results and their scope are listed in
   the dependency audit; none is considered complete merely by having a module.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `8cb664e`, published on `main`, with full builds,
-source guard and transitive audit passing for 2503 declarations. Full cumulant
-characterization/Möbius/generic interval products/Kreweras moments, genuine
-tensor-domain free semicircular system with faithful tracial C-star state,
-polynomial/matrix and single-generator resolvent IBP, iid moment free CLT and
-actual spectral probability measures/faithful support are integrated. Quantitative non-iid
-CLT is integrated; Kreweras deletion/count and complex/Cauchy
-spectral representation are published and queued. Full targets remain open as
-specified below; historical checkpoints retain their checked scope.
+Latest checked integration: `427f72b`, published on `main` through
+[PR #2](https://github.com/T1mberland/lean-free-probability-01/pull/2). Full builds
+3583/3586 jobs, source guard and transitive audit of 2636 declarations pass.
+Goals 1 and 6 are certified complete; nine full goals remain open. Explicit
+semicircle density, arbitrary-orthonormal-family Fock interfaces and matrix
+operator-valued models are published and queued for sequential integration.
+Historical checkpoints retain their scope.
 
 | Goal | Status | Earliest work and dependency |
 | --- | --- | --- |
-| 1. Cumulant calculus | Active; core iff and adjacent/unit/scalar calculus integrated | Full refinement/Möbius integrated; generic interval products/Kreweras moments undergoing integration; boxed product cumulants and rotation/block counts remain |
+| 1. Cumulant calculus | Complete on checked main `76af384`, PR #1 | All requested calculus and combinatorial subtargets verified; optional rotation/closed μ and Goal 7 S multiplication are separate |
 | 2. Full Fock systems | Active; faithful tracial C-star word model with exact norm two integrated | General-H full Fock and vector creation integrated; explicit tensor-sum operators/state/law published; spectral law remains |
 | 3. Free integration by parts | Active proof path selected | Actual polynomial tensor derivative/Leibniz and polynomial/matrix IBP integrated; analytic extensions remain |
 | 4. Operator-valued Dyson | Blocked on operator-valued realization | Completely positive covariance, amplified moments and Wick recursion precede Dyson and physical branch |
 | 5. Spectral edges | Blocked on goals 2, 4 and 6 | Faithful pencils and spectral/Dyson theory precede variational identity and certificates |
-| 6. Spectral distributions | Active worker B | Continuous functional calculus and positive-functional representation precede spectral measure and faithful support identification |
+| 6. Spectral distributions | Complete on checked main `427f72b`, PR #2 | Actual measures/CFC/support/Cauchy/moment compatibility and bounded convergence are integrated; uniform/derivative convergence is separate |
 | 7. Multiplicative convolution | Blocked on goals 1, 2 and 6 | Positive realizations, S-transform multiplication and actual spectral laws; rational critical-point computations are supporting special cases |
 | 8. Conditional subordination | Blocked on goals 6 and 7 and noncommutative L² | Normal conditional expectations, analytic subordination, then exterior continuation and projection specialization |
 | 9. Haar freeness | Independent algebraic groundwork ready | Haar-unitary star law and free conjugation; general orthogonal pairing integration precedes asymptotic trace estimates |
@@ -47,8 +45,8 @@ specified below; historical checkpoints retain their checked scope.
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
 | Coordinator | `main`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/cumulant-characterization`, `/home/user/Projects/lean-fp-cumulants` | New cumulant-related `Combinatorics` and `Algebraic` files except B's three reserved pairing files; coordinator owns the existing `CumulantFreeness.lean` header and polynomial FDQ/IBP files | Generic interval products and Kreweras published; interleaving factorization and multiplicative moment calculus |
-| Worker B (`fock`) | `feat/spectral-measures`, `/home/user/Projects/lean-fp-fock` | Current new `Analytic/SpectralMeasure*.lean`; completed Fock checkpoint on `feat/fock-semicircular`, pairing files owned exclusively: `Combinatorics/NoncrossingPairingDecomposition.lean`, `NoncrossingPairingWeights.lean`, `NoncrossingPairingCatalan.lean` | Tensor-domain faithful tracial C-star/Wick published; new feat/spectral-measures for actual spectral measures |
+| Worker A (`cumulants`) | `feat/operator-valued-matrix`, `/home/user/Projects/lean-fp-cumulants` | New `OperatorValued/Matrix*.lean`; completed cumulant feature preserved | Actual matrix conditional expectation, all finite covariance amplification positivity, matrix semicircular realization |
+| Worker B (`fock`) | `feat/orthonormal-fock`, `/home/user/Projects/lean-fp-fock` | Current new `Fock/OrthonormalFamily*.lean`; completed spectral/density feature preserved | Arbitrary orthonormal-family adapted complete Fock and intrinsic generated state/freeness |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -715,3 +713,158 @@ for full support. Baseline analytic transform convergence is only in the exterio
 region under eventual uniform source bounds and explicit target norm condition.
 Weak measure convergence and all-nonreal Cauchy convergence are being proved
 separately. They are not inferred from the exterior theorem or claimed prematurely.
+
+### Checked integration checkpoint: Cauchy law and spectral determinacy
+
+`ab262d5` is checked and published on `main`, previous source mappings integrated.
+Full build 3521 jobs, Verification 3524 jobs, direct audit 2520 declarations
+and source guard pass. Actual complex CFC/Cauchy representation on the whole
+resolvent domain and spectral law equality iff all power moments are complete.
+Weak law/full nonreal transform convergence under explicit bounds remain active.
+
+### Pending integration: Kreweras deletions/count/raw connectivity
+
+Sources/integration mappings: `0fe24b6`→`243d2dc`, `955cadb`→`98f85de`,
+`bb081f0`→`476127d`, `ea139ba`→`a2a3c46`, `0f7d1dc`→`da0456d`,
+`15d5ce4`→`90751b9`, `9403369`→`ed7c9e5`, `acaeae1`→`dee4866`,
+`b88ad6b`→`3a48bab`, `caebd84`→`07eca02`, `b6947cf`→`4548bd9`,
+`b25eb57`→`d9c7cdf`, `292e68e`→`1e92f7f`, `9a45c36`→`1fcc5ed`,
+`0417fd3`→`7f55eca`.
+Actual alternating pair products and (a*b)^n moments have the Kreweras formula.
+Adjacent original chords and noninitial singleton insertion have exact
+complement transports; a boundary-free reduction yields
+`card_blocks_add_kreweras` for n>0. At n=0 the usual n+1 count is false, and all
+empty identities are handled separately. Raw interval joins are genuinely NC
+without extra closure merges. Actual refinement block maps give strict block
+count for proper refinement. `interleave_sup_pairKernel` and
+`sup_val_of_le_kreweras` prove compatible joins are RAW joins;
+`sup_kreweras_val_eq_top` is genuine raw connectivity, not merely NC closure top.
+All mathematical reviews and name scans approved; combined checks pending.
+The finite incidence-graph connected block-count bound and exact doubled
+pairing top-fiber iff still precede boxed product cumulants. Worker graph bound
+currently compiles but is not yet published/integrated. Thirty-five uncached
+mathlib graph dependencies were built serially under the common lock; they are
+preserved. Future missing mathlib targets are hydrated from the pinned cache
+first, avoiding unnecessary dependency rebuilds. The worker-owned obstruction
+record is integrated from its published checkpoints; later updates remain on
+its branch until reviewed and integrated.
+
+### Pending integration: complete requested cumulant calculus
+
+Additional sources/integration mappings: `18bee10`→`920f0d0`,
+`c0011e6`→`12ef517`, `eb9bdcf`→`0d8e604`, `89c22f2`→`c7af250`,
+`6301f8b`→`a1a4676`, `20ddb01`→`60480d6`, `0fb2000`→`fd7d800`,
+`b84b8b4`→`598546f`, `ddc03b5`→`8842e0d`.
+Actual incidence-graph connectivity and finite edge bound give the connected
+block-count bound without assuming a tree. Genuine K count and strict refinement
+then prove the exact doubled top fiber q=K(p), including the separate empty case.
+`FreelyIndependent.cumulant_prod_eq_kreweras_sum` and its repeated-product variant
+are the full actual boxed formulas for positive-order coordinatewise products
+of two free tuples, with no trace, positivity, commutation or connectivity
+premises. The optional actual K incidence tree, finite-poset Möbius order-isomorphism
+invariance and finite dependent-product μ formula are also integrated into this
+feature. Source guard caught a forbidden token only in a documentation comment;
+`c0011e6` rephrases it with no proof change or audit relaxation. The targeted
+pinned graph cache hydrated 33 missing files instead of rebuilding dependencies.
+All mathematical reviews/global name scans approved. Final combined full build passes
+3574 jobs, Verification 3577 jobs, direct transitive audit 2626 declarations,
+and source guard. The ordinary second-cumulant centered-free-product usage
+example also kernel-compiles. Main integration and certification remain pending.
+
+Read-only literal Goal 1 audit confirms all requested mathematical subtargets
+are covered by these sources and existing integrated prerequisites. Rotation
+identities and explicit Catalan closed-form μ coefficients are useful extensions,
+not requirements named in the goal specification. Goal 1 will be certified only
+after this integration passes the main build/audits and meaningful boxed usage.
+No whole-project completion is implied.
+
+### Safe worker reassignment after verified branch checkpoints
+
+Worker A completed/pushed through clean `ddc03b5`, then coordinator switched its
+isolated worktree to `feat/operator-valued-matrix` from checked main `ab262d5`.
+Exclusive files are new `OperatorValued/Matrix*.lean`; actual scalar-state matrix
+conditional expectation `a594efa` and all finite amplified Hermitian covariance
+positivity `bf0e7eb` are published. General arbitrary-B completely positive
+semicircular realization remains a separate Goal 4 obligation.
+Worker B completed/pushed the spectral/density checkpoint through clean `edb2f06`,
+then coordinator switched its isolated worktree to `feat/orthonormal-fock` from
+checked main `ab262d5`. Exclusive new `Fock/OrthonormalFamily*.lean` extends an
+arbitrary ON family to a true Hilbert basis and builds a family-adapted complete
+Fock realization. It does not identify operators on the preexisting fixed
+chosen-basis tensor model without a separate proved unitary. Both earlier branches
+and all published histories are preserved; no uncommitted work was overwritten.
+
+### PR integration workflow
+
+The user requested PRs and appropriate merges. Successive verified integration
+checkpoints now use explicit PRs targeting `main`, preserving atomic source
+commits with merge commits. Local full builds, mathematical statement review,
+transitive audits and source checks precede each merge; GitHub protections are
+respected. Main is checked again after merging.
+
+### Pending PR: actual weak spectral laws and all-nonreal transforms
+
+Worker sources `d24b590`→`e123b38`, `ce0a337`→`45a9e76` construct the
+actual `ProbabilityMeasure` weak topology and prove convergence from all power
+moments under an eventual common operator-norm bound. Ambient C-star algebras
+may vary, and the filter is arbitrary. Continuous real/complex integrals converge;
+Cauchy transforms converge at every nonreal point, without an exterior radius
+restriction. This is pointwise convergence, not uniform convergence or convergence
+of derivatives. Read-only Goal 6 audit approves the exact statements and confirms
+canonical C-star orders supply the public order interfaces. Main integration,
+full checks and usage verification remain pending before Goal 6 certification.
+
+Combined full build passes 3530 jobs, Verification 3533 jobs, direct transitive
+axiom audit 2530 declarations and source guard. A canonical Fock-generator
+sequence usage example proves convergence at `z = I` inside the norm-two disk,
+using the actual all-order Catalan moments and the full nonreal theorem.
+
+### Checked PR integration: complete cumulant calculus
+
+[PR #1](https://github.com/T1mberland/lean-free-probability-01/pull/1) merged
+head `8adf5f1` as `76af384`; all atomic source commits are retained. Main full
+build 3574 jobs, Verification 3577 jobs, direct audit 2626 declarations and
+source guard pass. Boxed-product usage and independent exact-goal review pass.
+Goal 1 is complete. GitHub Actions was still running at merge; local checks
+are the verified evidence recorded here, with no claim of CI completion.
+
+### Checked PR integration: spectral distributions and convergence
+
+[PR #2](https://github.com/T1mberland/lean-free-probability-01/pull/2) merged
+head `415f92e` as `427f72b`. Main full build 3583 jobs, Verification 3586,
+direct audit 2636 declarations and source guard pass. The Fock sequence example
+at `z=I` compiles, and exact Goal 6 review approves the statements. Goal 6 is
+complete; nine goals remain open. PR #1 GitHub Actions run `38537828341`
+subsequently completed successfully; PR #2 CI completion is not yet claimed.
+
+### Pending PR: actual semicircle density and full operator spectrum
+
+Worker sources/integration mappings: `d927565`→`64a4790`, `2f8a5ed`→`59c09b6`,
+`64cd736`→`e6b1f54`, `2322a53`→`6d7b495`, `00432f6`→`dd48978`,
+`edb2f06`→`b4aff6f`. Actual compact Fock probability laws are constructed from
+the previously proved CFC state. Independently evaluated square-root integrals
+prove all Catalan/odd moments and normalization of
+`semicircleMeasure = volume.withDensity(ofReal(sqrt(4-x²)/(2π)))`.
+A general compact probability moment-uniqueness theorem then identifies the
+actual Fock law with this explicit measure. Positive interior density and closed
+support prove full support `[-2,2]`; faithfulness and spectral permanence yield
+the exact spectrum of both the generated-algebra element and original bounded
+operator. No semicircle-law premise is assumed. Mathematical review approves
+all sources; combined checks and main integration pending.
+
+### Arbitrary orthonormal-family completion scope
+
+Read-only review of published `466a0ca` confirms the adapted model is the FULL
+F(H), including all H through the actual extending Hilbert basis, not only the
+span of the supplied family. Scalar vacuum and Hilbert direct-sum grading are
+actual, completed tensor successors are onto unitaries, and original-H creation
+has literal tensor action. The literal Goal 2 construction permits this basis
+choice depending on an arbitrary ON family. Equality with an independently fixed
+chosen-basis realization is an optional coherence extension, not a missing
+existence hypothesis. Direct actual adapted spectral-law/density wrappers remain
+queued; full Goal 2 is not certified before their integration and all checks.
+
+Density integration checks pass: full build 3589 jobs, Verification 3592,
+direct transitive audit 2730 declarations and source integrity guard. Actual
+endpoint spectrum and density fourth-moment usage examples kernel-compile.
+Main integration pending.

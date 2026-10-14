@@ -18,9 +18,9 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `9715c11`, published on `main` through
-[PR #8](https://github.com/T1mberland/lean-free-probability-01/pull/8). Full builds
-3618/3621 jobs, source guard and transitive audit of 3148 declarations pass.
+Latest checked integration: `e7f693e`, published on `main` through
+[PR #9](https://github.com/T1mberland/lean-free-probability-01/pull/9). Full builds
+3625/3628 jobs, source guard and transitive audit of 3295 declarations pass.
 Goals 1, 2 and 6 are certified complete; eight full goals remain open. Actual
 matrix covariance/Wick/recursion and entire exponential IBP are published and
 queued for sequential integration. Historical checkpoints retain their scope.
@@ -45,7 +45,7 @@ queued for sequential integration. Historical checkpoints retain their scope.
 | --- | --- | --- | --- |
 | Coordinator | `main`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
 | Worker A (`cumulants`) | `feat/operator-valued-matrix`, `/home/user/Projects/lean-fp-cumulants` | New `OperatorValued/Matrix*.lean`; completed cumulant feature preserved | Actual matrix conditional expectation, all finite covariance amplification positivity, matrix semicircular realization |
-| Worker B (`fock`) | `feat/analytic-series-ibp`, `/home/user/Projects/lean-fp-fock` | New `Analytic/FockAnalyticSeries*.lean`; published resolvent/exponential/ON features preserved | General actual analytic power-series IBP with explicit value/derivative norm-summability |
+| Worker B (`fock`) | `feat/wick-contractions`, `/home/user/Projects/lean-fp-fock` | New `Fock/WickProduct*.lean`, `Fock/WickNorm*.lean`; published analytic features preserved | Actual Wick normal order, word norm bounds and reverse-overlap contractions |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -1091,3 +1091,46 @@ files or A-owned Matrix modules are shared.
 Actual affine Dyson combined checks pass: full build 3625 jobs, Verification
 3628 jobs, direct transitive audit 3295 declarations and source guard.
 Noncommuting Hermitian affine usage at z=I compiles. Main integration pending.
+
+### Checked PR integration: actual affine inverse Dyson
+
+[PR #9](https://github.com/T1mberland/lean-free-probability-01/pull/9) merged
+head `620695f` as `e7f693e`. Main full build 3625 jobs, Verification 3628,
+direct audit 3295 declarations and source guard pass, including noncommuting
+Hermitian drift/coefficient usage at z=I. Goal 4 remains open as specified.
+
+### Pending PR: actual full-domain polynomial resolvent IBP
+
+Published B originals `ccc3edd`, `2d34626`, `31e3618`, `8ac8c1a` (with
+coordinator prerequisite sync `66eab22`) are assembled as `48a940a`, retaining
+history. Generic complex-algebra inverse commutator, actual scalar/matrix
+polynomial FDQ insertions and genuine full-matrix inverses give resolvent IBP
+at every actual invertibility point, with no self-adjointness, radius, or
+entrywise inverse premise. Closed scalar-state transport proves exact intrinsic
+and ambient domains via spectral permanence; closed matrix transport covers
+ALL intrinsic matrix resolvent points using true whole-inverse homomorphism
+compatibility. Reverse matrix domain equality is optional and not assumed.
+All four sources independently reviewed, with no collisions. Full code build
+3629 jobs, Verification 3632, direct audit 3337 declarations and source guard
+pass; ordered two-letter usage keeps the correct boundary factor. Its polynomial
+field was explicitly annotated ℂ, and singleton FDQ expanded before FreeMonoid
+simplification; the actual theorem/domain was unchanged. Main integration pending.
+
+### Independent next cycle after analytic sources published
+
+B completed/pushed analytic-series feature through clean `3047563`; all final
+scalar/matrix/closed wrappers now reviewed. Literal Goal 3 audit confirms full
+checklist once polynomial resolvent and analytic series integrations/main checks
+and usage pass. Norm-analytic series require explicit value AND derivative
+absolute bounds; no optimal convergence radius, unrestricted value-only
+FDQ-convergence or general contour calculus is claimed. B was reassigned from
+clean `3047563` to `feat/wick-contractions` from checked `e7f693e`, preserving
+all published analytic branches. New isolated WickProduct/WickNorm files target
+actual normal order, reverse-overlap contraction and norm bounds for Goal 10.
+Normal-order source `ea7aa32` had a transient GitHub server push rejection
+`fatal error in commit_refs`. Local commit was preserved and further writes held;
+a second normal push succeeded immediately, with upstream confirmed. No unresolved
+publication blocker remains. Single-word bound `128a21f` is also published.
+These are not yet integrated OU/entropy results. A's strict imaginary positivity
+and normalized analytic physical-branch results are published/reviewed in part
+and queued separately; global pointwise-root uniqueness remains unclaimed.

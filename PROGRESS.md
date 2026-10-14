@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `9715c11` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 3148 declarations.
+The latest checked and published integration is `e7f693e` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 3295 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -161,8 +161,14 @@ expectation, covariance positive at every matrix amplification, genuine scalar
 state complete positivity, all-order ordered/interspersed Wick laws and actual
 covariance moment recursion. These are integrated through
 [PR #6](https://github.com/T1mberland/lean-free-probability-01/pull/6) at `a1f942b`.
-They establish the concrete matrix case's foundations. General arbitrary-base
-CP covariance realization and analytic Dyson/physical-branch theory remain open.
+The actual affine matrix resolvent now satisfies
+`m(z)^-1=zI-C0-eta(m(z))` on its WHOLE actual resolvent set, including every
+nonreal point for Hermitian coefficients, integrated through
+[PR #9](https://github.com/T1mberland/lean-free-probability-01/pull/9) at `e7f693e`.
+The proof uses actual CStarMatrix inverses and determinant invertibility, never
+formal-series substitutes. General arbitrary-base CP covariance realization,
+half-plane/exterior properties, physical-branch uniqueness and entrywise matching
+remain separate Goal 4 obligations.
 
 For an actual self-adjoint idempotent p, `spectralMeasure_projection` proves
 its actual law is `(1-alpha)delta0+alpha delta1`, alpha=Re(phi(p)) in [0,1].
@@ -228,7 +234,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 3148 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 3295 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

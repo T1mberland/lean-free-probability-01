@@ -261,4 +261,25 @@ example :
     fin_cases r <;> fin_cases c <;> norm_num [C, Matrix.conjTranspose]
   · simp
 
+/-- Resolvent IBP for an ordered two-letter polynomial keeps the right boundary
+factor, throughout its actual invertibility domain. -/
+example {I : Type*} (i j : I) (hij : i ≠ j) (z : ℂ)
+    (hz : z ∈ resolventSet ℂ (evaluate Fock.semicircular (wordMonomial (𝕜 := ℂ) [j, i]))) :
+    let R := resolvent (evaluate Fock.semicircular (wordMonomial (𝕜 := ℂ) [j, i])) z
+    Fock.vacuumExpectation (Fock.semicircular i * R) =
+      Fock.vacuumExpectation (R * Fock.semicircular j) * Fock.vacuumExpectation R := by
+  classical
+  have hd : freeDifferenceQuotient i (wordMonomial (𝕜 := ℂ) [j, i]) =
+      wordMonomial [j] ⊗ₜ[ℂ] (1 : WordPolynomial ℂ I) := by
+    unfold wordMonomial
+    rw [freeDifferenceQuotient_single]
+    simp [wordDifferenceQuotient, hij, wordMonomial, MonoidAlgebra.one_def]
+  have he : evaluate Fock.semicircular (wordMonomial (𝕜 := ℂ) [j]) = Fock.semicircular j := by
+    simp only [wordMonomial, evaluate_single, List.map_cons, List.map_nil,
+      List.prod_cons, List.prod_nil, one_smul, mul_one]
+  have h := Fock.vacuumExpectation_polynomial_resolvent_integrationByParts
+    i (wordMonomial (𝕜 := ℂ) [j, i]) z hz
+  rw [hd, Fock.sandwichPolynomialExpectation_tmul, he, map_one, one_mul] at h
+  exact h
+
 end FreeProbability.Examples

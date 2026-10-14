@@ -1108,3 +1108,9 @@ run_cmd do
 #print axioms FreeProbability.Fock.tensorFamilyDoubleAlgebra_coe
 #print axioms FreeProbability.Fock.tensorFamilyVonNeumannVacuumState_faithful
 #print axioms FreeProbability.Fock.tensorFamilyVonNeumannVacuumState_tracial
+#print axioms FreeProbability.Fock.isometrySuffixEmbedding_field_defect
+#print axioms FreeProbability.Fock.isometrySuffixEmbedding_commute_family_field
+#print axioms FreeProbability.Fock.ouDoubleCommutantRaw_mem_familyDoubleCentralizer
+#print axioms FreeProbability.Fock.ouDoubleCommutantRawCP_mem_familyDoubleCentralizer
+#print axioms FreeProbability.Fock.ouDoubleCommutantTimeCP_zero
+#print axioms FreeProbability.Fock.ouDoubleCommutantTimeCP_boundedWOT_continuous

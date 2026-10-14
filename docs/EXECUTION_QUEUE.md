@@ -18,18 +18,17 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `0f40468`, published on `main` through
-[PR #4](https://github.com/T1mberland/lean-free-probability-01/pull/4). Full builds
-3590/3593 jobs, source guard and transitive audit of 2755 declarations pass.
-Goals 1 and 6 are certified complete; nine full goals remain open. Explicit
-semicircle density, arbitrary-orthonormal-family Fock interfaces and matrix
-operator-valued models are published and queued for sequential integration.
-Historical checkpoints retain their scope.
+Latest checked integration: `68de4fe`, published on `main` through
+[PR #5](https://github.com/T1mberland/lean-free-probability-01/pull/5). Full builds
+3594/3597 jobs, source guard and transitive audit of 2913 declarations pass.
+Goals 1, 2 and 6 are certified complete; eight full goals remain open. Actual
+matrix covariance/Wick/recursion and entire exponential IBP are published and
+queued for sequential integration. Historical checkpoints retain their scope.
 
 | Goal | Status | Earliest work and dependency |
 | --- | --- | --- |
 | 1. Cumulant calculus | Complete on checked main `76af384`, PR #1 | All requested calculus and combinatorial subtargets verified; optional rotation/closed μ and Goal 7 S multiplication are separate |
-| 2. Full Fock systems | Active; faithful tracial C-star word model with exact norm two integrated | General-H full Fock and vector creation integrated; explicit tensor-sum operators/state/law published; spectral law remains |
+| 2. Full Fock systems | Complete on checked main `68de4fe`, PR #5 | All literal arbitrary-H/ON-family structure/state/Wick/spectral subtargets verified; independently chosen-model coherence optional |
 | 3. Free integration by parts | Active proof path selected | Actual polynomial tensor derivative/Leibniz and polynomial/matrix IBP integrated; analytic extensions remain |
 | 4. Operator-valued Dyson | Blocked on operator-valued realization | Completely positive covariance, amplified moments and Wick recursion precede Dyson and physical branch |
 | 5. Spectral edges | Blocked on goals 2, 4 and 6 | Faithful pencils and spectral/Dyson theory precede variational identity and certificates |
@@ -933,3 +932,44 @@ sixth moment five and the actual density without any spanning assumption.
 Combined ON-family full build passes 3594 jobs, Verification 3597 jobs,
 direct transitive audit 2913 declarations and source guard. Arbitrary-family
 usage kernel-compiles.
+
+### Checked PR integration: full arbitrary-family Fock goal
+
+[PR #5](https://github.com/T1mberland/lean-free-probability-01/pull/5) merged
+head `458d944` as `68de4fe`. Main full build 3594 jobs, Verification 3597,
+direct audit 2913 declarations and source guard pass, with arbitrary-family
+usage. All literal Goal 2 subtargets are certified; eight goals remain open.
+GitHub PR CI runs for #2 (`38538477082`), #3 (`38538933882`), #4
+(`38540161510`) and #5 (`38540587555`) subsequently completed successfully.
+
+### Pending PR: actual matrix semicircular calculus
+
+Published original A commits `a594efa`, `bf0e7eb`, `0a751c2`, `fa59547`,
+`a01f261`, `9a6c7a8`, `3582815`, `13dce41` are assembled as `e705793`;
+`e1fb2bb`, `ab1d85c`, `8b7be88`, `c38c759` as `be2986c`, retaining original
+history. Actual matrix range-target conditional expectation fixes coefficients
+and is a two-sided bimodule retract. Hermitian coefficient covariance is positive
+at every finite amplification. Any scalar C-star probability state is bundled
+as a genuine completely positive map on ALL positive C-star matrix inputs,
+using actual cone closure rather than a Gram-only positivity premise.
+Actual closed-Fock coefficient sums give the Hermitian semicircular matrix
+model, centering and exact covariance. All-order ordered joint/interspersed
+matrix Wick identities preserve noncommuting coefficients. Actual matrix tensor
+FDQ calculus, power cuts and expectation contraction prove
+`closedMatrixMoment_recursion`: M(k+1)=sum_{j<k} eta(Mj)M(k-1-j), with M0=I,
+M1=0, derived from actual polynomial IBP. No moment law is assumed.
+All twelve sources have independent mathematical review and no collisions.
+The first eight passed full build 3608, Verification 3611 and audit 2983 plus
+integrity guard. Final related recursion additions undergo combined checks.
+The concrete two noncommuting Pauli coefficients give actual covariance 2I;
+a generic fourth-moment usage retains both noncrossing nestings.
+General arbitrary-base CP-covariance realization, actual analytic Dyson and
+physical matrix branch remain unproved Goal 4 obligations. Formal power-series
+Dyson, currently assigned A, is not a substitute for the actual resolvent equation.
+
+Final related matrix recursion checks pass: full build 3612 jobs, Verification
+3615 jobs, direct transitive audit 3029 declarations and source guard. Both
+Pauli covariance and ordered fourth-moment usage kernel-compile. The fourth
+moment simplifier required retaining the covariance linear-map head; expanded
+map-sum normal forms were mathematically equal but syntactically different.
+No statement or proof requirement was weakened. Main integration pending.

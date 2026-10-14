@@ -199,4 +199,31 @@ example {I H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [Complete
   refine ⟨d, hf, fun i => ⟨?_, (hd i).2.2.2.2.1⟩⟩
   simpa [catalan_three] using d.even_moment i 3
 
+/-- Two noncommuting Hermitian Pauli coefficients give actual matrix covariance 2I. -/
+example :
+    let C : Fin 2 → Matrix (Fin 2) (Fin 2) ℂ :=
+      ![!![1, 0; 0, -1], !![0, 1; 1, 0]]
+    matrixExpectation (Fock.closedGeneratedVacuumState (Fin 2)).toProbabilitySpace
+      (Fock.closedMatrixSemicircular C ^ 2) = (2 : ℂ) • 1 := by
+  intro C
+  calc
+    _ = matrixCovariance C 1 := by
+      simpa only [map_one, mul_one, ← pow_two] using
+        Fock.closedMatrixSemicircular_covariance C 1
+    _ = _ := by
+      ext r c
+      fin_cases r <;> fin_cases c <;>
+        norm_num [C, matrixCovariance, Matrix.mul_apply, Fin.sum_univ_two]
+
+/-- The actual fourth operator-valued moment retains both noncrossing nestings. -/
+example {I n : Type*} [Fintype I] [Fintype n] [DecidableEq n]
+    (C : I → Matrix n n ℂ) :
+    Fock.closedMatrixMoment C 4 =
+      matrixCovariance C 1 * matrixCovariance C 1 +
+        matrixCovariance C (matrixCovariance C 1) := by
+  have h2 : Fock.closedMatrixMoment C 2 = matrixCovariance C 1 := by
+    simpa using Fock.closedMatrixMoment_recursion C 1
+  simpa [Finset.sum_range_succ, h2, -matrixCovariance_apply] using
+    Fock.closedMatrixMoment_recursion C 3
+
 end FreeProbability.Examples

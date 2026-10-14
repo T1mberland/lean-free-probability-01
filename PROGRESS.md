@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `0f40468` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 2755 declarations.
+The latest checked and published integration is `68de4fe` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 2913 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -85,9 +85,17 @@ integrated at `5c2e9cb`. Explicit recursively completed tensor powers and the
 unitary onto their Hilbert sum, exact tensor-domain operators and actual
 faithful tracial generated tensor C-star model with literal joint Wick/Catalan
 laws are integrated at `8334d17`.
-The semicircular density and arbitrary-orthonormal-family interfaces await
-integration. Goals 1 and 6 are certified complete at checked main `76af384` and
-`427f72b`, respectively; the other nine goals remain open. Completed tensor-power identification is already integrated.
+The canonical spectral density and full spectrum are integrated at `9a2bdad`.
+Every arbitrary orthonormal family in a complete complex Hilbert space now has
+a genuine adapted full F(H), including all H, literal completed-tensor creation,
+scalar vacuum and grading. Its literal generated C-star state is faithful and
+tracial, its fields are free with norm two, and actual joint Wick/Catalan and
+explicit spectral density laws hold. `exists_fullFock_semicircular_family`
+packages the general existence theorem without a spanning/countability assumption.
+Integrated through [PR #5](https://github.com/T1mberland/lean-free-probability-01/pull/5)
+at checked main `68de4fe`, with full builds, audits and arbitrary-family usage.
+Goals 1, 2 and 6 are certified complete; eight full goals remain open. Equality
+with an independently chosen basis model is an optional coherence extension.
 
 Formal R-transform additivity/scaling and the algebraic free CLT are integrated
 at `65ea73e`. The CLT gives explicit pairing-moment limits for
@@ -201,7 +209,7 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - Lean 4.34.1; mathlib revision
   `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 - `lake build`, the direct `Verification/Axioms.lean` audit, and the source
-  integrity guard passed. The latest integrated transitive audit covers 2755 library declarations
+  integrity guard passed. The latest integrated transitive audit covers 2913 library declarations
   and permits only `propext`, `Classical.choice`, and `Quot.sound`.
 - GitHub Actions repeats the build, source guard, and transitive audit.
 - The analytic transform milestones were integrated through

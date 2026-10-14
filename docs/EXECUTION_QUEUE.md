@@ -18,8 +18,8 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `914cb5e9a768b82d4229db2c568b879c74474e0b`,
-published main after PR48. Full3817, Verification3820, direct transitive6065,
+Latest checked integration: `a123904ee26ab288fb0905095f1169824425abd9`,
+published main after PR49. Full3828, Verification3831, direct transitive6256,
 source guard/diff and explicit push passed. Earlier records below are historical.
 Goals 1, 2, 3, 6 and 7 are certified complete; six full goals remain open.
 Every historical checkpoint below retains its original scope and date.
@@ -42,9 +42,9 @@ Every historical checkpoint below retains its original scope and date.
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/fock-von-neumann-ou-semigroup-integration`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
-| Worker A (`cumulants`) | `feat/compact-haar-averaging`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalPairingDistance.lean and agreed notes; prior sources frozen | Actual raw-join pairing-distance triangle for sharp inverse/trace estimates |
-| Worker B (`fock`) | `feat/fock-von-neumann-ou-symmetry`, `/home/user/Projects/lean-fp-fock` | NEW Fock/OrnsteinUhlenbeckVonNeumannVacuumSymmetry*.lean and agreed notes; prior sources frozen | Actual whole-algebra state L2 symmetry |
+| Coordinator | `feat/positive-operator-monotone-limits`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Worker A (`cumulants`) | `feat/orthogonal-trace-words`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalTraceContractions.lean and agreed notes; prior sources frozen | Actual matrixunit cyclic trace and paired-delta network factorization |
+| Worker B (`fock`) | `feat/fock-number-resolvent`, `/home/user/Projects/lean-fp-fock` | NEW Fock/OrnsteinUhlenbeckNumberResolvent*.lean and agreed notes; prior sources frozen | Actual bounded inverse of number operator plus identity |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
 
 Source checkouts and `.lake` directories are separate. All heavy builds and Lean
@@ -2332,3 +2332,34 @@ no full Goal10 or random-matrix asymptotic freeness completion is claimed.
 
 Whole-von-Neumann semigroup feature passes full3828, Verification3831,
 direct transitive6256, source/diff, precise mathematical review and named audits.
+
+### Genuine bounded monotone operator convergence and directed suprema
+
+PR49 checked main `a123904ee26ab288fb0905095f1169824425abd9` passes full3828,
+Verification3831, directtransitive6256, source/diff and push. Whole ON-family
+OU semigroup is integrated; normality is still distinct. CI46 38593822819
+andCI47 38594314691 are confirmed successful; CI48/49 were still running.
+Root commits b913d8e,1aa51db,570e38d,728897a,6dc696e prove actual positive
+operator energy, scalar quadratic limits/increment bounds, vector Cauchy and
+genuine bounded CLM strong limits for arbitrary normbounded Loewner-monotone
+directed nets, actual IsLUB and literal commutant/doublecommutant closure.
+The index needs only Preorder plus atTop.NeBot (equivalent to nonempty directed),
+not a countable sequence, semilattice or finite-dimensional Hilbert space.
+Individual operators need not be positive for monotone convergence/IsLUB;
+positivity passes separately under the genuine eventually-positive hypothesis.
+No blanket complete lattice on arbitrary noncommuting operator sets is installed.
+Major declarations: positiveOperator_energy_le, monotoneOperator_vector_cauchy,
+positiveOperator_nonneg_of_strong_tendsto, monotoneOperator_exists_isLUB and
+operatorDoubleCentralizer_exists_isLUB. All thirteen public statements reviewed
+and individually standard-axiom audited; focused builds are warning-free.
+Next normality proof must identify intrinsic DC IsLUB with the constructed
+ambient strong supremum, apply bounded-WOT continuity, and identify the image
+strong supremum. Intrinsic-to-ambient supremum equivalence is not assumed.
+A frozen published checkpoints include true leading/distance Weingarten bounds
+and actual complex trace contractions6349c65; new TraceContractions active.
+B frozen663f2f8 has true weighted number-operator domain, density, full adjoint
+graph and closed graph; new NumberResolvent active. These are not integrated
+yet. Five full goals complete, six open; no normality/entropy/freeness completion.
+
+Monotone-limit feature passes full3833, Verification3836, directtransitive6270,
+source/diff, all focused builds and mathematical statement reviews.

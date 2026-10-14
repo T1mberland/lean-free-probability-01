@@ -1129,3 +1129,9 @@ run_cmd do
 #print axioms FreeProbability.Fock.ouVonNeumannTimeContinuous_add
 #print axioms FreeProbability.Fock.ouVonNeumannTimeCP_state_L2_le
 #print axioms FreeProbability.Fock.ouVonNeumannTimeCP_vacuum_strong_continuous
+#print axioms FreeProbability.positiveOperator_energy_le
+#print axioms FreeProbability.positiveOperator_increment_energy_le
+#print axioms FreeProbability.monotoneOperator_vector_cauchy
+#print axioms FreeProbability.positiveOperator_nonneg_of_strong_tendsto
+#print axioms FreeProbability.monotoneOperator_exists_isLUB
+#print axioms FreeProbability.operatorDoubleCentralizer_exists_isLUB

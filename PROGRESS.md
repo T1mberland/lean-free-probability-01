@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `f217432` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 6956 declarations.
+The latest checked and published integration is `9436c25` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 7083 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -1139,3 +1139,31 @@ Five full goals complete, six open; this is not full Goal10 completion.
 Full regularization feature passes full3888, Verification3891, directtransitive
 7083, integrity/diff and exact six-module reviews. Actual t=log2 factor-four
 state-L2 usage compiles. Goal10 L1 and matrix entropy remain open.
+
+### Actual centered multi-trace decay and Haar second absolute moment
+
+PR57 checked main9436c25 passes full3888, Verification3891, transitive7083,
+source/diff and push. Genuine all-coefficient positive-time native OU
+regularization is integrated; L1 and matrix entropy remain open. A published
+chainb7b4acf/7171e29/b3071c3/32432ff/ab161c9 is assembled: actual arbitrary
+permutation-indexed normalized trace cycle product and Haar expansion, exact
+paired row/column networks, centered actualN^-m bound for m true cycles,
+genuine disjoint-sum/reindexed network products and same-U two-trace product,
+entrywise-conjugate actualmatrix norm/trace preservation and true Haar
+second absolute moment. For nonempty fixedr, uniform K-bounded centered
+complex factors satisfy actualintegral‖traceWord‖²≤
+C_(2r) K^(4r) / N² eventually with threshold onlyr. No assumed expectation
+factorization or variance estimate is introduced. Empty-word/dimension cases
+retain their exact values and are excluded honestly from nonemptydecay.
+This is a genuine second-moment result, not yet probability/a.s. convergence.
+A now owns new MultiTraceConvergence* deriving bad-event summability and
+actual Haar-marginal sequence a.s., without across-Nindependence assumptions.
+B owns actual finite matrix WickSuffixGram* and identifies the positive
+candidate with actualOU; identity remainsopen. Root next independentGoal5
+finite-depth Fock exterior resolvent approximation; exact quantitative bound
+and true pencil propagation must be proved before marking that goal complete.
+Five full goals complete, six open; full random-matrix freeness stillopen.
+
+Multi-trace/second-moment feature passes full3893, Verification3896, direct
+transitive7172, integrity/diff and all five source precise statement reviews.
+Actual same-Haar second absolute moment is proved; probability/a.s. next.

@@ -18,8 +18,8 @@ integration checkout passes the full build and audits.
 
 ## Goal status and dependency-aware queue
 
-Latest checked integration: `f217432c18e16de0fd2ac0f0d4241c244c011185`,
-published main after PR56. Full3882, Verification3885, direct transitive6956,
+Latest checked integration: `9436c25e3fea306c41b07643f30b87ec91e2e344`,
+published main after PR57. Full3888, Verification3891, direct transitive7083,
 source guard/diff and explicit push passed. Earlier records below are historical.
 Goals 1, 2, 3, 6 and 7 are certified complete; six full goals remain open.
 Every historical checkpoint below retains its original scope and date.
@@ -35,14 +35,14 @@ Every historical checkpoint below retains its original scope and date.
 | 7. Multiplicative convolution | Complete on checked main `bdd05e2`, certified PR39 | Actual positive-pair S/law and arbitrary-length projection physical branch/edge/spectrum; universal free-product realization belongs to Goal11 |
 | 8. Conditional subordination | Noncommutative L² and Goal 7 dependencies open | Normal conditional expectations, analytic subordination, exterior continuation and projection specialization |
 | 9. Haar freeness | Genuine Haar conjugation and stable orthogonal FFT/integration verified | Actual sharp pairing-distance inverse estimates integrated; centered single-trace expected decay integrated PR55; multi-trace expected bounds pending integration; joint probability/a.s. convergence, strong resolvent convergence and low-dimensional integration remain |
-| 10. OU and entropy | Genuine whole-ONfamily von Neumann unital CP semigroup with faithful tracial vacuum and actual normality integrated PR51 | Exact Hilbert generator/domain integrated PR53; Original cyclic L2 bridge integrated PR56; complete-coefficient positive-time regularization in current feature, L1 extension and matrix entropy remain |
+| 10. OU and entropy | Genuine whole-ONfamily von Neumann unital CP semigroup with faithful tracial vacuum and actual normality integrated PR51 | Exact Hilbert generator/domain integrated PR53; Original cyclic L2 bridge integrated PR56; Complete-coefficient positive-time regularization integrated PR57, L1 extension and matrix entropy remain |
 | 11. Follow-up milestones | Formal R and quantitative conditional moment CLT integrated | Positive free products, analytic convolution, operator-valued cumulants, annular/second-order and genus theory remain |
 
 ## Active assignments and isolation
 
 | Role | Branch / worktree | Exclusive ownership | Current milestone |
 | --- | --- | --- | --- |
-| Coordinator | `feat/wick-damped-reconstruction`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
+| Coordinator | `feat/orthogonal-multitrace-variance-integration`, `/home/user/Projects/lean-free-prob` | Central imports, verification, configuration, ledgers, integration | Review, integrate verified branches sequentially, publish, select successive milestones |
 | Worker A (`cumulants`) | `feat/orthogonal-multitrace-bounds`, `/home/user/Projects/lean-fp-cumulants` | NEW RandomMatrix/OrthogonalMultiTrace*.lean and agreed notes; prior sources frozen | Genuine multi-trace Haar expansion and centered moment/variance bounds |
 | Worker B (`fock`) | `feat/fock-positive-suffix-gram`, `/home/user/Projects/lean-fp-fock` | NEW Fock/WickSuffixGram*.lean and agreed notes; prior sources frozen | Actual finite matrix positive suffix decomposition |
 | Reviewer | Read-only integration checkout | No writes, Git mutations or builds | Audit statements, prerequisites and precise scope |
@@ -2568,3 +2568,31 @@ Five full goals complete, six open; this is not full Goal10 completion.
 Full regularization feature passes full3888, Verification3891, directtransitive
 7083, integrity/diff and exact six-module reviews. Actual t=log2 factor-four
 state-L2 usage compiles. Goal10 L1 and matrix entropy remain open.
+
+### Actual centered multi-trace decay and Haar second absolute moment
+
+PR57 checked main9436c25 passes full3888, Verification3891, transitive7083,
+source/diff and push. Genuine all-coefficient positive-time native OU
+regularization is integrated; L1 and matrix entropy remain open. A published
+chainb7b4acf/7171e29/b3071c3/32432ff/ab161c9 is assembled: actual arbitrary
+permutation-indexed normalized trace cycle product and Haar expansion, exact
+paired row/column networks, centered actualN^-m bound for m true cycles,
+genuine disjoint-sum/reindexed network products and same-U two-trace product,
+entrywise-conjugate actualmatrix norm/trace preservation and true Haar
+second absolute moment. For nonempty fixedr, uniform K-bounded centered
+complex factors satisfy actualintegral‖traceWord‖²≤
+C_(2r) K^(4r) / N² eventually with threshold onlyr. No assumed expectation
+factorization or variance estimate is introduced. Empty-word/dimension cases
+retain their exact values and are excluded honestly from nonemptydecay.
+This is a genuine second-moment result, not yet probability/a.s. convergence.
+A now owns new MultiTraceConvergence* deriving bad-event summability and
+actual Haar-marginal sequence a.s., without across-Nindependence assumptions.
+B owns actual finite matrix WickSuffixGram* and identifies the positive
+candidate with actualOU; identity remainsopen. Root next independentGoal5
+finite-depth Fock exterior resolvent approximation; exact quantitative bound
+and true pencil propagation must be proved before marking that goal complete.
+Five full goals complete, six open; full random-matrix freeness stillopen.
+
+Multi-trace/second-moment feature passes full3893, Verification3896, direct
+transitive7172, integrity/diff and all five source precise statement reviews.
+Actual same-Haar second absolute moment is proved; probability/a.s. next.

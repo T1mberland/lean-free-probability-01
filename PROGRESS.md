@@ -48,8 +48,8 @@ Representative declarations include:
 
 ## Current checked development state
 
-The latest checked and published integration is `9436c25` on `main`; full builds,
-the direct transitive axiom audit and source guard pass for 7083 declarations.
+The latest checked and published integration is `7d70927` on `main`; full builds,
+the direct transitive axiom audit and source guard pass for 7172 declarations.
 Exact source/integration hashes are preserved in the execution ledger.
 
 `cumulant_ofFn_eq_zero_of_unit`, `cumulant_eq_zero_of_one_mem`,
@@ -1167,3 +1167,35 @@ Five full goals complete, six open; full random-matrix freeness stillopen.
 Multi-trace/second-moment feature passes full3893, Verification3896, direct
 transitive7172, integrity/diff and all five source precise statement reviews.
 Actual same-Haar second absolute moment is proved; probability/a.s. next.
+
+### Genuine mean-square, probability and almost-sure Haar trace convergence
+
+PR58 checked main7d70927 passes full3893, Verification3896, transitive7172,
+source/diff and push. True single-Haar second absolute moment is integrated.
+Reviewed A44e4e23/677a3ee/2ed976b and notes47a84dd are assembled: actual
+squared-trace integrability, summable secondmoments over ALLN (finite unstable
+prefix handled), genuine Tonelli a.e. summability and a.s. centeredtrace→0
+for ANY common measurable source with correct normalized Haar marginals.
+No independence across dimensions or assumed convergence is required.
+Correct marginal derives source probability; actual convergence in measure
+follows, and COUNTABLE indexed word collections share one fullmeasureevent.
+Positive fixedhalfdegree and actualuniformcomplexmatrixopnorm bounds are
+explicit; uncountable simultaneousword assertions are not made.
+Major names: summable_centered_traceWordSecondMoment,
+ae_centered_traceWord_tendsto, centered_traceWord_tendstoInMeasure,
+ae_countable_centered_traceWords_tendsto. Sevenpublicnewtheorems and the
+Tonellihelper reviewed/focusedbuilt/standardaxiomaudited. This proves distinct
+mean-square/probability/a.s. modes for actualsingle-Haarcenteredwords, not
+fullmultipleindependentHaarcolor/randomfamilyjointstar-law/strongconvergence.
+A NEW ProbabilityRandomInputs* proves actual jointmeasurability, productlaw
+and Haar×data Fubini bounds. B NEW WickSuffixGramActualOU* identifies the
+reviewed finite homogeneousmatrixpositiveGram with actualOU. Root published
+c9acaaa/c1e7329 conditionalgeometricinversebound and actualfinite-depth
+projections; actualpencilpropagation/quantitativeexteriorapplication next.
+The shiftedcompression plan records a required domain correction: ambient
+QHQ adds eigenvalue0; use Q(H+‖H‖I)Q or restricteddepthspace forz>b.
+Five full goals complete/six open; no fullGoal9/Goal5/Goal10 completion.
+
+Mean-square/probability/a.s. feature passes full3896, Verification3899, direct
+transitive7179, integrity/diff and all exact scope reviews. CI56 run38608452061,
+CI57 run38610503541 and CI58 run38611081396 confirmed success.

@@ -4,8 +4,10 @@ Targets are the concrete theorems in [PROJECT_GOAL.md](PROJECT_GOAL.md). This au
 compares actual existing declarations with those targets. Open entries are
 obligations, not assumptions that count as established results.
 
-See [EXECUTION_QUEUE.md](EXECUTION_QUEUE.md) for current isolated worker
-assignments, verification checkpoints, design decisions and successive tasks.
+Historical verification checkpoints and design decisions are preserved in the
+[archived execution ledger](archive/EXECUTION_QUEUE.md). Its assignments are not
+active project tasks. This audit is inherited from the original development;
+consult the declarations and current CI before relying on a completion claim.
 
 ## Audit of the eleven goals
 
@@ -25,7 +27,7 @@ assignments, verification checkpoints, design decisions and successive tasks.
 
 Goals 1, 2, 3, 6 and 7 are certified complete at checked main `76af384`, `68de4fe`,
 `5706254`, `427f72b` and `bdd05e2`; the other six targets remain open. Supporting interfaces alone do not certify a target. See
-[PROGRESS.md](../PROGRESS.md) for verified declarations and their current scope.
+[PROGRESS.md](archive/PROGRESS.md) for verified declarations and their current scope.
 
 ## First development path
 

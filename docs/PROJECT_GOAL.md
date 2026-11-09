@@ -161,9 +161,10 @@ Every completed theorem must be genuinely kernel-checked, without placeholders,
 new mathematical axioms, bypasses, circular assumptions, or weakened targets.
 Add meaningful usage examples. Run the complete build, integrity guard, and
 transitive axiom audit before declaring milestones verified. Follow
-[AGENTS.md](../AGENTS.md) for committing, publishing, and integration.
-Record exact missing dependencies in [PROGRESS.md](../PROGRESS.md) and
-[DEPENDENCIES.md](DEPENDENCIES.md), and continue with useful intermediate results.
+[CONTRIBUTING.md](../CONTRIBUTING.md) for committing, publishing, and integration.
+Record exact missing dependencies in [DEPENDENCIES.md](DEPENDENCIES.md), and
+continue with useful intermediate results. Historical progress is preserved in
+the [archive](archive/README.md).
 
 Success means semicircular resolvent identities, spectral-edge formulas,
 projection-product laws, conditional subordination, Haar freeness, and OU estimates

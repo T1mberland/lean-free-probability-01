@@ -1,7 +1,13 @@
-# Autonomous execution ledger
+# Historical execution ledger
 
-The eleven target statements are in [PROJECT_GOAL.md](PROJECT_GOAL.md). The
-verified dependency audit is in [DEPENDENCIES.md](DEPENDENCIES.md). An active task
+This is an archived record from the original development phase. Commit hashes,
+verification counts, assignments and “current” or “next” statements below refer
+to their historical checkpoints, not to active assignments or the latest branch.
+Use [the dependency audit](../DEPENDENCIES.md) for the mathematical roadmap and
+the branch CI for current build status.
+
+The eleven target statements are in [PROJECT_GOAL.md](../PROJECT_GOAL.md). The
+verified dependency audit is in [DEPENDENCIES.md](../DEPENDENCIES.md). An active task
 is not a verified result; a feature-branch result is not integrated until the
 integration checkout passes the full build and audits.
 

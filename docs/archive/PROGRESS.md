@@ -1,11 +1,17 @@
-# Progress
+# Historical development record
+
+This is an archived record from the original development phase. Commit hashes,
+verification counts, assignments and “current” or “next” statements below refer
+to their historical checkpoints, not to active assignments or the latest branch.
+Use [the dependency audit](../DEPENDENCIES.md) for the mathematical roadmap and
+the branch CI for current build status.
 
 ## Scope and status
 
 This project develops reusable Lean 4 foundations for free probability, operator
 algebras, and random matrices. Its targets are mathematical results described in
-[docs/PROJECT_GOAL.md](docs/PROJECT_GOAL.md), with an audit and dependency roadmap
-in [docs/DEPENDENCIES.md](docs/DEPENDENCIES.md). No particular application is a
+[docs/PROJECT_GOAL.md](../PROJECT_GOAL.md), with an audit and dependency roadmap
+in [docs/DEPENDENCIES.md](../DEPENDENCIES.md). No particular application is a
 completion criterion.
 
 ## Verified foundations
@@ -208,13 +214,13 @@ measurable nonzero random input have joint direction, gate-count, and energy
 product laws independent of the input history. Extinction errors are kept
 explicit in finite-dimensional probability bounds.
 
-These results live in [RandomMatrix](FreeProbability/RandomMatrix). General
+These results live in [RandomMatrix](../../FreeProbability/RandomMatrix). General
 orthogonal Weingarten asymptotics, conditional sphere sampling, conditioned
 random-matrix estimates, and summable centered-quadratic tails remain open.
 
 ## Additional examples
 
-[Applications/ReLU](FreeProbability/Applications/ReLU) contains verified examples
+[Applications/ReLU](../../FreeProbability/Applications/ReLU) contains verified examples
 using the general matrix and probability interfaces:
 
 - Diagonal gates have the actual active-coordinate rank, are positive
@@ -246,12 +252,12 @@ neither general strong convergence nor a Jacobian operator-norm limit.
 - The analytic transform milestones were integrated through
   [PR #1](https://github.com/T1mberland/lean-free-probability/pull/1). Verified
   milestones and feature branches are published promptly; repository workflow
-  is recorded in [AGENTS.md](AGENTS.md).
+  is recorded in [AGENTS.md](../../CONTRIBUTING.md).
 
 ## Next mathematical priorities
 
 The exact dependency queue, isolated assignments, source hashes and integration
-checks are maintained in [docs/EXECUTION_QUEUE.md](docs/EXECUTION_QUEUE.md).
+checks are maintained in [docs/EXECUTION_QUEUE.md](EXECUTION_QUEUE.md).
 Goals 1, 2, 3 and 6 are certified complete; seven goals remain open.
 
 1. Integrate published actual matrix half-plane/exterior, normalized analytic

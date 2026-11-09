@@ -11,7 +11,9 @@ Fock-space semicircular systems, free Wick and integration-by-parts formulas,
 operator-valued Dyson equations, spectral measures and edge formulas, free
 convolution and subordination, Haar freeness, and free Gaussian analysis.
 The full mathematical scope is in [docs/PROJECT_GOAL.md](docs/PROJECT_GOAL.md);
-verified results and remaining work are recorded in [PROGRESS.md](PROGRESS.md).
+the [dependency audit](docs/DEPENDENCIES.md) records implemented interfaces and
+remaining work. Earlier development records are retained in the
+[archive](docs/archive/README.md).
 
 ## Available foundations
 
@@ -35,7 +37,6 @@ illustrate the matrix and Haar-probability tools.
 Install elan, then run:
 
 ```sh
-lake update
 lake exe cache get
 lake build
 lake build Verification
@@ -75,7 +76,7 @@ convergence.
 
 ## Contributing and sources
 
-Use focused feature branches and publish verified milestones promptly. Before
+Use focused feature branches and reviewable changes. Before
 integration, run the build, source integrity guard, and transitive axiom audit:
 
 ```sh
@@ -84,5 +85,16 @@ python3 scripts/check_integrity.py
 lake env lean Verification/Axioms.lean
 ```
 
-See [AGENTS.md](AGENTS.md) for the repository workflow and
+See [CONTRIBUTING.md](CONTRIBUTING.md) for build and review expectations and
 [docs/SOURCES.md](docs/SOURCES.md) for public references and attribution.
+
+## Documentation and licensing
+
+The [documentation index](docs/README.md) separates the mathematical roadmap,
+proof-design notes and historical records. Proof-design notes can describe open
+work; only the corresponding Lean declarations establish formal results.
+
+Third-party attribution and the included Apache 2.0 text are preserved. This
+repository does not yet specify a project-wide license; the third-party license
+file alone does not license the entire project. A project-wide license needs to
+be chosen by the maintainers before presenting this as freely reusable code.

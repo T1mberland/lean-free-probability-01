@@ -5,7 +5,6 @@ models, spectral measures, matrix analysis and orthogonal Haar integration.
 
 - [Theorem overview](THEOREMS.md): selected results and their hypotheses.
 - [Source index](INDEX.json): generated module imports, declaration names and source locations.
-- [Agent guide](AGENTS.md): navigation and change checks.
 
 ## Build and use
 
@@ -41,6 +40,20 @@ Import individual modules when possible; `import FreeProbability` imports the
 whole library. Exact assumptions and mathematical conventions live in the Lean
 statements. In particular, positivity and traciality are not implicit in
 `ProbabilitySpace`, and moment convergence is not operator-norm convergence.
+
+## Source index
+
+`INDEX.json` records each module's path, SHA-256, direct imports and named source
+declarations (written name, lexical namespace, kind, visibility and 1-based line).
+It is a navigation aid, not an elaborated Lean environment or verification
+report. Types, assumptions, instances, fields, constructors and generated
+declarations are omitted; private entries are not public API. Read the source
+and compile before relying on a result.
+
+Regenerate it after source changes with `python3 scripts/generate_index.py`.
+Keep the short theorem overview current, preserve dependency pins and attribution,
+and run the checks above. Review mathematical statements as well as proofs;
+do not introduce `sorry`, new mathematical axioms or kernel bypasses.
 
 ## Attribution and license
 

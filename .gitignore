@@ -5,3 +5,7 @@
 *.log
 Scratch*.lean
 __pycache__/
+
+# Local scratch notes; only the directory's README is shared.
+/local-notes/*
+!/local-notes/README.md

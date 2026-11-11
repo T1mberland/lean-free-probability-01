@@ -1,4 +1,4 @@
-/-! Appended after `import all` for every project module by check_axioms.py.
+/-! Appended after legacy imports of every project module by check_axioms.py.
 Select by defining module, not declaration namespace: private helpers, generated
 declarations and declarations in other namespaces must also be checked. -/
 

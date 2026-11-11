@@ -22,9 +22,11 @@ def project_modules(root=ROOT):
 
 
 def audit_source(modules):
-    # `import all` also loads private declarations under Lean's module system.
-    imports = "\n".join(f"import all {module}" for module in modules)
-    return ("module\n" + imports + "\nmeta import Lean\nmeta import Lean.Util.CollectAxioms\n\n"
+    # A legacy (non-`module`) consumer loads the private import level in Lean
+    # 4.34, including private declarations of modern modules. It also accepts
+    # this project's legacy modules, which a `module` consumer cannot import.
+    imports = "\n".join(f"import {module}" for module in modules)
+    return (imports + "\nimport Lean\nimport Lean.Util.CollectAxioms\n\n"
             + AUDIT.read_text(encoding="utf-8"))
 
 

@@ -33,9 +33,9 @@ class IntegrityTests(unittest.TestCase):
             self.assertEqual(modules, ["FreeProbability", "FreeProbability.Unimported",
                                        "Verification.Example"])
             source = audit_source(modules)
-            self.assertTrue(source.startswith("module\n"))
+            self.assertFalse(source.startswith("module\n"))
             for module in modules:
-                self.assertIn(f"import all {module}\n", source)
+                self.assertIn(f"import {module}\n", source)
 
 
 if __name__ == "__main__":

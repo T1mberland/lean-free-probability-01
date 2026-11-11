@@ -12,15 +12,16 @@ import tempfile
 from check_axioms import ROOT, audit_source
 
 
-def run_lean(path, root, env, output=None):
-    command = ["lean", f"--root={root}"]
+def run_lean(path, root, env, output=None, extra_args=()):
+    command = ["lean", f"--root={root}", *extra_args]
     if output is not None:
         command += ["-o", str(output)]
     return subprocess.run(command + [str(path)], cwd=ROOT, env=env,
                           text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
 
-def check_case(label, source, expected=None, module="FreeProbability.AuditProbe", dependency=None):
+def check_case(label, source, expected=None, module="FreeProbability.AuditProbe",
+               dependency=None, compile_error=None):
     with tempfile.TemporaryDirectory(prefix="axiom-regression-") as directory:
         root = Path(directory)
         env = dict(os.environ)
@@ -36,7 +37,13 @@ def check_case(label, source, expected=None, module="FreeProbability.AuditProbe"
             fixture = root.joinpath(*module.split(".")).with_suffix(".lean")
             fixture.parent.mkdir(parents=True)
             fixture.write_text(source, encoding="utf-8")
-            result = run_lean(fixture, root, env, fixture.with_suffix(".olean"))
+            result = run_lean(fixture, root, env, fixture.with_suffix(".olean"),
+                              ["--error=hasSorry"] if compile_error else [])
+            if compile_error is not None:
+                if result.returncode == 0 or compile_error not in result.stdout:
+                    raise SystemExit(f"{label}: expected compilation failure\n{result.stdout}")
+                print(f"PASS: {label}", flush=True)
+                return
             if result.returncode:
                 raise SystemExit(f"{label}: fixture failed to compile\n{result.stdout}")
             modules.append(module)
@@ -69,12 +76,14 @@ theorem sound {α : Sort u} {r : α → α → Prop} {a b : α} (h : r a b) :
                "module\nprivate theorem hidden : False := by sorry\n", "Forbidden axiom sorryAx")
     check_case("other declaration namespace", "theorem Unrelated.bad : False := by sorry\n",
                "Forbidden axiom sorryAx")
-    check_case("verification example", "example : False := by sorry\n",
+    check_case("verification theorem", "theorem bad : False := by sorry\n",
                "Forbidden axiom sorryAx", module="Verification.AuditProbe")
     check_case("transitive external axiom", "import AuditDependency\ntheorem bad : False := externalFact\n",
                "Forbidden axiom externalFact", dependency="axiom externalFact : False\n")
     check_case("native_decide compiler trust", "import Lean\ntheorem bad : 1 = 1 := by native_decide\n",
                "Forbidden axiom")
+    check_case("anonymous example sorry is a build error", "example : True := by sorry\n",
+               compile_error="declaration uses `sorry`")
     check_case("empty audit fails closed", None, "No project declarations were audited")
 
 

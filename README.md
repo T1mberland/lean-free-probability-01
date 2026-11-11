@@ -36,8 +36,10 @@ transitive dependencies. Only `propext`, `Classical.choice` and `Quot.sound`
 (Lean's standard logical axioms used by mathlib) are allowed. `sorryAx`, added
 mathematical axioms and compiler-trusting proofs such as `native_decide` fail
 CI. This means **no `sorry` or extra axioms**, not "axiom-free mathematics."
-Regression fixtures verify that forbidden cases really fail; comments and
-strings are ignored by the separate source guard. As with any CI, these checks
+Builds also promote Lean’s `hasSorry` diagnostic to an error, including in
+anonymous `example` commands that are not retained as declarations. Regression
+fixtures verify that forbidden cases really fail; comments and strings are
+ignored by the separate source guard. As with any CI, these checks
 rely on the pinned Lean toolchain and trusted build/audit code.
 
 ```lean

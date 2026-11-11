@@ -3,6 +3,7 @@ open Lake DSL
 
 package «lean-free-prob» where
   leanOptions := #[⟨`autoImplicit, false⟩]
+  moreLeanArgs := #["--error=hasSorry"]
 
 require mathlib from git
   "https://github.com/leanprover-community/mathlib4.git" @ "d13f23b723b8a846827a245b89c10fc7d3f11612"

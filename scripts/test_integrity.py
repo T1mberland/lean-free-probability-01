@@ -12,7 +12,7 @@ class IntegrityTests(unittest.TestCase):
     def test_rejects_forbidden_terms(self):
         for token in ("sorry", "admit", "axiom", "unsafe", "implemented_by", "extern",
                       "sorryAx", "native_decide", "ofReduceBool", "ofReduceNat",
-                      "debug.skipKernelTC"):
+                      "debug.skipKernelTC", "debug.proofAsSorry", "warn.sorry"):
             with self.subTest(token=token):
                 self.assertIsNotNone(check_source(f"namespace Other\n{token}\nend Other"))
 
@@ -33,6 +33,7 @@ class IntegrityTests(unittest.TestCase):
             self.assertEqual(modules, ["FreeProbability", "FreeProbability.Unimported",
                                        "Verification.Example"])
             source = audit_source(modules)
+            self.assertTrue(source.startswith("module\n"))
             for module in modules:
                 self.assertIn(f"import all {module}\n", source)
 

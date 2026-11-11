@@ -24,7 +24,8 @@ def project_modules(root=ROOT):
 def audit_source(modules):
     # `import all` also loads private declarations under Lean's module system.
     imports = "\n".join(f"import all {module}" for module in modules)
-    return imports + "\nimport Lean.Util.CollectAxioms\n\n" + AUDIT.read_text(encoding="utf-8")
+    return ("module\n" + imports + "\nmeta import Lean\nmeta import Lean.Util.CollectAxioms\n\n"
+            + AUDIT.read_text(encoding="utf-8"))
 
 
 def main():

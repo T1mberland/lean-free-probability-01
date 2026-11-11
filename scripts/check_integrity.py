@@ -6,7 +6,7 @@ from generate_index import mask_comments_and_strings
 
 FORBIDDEN = re.compile(
     r"\b(sorry|admit|axiom|unsafe|implemented_by|extern|sorryAx|native_decide|"
-    r"ofReduceBool|ofReduceNat|debug\.skipKernelTC)\b"
+    r"ofReduceBool|ofReduceNat|debug\.skipKernelTC|debug\.proofAsSorry|warn\.sorry)\b"
 )
 
 

@@ -35,7 +35,7 @@ def check_case(label, source, expected=None, module="FreeProbability.AuditProbe"
         modules = []
         if source is not None:
             fixture = root.joinpath(*module.split(".")).with_suffix(".lean")
-            fixture.parent.mkdir(parents=True)
+            fixture.parent.mkdir(parents=True, exist_ok=True)
             fixture.write_text(source, encoding="utf-8")
             result = run_lean(fixture, root, env, fixture.with_suffix(".olean"),
                               ["--error=hasSorry"] if compile_error else [])

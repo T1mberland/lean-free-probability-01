@@ -1,4 +1,4 @@
-name: Lean verification
+name: Lean build + proof audit
 
 on:
   push:
@@ -13,17 +13,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Check proof sources and source index
+        run: |
+          python3 scripts/check_integrity.py
+          python3 -m unittest discover -s scripts -p 'test_*.py'
+          python3 scripts/generate_index.py --check
       - uses: leanprover/lean-action@v1
         with:
           auto-config: false
           build: true
       - name: Build verification modules
         run: flock -x /tmp/lean-fp-build.lock -c 'lake build Verification'
-      - name: Source integrity guard
-        run: python3 scripts/check_integrity.py
-      - name: Check source index
-        run: |
-          python3 -m unittest discover -s scripts -p 'test_*.py'
-          python3 scripts/generate_index.py --check
-      - name: Audit transitive theorem axioms
-        run: lake env lean Verification/Axioms.lean
+      - name: Audit every project declaration (no sorry or extra axioms)
+        run: python3 scripts/check_axioms.py
+      - name: Verify that forbidden proof fixtures fail
+        run: lake env python3 scripts/check_axioms_regressions.py

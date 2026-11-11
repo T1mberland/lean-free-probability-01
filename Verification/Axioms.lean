@@ -1,24 +1,7 @@
 import FreeProbability
-import Lean.Util.CollectAxioms
 
-/-! Audit every declaration in the library namespace, including transitive dependencies.
-Only Lean's standard logical axioms are allowed. This is an inspection command,
-not a proof mechanism; mathematical proofs remain checked by Lean's kernel. -/
-
-open Lean Elab Command in
-run_cmd do
-  let env ← getEnv
-  let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let mut count : Nat := 0
-  for (name, _) in env.constants.toList do
-    if (`FreeProbability).isPrefixOf name then
-      count := count + 1
-      for ax in ← collectAxioms name do
-        unless allowed.contains ax do
-          throwError "Forbidden axiom {ax} in {name}"
-  unless count > 0 do
-    throwError "No library declarations were audited"
-  logInfo m!"Axiom audit passed for {count} library declarations."
+/-! Selected human-readable dependency reports. The exhaustive CI audit lives in
+scripts/check_axioms.py and covers all library and verification modules. -/
 
 #print axioms FreeProbability.ProbabilitySpace.expectation_center
 #print axioms FreeProbability.FreelyIndependent.expectation_mul

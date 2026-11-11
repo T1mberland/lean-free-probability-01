@@ -1,5 +1,7 @@
 # Free Probability in Lean 4
 
+[![Lean build + proof audit](https://github.com/T1mberland/lean-free-probability-01/actions/workflows/lean.yml/badge.svg?branch=cleanup%2Ffreeproblean-ready&event=push)](https://github.com/T1mberland/lean-free-probability-01/actions/workflows/lean.yml?query=branch%3Acleanup%2Ffreeproblean-ready)
+
 A Lean 4 library for noncommutative probability, free cumulants, Fock-space
 models, spectral measures, matrix analysis and orthogonal Haar integration.
 
@@ -17,13 +19,26 @@ lake build Verification
 python3 scripts/check_integrity.py
 python3 -m unittest discover -s scripts -p 'test_*.py'
 python3 scripts/generate_index.py --check
-lake env lean Verification/Axioms.lean
+python3 scripts/check_axioms.py
+lake env python3 scripts/check_axioms_regressions.py
 ```
 
 Use the committed toolchain and dependency manifest. The cache download is
 optional; do not run `lake update` unless intentionally upgrading dependencies.
 CI builds the library and verification modules and checks source integrity,
-index freshness and transitive axioms.
+index freshness and transitive axioms. The badge tracks this cleanup branch.
+
+The axiom audit discovers and builds **every** module under `FreeProbability`
+and `Verification`, even if omitted from the umbrella import. It checks all
+compiled declarations by their defining module, including private helpers,
+generated declarations and declarations in other namespaces, and follows their
+transitive dependencies. Only `propext`, `Classical.choice` and `Quot.sound`
+(Lean's standard logical axioms used by mathlib) are allowed. `sorryAx`, added
+mathematical axioms and compiler-trusting proofs such as `native_decide` fail
+CI. This means **no `sorry` or extra axioms**, not "axiom-free mathematics."
+Regression fixtures verify that forbidden cases really fail; comments and
+strings are ignored by the separate source guard. As with any CI, these checks
+rely on the pinned Lean toolchain and trusted build/audit code.
 
 ```lean
 import FreeProbability.Algebraic.ProbabilitySpace

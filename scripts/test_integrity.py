@@ -5,7 +5,7 @@ import tempfile
 import unittest
 
 from check_axioms import audit_source, project_modules
-from check_integrity import check_source
+from check_integrity import check_source, main as check_integrity
 
 
 class IntegrityTests(unittest.TestCase):
@@ -26,16 +26,30 @@ class IntegrityTests(unittest.TestCase):
             root = Path(directory)
             (root / "FreeProbability").mkdir()
             (root / "Verification").mkdir()
-            for file in ("FreeProbability.lean", "FreeProbability/Unimported.lean",
+            for file in ("FreeProbability.lean", "Verification.lean", "FreeProbability/Unimported.lean",
                          "Verification/Example.lean"):
                 (root / file).write_text("", encoding="utf-8")
             modules = project_modules(root)
             self.assertEqual(modules, ["FreeProbability", "FreeProbability.Unimported",
-                                       "Verification.Example"])
+                                       "Verification", "Verification.Example"])
             source = audit_source(modules)
             self.assertFalse(source.startswith("module\n"))
             for module in modules:
                 self.assertIn(f"import {module}\n", source)
+
+    def test_source_guard_rejects_both_top_level_modules(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for library in ("FreeProbability", "Verification"):
+                (root / library).mkdir()
+                (root / f"{library}.lean").write_text("", encoding="utf-8")
+            for library in ("FreeProbability", "Verification"):
+                with self.subTest(library=library):
+                    path = root / f"{library}.lean"
+                    path.write_text("axiom extra : False\n", encoding="utf-8")
+                    with self.assertRaisesRegex(SystemExit, rf"{library}\.lean: forbidden token axiom"):
+                        check_integrity(root)
+                    path.write_text("", encoding="utf-8")
 
 
 if __name__ == "__main__":

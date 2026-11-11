@@ -16,20 +16,26 @@ Install [elan](https://github.com/leanprover/elan) and Python 3, then run:
 lake exe cache get
 lake build
 lake build Verification
+lake exe mk_all --check
 python3 scripts/check_integrity.py
 python3 -m unittest discover -s scripts -p 'test_*.py'
 python3 scripts/generate_index.py --check
 python3 scripts/check_axioms.py
 lake env python3 scripts/check_axioms_regressions.py
+LEAN_NUM_THREADS=1 lake env leanchecker -v FreeProbability Verification
 ```
 
 Use the committed toolchain and dependency manifest. The cache download is
 optional; do not run `lake update` unless intentionally upgrading dependencies.
 CI builds the library and verification modules and checks source integrity,
-index freshness and transitive axioms. The badge tracks this cleanup branch.
+index freshness, umbrella import coverage, transitive axioms and kernel replay.
+The badge tracks this cleanup branch. Run `lake exe mk_all` after adding a module
+to regenerate both umbrella files, then regenerate the source index. `mk_all`
+returns a nonzero exit code when it updates files; rerun it with `--check`.
 
-The axiom audit discovers and builds **every** module under `FreeProbability`
-and `Verification`, even if omitted from the umbrella import. It checks all
+The source guard and axiom audit include both top-level files
+`FreeProbability.lean` and `Verification.lean`, plus **every** module under their
+directories, even if omitted from an umbrella import. The audit builds them and checks all
 compiled declarations by their defining module, including private helpers,
 generated declarations and declarations in other namespaces, and follows their
 transitive dependencies. Only `propext`, `Classical.choice` and `Quot.sound`
@@ -39,7 +45,11 @@ CI. This means **no `sorry` or extra axioms**, not "axiom-free mathematics."
 Builds also promote Lean’s `hasSorry` diagnostic to an error, including in
 anonymous `example` commands that are not retained as declarations. Regression
 fixtures verify that forbidden cases really fail; comments and strings are
-ignored by the separate source guard. As with any CI, these checks
+ignored by the separate source guard. `leanchecker` replays compiled declarations
+from both libraries through Lean's kernel to detect environment manipulation.
+It uses the same pinned Lean kernel, not an independent verifier, and does not
+replace the axiom allowlist. CI uses one replay worker to limit memory usage
+when loading mathlib. As with any CI, these checks
 rely on the pinned Lean toolchain and trusted build/audit code.
 
 ```lean
@@ -74,10 +84,11 @@ do not introduce `sorry`, new mathematical axioms or kernel bypasses.
 
 ## Attribution and license
 
+This project is licensed under the [Apache License 2.0](LICENSE).
+
 The library depends on [mathlib](https://github.com/leanprover-community/mathlib4).
 Compact-Haar normalization proofs in
 [OrthogonalHaar.lean](FreeProbability/RandomMatrix/OrthogonalHaar.lean) are adapted
 from [lean-weingarten](https://github.com/T1mberland/lean-weingarten/tree/e3a09fdfaeeab526388990a52b9911dd8e955ab2),
 with attribution in that file and the [Apache 2.0 text](LICENSES/Apache-2.0.txt)
-retained. **No project-wide license has been specified.** The third-party license
-does not license the entire repository.
+retained. Third-party dependencies retain their respective licenses.

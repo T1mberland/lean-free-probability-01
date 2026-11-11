@@ -78,6 +78,10 @@ theorem sound {α : Sort u} {r : α → α → Prop} {a b : α} (h : r a b) :
                "Forbidden axiom sorryAx")
     check_case("verification theorem", "theorem bad : False := by sorry\n",
                "Forbidden axiom sorryAx", module="Verification.AuditProbe")
+    check_case("top-level verification axiom", "axiom extra : False\n",
+               "Forbidden axiom extra", module="Verification")
+    check_case("top-level verification private theorem", "private theorem hidden : False := by sorry\n",
+               "Forbidden axiom sorryAx", module="Verification")
     check_case("transitive external axiom", "import AuditDependency\ntheorem bad : False := externalFact\n",
                "Forbidden axiom externalFact", dependency="axiom externalFact : False\n")
     check_case("native_decide compiler trust", "import Lean\ntheorem bad : 1 = 1 := by native_decide\n",

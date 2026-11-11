@@ -10,9 +10,10 @@ AUDIT = ROOT / "scripts" / "axiom_audit.lean"
 
 def project_sources(root=ROOT):
     """Discover sources even when they are missing from the umbrella import."""
-    sources = [root / "FreeProbability.lean"]
-    for directory in ("FreeProbability", "Verification"):
-        sources.extend(sorted((root / directory).rglob("*.lean")))
+    sources = []
+    for library in ("FreeProbability", "Verification"):
+        sources.append(root / f"{library}.lean")
+        sources.extend(sorted((root / library).rglob("*.lean")))
     return sources
 
 

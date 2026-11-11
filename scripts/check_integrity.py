@@ -1,7 +1,7 @@
 """Source guard; check_axioms.py is the authoritative transitive axiom check."""
 import re
 
-from check_axioms import project_sources
+from check_axioms import ROOT, project_sources
 from generate_index import mask_comments_and_strings
 
 FORBIDDEN = re.compile(
@@ -14,8 +14,8 @@ def check_source(source):
     return FORBIDDEN.search(mask_comments_and_strings(source))
 
 
-def main():
-    for path in project_sources():
+def main(root=ROOT):
+    for path in project_sources(root):
         forbidden = check_source(path.read_text(encoding="utf-8"))
         if forbidden:
             raise SystemExit(f"{path}: forbidden token {forbidden.group()}")
